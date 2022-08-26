@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<globalevents>
+	<globalevent type="startup" name="ServerStartup" script="startup.lua" />
+	<globalevent type="record" name="PlayerRecord" script="record.lua" />
+
+
+	<!-- <globalevent name="Server Save" interval="600" script="Server_Save.lua" /> -->
+	<globalevent name="Server Save" interval="10800000" script="Server_Save.lua" />
+	<globalevent name="Server Clear Map" time="00:00:00" script="Map_Clean.lua" />
+
+
+	<!--
+	<globalevent name="timer_example" time="12:00:00" script="my_script.lua" />
+	-->
+</globalevents>

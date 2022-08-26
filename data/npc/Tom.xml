@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Tom" script="rookgard/Tom.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="144" head="113" body="115" legs="58" feet="115" addons="1" />
+  <voices>
+    <voice text="Buying fresh corpses of rats, rabbits and wolves." 
+          interval2="150" margin="1" yell="no" />
+    <voice text="Oh yeah, I\'m also interested in wolf paws and bear paws." 
+          interval2="100" margin="1" yell="no" />
+    <voice text="Also buying minotaur leather." 
+          interval2="120" margin="1" yell="no" />
+  </voices>
+	<parameters>
+    <parameter key="message_greet" value="Hey there, |PLAYERNAME|. I\'m Tom the tanner. If you have fresh {corpses}, leather, paws or other animal body parts, {trade} with me." />
+    <parameter key="message_walkaway" value="D\'oh?" />
+    <parameter key="message_sendtrade" value="Sure, check what I buy." />
+
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_sellable" value="bear paw,5896,10;dead rabbit,2992,2;dead rat,2813,2;dead wolf,2826,5;minotaur leather,5878,12;wolf paw,5897,7" />
+	</parameters>
+</npc>

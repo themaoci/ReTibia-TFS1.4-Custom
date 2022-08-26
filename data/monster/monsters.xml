@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<monsters>
+  <!-- Custom Spawns -->
+	<monster name="trainer" file="training_device.xml"/>
+  
+  <!-- Almost Unkillable God Beings -->
+	<monster name="demigod ??????" file="demigod_punish.xml"/>
+
+  <!-- Default Rookgaard -->
+	<monster name="bear" file="default rookgaard/bear.xml"/>
+	<monster name="bug" file="default rookgaard/bug.xml"/>
+	<monster name="cave rat" file="default rookgaard/cave rat.xml"/>
+	<monster name="chicken" file="default rookgaard/chicken.xml"/>
+	<monster name="deer" file="default rookgaard/deer.xml"/>
+	<monster name="ghoul" file="default rookgaard/ghoul.xml"/>
+	<monster name="goblin" file="default rookgaard/goblin.xml"/>
+	<monster name="minotaur mage" file="default rookgaard/minotaur mage.xml"/>
+	<monster name="minotaur" file="default rookgaard/minotaur.xml"/>
+	<monster name="orc spearman" file="default rookgaard/orc spearman.xml"/>
+	<monster name="orc" file="default rookgaard/orc.xml"/>
+	<monster name="poison spider" file="default rookgaard/poison spider.xml"/>
+	<monster name="rabbit" file="default rookgaard/rabbit.xml"/>
+	<monster name="rat" file="default rookgaard/rat.xml"/>
+	<monster name="rotworm" file="default rookgaard/rotworm.xml"/>
+	<monster name="sheep" file="default rookgaard/sheep.xml"/>
+	<monster name="skeleton" file="default rookgaard/skeleton.xml"/>
+	<monster name="snake" file="default rookgaard/snake.xml"/>
+	<monster name="spider" file="default rookgaard/spider.xml"/>
+	<monster name="troll" file="default rookgaard/troll.xml"/>
+	<monster name="warlock" file="default rookgaard/warlock.xml"/>
+	<monster name="wasp" file="default rookgaard/wasp.xml"/>
+	<monster name="wolf" file="default rookgaard/wolf.xml"/>
+  
+  <!-- Dragonic species -->
+  <monster name="dragon hatchling" file="dragonic_species/dragon_hatchling.xml"/>
+	<monster name="wyvern" file="dragonic_species/wyvern.xml"/>
+	<monster name="dragon lord hatchling" file="dragonic_species/dragon_lord_hatchling.xml"/>
+	<monster name="dragon" file="dragonic_species/dragon.xml"/>
+	<monster name="wyrm" file="dragonic_species/wyrm.xml"/>
+	<monster name="dragon lord" file="dragonic_species/dragon_lord.xml"/>
+	<monster name="dragonling" file="dragonic_species/dragonling.xml"/>
+	<monster name="draptor" file="dragonic_species/draptor.xml"/>
+	<monster name="elder wyrm" file="dragonic_species/elder_wyrm.xml"/>
+	<monster name="elder dragon" file="dragonic_species/elder_dragon.xml"/>
+
+  <!-- Undead species -->
+  <monster name="banshee" file="undead_species/banshee.xml"/>
+ 	<monster name="blightwalker" file="undead_species/blightwalker.xml"/>
+ 	<monster name="crypt shambler" file="undead_species/crypt_shambler.xml"/>
+ 	<monster name="death priest" file="undead_species/death_priest.xml"/>
+ 	<monster name="elder mummy" file="undead_species/elder_mummy.xml"/>
+ 	<monster name="greater death minion" file="undead_species/greater death minion.xml"/>
+ 	<monster name="grim_reaper" file="undead_species/grim_reaper.xml"/>
+ 	<monster name="lich" file="undead_species/lich.xml"/>
+ 	<monster name="mummy" file="undead_species/mummy.xml"/>
+ 	<monster name="nightfiend" file="undead_species/nightfiend.xml"/>
+ 	<monster name="tomb_servant" file="undead_species/tomb_servant.xml"/>
+ 	<monster name="undead_prospector" file="undead_species/undead_prospector.xml"/>
+ 	<monster name="vampire" file="undead_species/vampire.xml"/>
+ 	<monster name="vampire_bride" file="undead_species/vampire_bride.xml"/>
+ 	<monster name="vicious_manbat" file="undead_species/vicious_manbat.xml"/>
+ 	<monster name="vampire_viscount" file="undead_species/vampire_viscount.xml"/>
+ 	<monster name="zombie" file="undead_species/zombie.xml"/>
+ 	<monster name="ghastly dragon" file="undead_species/ghastly_dragon.xml"/>
+
+  <!-- Skeleton species -->
+  <monster name="skeleton_warrior" file="skeleton_species/skeleton_warrior.xml"/>
+ 	<monster name="honour_guard" file="skeleton_species/honour_guard.xml"/>
+ 	<monster name="demon_skeleton" file="skeleton_species/demon_skeleton.xml"/>
+ 	<monster name="dreadbeast" file="skeleton_species/dreadbeast.xml"/>
+ 	<monster name="undead minion" file="skeleton_species/undead minion.xml"/>
+ 	<monster name="bonebeast" file="skeleton_species/bonebeast.xml"/>
+ 	<monster name="undead cavebear" file="skeleton_species/undead cavebear.xml"/>
+ 	<monster name="undead_gladiator" file="skeleton_species/undead_gladiator.xml"/>
+ 	<monster name="betrayed_wraith" file="skeleton_species/betrayed_wraith.xml"/>
+ 	<monster name="lost_soul" file="skeleton_species/lost_soul.xml"/>
+
+  
+  <!-- Almost Unkillable God Beings -->
+	<monster name="demigod" file="endgame/demigod.xml"/>
+  
+  <!-- Boss monsters and Special Event monsters -->
+	<monster name="Apprentice Sheng" file="raid_special/apprentice_sheng.xml"/>
+	<monster name="Munster" file="raid_special/munster.xml"/>
+	<monster name="Rottie the Rotworm" file="raid_special/rottie_the_rotworm.xml"/>
+	<monster name="Tarantula" file="raid_special/tarantula.xml"/>
+	<monster name="Teleskor" file="raid_special/teleskor.xml"/>
+</monsters>

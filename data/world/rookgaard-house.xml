@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<houses>
+	<house name="Rook House in Rock #1" houseid="1" entryx="380" entryy="406" entryz="7" rent="500" townid="2" size="17" />
+	<house name="Standalone 1" houseid="2" entryx="195" entryy="658" entryz="7" rent="750" townid="3" size="10" />
+	<house name="Standalone 2" houseid="3" entryx="205" entryy="662" entryz="7" rent="750" townid="3" size="16" />
+	<house name="Standalone 3" houseid="4" entryx="233" entryy="658" entryz="7" rent="750" townid="3" size="4" />
+	<house name="Standalone 4" houseid="5" entryx="234" entryy="664" entryz="7" rent="750" townid="3" size="2" />
+	<house name="Standalone 5" houseid="6" entryx="225" entryy="678" entryz="7" rent="750" townid="3" size="6" />
+	<house name="RowHouse 1" houseid="7" entryx="204" entryy="657" entryz="7" rent="600" townid="3" size="18" />
+	<house name="RowHouse 2" houseid="8" entryx="210" entryy="656" entryz="7" rent="600" townid="3" size="10" />
+	<house name="RowHouse 3" houseid="9" entryx="217" entryy="657" entryz="7" rent="600" townid="3" size="14" />
+	<house name="RowHouse 4" houseid="10" entryx="220" entryy="657" entryz="7" rent="600" townid="3" size="10" />
+	<house name="RowHouse 5" houseid="11" entryx="224" entryy="658" entryz="7" rent="600" townid="3" size="16" />
+	<house name="RowHouse 6" houseid="12" entryx="230" entryy="656" entryz="7" rent="600" townid="3" size="7" />
+	<house name="RowHouse 7" houseid="13" entryx="233" entryy="656" entryz="7" rent="600" townid="3" size="7" />
+	<house name="RowHouse L2 1" houseid="14" entryx="204" entryy="653" entryz="6" rent="600" townid="3" size="7" />
+	<house name="RowHouse L2 2" houseid="15" entryx="208" entryy="653" entryz="6" rent="600" townid="3" size="7" />
+	<house name="RowHouse L2 3" houseid="16" entryx="212" entryy="653" entryz="6" rent="600" townid="3" size="7" />
+	<house name="RowHouse L2 4" houseid="17" entryx="216" entryy="653" entryz="6" rent="600" townid="3" size="7" />
+	<house name="RowHouse L2 5" houseid="18" entryx="220" entryy="653" entryz="6" rent="600" townid="3" size="7" />
+	<house name="RowHouse L2 6" houseid="19" entryx="224" entryy="653" entryz="6" rent="600" townid="3" size="7" />
+	<house name="RowHouse L2 7" houseid="20" entryx="228" entryy="653" entryz="6" rent="600" townid="3" size="7" />
+	<house name="RowHouse L2 8" houseid="21" entryx="232" entryy="653" entryz="6" rent="600" townid="3" size="10" />
+	<house name="Tavern 1" houseid="22" entryx="195" entryy="670" entryz="6" rent="550" townid="3" size="11" />
+	<house name="Tavern 2" houseid="23" entryx="196" entryy="675" entryz="6" rent="550" townid="3" size="12" />
+	<house name="Tavern 3" houseid="24" entryx="197" entryy="675" entryz="5" rent="650" townid="3" size="10" />
+	<house name="Tavern 4" houseid="25" entryx="197" entryy="671" entryz="5" rent="650" townid="3" size="12" />
+	<house name="Tavern 5" houseid="26" entryx="194" entryy="672" entryz="5" rent="550" townid="3" size="8" />
+	<house name="Rook House Underground #1" houseid="39" entryx="364" entryy="382" entryz="9" rent="250" townid="2" size="10" />
+	<house name="Rook House Underground #2" houseid="40" entryx="364" entryy="386" entryz="9" rent="250" townid="2" size="7" />
+	<house name="Rook House Underground #3" houseid="41" entryx="364" entryy="388" entryz="9" rent="250" townid="2" size="7" />
+	<house name="Rook House Underground #4" houseid="42" entryx="365" entryy="391" entryz="9" rent="250" townid="2" size="13" />
+	<house name="Rook House Underground #5" houseid="43" entryx="367" entryy="391" entryz="9" rent="250" townid="2" size="7" />
+	<house name="Rook House Underground #6" houseid="44" entryx="373" entryy="391" entryz="9" rent="250" townid="2" size="7" />
+	<house name="Rook House Underground #7" houseid="45" entryx="375" entryy="391" entryz="9" rent="250" townid="2" size="7" />
+	<house name="Rook House Underground #8" houseid="46" entryx="373" entryy="389" entryz="9" rent="250" townid="2" size="7" />
+	<house name="Rook House Underground #9" houseid="47" entryx="368" entryy="388" entryz="9" rent="250" townid="2" size="13" />
+	<house name="Rook House Underground #10" houseid="48" entryx="368" entryy="382" entryz="9" rent="250" townid="2" size="10" />
+	<house name="Rook House Underground #11" houseid="49" entryx="366" entryy="381" entryz="9" rent="250" townid="2" size="4" />
+	<house name="Rook House in Rock #2" houseid="50" entryx="370" entryy="388" entryz="7" rent="500" townid="2" size="10" />
+	<house name="Rook House in Rock #3" houseid="51" entryx="368" entryy="397" entryz="7" rent="500" townid="2" size="7" />
+</houses>
