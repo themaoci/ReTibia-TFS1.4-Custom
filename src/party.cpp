@@ -349,6 +349,7 @@ bool Party::setSharedExperience(Player* player, bool sharedExpActive)
 
 	if (sharedExpActive) {
 		SharedExpStatus_t sharedExpStatus = getSharedExperienceStatus();
+
 		this->sharedExpEnabled = sharedExpStatus == SHAREDEXP_OK;
 		leader->sendTextMessage(MESSAGE_INFO_DESCR, getSharedExpReturnMessage(sharedExpStatus));
 	} else {
@@ -388,7 +389,7 @@ SharedExpStatus_t Party::getMemberSharedExperienceStatus(const Player* player) c
 		}
 	}
 
-	uint32_t minLevel = static_cast<uint32_t>(std::ceil((static_cast<float>(highestLevel) * 2) / 3));
+	uint32_t minLevel = static_cast<uint32_t>(std::ceil((static_cast<float>(highestLevel) / 4)));
 	if (player->getLevel() < minLevel) {
 		return SHAREDEXP_LEVELDIFFTOOLARGE;
 	}
@@ -415,14 +416,14 @@ SharedExpStatus_t Party::getMemberSharedExperienceStatus(const Player* player) c
 SharedExpStatus_t Party::getSharedExperienceStatus()
 {
 	SharedExpStatus_t leaderStatus = getMemberSharedExperienceStatus(leader);
-	//std::cout << "leader " << leaderStatus << std::endl;
+	std::cout << "leader " << leaderStatus << std::endl;
 	if (leaderStatus != SHAREDEXP_OK) {
 		return leaderStatus;
 	}
 
 	for (Player* member : memberList) {
 		SharedExpStatus_t memberStatus = getMemberSharedExperienceStatus(member);
-    //std::cout << "member " << memberStatus << std::endl;
+    std::cout << "member " << memberStatus << std::endl;
 		if (memberStatus != SHAREDEXP_OK) {
 			return memberStatus;
 		}
