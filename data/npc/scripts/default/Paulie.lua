@@ -5,11 +5,16 @@ NpcSystem.parseParameters(npcHandler)
 local count = {}
 local transfer = {}
 
-function onCreatureAppear(cid)			    npcHandler:onCreatureAppear(cid)			    end
-function onCreatureDisappear(cid)		    npcHandler:onCreatureDisappear(cid)			  end
-function onCreatureSay(cid, type, msg)	npcHandler:onCreatureSay(cid, type, msg)	end
-function onThink()		                  npcHandler:onThink()		                  end
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()		npcHandler:onThink()		end
 
+local voices = {
+	{ text = 'Deposit your money here in the safety of the Tibian Bank!' },
+	{ text = 'Any questions about the functions of your bank account? Feel free to ask me for help!' }
+}
+npcHandler:addModule(VoiceModule:new(voices))
 
 local function greetCallback(cid)
 	count[cid], transfer[cid] = nil, nil
@@ -316,6 +321,9 @@ keywordHandler:addKeyword({'hyacinth'}, StdModule.say, {npcHandler = npcHandler,
 keywordHandler:addKeyword({'dixi'}, StdModule.say, {npcHandler = npcHandler, text = 'She\'s {Obi\'s} granddaughter and deals with {armors} and {shields}. Her shop is southwest of town, close to the {temple}.'})
 keywordHandler:addKeyword({'cipfried'}, StdModule.say, {npcHandler = npcHandler, text = 'He guards the temple and can heal you if you are badly injured or poisoned.'})
 
+npcHandler:setMessage(MESSAGE_GREET, 'Welcome |PLAYERNAME|! Here, you can {deposit} or {withdraw} your money from your bank account and {change} gold. I can also explain the {functions} of your bank account to you.')
+npcHandler:setMessage(MESSAGE_FAREWELL, 'Good bye, and remember: entrusting us with your gold is the safest way of storing it!')
+npcHandler:setMessage(MESSAGE_WALKAWAY, 'Good bye.')
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

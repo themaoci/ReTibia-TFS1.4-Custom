@@ -79,8 +79,6 @@ local function greetCallback(cid)
 end
 
 local function creatureSayCallback(cid, type, msg)
-  print("creatureSayCallback(cid, type, msg)")
-
 	if not npcHandler:isFocused(cid) then
 		return false
 	end

@@ -2,11 +2,19 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-function onCreatureAppear(cid)			    npcHandler:onCreatureAppear(cid)			    end
-function onCreatureDisappear(cid)		    npcHandler:onCreatureDisappear(cid)			  end
-function onCreatureSay(cid, type, msg)	npcHandler:onCreatureSay(cid, type, msg)	end
-function onThink()				              npcHandler:onThink()					            end
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
 
+local voices = {
+	{ text = 'Are you injured or poisoned? I can help you.' },
+	{ text = 'For Rookgaard! For Tibia!' },
+	{ text = 'No monster shall go past me.' },
+	{ text = 'The premium side of Rookgaard lies beyond.' },
+	{ text = 'Want to know what monsters are good for you at your level? Just ask me!' }
+}
+npcHandler:addModule(VoiceModule:new(voices))
 
 -- Greeting and Farewell
 keywordHandler:addGreetKeyword({'hi'}, {npcHandler = npcHandler, text = 'Greetings, |PLAYERNAME|! You\'re looking really bad. Let me heal your wounds.'},
@@ -22,6 +30,9 @@ keywordHandler:addAliasKeyword({'hello'})
 
 keywordHandler:addGreetKeyword({'hi'}, {npcHandler = npcHandler, text = '<nods> At your service, |PLAYERNAME|, protecting the {village} from {monsters}.'}, function(player) return player:getSex() == PLAYERSEX_FEMALE end)
 keywordHandler:addAliasKeyword({'hello'})
+
+keywordHandler:addFarewellKeyword({'bye'}, {npcHandler = npcHandler, text = 'Bye, |PLAYERNAME|.'})
+keywordHandler:addAliasKeyword({'farewell'})
 
 local function addMonsterKeyword(level, text, marks)
 	keywordHandler:addKeyword({'monster'}, StdModule.say, {npcHandler = npcHandler, text = text},
@@ -44,19 +55,19 @@ addMonsterKeyword(8, 'Wow, |PLAYERNAME|! You have grown so much. I think there i
 addMonsterKeyword(7, 'Impressive, |PLAYERNAME|. You are almost strong enough to leave this island. Maybe you can take on minotaurs or rotworms now. There are no rotworms on this side of the island, ask Dallheim for their location.')
 addMonsterKeyword(6, 'Nice job out there,|PLAYERNAME|. If you are looking for a challenge, descend into the troll cave as deep as you can. Or explore the northern side of this island. Talk to {Dallheim} for directions.')
 addMonsterKeyword(5, 'Nice job out there, |PLAYERNAME|. Are you looking for other monsters than {trolls} or {wolves}? Maybe you\'d like to check out {skeletons}. I\'ll mark them for you so you can find them easily.',
-	{{position = Position(262, 403, 7), type = MAPMARK_GREENSOUTH, description = 'Skeleton Cave'}}
+	{{position = Position(31977, 32228, 7), type = MAPMARK_GREENSOUTH, description = 'Skeleton Cave'}}
 )
 addMonsterKeyword(4, 'You\'re halfway to leaving this island, well done. {Spiders} or {wolves} are always good to fight, but if you want to move on, why don\'t you check out trolls? I\'ll mark you the troll cave on this side.',
-	{{position = Position(287, 387, 7), type = MAPMARK_GREENSOUTH, description = 'Troll Cave'}}
+	{{position = Position(32002, 32212, 7), type = MAPMARK_GREENSOUTH, description = 'Troll Cave'}}
 )
 addMonsterKeyword(3, 'Good progress, |PLAYERNAME|. You can still stay with {spiders} or {snakes}, but maybe you\'d like to try fighting a {wolf}? I\'ll mark some of their hills on your map.',
-	{{position = Position(287, 400, 7), type = MAPMARK_GREENNORTH, description = 'Wolf Hill'}, {position = Position(274, 373, 7), type = MAPMARK_GREENNORTH, description = 'Wolf Hill'}}
+	{{position = Position(32002, 32225, 7), type = MAPMARK_GREENNORTH, description = 'Wolf Hill'}, {position = Position(31989, 32198, 7), type = MAPMARK_GREENNORTH, description = 'Wolf Hill'}}
 )
 addMonsterKeyword(2, 'You\'ve already grown some, |PLAYERNAME|. You can either stay with {rats} or leave town to hunt {spiders} or {snakes}. I\'ll mark some spawns on your map.',
-	{{position = Position(285, 413, 7), type = MAPMARK_GREENSOUTH, description = 'Snake Pit'}, {position = Position(331, 363, 7), type = MAPMARK_GREENSOUTH, description = 'Spider Cave'}}
+	{{position = Position(32001, 32238, 7), type = MAPMARK_GREENSOUTH, description = 'Snake Pit'}, {position = Position(32046, 32188, 7), type = MAPMARK_GREENSOUTH, description = 'Spider Cave'}}
 )
 addMonsterKeyword(1, 'You are just beginning your journey, dear |PLAYERNAME|. You can start by helping me fight {rats} in the sewers. I\'ll mark an entrance on your map.',
-	{{position = Position(382, 380, 7), type = MAPMARK_GREENSOUTH, description = 'Sewer Entrance'}}
+	{{position = Position(32097, 32205, 7), type = MAPMARK_GREENSOUTH, description = 'Sewer Entrance'}}
 )
 
 -- Basic keywords
@@ -156,4 +167,5 @@ keywordHandler:addKeyword({'heal'}, StdModule.say, {npcHandler = npcHandler, tex
 )
 keywordHandler:addKeyword({'heal'}, StdModule.say, {npcHandler = npcHandler, text = 'You aren\'t looking really bad. Eat some food to regain strength.'})
 
+npcHandler:setMessage(MESSAGE_WALKAWAY, 'Hm.')
 npcHandler:addModule(FocusModule:new())

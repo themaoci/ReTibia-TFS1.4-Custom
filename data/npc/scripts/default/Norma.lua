@@ -2,10 +2,28 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-function onCreatureAppear(cid)			    npcHandler:onCreatureAppear(cid)			    end
-function onCreatureDisappear(cid)		    npcHandler:onCreatureDisappear(cid)			  end
-function onCreatureSay(cid, type, msg)	npcHandler:onCreatureSay(cid, type, msg)  end
-function onThink()				              npcHandler:onThink()					            end
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
+
+local voices = {
+	{ text = 'Great drinks and snacks at fair prices!' },
+	{ text = 'You know you want a party after all that tiring hunting!' },
+	{ text = '<sings> ... are a girl\'s best friieeend...' },
+	{ text = 'Sing and dance at my bar! Yeah!' },
+	{ text = 'Best place in town! Come to my bar!' }
+}
+npcHandler:addModule(VoiceModule:new(voices))
+
+--[[
+addon
+Pretty, isn't it? I made it myself, but I could teach you how to do that if you like. What do you say?
+hat
+13:44 Norma: Pretty, isn't it? I made it myself, but I could teach you how to do that if you like. What do you say?
+yes
+13:44 Norma: Okay, here we go, listen closely! I need a few things... a basic hat of course, maybe a legion helmet would do. Then about 100 chicken feathers... and 50 honeycombs as glue. That's it, come back to me once you gathered it!!
+]]
 
 -- Basic keywords
 keywordHandler:addKeyword({'hint'}, StdModule.rookgaardHints, {npcHandler = npcHandler})
@@ -63,5 +81,10 @@ keywordHandler:addKeyword({'hyacinth'}, StdModule.say, {npcHandler = npcHandler,
 keywordHandler:addKeyword({'cipfried'}, StdModule.say, {npcHandler = npcHandler, text = '<giggles> That monk with his holier-than-thou attitude hasn\'t anything against a good mug of wine now and then.'})
 keywordHandler:addKeyword({'dallheim'}, StdModule.say, {npcHandler = npcHandler, text = 'If you listen to him, you could get the impression my little bar is the devil himself. He says he has more work now keeping drunken adventurers in than monsters out of the city. Such an exaggeration!'})
 keywordHandler:addAliasKeyword({'zerbrus'})
+
+npcHandler:setMessage(MESSAGE_WALKAWAY, 'Hey, where are you going? We\'ve just started!')
+npcHandler:setMessage(MESSAGE_FAREWELL, 'Come back soon!')
+npcHandler:setMessage(MESSAGE_SENDTRADE, 'Take all the time you need to decide what you want!')
+npcHandler:setMessage(MESSAGE_GREET, 'Welcome, welcome! Have a seat! If you like a drink or something to eat, just ask me for a {trade}!')
 
 npcHandler:addModule(FocusModule:new())

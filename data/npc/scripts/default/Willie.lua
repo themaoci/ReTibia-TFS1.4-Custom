@@ -2,10 +2,18 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-function onCreatureAppear(cid)			    npcHandler:onCreatureAppear(cid)			    end
-function onCreatureDisappear(cid)		    npcHandler:onCreatureDisappear(cid)			  end
-function onCreatureSay(cid, type, msg)	npcHandler:onCreatureSay(cid, type, msg)	end
-function onThink()				              npcHandler:onThink()					            end
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
+
+local voices = {
+	{ text = 'Ah, what the heck.Make sure you know what you want before you bug me.' },
+	{ text = 'Buying and selling food!' },
+	{ text = 'Make sure you know what you want before you bug me.' },
+	{ text = 'You, over there! Stop sniffing around my farm! Either trade with me or leave!' }
+}
+npcHandler:addModule(VoiceModule:new(voices))
 
 -- Basic keywords
 keywordHandler:addKeyword({'offer'}, StdModule.say, {npcHandler = npcHandler, text = 'Haven\'t they taught you anything at school? Ask for a {trade} if you want to trade.'})
@@ -70,5 +78,10 @@ local bananaKeyword = keywordHandler:addKeyword({'banana'}, StdModule.say, {npcH
 	)
 	bananaKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'Are you trying to mess with me?!', reset = true})
 	bananaKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'Too bad.', reset = true})
+
+npcHandler:setMessage(MESSAGE_WALKAWAY, 'Yeah go away!')
+npcHandler:setMessage(MESSAGE_FAREWELL, 'Yeah, bye |PLAYERNAME|.')
+npcHandler:setMessage(MESSAGE_SENDTRADE, 'Ya take a good look.')
+npcHandler:setMessage(MESSAGE_GREET, 'Hiho |PLAYERNAME|. I hope you\'re here to {trade}.')
 
 npcHandler:addModule(FocusModule:new())

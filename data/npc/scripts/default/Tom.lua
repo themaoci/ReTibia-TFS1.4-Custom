@@ -2,13 +2,21 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-function onCreatureAppear(cid)			    npcHandler:onCreatureAppear(cid)			    end
-function onCreatureDisappear(cid)		    npcHandler:onCreatureDisappear(cid)			  end
-function onCreatureSay(cid, type, msg)	npcHandler:onCreatureSay(cid, type, msg)	end
-function onThink()				              npcHandler:onThink()					            end
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
 
+local voices = {
+	{ text = 'Buying fresh corpses of rats, rabbits and wolves.' },
+	{ text = 'Oh yeah, I\'m also interested in wolf paws and bear paws.' },
+	{ text = 'Also buying minotaur leather.' }
+}
+npcHandler:addModule(VoiceModule:new(voices))
 
 -- Greeting and Farewell
+keywordHandler:addGreetKeyword({'hi'}, {npcHandler = npcHandler, text = 'Hey there, |PLAYERNAME|. I\'m Tom the tanner. If you have fresh {corpses}, leather, paws or other animal body parts, {trade} with me.'})
+keywordHandler:addAliasKeyword({'hello'})
 keywordHandler:addFarewellKeyword({'bye'}, {npcHandler = npcHandler, text = 'Good hunting, child.'}, function(player) return player:getSex() == PLAYERSEX_FEMALE end)
 keywordHandler:addAliasKeyword({'farewell'})
 keywordHandler:addFarewellKeyword({'bye'}, {npcHandler = npcHandler, text = 'Good hunting, son.'})
@@ -68,5 +76,8 @@ keywordHandler:addKeyword({'hyacinth'}, StdModule.say, {npcHandler = npcHandler,
 keywordHandler:addKeyword({'cipfried'}, StdModule.say, {npcHandler = npcHandler, text = 'I\'m not what you\'d call a \'believer\'.'})
 keywordHandler:addKeyword({'dallheim'}, StdModule.say, {npcHandler = npcHandler, text = 'He\'s okay.'})
 keywordHandler:addAliasKeyword({'zerbrus'})
+
+npcHandler:setMessage(MESSAGE_WALKAWAY, 'D\'oh?')
+npcHandler:setMessage(MESSAGE_SENDTRADE, 'Sure, check what I buy.')
 
 npcHandler:addModule(FocusModule:new())
