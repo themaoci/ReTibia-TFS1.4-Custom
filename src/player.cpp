@@ -3611,7 +3611,7 @@ void Player::onGainExperience(uint64_t gainExp, Creature* target)
 	if (hasFlag(PlayerFlag_NotGainExperience)) {
 		return;
 	}
-	//std::cout << party->isSharedExperienceActive() << " " << party->isSharedExperienceEnabled() << std::endl;
+
 	if (target && !target->getPlayer() && party && party->isSharedExperienceActive() && party->isSharedExperienceEnabled()) {
 		party->shareExperience(gainExp, target);
 		//We will get a share of the experience through the sharing mechanism
