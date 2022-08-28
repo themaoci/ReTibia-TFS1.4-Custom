@@ -1,26 +1,26 @@
 -- Custom Modules, created to help us in this datapack
-local travelDiscounts = {
-	['postman'] = {price = 10, storage = Storage.postman.Rank, value = 3},
-	['new frontier'] = {price = 50, storage = Storage.TheNewFrontier.Mission03, value = 1}
-}
+-- local travelDiscounts = {
+	-- ['postman'] = {price = 10, storage = Storage.postman.Rank, value = 3},
+	-- ['new frontier'] = {price = 50, storage = Storage.TheNewFrontier.Mission03, value = 1}
+-- }
 
 function StdModule.travelDiscount(player, discounts)
 	local discountPrice, discount = 0
-	if type(discounts) == 'string' then
-		discount = travelDiscounts[discounts]
-		if discount and player:getStorageValue(discount.storage) >= discount.value then
-			return discount.price
-		end
-	else
-		for i = 1, #discounts do
-			discount = travelDiscounts[discounts[i]]
-			if discount and player:getStorageValue(discount.storage) >= discount.value then
-				discountPrice = discountPrice + discount.price
-			end
-		end
-	end
+	-- if type(discounts) == 'string' then
+		-- discount = travelDiscounts[discounts]
+		-- if discount and player:getStorageValue(discount.storage) >= discount.value then
+			-- return discount.price
+		-- end
+	-- else
+		-- for i = 1, #discounts do
+			-- discount = travelDiscounts[discounts[i]]
+			-- if discount and player:getStorageValue(discount.storage) >= discount.value then
+				-- discountPrice = discountPrice + discount.price
+			-- end
+		-- end
+	-- end
 
-	return discountPrice
+	return 0
 end
 
 function StdModule.kick(cid, message, keywords, parameters, node)
