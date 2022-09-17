@@ -1,4 +1,5 @@
 
+
 LOCATION_ROOKGARD = {}
 
 
@@ -275,7 +276,7 @@ LOCATION_ROOKGARD["ItemAction"]["7022"] = {
   sendTextMessage = "You have found a bag.",
   itemsToAdd = {
     { id = 2545, amount = 4, specialDescription = "" },
-    { id = 2544, amount = 4, specialDescription = "" }
+    { id = 2544, amount = 10, specialDescription = "" }
   },
   containerId = 1987,
   storageValue = 7022,
