@@ -321,9 +321,6 @@
 		<monster name="Snake" x="2" y="-1" z="7" spawntime="150" />
 		<monster name="Snake" x="-1" y="1" z="7" spawntime="150" />
 	</spawn>
-	<spawn centerx="339" centery="351" centerz="7" radius="1">
-		<monster name="Chicken" x="1" y="0" z="7" spawntime="150" />
-	</spawn>
 	<spawn centerx="330" centery="352" centerz="7" radius="1">
 		<monster name="Troll" x="0" y="-1" z="7" spawntime="150" />
 	</spawn>
@@ -343,12 +340,6 @@
 	<spawn centerx="348" centery="354" centerz="7" radius="1">
 		<npc name="Al Dee" x="0" y="1" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="383" centery="355" centerz="7" radius="1">
-		<npc name="Norma" x="-1" y="0" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="368" centery="356" centerz="7" radius="1">
-		<monster name="Chicken" x="1" y="0" z="7" spawntime="150" />
-	</spawn>
 	<spawn centerx="327" centery="357" centerz="7" radius="1">
 		<monster name="Snake" x="1" y="0" z="7" spawntime="150" />
 	</spawn>
@@ -356,13 +347,19 @@
 		<monster name="Snake" x="-4" y="1" z="7" spawntime="150" />
 		<monster name="Snake" x="5" y="1" z="7" spawntime="150" />
 	</spawn>
+	<spawn centerx="376" centery="359" centerz="7" radius="1">
+		<npc name="Norma" x="-1" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="298" centery="362" centerz="7" radius="5">
 		<monster name="Rabbit" x="-1" y="-3" z="7" spawntime="150" />
 		<monster name="Deer" x="-3" y="0" z="7" spawntime="150" />
 		<monster name="Snake" x="1" y="0" z="7" spawntime="150" />
 	</spawn>
-	<spawn centerx="314" centery="362" centerz="7" radius="1">
-		<monster name="Chicken" x="1" y="0" z="7" spawntime="150" />
+	<spawn centerx="312" centery="362" centerz="7" radius="3">
+		<monster name="Chicken" x="1" y="-1" z="7" spawntime="150" />
+		<monster name="Chicken" x="-1" y="0" z="7" spawntime="150" />
+		<monster name="Chicken" x="-3" y="2" z="7" spawntime="150" />
+		<monster name="Chicken" x="3" y="2" z="7" spawntime="150" />
 	</spawn>
 	<spawn centerx="318" centery="362" centerz="7" radius="1">
 		<npc name="Loui" x="1" y="1" z="7" spawntime="60" />
@@ -382,9 +379,6 @@
 		<monster name="Poison Spider" x="-3" y="-5" z="7" spawntime="150" />
 		<monster name="Poison Spider" x="-9" y="-1" z="7" spawntime="150" />
 		<monster name="Spider" x="3" y="6" z="7" spawntime="150" />
-	</spawn>
-	<spawn centerx="310" centery="366" centerz="7" radius="1">
-		<monster name="Chicken" x="0" y="0" z="7" spawntime="150" />
 	</spawn>
 	<spawn centerx="388" centery="370" centerz="7" radius="1">
 		<npc name="Seymour" x="-1" y="0" z="7" spawntime="60" />
@@ -409,14 +403,14 @@
 	</spawn>
 	<spawn centerx="425" centery="381" centerz="7" radius="30">
 		<monster name="Spider" x="25" y="-27" z="7" spawntime="150" />
-		<monster name="Wolf" x="-28" y="-26" z="7" spawntime="150" />
-		<monster name="Deer" x="-27" y="-25" z="7" spawntime="150" />
+		<monster name="Wolf" x="-29" y="-25" z="7" spawntime="150" />
 		<monster name="Wolf" x="-24" y="-24" z="7" spawntime="150" />
 		<monster name="Wolf" x="-1" y="-24" z="7" spawntime="150" />
 		<monster name="Bug" x="24" y="-22" z="7" spawntime="150" />
 		<monster name="Bug" x="20" y="-21" z="7" spawntime="150" />
 		<monster name="Bug" x="20" y="-18" z="7" spawntime="150" />
-		<monster name="Deer" x="-24" y="-14" z="7" spawntime="150" />
+		<monster name="Deer" x="-27" y="-17" z="7" spawntime="150" />
+		<monster name="Deer" x="-21" y="-14" z="7" spawntime="150" />
 		<monster name="Wolf" x="-9" y="-14" z="7" spawntime="150" />
 		<monster name="Wolf" x="14" y="-13" z="7" spawntime="150" />
 		<monster name="Wolf" x="-10" y="-12" z="7" spawntime="150" />
@@ -428,8 +422,6 @@
 		<monster name="Deer" x="-14" y="2" z="7" spawntime="150" />
 		<monster name="Bear" x="7" y="2" z="7" spawntime="150" />
 		<monster name="Wolf" x="16" y="6" z="7" spawntime="150" />
-		<monster name="Deer" x="-26" y="7" z="7" spawntime="150" />
-		<monster name="Deer" x="-22" y="7" z="7" spawntime="150" />
 		<monster name="Snake" x="-11" y="8" z="7" spawntime="150" />
 		<monster name="Wolf" x="12" y="9" z="7" spawntime="150" />
 		<monster name="Wolf" x="17" y="9" z="7" spawntime="150" />
@@ -451,8 +443,8 @@
 		<monster name="Sheep" x="-1" y="5" z="7" spawntime="150" />
 		<monster name="Sheep" x="5" y="5" z="7" spawntime="150" />
 	</spawn>
-	<spawn centerx="382" centery="393" centerz="7" radius="1">
-		<npc name="Cipfried" x="-1" y="1" z="7" spawntime="60" />
+	<spawn centerx="381" centery="395" centerz="7" radius="1">
+		<npc name="Cipfried" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="277" centery="399" centerz="7" radius="30">
 		<monster name="Wolf" x="-8" y="-30" z="7" spawntime="150" />
@@ -735,16 +727,16 @@
 	<spawn centerx="339" centery="354" centerz="8" radius="1">
 		<monster name="Spider" x="1" y="0" z="8" spawntime="150" />
 	</spawn>
-	<spawn centerx="387" centery="357" centerz="8" radius="1">
-		<npc name="Amber" x="1" y="1" z="8" spawntime="60" direction="2" />
-	</spawn>
 	<spawn centerx="367" centery="358" centerz="8" radius="1">
 		<monster name="Rat" x="1" y="-1" z="8" spawntime="150" />
+	</spawn>
+	<spawn centerx="386" centery="358" centerz="8" radius="1">
+		<npc name="Amber" x="1" y="1" z="8" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="325" centery="363" centerz="8" radius="1">
 		<monster name="Bug" x="1" y="0" z="8" spawntime="150" />
 	</spawn>
-	<spawn centerx="401" centery="363" centerz="8" radius="2">
+	<spawn centerx="402" centery="363" centerz="8" radius="2">
 		<npc name="Paulie" x="-1" y="0" z="8" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="266" centery="365" centerz="8" radius="5">
@@ -1833,8 +1825,8 @@
 	<spawn centerx="359" centery="227" centerz="11" radius="1">
 		<monster name="Skeleton" x="1" y="0" z="11" spawntime="150" />
 	</spawn>
-	<spawn centerx="366" centery="228" centerz="11" radius="1">
-		<monster name="Skeleton" x="1" y="0" z="11" spawntime="150" />
+	<spawn centerx="367" centery="229" centerz="11" radius="1">
+		<monster name="Skeleton" x="0" y="-1" z="11" spawntime="150" />
 	</spawn>
 	<spawn centerx="362" centery="230" centerz="11" radius="1">
 		<monster name="Skeleton" x="0" y="0" z="11" spawntime="150" />

@@ -37,15 +37,15 @@
 
 	<!-- player talkactions -->
 	<!-- <talkaction words="!buypremium" script="buyprem.lua" /> -->
-	<!-- <talkaction words="!buyhouse" script="buyhouse.lua" /> -->
-	<!-- <talkaction words="!sellhouse" separator=" " script="sellhouse.lua" /> -->
-	<!-- <talkaction words="!leavehouse" script="leavehouse.lua" /> -->
+	<talkaction words="!buyhouse" script="buyhouse.lua" />
+	<talkaction words="!sellhouse" separator=" " script="sellhouse.lua" />
+	<talkaction words="!leavehouse" script="leavehouse.lua" />
 	<!-- <talkaction words="!changesex" script="changesex.lua" /> -->
-	<!-- <talkaction words="!uptime" script="uptime.lua" /> -->
+	<talkaction words="!uptime" script="uptime.lua" />
 	<!-- <talkaction words="!deathlist" script="deathlist.lua" /> -->
 	<!-- <talkaction words="!kills" script="kills.lua" /> -->
-	<!-- <talkaction words="!online;/online" script="online.lua" /> -->
-	<!-- <talkaction words="!serverinfo" script="serverinfo.lua" /> -->
+	<talkaction words="!online;/online" script="online.lua" />
+	<talkaction words="!serverinfo" script="serverinfo.lua" />
 
 	<!-- test talkactions -->
 	<!-- <talkaction words="!z" separator=" " script="magiceffect.lua" /> -->
