@@ -19,6 +19,42 @@
 --7036 Movement tile for Spike sword (Rotworm cave)
 --7037 Access to the door above Tom's shop
 --7041 Spike sword storage for web (given in last door)
+
+-- RETARDED ITEM ID's...
+Cfletter = 2597
+Cfsalmon = 2668
+Cfchainarmor = 2464
+Cfbrasshelmet = 2460
+Cfarrow = 2544
+Cfcombatknife = 2404
+Cfdoublet = 2485
+Cflegionhelmet = 2480
+Cfcoppershield = 2530
+Cfpan = 2563
+Cfsmallstone = 1294
+Cfsnowball = 2111
+Cfsandals = 2642
+Cfkatana = 2412
+Cfcarlinsword = 2395
+Cffishingrod = 2580
+Cfpoisonarrow = 2545
+Cfrapier = 2384
+Cftorch = 2050
+Cfbackpack = 1988
+Cfcup = 2013
+Cfplate = 2035
+Cfjug = 2014
+Cfsmallaxe = 2559
+Cfbanana = 2676
+Cfpurplekey = 2086
+Cfwoodenkey = 2087
+Cfsilverkey = 2088
+Cfcopperkey = 2089
+Cfcrystalkey = 2090
+Cfgoldenkey = 2091
+Cfbonekey = 2092
+
+
 function onUse(cid, item, frompos, item2, topos)
 -- Ambers Notebook --
 if item.uid == 7006 then
@@ -359,6 +395,22 @@ elseif item.uid == 7031 then
 	doPlayerSendTextMessage(cid,22,"You have found a banana.")
 	doPlayerAddItem(cid, Cfbanana, 1)
 	setPlayerStorageValue(cid,7031,1)
+	
+	else
+	doPlayerSendTextMessage(cid,22,"it's empty.")
+	end
+-----
+-----
+-- Viking Helmet --
+elseif item.uid == 7038 then
+	if getPlayerStorageValue(cid,7038) <= 0 then
+		if getPlayerFreeCap(cid) <= 39 then
+		doPlayerSendTextMessage(cid,22,"You need 39 cap or more to loot this!")
+		return TRUE
+		end
+	doPlayerSendTextMessage(cid,22,"You have found a Viking Helmet.")
+	doPlayerAddItem(cid, 2473, 1)
+	setPlayerStorageValue(cid,7038,1)
 	
 	else
 	doPlayerSendTextMessage(cid,22,"it's empty.")
