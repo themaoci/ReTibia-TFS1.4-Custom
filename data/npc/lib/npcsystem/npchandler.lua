@@ -320,7 +320,7 @@ if NpcHandler == nil then
 		end
 
 		local callback = self:getCallback(CALLBACK_FAREWELL)
-		if callback == nil or callback() then
+		if callback == nil or callback(cid) then
 			if self:processModuleCallback(CALLBACK_FAREWELL) then
 				local msg = self:getMessage(MESSAGE_FAREWELL)
 				local player = Player(cid)
@@ -454,17 +454,17 @@ if NpcHandler == nil then
 	-- Handles onBuy events. If you wish to handle this yourself, use the CALLBACK_ONBUY callback.
 	function NpcHandler:onBuy(creature, itemid, subType, amount, ignoreCap, inBackpacks)
 		local cid = creature:getId()
-		if (os.time() - getPlayerStorageValue(cid, storage)) >= duration then
-			setPlayerStorageValue(cid, storage, os.time()) -- DELAY PRA COMPRAR 
+		--if (os.time() - getPlayerStorageValue(cid, storage)) >= duration then
+		--	setPlayerStorageValue(cid, storage, os.time()) -- DELAY PRA COMPRAR 
 			local callback = self:getCallback(CALLBACK_ONBUY)
 			if callback == nil or callback(cid, itemid, subType, amount, ignoreCap, inBackpacks) then
 				if self:processModuleCallback(CALLBACK_ONBUY, cid, itemid, subType, amount, ignoreCap, inBackpacks) then
 					--
 				end
 			end
-		else
-			return false
-		end
+		--else
+		--	return false
+		--end
 	end
 
 	-- Handles onSell events. If you wish to handle this yourself, use the CALLBACK_ONSELL callback.
@@ -537,7 +537,7 @@ if NpcHandler == nil then
 	function NpcHandler:onWalkAway(cid)
 		if self:isFocused(cid) then
 			local callback = self:getCallback(CALLBACK_CREATURE_DISAPPEAR)
-			if callback == nil or callback() then
+			if callback == nil or callback(cid) then
 				if self:processModuleCallback(CALLBACK_CREATURE_DISAPPEAR, cid) then
 					local msg = self:getMessage(MESSAGE_WALKAWAY)
 

@@ -1,6 +1,6 @@
 -- Advanced NPC System by Jiddo
 
-if KeywordHandler == nil then
+if not KeywordHandler then
 
 	KeywordNode = {
 		keywords = nil,
@@ -47,37 +47,51 @@ if KeywordHandler == nil then
 	-- Returns true if message contains all patterns/strings found in keywords.
 	-- Returns true if message contains all patterns/strings found in keywords.
 	function KeywordNode:checkMessage(cid, message)
-		if self.keywords.callback then
-			local ret, data = self.keywords.callback(self.keywords, message)
-			if not ret then
-				return false
-			end
-
-			if self.condition and not self.condition(Player(cid), data) then
-				return false
-			end
-			return true
+  	if self.keywords.callback then
+			return self.keywords.callback(self.keywords, message)
 		end
 
-		local data = {}
-		local last = 0
-		for _, keyword in ipairs(self.keywords) do
-			if type(keyword) == 'string' then
-				local a, b = string.find(message, keyword)
-				if a == nil or b == nil or a < last then
+		for _, v in ipairs(self.keywords) do
+			if type(v) == 'string' then
+				local a, b = string.find(message, v)
+				if not a or not b then
 					return false
 				end
-				if keyword:sub(1, 1) == '%' then
-					data[#data + 1] = tonumber(message:sub(a, b)) or nil
-				end
-				last = a
 			end
 		end
-
-		if self.condition and not self.condition(Player(cid), data) then
-			return false
-		end
 		return true
+
+		-- if self.keywords.callback then
+			-- local ret, data = self.keywords.callback(self.keywords, message)
+			-- if not ret then
+				-- return false
+			-- end
+
+			-- if self.condition and not self.condition(Player(cid), data) then
+				-- return false
+			-- end
+			-- return true
+		-- end
+
+		-- local data = {}
+		-- local last = 0
+		-- for _, keyword in ipairs(self.keywords) do
+			-- if type(keyword) == 'string' then
+				-- local a, b = string.find(message, keyword)
+				-- if a == nil or b == nil or a < last then
+					-- return false
+				-- end
+				-- if keyword:sub(1, 1) == '%' then
+					-- data[#data + 1] = tonumber(message:sub(a, b)) or nil
+				-- end
+				-- last = a
+			-- end
+		-- end
+
+		-- if self.condition and not self.condition(Player(cid), data) then
+			-- return false
+		-- end
+		-- return true
 	end
 
 	-- Returns the parent of this node or nil if no such node exists.
@@ -101,6 +115,7 @@ if KeywordHandler == nil then
 		return self:addChildKeywordNode(new)
 	end
 
+	-- Adds an alias keyword. Should be used if you have to answer the same thing to several keywords.
 	function KeywordNode:addAliasKeyword(keywords)
 		if #self.children == 0 then
 			print('KeywordNode:addAliasKeyword no previous node found')
@@ -209,6 +224,7 @@ if KeywordHandler == nil then
 		return self:getRoot():addChildKeyword(keys, callback, parameters, condition, action)
 	end
 
+	-- Adds an alias keyword for the previous node.
 	function KeywordHandler:addAliasKeyword(keys)
 		return self:getRoot():addAliasKeyword(keys)
 	end

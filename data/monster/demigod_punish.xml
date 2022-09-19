@@ -43,7 +43,7 @@
 	<voices interval="5000" chance="25">
 		<voice sentence="Disgusting being..." yell="1" />
 		<voice sentence="Let me teach you what despair is..." yell="1" />
-		<voice sentence="Attacking weaker than you is disgusting in my eyes..." yell="1" />
+		<voice sentence="Attacking weaker then you is disgusting in my eyes..." yell="1" />
 	</voices>
 	<loot>
 		<item name="gold coin" countmax="1" chance="10000" />

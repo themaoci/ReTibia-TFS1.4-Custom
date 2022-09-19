@@ -34,7 +34,7 @@ local ratsKeyword = keywordHandler:addKeyword({'%d+', 'dead', 'rat'}, StdModule.
 	end)
 	ratsKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'Thank you! Here is your reward.', reset = true},
 		function(player) return player:getItemCount(2813) >= npcHandler.rats[player.uid] end,
-		function(player) player:removeItem(2813, npcHandler.rats[player.uid]) player:addMoney(2 * npcHandler.rats[player.uid]) end
+		function(player) player:removeItem(2813, npcHandler.rats[player.uid]) player:addMoney(20 * npcHandler.rats[player.uid]) end
 	)
 	ratsKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'HEY! You don\'t have so many!', reset = true})
 	ratsKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'Go and find some rats to kill!', reset = true})
@@ -42,7 +42,7 @@ local ratsKeyword = keywordHandler:addKeyword({'%d+', 'dead', 'rat'}, StdModule.
 local ratKeyword = keywordHandler:addKeyword({'dead', 'rat'}, StdModule.say, {npcHandler = npcHandler, text = 'Have you brought a dead rat to me to pick up your reward?'})
 	ratKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'Thank you! Here is your reward.', reset = true},
 		function(player) return player:getItemCount(2813) > 0 end,
-		function(player) player:removeItem(2813, 1) player:addMoney(2) end
+		function(player) player:removeItem(2813, 1) player:addMoney(20) end
 	)
 	ratKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'HEY! You don\'t have one! Stop playing tricks on me or I\'ll give you some extra work!', reset = true})
 	ratKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'Go and find some rats to kill!', reset = true})

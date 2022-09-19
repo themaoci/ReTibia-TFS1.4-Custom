@@ -1,34 +1,46 @@
 -- Infinity Room Config
 local IRConfig = {
-    startPos = Position(50, 50, 15), -- upper left corner
+    startPos = Position(100, 100, 2), -- upper left corner
     tpInAid = 65000, -- actionid for enter teleport
     tpOutAid = 65001, -- actionid for exit teleport
     foodAid = 65002, -- actionid for infinity food (only work with EventCallback)
+    replacableTile = 598,
     maxRoomsPer = { -- 10 x 10 = 100 rooms max
-        row = 10,
-        col = 10
+        row = 15,
+        col = 15
     },
-    items = {
-        {1050}, -- 1 - horizontal wall
-        {598, 1049}, -- 2 - vertical wall
-        {598, 1057}, -- 3 - corner wall
-        {1051}, -- 4 - pole wall
-        {426}, -- 5 - tile train
-        {407}, -- 6 - tile base
-        {407, 1484}, -- 7 - coal basin
-        {407, 1387, "teleport"}, -- 8 - teleport
-        {407, 1642, 7159, "foodhuge"}, -- 9 - food panel
-        {407, "Training Device"}, -- 10 - training monster name
-        { 598 } -- 11 - 
+    mapTiles = {
+      {4470}, -- 1 -- mountain left-top
+      {876},  -- 2 -- mountain top-v1
+      {598, 875},  -- 3 -- mountain left
+      {598, 4473}, -- 4 -- mountain right-top
+      {598, 4472}, -- 5 -- mountain right-v1
+      {598, 4475}, -- 6 -- mountain right-bottom
+      {598, 4471}, -- 7 -- mountain bottom
+      {919},  -- 8 -- mountain OverTop
+      {919, 1051}, -- 9 -- wall top-left
+      {1053}, -- 10 -- wall bottom-right
+      {919, 1049}, -- 11 -- wall left
+      {1049}, -- 12 -- wall right
+      {919, 1050}, -- 13 -- wall top
+      {1050}, -- 14 -- wall bottom
+      {424, "trainer"}, -- 15 -- TrainerSandingTile
+      {424, 1642, 7159, "foodhuge"}, -- 16 -- TrainerFood
+      {3216}, -- 17 -- Center
+      {424, 1484}, -- 18 -- Coal Basin
+      {424, 1642}, -- 19 -- Pedestal
+      {424, 1387, "teleport"}, -- 20 - teleport
+      {598} -- 21 -- just lava
     },
     map = { -- room drawing mask
-        { 11, 11, 11, 11, 11, 11, 11},
-        { 11, 4,  1,  1,  1,  1,  11},
-        { 11, 2,  10, 7,  10, 2,  11},
-        { 11, 2,  7,  5,  7,  2,  11},
-        { 11, 2,  8,  6,  9,  2,  11},
-        { 11, 2,  1,  1,  1,  3,  11},
-        { 11, 11, 11, 11, 11, 11, 11}
+      { 1,  2,  2,  2,  2,  2, 2, 4 },
+      { 3,  9, 13, 13, 13, 13, 8, 5 },
+      { 3, 11, 15, 18, 15, 12, 8, 5 },
+      { 3, 11, 19, 17, 16, 12, 8, 5 },
+      { 3, 11, 15, 20, 15, 12, 8, 5 },
+      { 3, 11, 14, 14, 14, 10, 8, 5 },
+      { 3,  8,  8,  8,  8,  8, 8, 5 },
+      { 21,  7,  7,  7,  7,  7, 7, 6 }
     }
 }
 
@@ -47,17 +59,20 @@ function IRoom.new(pos, fromPos, index)
         for y = 1, mapDistY do
             local tilePos = Position(pos.x+x, pos.y+y, pos.z)
             local tileIndex = IRConfig.map[y][x]
-            if tileIndex == 5 then iroom.center = tilePos end
+            if tileIndex == 17 then iroom.center = tilePos end
+            if tileIndex == 0 then goto endLooper end
             local lastItem
-            for _, it in pairs(IRConfig.items[tileIndex]) do
+            local stackedPosition = 1
+            for _, it in pairs(IRConfig.mapTiles[tileIndex]) do
                 local thingType = type(it)
                 if thingType == "number" then
                     lastItem = Game.createItem(it, 1, tilePos)
                     if not lastItem then
-                        iroom:destroy()
-                        debugPrint("[Warning - IRoom::new] the room could not be created correctly.")
-                        return
+                      debugPrint("[Warning - IRoom::new] the room could not be created correctly.")
+                      iroom:destroy()
+                      return
                     end
+                    --tilePos.stackpos = tilePos.stackpos + 1
                 elseif thingType == "string" then
                     if it == "teleport" then
                         lastItem:setCustomAttribute("roomIndex", index)
@@ -71,6 +86,7 @@ function IRoom.new(pos, fromPos, index)
                     end
                 end
             end
+            ::endLooper::
         end
     end
     IRoomList[index] = iroom
@@ -85,6 +101,7 @@ function IRoom:destroy()
             if tile then
                 local thingCount = tile:getThingCount()
                 for index = thingCount, 0, -1 do
+                  if index ~= 1 then
                     local thing = tile:getThing(index)
                     if thing then
                         if thing:isPlayer() then
@@ -93,8 +110,12 @@ function IRoom:destroy()
                             thing:remove()
                         end
                     end
+                  end
                 end
+                tile:remove()
             end
+            Game.createItem(IRConfig.replacableTile, 1, pos)
+            pos:sendMagicEffect(CONST_ME_POFF)
         end
     end
     IRoomList[self.index] = nil

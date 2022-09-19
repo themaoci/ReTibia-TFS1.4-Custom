@@ -2,9 +2,10 @@
 <monsters>
   <!-- Custom Spawns -->
 	<monster name="trainer" file="training_device.xml"/>
+	<monster name="Weard Dragon Statue" file="dragon_statue_device.xml"/>
   
   <!-- Almost Unkillable God Beings -->
-	<monster name="demigod ??????" file="demigod_punish.xml"/>
+	<monster name="Demigod ??????" file="demigod_punish.xml"/>
 
   <!-- Default Rookgaard -->
 	<monster name="bear" file="default rookgaard/bear.xml"/>

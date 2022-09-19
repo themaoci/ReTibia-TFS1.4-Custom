@@ -148,7 +148,7 @@
 	<instant group="support" name="Animate Dead Rune" words="adana mort" level="27" mana="600" soul="5" premium="1" aggressive="0" cooldown="2000" groupcooldown="2000" needlearn="0" script="conjuring/animate_dead_rune.lua"/>
 	<instant group="support" spellid="176" name="Arrow Call" words="exevo infir con" level="1" mana="10" soul="1" premium="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="conjuring/arrow_call.lua"/>
 	<instant group="support" name="Avalanche Rune" words="adori mas frigo" level="30" mana="530" soul="3" aggressive="0" cooldown="2000" groupcooldown="2000" needlearn="0" script="conjuring/avalanche_rune.lua"/>
-	<instant group="support" name="Blank Rune" words="adori blank" level="20" mana="50" soul="1" aggressive="0" cooldown="2000" groupcooldown="2000" needlearn="0" script="conjuring/blank_rune.lua"/>
+	<instant group="support" name="Blank Rune" words="adori blank" level="5" mana="10" soul="1" aggressive="0" cooldown="2000" groupcooldown="2000" needlearn="0" script="conjuring/blank_rune.lua"/>
 	<instant group="support" name="Chameleon Rune" words="adevo ina" level="27" mana="600" soul="2" aggressive="0" cooldown="2000" groupcooldown="2000" needlearn="0" script="conjuring/chameleon_rune.lua"/>
 	<instant group="support" spellid="51" name="Conjure Arrow" words="exevo con" level="13" mana="100" soul="1" premium="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="conjuring/conjure_arrow.lua"/>
 	<instant group="support" spellid="79" name="Conjure Bolt" words="exevo con mort" level="17" mana="140" soul="2" premium="1" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="conjuring/conjure_bolt.lua"/>

@@ -8,12 +8,12 @@ local config = {
   npcAllowedVocation = "warrior",
 	vocations = {
 		["warrior"] = {
-			text = "You have been blessed by (|_|/?|()|_|_\~ |)[-|\/||(_,()|) and now you can call yourself a Warrior!",
+			text = "You have been blessed by (|_|/?|()|_|_\\~ |)[-|\\/||(_,()|) and now you can call yourself a Warrior!",
 			vocationId = 2,
 			--equipment
 			{
       },
-			--container
+			--container jagged sword, daramian mace, rope, shovel, health potion
 			{
         {2120, 1},  -- rope
         {2554, 1},  -- shovel
@@ -23,7 +23,7 @@ local config = {
       }
 		},
 		["mage"] = {
-			text = "You have been blessed by (|_|/?|()|_|_\~ |)[-|\/||(_,()|) and now you can call yourself a Mage!",
+			text = "You have been blessed by (|_|/?|()|_|_\\~ |)[-|\\/||(_,()|) and now you can call yourself a Mage!",
 			vocationId = 3,
 			--equipment
 			{
@@ -38,7 +38,7 @@ local config = {
       }
 		},
 		["all_rounder"] = {
-			text = "You have been blessed by (|_|/?|()|_|_\~ |)[-|\/||(_,()|) and now you can call yourself a All Rounder!",
+			text = "You have been blessed by (|_|/?|()|_|_\\~ |)[-|\\/||(_,()|) and now you can call yourself a All Rounder!",
 			vocationId = 1,
 			--equipment
 			{
@@ -73,23 +73,22 @@ local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
-  	local player = Player(cid)
-		if msgcontains(msg, "yes") then
-      player:setVocation(Vocation(config.vocation[config.npcAllowedVocation].vocationId))
-      player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have received a backpack with starting items.")
-      
-			local targetVocation = config.vocations[config.npcAllowedVocation]
-			for i = 1, #targetVocation[1] do
-				player:addItem(targetVocation[1][i][1], targetVocation[1][i][2])
-			end
-			local backpack = player:addItem(1988)
-			for i = 1, #targetVocation[2] do
-				backpack:addItem(targetVocation[2][i][1], targetVocation[2][i][2])
-			end
-    else
-      
+  local player = Player(cid)
+  if msgcontains(msg, "yes") then
+    player:setVocation(Vocation(config.vocation[config.npcAllowedVocation].vocationId))
+    player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have received a backpack with starting items.")
+    
+    local targetVocation = config.vocations[config.npcAllowedVocation]
+    for i = 1, #targetVocation[1] do
+      player:addItem(targetVocation[1][i][1], targetVocation[1][i][2])
     end
-	end
+    local backpack = player:addItem(1988)
+    for i = 1, #targetVocation[2] do
+      backpack:addItem(targetVocation[2][i][1], targetVocation[2][i][2])
+    end
+  else
+    
+  end
 	return true
 end
 
