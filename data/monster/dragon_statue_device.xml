@@ -19,7 +19,7 @@
       <flag runonhealth="0"/>
     </flags>
     <attacks>
-      <attack name="fire" interval="5000" chance="100" length="10" spread="1" min="-50" max="-50">
+      <attack name="fire" interval="1000" chance="100" length="10" spread="1" min="-50" max="-50">
         <attribute key="areaEffect" value="firearea" />
       </attack>
     </attacks>

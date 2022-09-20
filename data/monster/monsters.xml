@@ -19,14 +19,12 @@
 	<monster name="minotaur" file="default rookgaard/minotaur.xml"/>
 	<monster name="orc spearman" file="default rookgaard/orc spearman.xml"/>
 	<monster name="orc" file="default rookgaard/orc.xml"/>
-	<monster name="poison spider" file="default rookgaard/poison spider.xml"/>
 	<monster name="rabbit" file="default rookgaard/rabbit.xml"/>
 	<monster name="rat" file="default rookgaard/rat.xml"/>
 	<monster name="rotworm" file="default rookgaard/rotworm.xml"/>
 	<monster name="sheep" file="default rookgaard/sheep.xml"/>
 	<monster name="skeleton" file="default rookgaard/skeleton.xml"/>
 	<monster name="snake" file="default rookgaard/snake.xml"/>
-	<monster name="spider" file="default rookgaard/spider.xml"/>
 	<monster name="troll" file="default rookgaard/troll.xml"/>
 	<monster name="warlock" file="default rookgaard/warlock.xml"/>
 	<monster name="wasp" file="default rookgaard/wasp.xml"/>
@@ -76,7 +74,19 @@
  	<monster name="betrayed_wraith" file="skeleton_species/betrayed_wraith.xml"/>
  	<monster name="lost_soul" file="skeleton_species/lost_soul.xml"/>
 
+  <!-- Bio Elemental -->
+ 	<monster name="swampling" file="bio-elemental/swampling.xml"/>
+ 	<monster name="slime" file="bio-elemental/slime.xml"/>
+ 	<monster name="glooth anemone" file="bio-elemental/glooth_anemone.xml"/>
+  <monster name="devourer" file="bio-elemental/devourer.xml"/>
+
+  <!-- Arachnids -->
+  <monster name="spider" file="arachnids/spider.xml"/>
+	<monster name="poison spider" file="arachnids/poison_spider.xml"/>
+	<monster name="giant spider" file="arachnids/giant_spider.xml"/>
+	<monster name="wailing widow" file="arachnids/wailing_widow.xml"/>
   
+
   <!-- Almost Unkillable God Beings -->
 	<monster name="demigod" file="endgame/demigod.xml"/>
   

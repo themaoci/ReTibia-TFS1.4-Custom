@@ -2,8 +2,6 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-local vocation = {}
-
 local config = {
   npcAllowedVocation = "mage",
 	vocations = {
@@ -68,6 +66,7 @@ local function greetCallback(cid)
     npcHandler:setMessage(MESSAGE_GREET, player:getName() ..", are you prepared to receive my blessing of the Mage")
 	else
     npcHandler:setMessage(MESSAGE_GREET, player:getName() ..", you are yet to grow in strength before you can receive my blessing")
+		npcHandler:resetNpc(cid)
   end
   return true
 end
@@ -77,7 +76,14 @@ local function creatureSayCallback(cid, type, msg)
 		return false
 	end
   local player = Player(cid)
+  local receivedBlessing = player:getVocation() ~= 0
+  if receivedBlessing then
+		npcHandler:resetNpc(cid)
+    return true
+  end
+  print(msg)
   if msgcontains(msg, "yes") then
+    print("we are ok now")
     player:setVocation(Vocation(config.vocation[config.npcAllowedVocation].vocationId))
     player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have received a backpack with starting items.")
     
@@ -94,18 +100,7 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-local function onAddFocus(cid)
-	town[cid] = 0
-	vocation[cid] = 0
-end
 
-local function onReleaseFocus(cid)
-	town[cid] = nil
-	vocation[cid] = nil
-end
-
-npcHandler:setCallback(CALLBACK_ONADDFOCUS, onAddFocus)
-npcHandler:setCallback(CALLBACK_ONRELEASEFOCUS, onReleaseFocus)
 
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setMessage(MESSAGE_FAREWELL, "...")
