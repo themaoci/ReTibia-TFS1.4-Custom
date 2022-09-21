@@ -1,7 +1,7 @@
 #!/bin/sh
 cd /home/mao/retibia
 
-git fetch origin
+git pull
 
 if [ -f ./console.log ]
 then
