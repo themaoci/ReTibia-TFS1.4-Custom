@@ -48,7 +48,23 @@ function onLogin(player)
 		if loginStr ~= "" then
 			player:sendTextMessage(MESSAGE_STATUS_DEFAULT, loginStr)
 		end
-		loginStr = string.format("Your last visit in %s: %s.\nLogged in from: %s", serverName, os.date("%d %b %Y %X", player:getLastLoginSaved()), Game.convertIpToString(player:getIp()))
+
+		convertedIp = ""
+		for k, v in string.gmatch(Game.convertIpToString(player:getIp()), "([^.]+)") do
+			if k == 1 or k == 4 then
+				convertedIp = convertedIp .. v
+				if k == 1 then
+					convertIp = convertedIp .. ":"
+				end
+			else
+				convertedIp = convertedIp .. "***:"
+			end
+		end
+		loginStr = string.format(
+			"Your last visit in %s: %s.\nLast registered IP: %s", 
+			serverName, 
+			os.date("%d %b %Y %X", player:getLastLoginSaved()), 
+			convertedIp)
 	end
 	player:sendTextMessage(MESSAGE_STATUS_DEFAULT, loginStr)
 
