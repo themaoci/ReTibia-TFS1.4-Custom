@@ -53,7 +53,6 @@ function onLogin(player)
 		print(Game.convertIpToString(player:getIp()))
 		for k, v in string.gmatch(Game.convertIpToString(player:getIp()), "([^.]+)") do
 			print(k)
-			if v then print v end
 			if k == 1 or k == 4 then
 				convertedIp = convertedIp .. v
 				if k == 1 then
