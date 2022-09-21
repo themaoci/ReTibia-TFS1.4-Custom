@@ -1,10 +1,19 @@
-GameConfig = {}
-
-GameConfig['sharedExpPercentage'] = 1.2
-GameConfig['autoGhostStaffMembers'] = true
-
-GameConfig['Tutor'] = {}
-GameConfig.Tutor['WelcomeMessageRules'] = [[ Tutor Rules
+GameConfig = {
+  ['sharedExpPercentage'] = 1.2,
+  ['autoGhostStaffMembers'] = true,
+  ["God"] = {
+    ['WelcomeMessageEnabled'] = false,
+    ['WelcomeMessageCommands'] = [[
+-- COMMANDS --
+/ban {username},{reason},{time in days}
+/banid - works the same as /ban without time
+/i {itemId},{amount}
+-- COMMANDS --
+]]
+  }, 
+  ["Tutor"] = {
+    ['WelcomeMessageEnabled'] = false,
+    ['WelcomeMessageRules'] = [[ Tutor Rules
 1 *> 3 Warnings you lose the job.
 2 *> Without parallel conversations with players in Help, if the player starts offending, you simply mute it.
 3 *> Be educated with the players in Help and especially in the Private, try to help as much as possible.
@@ -21,34 +30,85 @@ GameConfig.Tutor['WelcomeMessageRules'] = [[ Tutor Rules
 Mute Player: /mute nick, 90. (90 seconds)
 Unmute Player: /unmute nick.
 - Commands -]]
-
-GameConfig['God'] = {}
-GameConfig.God['WelcomeMessageCommands'] = [[
--- COMMANDS --
-/ban {username},{reason},{time in days}
-/banid - works the same as /ban without time
-/i {itemId},{amount}
--- COMMANDS --
-]]
-
-GameConfig['StartItems'] = {
-    --club, coat
-    items = {{2175, 1}},
-    --container rope, shovel, red apple
-    container = {{2674, 2}}
-}
-
-
-GameConfig['PremiumTile'] = {
-  StepInActionId = 50241,
-  kickEffect = CONST_ME_MAGIC_BLUE,
-  kickMsg = "Only noble citizens can pass, get your premium account on our website!",
-  enterMsg = "Welcome to a premium area!",
-  enterEffect = CONST_ME_MAGIC_BLUE
-}
-
-GameConfig['LevelTile'] = {
-  TileStepOut = 446,
-  TileStepIn = 447,
-  kickMsg = "Only players with level %s and above may leave the town!"
+  },
+  ['StartItems'] = {
+      --club, coat
+      items = {{2175, 1}},
+      --container rope, shovel, red apple
+      container = {{2674, 2}}
+  },
+  ['PremiumTile'] = {
+    StepInActionId = 50241,
+    kickEffect = CONST_ME_MAGIC_BLUE,
+    kickMsg = "Only noble citizens can pass, get your premium account on our website!",
+    enterMsg = "Welcome to a premium area!",
+    enterEffect = CONST_ME_MAGIC_BLUE
+  },
+  ['LevelTile'] = {
+    TileStepOut = 446,
+    TileStepIn = 447,
+    kickMsg = "Only players with level %s and above may leave the town!"
+  },
+  ["Vocations"] = {
+    ["warrior"] = {
+      text = "You have been blessed by ▒▒▒▒▒▒▒ ▒▒▒▒▒▒▒ and now you can call yourself a Warrior!",
+      vocationId = 2,
+      --equipment
+      {
+      },
+      --container
+      {
+        {2120, 1},  -- rope
+        {2554, 1},  -- shovel
+        {7618, 50}, -- health potion
+        {7620, 10}, -- mana potion
+        {2152, 20}  -- platinum coins
+      }
+    },		
+    ["rogue"] = {
+      text = "You have been blessed by ▒▒▒▒▒▒▒ ▒▒▒▒▒▒▒ and now you can call yourself a Rogue!",
+      vocationId = 4,
+      --equipment
+      {
+      },
+      --container
+      {
+        {2120, 1},  -- rope
+        {2554, 1},  -- shovel
+        {7618, 55}, -- health potion
+        {7620, 5}, -- mana potion
+        {2152, 40}  -- platinum coins
+      }
+    },
+    ["mage"] = {
+      text = "You have been blessed by ▒▒▒▒▒▒▒ ▒▒▒▒▒▒▒ and now you can call yourself a Mage!",
+      vocationId = 3,
+      --equipment
+      {
+      },
+      --container
+      {
+        {2120, 1},  -- rope
+        {2554, 1},  -- shovel
+        {7618, 10}, -- health potion
+        {7620, 50}, -- mana potion
+        {2152, 30}  -- platinum coins
+      }
+    },
+    ["all_rounder"] = {
+      text = "You have been blessed by ▒▒▒▒▒▒▒ ▒▒▒▒▒▒▒ and now you can call yourself a All Rounder!",
+      vocationId = 1,
+      --equipment
+      {
+      },
+      --container
+      {
+        {2120, 1},  -- rope
+        {2554, 1},  -- shovel
+        {7618, 30}, -- health potion
+        {7620, 30}, -- mana potion
+        {2152, 100} -- platinum coins
+      }
+    }
+  }
 }
