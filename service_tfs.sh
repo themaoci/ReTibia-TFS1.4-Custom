@@ -1,6 +1,8 @@
 #!/bin/sh
 cd /home/mao/retibia
 
+git fetch origin
+
 if [ -f ./console.log ]
 then
 mv ./console.log "./old_logs/console_$(date +%y%m%d%H%M%S).log"
