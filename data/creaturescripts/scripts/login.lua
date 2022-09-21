@@ -51,16 +51,20 @@ function onLogin(player)
 
 		convertedIp = ""
 		print(Game.convertIpToString(player:getIp()))
+		local index = 1
 		for k, v in string.gmatch(Game.convertIpToString(player:getIp()), "([^.]+)") do
-			print(k)
-			if k == 1 or k == 4 then
-				convertedIp = convertedIp .. v
-				if k == 1 then
+			if index == 1 or index == 4 then
+				convertedIp = convertedIp .. k
+				if index == 1 then
 					convertIp = convertedIp .. ":"
 				end
 			else
-				convertedIp = convertedIp .. "***:"
+				convertedIp = convertedIp .. "***"
+				if index < 4 then
+					convertedIp = convertedIp .. ":"
+				end
 			end
+			index = index + 1
 		end
 		loginStr = string.format(
 			"Your last visit in %s: %s.\nLast registered IP: %s", 
