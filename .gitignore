@@ -180,4 +180,12 @@ pip-log.txt
 #############
 ## TFS / OT
 #############
-config.lua
+./config.lua
+./compile.sh
+./restart.sh
+./retibia.service
+./service_tfs.sh
+./start.sh
+./status.sh
+./stop.sh
+./tfs
