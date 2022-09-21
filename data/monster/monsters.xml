@@ -43,45 +43,45 @@
 	<monster name="elder dragon" file="dragonic_species/elder_dragon.xml"/>
 
   <!-- Undead species -->
-  <monster name="banshee" file="undead_species/banshee.xml"/>
+	<monster name="banshee" file="undead_species/banshee.xml"/>
  	<monster name="blightwalker" file="undead_species/blightwalker.xml"/>
  	<monster name="crypt shambler" file="undead_species/crypt_shambler.xml"/>
  	<monster name="death priest" file="undead_species/death_priest.xml"/>
  	<monster name="elder mummy" file="undead_species/elder_mummy.xml"/>
  	<monster name="greater death minion" file="undead_species/greater death minion.xml"/>
- 	<monster name="grim_reaper" file="undead_species/grim_reaper.xml"/>
+ 	<monster name="grim reaper" file="undead_species/grim_reaper.xml"/>
  	<monster name="lich" file="undead_species/lich.xml"/>
  	<monster name="mummy" file="undead_species/mummy.xml"/>
  	<monster name="nightfiend" file="undead_species/nightfiend.xml"/>
- 	<monster name="tomb_servant" file="undead_species/tomb_servant.xml"/>
- 	<monster name="undead_prospector" file="undead_species/undead_prospector.xml"/>
+ 	<monster name="tomb servant" file="undead_species/tomb_servant.xml"/>
+ 	<monster name="undead prospector" file="undead_species/undead_prospector.xml"/>
  	<monster name="vampire" file="undead_species/vampire.xml"/>
- 	<monster name="vampire_bride" file="undead_species/vampire_bride.xml"/>
- 	<monster name="vicious_manbat" file="undead_species/vicious_manbat.xml"/>
- 	<monster name="vampire_viscount" file="undead_species/vampire_viscount.xml"/>
+ 	<monster name="vampire bride" file="undead_species/vampire_bride.xml"/>
+ 	<monster name="vicious manbat" file="undead_species/vicious_manbat.xml"/>
+ 	<monster name="vampire viscount" file="undead_species/vampire_viscount.xml"/>
  	<monster name="zombie" file="undead_species/zombie.xml"/>
  	<monster name="ghastly dragon" file="undead_species/ghastly_dragon.xml"/>
 
   <!-- Skeleton species -->
-  <monster name="skeleton_warrior" file="skeleton_species/skeleton_warrior.xml"/>
- 	<monster name="honour_guard" file="skeleton_species/honour_guard.xml"/>
- 	<monster name="demon_skeleton" file="skeleton_species/demon_skeleton.xml"/>
+	<monster name="skeleton warrior" file="skeleton_species/skeleton_warrior.xml"/>
+ 	<monster name="honour guard" file="skeleton_species/honour_guard.xml"/>
+ 	<monster name="demon skeleton" file="skeleton_species/demon_skeleton.xml"/>
  	<monster name="dreadbeast" file="skeleton_species/dreadbeast.xml"/>
  	<monster name="undead minion" file="skeleton_species/undead minion.xml"/>
  	<monster name="bonebeast" file="skeleton_species/bonebeast.xml"/>
  	<monster name="undead cavebear" file="skeleton_species/undead cavebear.xml"/>
- 	<monster name="undead_gladiator" file="skeleton_species/undead_gladiator.xml"/>
- 	<monster name="betrayed_wraith" file="skeleton_species/betrayed_wraith.xml"/>
- 	<monster name="lost_soul" file="skeleton_species/lost_soul.xml"/>
+ 	<monster name="undead gladiator" file="skeleton_species/undead_gladiator.xml"/>
+ 	<monster name="betrayed wraith" file="skeleton_species/betrayed_wraith.xml"/>
+ 	<monster name="lost soul" file="skeleton_species/lost_soul.xml"/>
 
   <!-- Bio Elemental -->
  	<monster name="swampling" file="bio-elemental/swampling.xml"/>
  	<monster name="slime" file="bio-elemental/slime.xml"/>
  	<monster name="glooth anemone" file="bio-elemental/glooth_anemone.xml"/>
-  <monster name="devourer" file="bio-elemental/devourer.xml"/>
+	<monster name="devourer" file="bio-elemental/devourer.xml"/>
 
   <!-- Arachnids -->
-  <monster name="spider" file="arachnids/spider.xml"/>
+	<monster name="spider" file="arachnids/spider.xml"/>
 	<monster name="poison spider" file="arachnids/poison_spider.xml"/>
 	<monster name="giant spider" file="arachnids/giant_spider.xml"/>
 	<monster name="wailing widow" file="arachnids/wailing_widow.xml"/>
