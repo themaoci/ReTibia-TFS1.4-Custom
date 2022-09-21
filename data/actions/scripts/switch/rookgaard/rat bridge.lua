@@ -1,25 +1,31 @@
-function onUse(cid, item, frompos, item2, topos)
-  gatepos1 = {x=385, y=380, z=8, stackpos=1}
-  --getgate1 = getThingfromPos(gatepos1)
-  gatepos2 = {x=386, y=380, z=8, stackpos=1}
-  --getgate2 = getThingfromPos(gatepos2)
+local bridgePosition = {x=385, y=380, z=8, stackpos=1}
+local leverPosition_1 = {x=383, y=379, z=8}
+local leverPosition_2 = {x=389, y=379, z=8}
 
-  switchpos1 = {x=383, y=379, z=8}
-  switchpos2 = {x=389, y=379, z=8}
-  --dumppos = {x=387, y=380, z=8}
+function updateSwitches(pos1, pos2, state)
+  if state then
+    doTransformItem(getTileItemById(pos1, 1945).uid,1946)
+    doTransformItem(getTileItemById(pos2, 1945).uid,1946)		
+  else 
+    doTransformItem(getTileItemById(pos1, 1946).uid,1945)
+    doTransformItem(getTileItemById(pos2, 1946).uid,1945)
+  end
+end
+
+function onUse(cid, item, frompos, item2, topos)
     
   if item.itemid == 1945 then	
-    doCreateItem(1284,1,gatepos1)
-    doCreateItem(1284,1,gatepos2)
-    doTransformItem(getTileItemById(switchpos1, 1945).uid,1946)
-    doTransformItem(getTileItemById(switchpos2, 1945).uid,1946)		  
+
+    doCreateItem(405,1,bridgePosition)
+    updateSwitches(leverPosition_1, leverPosition_2, true)
+
   elseif item.itemid == 1946 then
-    doCreateItem(493,1,gatepos1)
-    doCreateItem(493,1,gatepos2)
-    doTransformItem(getTileItemById(switchpos1, 1946).uid,1945)
-    doTransformItem(getTileItemById(switchpos2, 1946).uid,1945)
+
+    doCreateItem(4608,1,bridgePosition)
+    updateSwitches(leverPosition_1, leverPosition_2, false)
+
   else
     doPlayerSendCancel(cid,"Sorry not possible.")
   end
   return 1
-  end
+end
