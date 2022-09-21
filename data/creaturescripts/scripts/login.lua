@@ -56,7 +56,7 @@ function onLogin(player)
 			if index == 1 or index == 4 then
 				convertedIp = convertedIp .. k
 				if index == 1 then
-					convertIp = convertedIp .. ":"
+					convertedIp = convertedIp .. ":"
 				end
 			else
 				convertedIp = convertedIp .. "***"
