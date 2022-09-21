@@ -5,12 +5,7 @@ NpcSystem.parseParameters(npcHandler)
 local vocation = {}
 
 local config = {
-  npcAllowedVocation = "warrior",
-  minFistLevel = 15,
-  minClubLevel = 15,
-  minSwordLevel = 15,
-  minAxeLevel = 15,
-  minShieldLevel = 15,
+  npcAllowedVocation = "rogue",
 }
 
 function onCreatureAppear(cid)			    npcHandler:onCreatureAppear(cid)			    end
@@ -19,33 +14,16 @@ function onCreatureSay(cid, type, msg)  npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				              npcHandler:onThink()					            end
 
 local function greetCallback(cid)
-
-	-- SKILL_FIST = 0,
-	-- SKILL_CLUB = 1,
-	-- SKILL_SWORD = 2,
-	-- SKILL_AXE = 3,
-	-- SKILL_DISTANCE = 4,
-	-- SKILL_SHIELD = 5,
-	-- SKILL_FISHING = 6,
-
-	-- SKILL_MAGLEVEL = 7, (not accessable)
-	-- SKILL_LEVEL = 8, (not accessable)
-
 	local player = Player(cid)
-  local fistLevel = player:getSkillLevel(0)
-  local clubLevel = player:getSkillLevel(1)
-  local swordLevel = player:getSkillLevel(2)
-  local axeLevel = player:getSkillLevel(3)
-  local shieldLevel = player:getSkillLevel(5)
+  local distLevel = player:getSkillLevel(4) -- distance skill is id 4
   local vocation = player:getVocation():getId()
   
-  local isWorthy = fistLevel >= config.minFistLevel or clubLevel >= config.minClubLevel or swordLevel >= config.minSwordLevel or axeLevel >= config.minAxeLevel or shieldLevel >= config.minShieldLevel
   if vocation ~= 0 then
     npcHandler:say(player:getName() ..", you already received the blessing. i can't help you more.", cid)
     npcHandler:resetNpc(cid)
     return false
   end
-  if not isWorthy then
+  if distLevel <= 15 then
     npcHandler:say(player:getName() ..", you are yet to grow in strength before you can receive my blessing", cid)
     npcHandler:resetNpc(cid)
     return false
@@ -80,8 +58,6 @@ local function creatureSayCallback(cid, type, msg)
 
 	return true
 end
-
-
 
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
