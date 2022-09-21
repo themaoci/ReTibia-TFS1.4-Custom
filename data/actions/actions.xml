@@ -188,10 +188,6 @@
   <!-- Rook Switches (3100) -->
 	<action actionid="3100" script="switch/rookgaard/rat bridge.lua"/>
 	<action actionid="3101" script="switch/rookgaard/academy switch.lua"/>
-	<action actionid="3102" script="switch/rookgaard/train monster1.lua" />
-	<action actionid="3103" script="switch/rookgaard/train monster2.lua" />
-  <action actionid="3104" script="switch/rookgaard/train monster3.lua" />
-	<action actionid="3105" script="switch/rookgaard/train monster4.lua" />
 	<action actionid="3106" script="switch/rookgaard/bear room stone.lua" />
 	<action actionid="3107" script="switch/rookgaard/katana door.lua" />
 	<action actionid="3109" script="switch/rookgaard/golden key.lua" />

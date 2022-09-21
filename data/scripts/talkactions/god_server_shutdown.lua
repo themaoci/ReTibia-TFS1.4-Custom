@@ -1,6 +1,6 @@
-local god_server_open = TalkAction("/shutdown")
+local god_server_shutdown = TalkAction("/shutdown")
 
-function god_server_open.onSay(player, words, param)
+function god_server_shutdown.onSay(player, words, param)
 	if not player:getGroup():getAccess() then
 		return true
 	end
@@ -16,4 +16,4 @@ function god_server_open.onSay(player, words, param)
 	return false
 end
 
-god_server_open:register()
+god_server_shutdown:register()

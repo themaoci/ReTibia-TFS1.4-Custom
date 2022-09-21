@@ -91,6 +91,7 @@
 	<monster name="demigod" file="endgame/demigod.xml"/>
   
   <!-- Boss monsters and Special Event monsters -->
+	<monster name="Rotworm Queen" file="default rookgaard/rotworm_queen.xml"/>
 	<monster name="Apprentice Sheng" file="raid_special/apprentice_sheng.xml"/>
 	<monster name="Munster" file="raid_special/munster.xml"/>
 	<monster name="Rottie the Rotworm" file="raid_special/rottie_the_rotworm.xml"/>
