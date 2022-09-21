@@ -1,0 +1,15 @@
+[Unit]
+Description=ReTibia game server service
+After=network.target
+StartLimitBurst=5
+StartLimitIntervalSec=60
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=mao
+ExecStart=/home/mao/retibia/service_tfs.sh
+
+[Install]
+WantedBy=multi-user.target
