@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <houses>
 	<house name="Rook House in Rock #1" houseid="1" entryx="380" entryy="407" entryz="7" rent="500" townid="2" size="18" />
-	<house name="Standalone 1" houseid="2" entryx="195" entryy="659" entryz="7" rent="750" townid="3" size="10" />
+	<house name="Standalone 1" houseid="2" entryx="195" entryy="659" entryz="7" rent="750" townid="3" size="11" />
 	<house name="Standalone 2" houseid="3" entryx="205" entryy="661" entryz="7" rent="750" townid="3" size="17" />
 	<house name="Standalone 3" houseid="4" entryx="236" entryy="660" entryz="7" rent="750" townid="3" size="5" />
 	<house name="Standalone 4" houseid="5" entryx="234" entryy="665" entryz="7" rent="750" townid="3" size="3" />
