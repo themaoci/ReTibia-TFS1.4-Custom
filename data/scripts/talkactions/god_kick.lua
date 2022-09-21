@@ -4,7 +4,7 @@ function god_kick.onSay(player, words, param)
 	if not player:getGroup():getAccess() then
 		return true
 	end
-  Helpers.logCommand(player, words, param)
+  	Helpers.logCommand(player, words, param)
 
 	local target = Player(param)
 	if target == nil then

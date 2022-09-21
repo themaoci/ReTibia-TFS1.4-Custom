@@ -4,7 +4,7 @@ function god_down.onSay(player, words, param)
 	if not player:getGroup():getAccess() then
 		return true
 	end
-  Helpers.logCommand(player, words, param)
+  	Helpers.logCommand(player, words, param)
 
 	local position = player:getPosition()
 	position.z = position.z + 1

@@ -7,7 +7,7 @@ function god_place_monster.onSay(player, words, param)
 	if player:getAccountType() < ACCOUNT_TYPE_GOD then
 		return false
 	end
-  Helpers.logCommand(player, words, param)
+  	Helpers.logCommand(player, words, param)
 	local position = player:getPosition()
 	local monster = Game.createMonster(param, position)
 	if monster ~= nil then

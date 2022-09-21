@@ -4,7 +4,7 @@ function god_broadcast.onSay(player, words, param)
 	if not getPlayerFlagValue(player, PlayerFlag_CanBroadcast) then
 		return true
 	end
-  Helpers.logCommand(player, words, param)
+  	Helpers.logCommand(player, words, param)
 
 	print("> " .. player:getName() .. " broadcasted: \"" .. param .. "\".")
 	for _, targetPlayer in ipairs(Game.getPlayers()) do

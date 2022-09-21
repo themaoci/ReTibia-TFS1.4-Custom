@@ -8,7 +8,7 @@ function god_ghost.onSay(player, words, param)
 	if player:getAccountType() < ACCOUNT_TYPE_GOD then
 		return false
 	end
-  Helpers.logCommand(player, words, param)
+  	Helpers.logCommand(player, words, param)
 
 	local position = player:getPosition()
 	local isGhost = not player:isInGhostMode()

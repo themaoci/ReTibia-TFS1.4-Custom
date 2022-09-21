@@ -9,13 +9,13 @@ function god_create_item.onSay(player, words, param)
 	if player:getAccountType() < ACCOUNT_TYPE_GOD then
 		return false
 	end
-  Helpers.logCommand(player, words, param)
+  	Helpers.logCommand(player, words, param)
 
-  if(param == "help") then
-    local helpMessage = "Command usage:\n/i ItemId,Amount\nExample: {/i 2160,100}"
-    player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, helpMessage)
-    return false
-  end
+	if(param == "help") then
+		local helpMessage = "Command usage:\n/i ItemId,Amount\nExample: {/i 2160,100}"
+		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, helpMessage)
+		return false
+	end
 
 	local split = param:split(",")
 

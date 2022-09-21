@@ -4,7 +4,7 @@ function god_teleport_creature_here.onSay(player, words, param)
 	if not player:getGroup():getAccess() then
 		return true
 	end
-  Helpers.logCommand(player, words, param)
+  	Helpers.logCommand(player, words, param)
 
 	local creature = Creature(param)
 	if not creature then

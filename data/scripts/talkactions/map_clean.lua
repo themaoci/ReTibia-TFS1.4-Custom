@@ -4,11 +4,12 @@ function map_clean.onSay(player, words, param)
 	if not player:getGroup():getAccess() then
 		return true
 	end
-  Helpers.logCommand(player, words, param)
 
 	if player:getAccountType() < ACCOUNT_TYPE_GOD then
 		return false
 	end
+
+  	Helpers.logCommand(player, words, param)
 
 	local itemCount = cleanMap()
 	if itemCount > 0 then

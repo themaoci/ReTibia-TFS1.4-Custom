@@ -5,7 +5,7 @@ function god_ban.onSay(player, words, param)
 		return true
 	end
   
-  Helpers.logCommand(player, words, param)
+  	Helpers.logCommand(player, words, param)
   
 	local name = param
 	local reason = ''
