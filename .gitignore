@@ -189,3 +189,4 @@ pip-log.txt
 /status.sh
 /stop.sh
 /tfs
+/old_logs
