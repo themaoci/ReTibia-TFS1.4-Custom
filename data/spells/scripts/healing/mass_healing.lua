@@ -5,6 +5,12 @@ combat:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 combat:setArea(createCombatArea(AREA_CIRCLE3X3))
 
 function onCastSpell(creature, variant)
+
+if creature == nil then 
+	--local min = 104.8
+	--local max = 134.8
+	return true 
+end
 local creatureLevel = creature:getLevel() or 1
 local creatureMLevel = creature:getMagicLevel() or 1
   local min = (creatureLevel / 5) + (creatureMLevel * 4.6) + 100
