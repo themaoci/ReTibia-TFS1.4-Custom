@@ -1,5 +1,5 @@
-local keywordHandler = KeywordHandler:new()
-local npcHandler = NpcHandler:new(keywordHandler)
+local keywordHandler = Romero_DesignSeller_keywordHandler
+local npcHandler = Romero_DesignSeller_npcHandler
 local talkState = {}
 local rtnt = {}
 function onCreatureAppear(cid)         npcHandler:onCreatureAppear(cid)         end
@@ -314,10 +314,6 @@ local o = {
     "norseman"
 }
     
-NPC_GLOBAL_WINDOW_OPTIONS = addoninfo
-NPC_OUTFITSWINDOW_npcHandler = npcHandler
-NPC_GLOBAL_TEXT = "Romero Seller"
-
 function creatureSayCallback(cid, type, msg)
 local talkUser = cid
 
@@ -393,7 +389,6 @@ local talkUser = cid
         window:addButton(101, "Cancel")
         local id_number = 1
         for key, value in pairs(addoninfo) do
-            print(id_number .. " " .. key)
             window:addChoice(id_number, key)
             id_number = id_number + 1
         end
