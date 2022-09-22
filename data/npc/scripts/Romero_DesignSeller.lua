@@ -313,11 +313,11 @@ local o = {
     "norseman"
 }
     
---local id_number2 = 1
+local id_number2 = 1
 for key, value in pairs(addoninfo) do
-    print(key .. " -> " .. value.outfit_female .. "/" .. value.outfit_male)
+    print("[" .. id_number2 .. "]" .. key .. " -> " .. value.outfit_female .. "/" .. value.outfit_male)
     --window:addChoice(id_number, key)
-    --id_number2 = id_number2 + 1
+    id_number2 = id_number2 + 1
 end
 function creatureSayCallback(cid, type, msg)
 local talkUser = cid
