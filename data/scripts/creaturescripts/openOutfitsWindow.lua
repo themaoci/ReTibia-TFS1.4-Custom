@@ -3,13 +3,25 @@ local config = {
     [2] = Position({x = 1000, y = 1000, z = 7}) -- Thais
 }
 
-NPC_GLOBAL_WINDOW_OPTIONS = {}
-NPC_OUTFITSWINDOW_npcHandler = nil
+--NPC_GLOBAL_WINDOW_OPTIONS = {}
+--NPC_OUTFITSWINDOW_npcHandler = nil
 function onModalWindow(cid, modalWindowId, buttonId, choiceId)
     if modalWindowId ~= 6001 or buttonId == 101 then
         return false
     end
-
+    if NPC_GLOBAL_WINDOW_OPTIONS == nil then
+        print("NPC_GLOBAL_WINDOW_OPTIONS is nil...")
+        if NPC_OUTFITSWINDOW_npcHandler == nil then
+            print("NPC_OUTFITSWINDOW_npcHandler is nil...")
+            return false
+        end
+        return false
+    end
+    if NPC_OUTFITSWINDOW_npcHandler == nil then
+        print("NPC_OUTFITSWINDOW_npcHandler is nil...")
+        return false
+    end
+    
     local id_number = 1
     local outfitData = nil
     for key, value in pairs(NPC_GLOBAL_WINDOW_OPTIONS) do
