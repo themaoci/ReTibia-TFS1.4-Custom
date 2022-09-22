@@ -1,3 +1,5 @@
+Romero_DesignSeller_keywordHandler = KeywordHandler:new()
+Romero_DesignSeller_npcHandler = NpcHandler:new(keywordHandler)
 local keywordHandler = Romero_DesignSeller_keywordHandler
 local npcHandler = Romero_DesignSeller_npcHandler
 local talkState = {}
