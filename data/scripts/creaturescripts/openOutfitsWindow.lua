@@ -1,7 +1,8 @@
 --Romero_DesignSeller_keywordHandler = KeywordHandler:new()
 --Romero_DesignSeller_npcHandler = NpcHandler:new(keywordHandler)
+local modal_openOutfitsWindow = CreatureEvent("openOutfitsWindow_Modal_Window")
 
-function onModalWindow(cid, modalWindowId, buttonId, choiceId)
+function modal_openOutfitsWindow.onModalWindow(cid, modalWindowId, buttonId, choiceId)
     print(modalWindowId .. " " .. buttonId .. " " .. choiceId)
     if modalWindowId ~= 6001 or buttonId == 101 then
         return false
@@ -54,7 +55,7 @@ function onModalWindow(cid, modalWindowId, buttonId, choiceId)
         window:addButton(999, "Close")
 
         window:setDefaultEscapeButton(999)
-        
+        local player = Player(cid)
         window:sendToPlayer(player)
 
 
@@ -66,3 +67,5 @@ function onModalWindow(cid, modalWindowId, buttonId, choiceId)
 
     return true
 end
+
+modal_openOutfitsWindow:register()
