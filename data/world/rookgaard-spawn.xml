@@ -982,6 +982,9 @@
 		<monster name="Skeleton" x="-1" y="-1" z="9" spawntime="450" />
 		<monster name="Skeleton" x="3" y="3" z="9" spawntime="450" />
 	</spawn>
+	<spawn centerx="326" centery="318" centerz="9" radius="1">
+		<npc name="Statue_RogueVocation" x="0" y="-1" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="301" centery="320" centerz="9" radius="15">
 		<monster name="Rat" x="5" y="-10" z="9" spawntime="450" />
 		<monster name="Rat" x="4" y="-9" z="9" spawntime="450" />
