@@ -23,7 +23,7 @@ local function greetCallback(cid)
     npcHandler:resetNpc(cid)
     return false
   end
-  if distLevel <= 15 then
+  if distLevel < 15 then
     npcHandler:say(player:getName() ..", you are yet to grow in strength before you can receive my blessing", cid)
     npcHandler:resetNpc(cid)
     return false
