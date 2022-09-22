@@ -315,7 +315,7 @@ local o = {
     
 --local id_number2 = 1
 for key, value in pairs(addoninfo) do
-    print(key)
+    print(key .. " -> " .. value.outfit_female .. "/" .. value.outfit_male)
     --window:addChoice(id_number, key)
     --id_number2 = id_number2 + 1
 end
