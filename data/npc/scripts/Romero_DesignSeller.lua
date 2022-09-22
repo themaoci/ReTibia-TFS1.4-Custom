@@ -316,7 +316,7 @@ local o = {
     
 NPC_GLOBAL_WINDOW_OPTIONS = addoninfo
 NPC_OUTFITSWINDOW_npcHandler = npcHandler
-
+NPC_GLOBAL_TEXT = "Romero Seller"
 
 function creatureSayCallback(cid, type, msg)
 local talkUser = cid
@@ -388,13 +388,13 @@ local talkUser = cid
     elseif msgcontains(msg, "addon") then
         local player = Player(cid)
           
-        local window = ModalWindow(6001, "Outfits", "List of options:")
+        local window = ModalWindow(6001, "Outfits", "Here is the 'Book of Outfits' content:")
         window:addButton(100, "Next")
         window:addButton(101, "Cancel")
         local id_number = 1
         for key, value in pairs(addoninfo) do
             print(id_number .. " " .. key)
-            window:addChoice(id_number, "Outfit" .. key)
+            window:addChoice(id_number, key)
             id_number = id_number + 1
         end
       
