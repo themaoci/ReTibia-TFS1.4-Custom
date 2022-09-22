@@ -5,10 +5,13 @@ local config = {
 
 --NPC_GLOBAL_WINDOW_OPTIONS = {}
 --NPC_OUTFITSWINDOW_npcHandler = nil
+
+print("NPC_GLOBAL_TEXT " .. NPC_GLOBAL_TEXT)
 function onModalWindow(cid, modalWindowId, buttonId, choiceId)
     if modalWindowId ~= 6001 or buttonId == 101 then
         return false
     end
+    print("NPC_GLOBAL_TEXT " .. NPC_GLOBAL_TEXT)
     if NPC_GLOBAL_WINDOW_OPTIONS == nil then
         print("NPC_GLOBAL_WINDOW_OPTIONS is nil...")
         if NPC_OUTFITSWINDOW_npcHandler == nil then
