@@ -1,7 +1,6 @@
-Romero_DesignSeller_keywordHandler = KeywordHandler:new()
-Romero_DesignSeller_npcHandler = NpcHandler:new(keywordHandler)
-local keywordHandler = Romero_DesignSeller_keywordHandler
-local npcHandler = Romero_DesignSeller_npcHandler
+
+local keywordHandler = KeywordHandler:new()
+local npcHandler = NpcHandler:new(keywordHandler)
 local talkState = {}
 local rtnt = {}
 function onCreatureAppear(cid)         npcHandler:onCreatureAppear(cid)         end
