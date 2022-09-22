@@ -1,5 +1,5 @@
-Romero_DesignSeller_keywordHandler = KeywordHandler:new()
-Romero_DesignSeller_npcHandler = NpcHandler:new(keywordHandler)
+--Romero_DesignSeller_keywordHandler = KeywordHandler:new()
+--Romero_DesignSeller_npcHandler = NpcHandler:new(keywordHandler)
 
 function onModalWindow(cid, modalWindowId, buttonId, choiceId)
     print(modalWindowId .. " " .. buttonId .. " " .. choiceId)
@@ -9,9 +9,11 @@ function onModalWindow(cid, modalWindowId, buttonId, choiceId)
     
     local id_number = 1
     local outfitData = nil
+    local optionName = nil
     for key, value in pairs(NPC_GLOBAL_WINDOW_OPTIONS) do
         print("from modal: " .. key)
         if id_number == choiceId then
+            optionName = key
             outfitData = value
             goto EndOutfitSearch
         end
@@ -22,11 +24,11 @@ function onModalWindow(cid, modalWindowId, buttonId, choiceId)
     if outfitData == nil then return true end
 
     if (getPlayerStorageValue(cid, outfitData.storageID) ~= -1) then
-        Romero_DesignSeller_npcHandler:say('You already have this addon!', cid)
-        Romero_DesignSeller_npcHandler:resetNpc()
+        --Romero_DesignSeller_npcHandler:say('You already have this addon!', cid)
+        --Romero_DesignSeller_npcHandler:resetNpc()
     else
-    local itemsTable = outfitData.items
-    local items_list = ''
+        local itemsTable = outfitData.items
+        local items_list = ''
         if table.maxn(itemsTable) > 0 then
             for i = 1, table.maxn(itemsTable) do
                 local item = itemsTable[i]
@@ -44,9 +46,21 @@ function onModalWindow(cid, modalWindowId, buttonId, choiceId)
         elseif (outfitData.cost > 0) and table.maxn(outfitData.items) then
             text = items_list .. ' and ' .. outfitData.cost .. ' gp'
         end
-        Romero_DesignSeller_npcHandler:say('For ' .. msg .. ' you will need ' .. text .. '. Do you have it all with you?', cid)
-        rtnt[talkUser] = msg
-        talkState[talkUser] = outfitData.storageID
+
+        local window = ModalWindow(
+            6002, 
+            optionName, 
+            'You will need to collect ' .. text .. '.')
+        window:addButton(999, "Close")
+
+        window:setDefaultEscapeButton(999)
+        
+        window:sendToPlayer(player)
+
+
+        --Romero_DesignSeller_npcHandler:say('For ' .. msg .. ' you will need ' .. text .. '. Do you have it all with you?', cid)
+        --rtnt[talkUser] = msg
+        --talkState[talkUser] = outfitData.storageID
         return true
     end
 
