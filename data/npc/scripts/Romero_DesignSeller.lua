@@ -2,10 +2,10 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 local talkState = {}
 local rtnt = {}
-function onCreatureAppear(cid)                npcHandler:onCreatureAppear(cid)             end
-function onCreatureDisappear(cid)             npcHandler:onCreatureDisappear(cid)         end
-function onCreatureSay(cid, type, msg)         npcHandler:onCreatureSay(cid, type, msg)     end
-function onThink()                             npcHandler:onThink()                         end
+function onCreatureAppear(cid)         npcHandler:onCreatureAppear(cid)         end
+function onCreatureDisappear(cid)      npcHandler:onCreatureDisappear(cid)      end
+function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
+function onThink()                     npcHandler:onThink()                     end
 
 npcHandler:setMessage(MESSAGE_GREET, "Greetings |PLAYERNAME|. I need your help and I'll reward you with nice addons if you help me! Just say {addons} or {help} if you don't know what to do.")
 
@@ -294,6 +294,7 @@ addoninfo = {
     }
     -- next storage 10052    -- next storage 10052    -- next storage 10052    -- next storage 10052    -- next storage 10052    -- next storage 10052    -- next storage 10052 --
 }    
+
 local o = {
     "citizen",
     "hunter",
@@ -313,6 +314,9 @@ local o = {
     "norseman"
 }
     
+NPC_GLOBAL_WINDOW_OPTIONS = addoninfo
+NPC_OUTFITSWINDOW_npcHandler = npcHandler
+
 
 function creatureSayCallback(cid, type, msg)
 local talkUser = cid
@@ -383,12 +387,8 @@ local talkUser = cid
         end
     elseif msgcontains(msg, "addon") then
         local player = Player(cid)
-        player:registerEvent("NPCOutfits_Modal_Window")
-
-        local title = "Outfits"
-        local message = "List of options:"
           
-        local window = ModalWindow(item.actionid, title, message)
+        local window = ModalWindow(6001, "Outfits", "List of options:")
         window:addButton(100, "Next")
         window:addButton(101, "Cancel")
         local id_number = 1
@@ -431,60 +431,3 @@ end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
-
-
-local modalDeveloperChest = CreatureEvent("DeveloperChest_Modal_Window")
-modalDeveloperChest:type("modalwindow")
-
-function modalDeveloperChest.onModalWindow(player, modalWindowId, buttonId, choiceId)
-    player:unregisterEvent("DeveloperChest_Modal_Window")
-      if buttonId == 100 then
-        player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-        local ItemsToGiveTable = nil
-
-        local id_number = 1
-        local outfitData = nil
-        for key, value in pairs(addoninfo) do
-            if id_number == choiceId then
-                outfitData = value
-
-                goto EndOutfitSearch
-            end
-            id_number = id_number + 1
-        end
-        ::EndOutfitSearch::
-        if outfitData == nil then return true end
-
-        if (getPlayerStorageValue(cid, outfitData.storageID) ~= -1) then
-            npcHandler:say('You already have this addon!', cid)
-            npcHandler:resetNpc()
-        else
-        local itemsTable = outfitData.items
-        local items_list = ''
-            if table.maxn(itemsTable) > 0 then
-                for i = 1, table.maxn(itemsTable) do
-                    local item = itemsTable[i]
-                    items_list = items_list .. item[2] .. ' ' .. ItemType(item[1]):getName()
-                    if i ~= table.maxn(itemsTable) then
-                        items_list = items_list .. ', '
-                    end
-                end
-            end
-            local text = ''
-            if (outfitData.cost > 0) then
-                text = outfitData.cost .. ' gp'
-            elseif table.maxn(outfitData.items) then
-                text = items_list
-            elseif (outfitData.cost > 0) and table.maxn(outfitData.items) then
-                text = items_list .. ' and ' .. outfitData.cost .. ' gp'
-            end
-            npcHandler:say('For ' .. msg .. ' you will need ' .. text .. '. Do you have it all with you?', cid)
-            rtnt[talkUser] = msg
-            talkState[talkUser] = outfitData.storageID
-            return true
-        end
-      end
-    return true
-end
-
-modalDeveloperChest:register()
