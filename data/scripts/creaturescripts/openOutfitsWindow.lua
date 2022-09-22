@@ -1,33 +1,16 @@
-local config = {
-    [1] = Position({x =1000, y = 1000, z = 7}), -- Venore
-    [2] = Position({x = 1000, y = 1000, z = 7}) -- Thais
-}
-
---NPC_GLOBAL_WINDOW_OPTIONS = {}
---NPC_OUTFITSWINDOW_npcHandler = nil
+Romero_DesignSeller_keywordHandler = KeywordHandler:new()
+Romero_DesignSeller_npcHandler = NpcHandler:new(keywordHandler)
 
 function onModalWindow(cid, modalWindowId, buttonId, choiceId)
+    print(modalWindowId .. " " .. buttonId .. " " .. choiceId)
     if modalWindowId ~= 6001 or buttonId == 101 then
-        return false
-    end
-    print("NPC_GLOBAL_TEXT " .. NPC_GLOBAL_TEXT)
-    if NPC_GLOBAL_WINDOW_OPTIONS == nil then
-        print("NPC_GLOBAL_WINDOW_OPTIONS is nil...")
-        if NPC_OUTFITSWINDOW_npcHandler == nil then
-            print("NPC_OUTFITSWINDOW_npcHandler is nil...")
-            return false
-        end
-        return false
-    end
-    if NPC_OUTFITSWINDOW_npcHandler == nil then
-        print("NPC_OUTFITSWINDOW_npcHandler is nil...")
         return false
     end
     
     local id_number = 1
     local outfitData = nil
     for key, value in pairs(NPC_GLOBAL_WINDOW_OPTIONS) do
-        print(key)
+        print("from modal: " .. key)
         if id_number == choiceId then
             outfitData = value
             goto EndOutfitSearch
@@ -35,11 +18,12 @@ function onModalWindow(cid, modalWindowId, buttonId, choiceId)
         id_number = id_number + 1
     end
     ::EndOutfitSearch::
+    print(outfitData.storageID)
     if outfitData == nil then return true end
 
     if (getPlayerStorageValue(cid, outfitData.storageID) ~= -1) then
-        NPC_OUTFITSWINDOW_npcHandler:say('You already have this addon!', cid)
-        NPC_OUTFITSWINDOW_npcHandler:resetNpc()
+        Romero_DesignSeller_npcHandler:say('You already have this addon!', cid)
+        Romero_DesignSeller_npcHandler:resetNpc()
     else
     local itemsTable = outfitData.items
     local items_list = ''
@@ -60,7 +44,7 @@ function onModalWindow(cid, modalWindowId, buttonId, choiceId)
         elseif (outfitData.cost > 0) and table.maxn(outfitData.items) then
             text = items_list .. ' and ' .. outfitData.cost .. ' gp'
         end
-        NPC_OUTFITSWINDOW_npcHandler:say('For ' .. msg .. ' you will need ' .. text .. '. Do you have it all with you?', cid)
+        Romero_DesignSeller_npcHandler:say('For ' .. msg .. ' you will need ' .. text .. '. Do you have it all with you?', cid)
         rtnt[talkUser] = msg
         talkState[talkUser] = outfitData.storageID
         return true
