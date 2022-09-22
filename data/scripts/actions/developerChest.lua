@@ -1,4 +1,4 @@
-
+print("*** DEVELOPER CHEST: ACTIVE ***")
 local BackpackItems = {
   [2365] = { amount = 1, cap = 15, name = "backpack of holding" }, -- duzy bp 24 sloty
 }
@@ -36,7 +36,6 @@ local ItemsToGiveRings = {
   [2169] = { amount = 5, cap = 0.9, name = "time ring" }, -- time ring
   [2214] = { amount = 5, cap = 0.8, name = "ring of healing" } -- ring of healing
 }
-  print(">> REGISTERING DEV CHEST")
 
 local developerChest = Action()
 
