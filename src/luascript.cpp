@@ -2011,7 +2011,7 @@ void LuaScriptInterface::registerFunctions()
 
 	// Discord
 	registerTable("Discord");
-	registerMethod("Game", "webhook", LuaScriptInterface::luaDiscordWebhook);
+	registerMethod("Discord", "webhook", LuaScriptInterface::luaDiscordWebhook);
 
 	// Game
 	registerTable("Game");
