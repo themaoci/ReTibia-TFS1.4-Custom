@@ -111,9 +111,9 @@ function creatureSayCallback(cid, type, msg)
     end
     if msgcontains(msg, 'spells') then
         for var, item in pairs(spells) do
-            if then
+            --if  then
                 shopWindow[item.id] = {Level = item.level, Vocs = item.vocations, Price = item.buy, subType = 0, Words = item.spell, SpellName = item.name}
-            end
+            --end
         end
         openShopWindow(cid, spells, onBuy, onSell) end
         return true
