@@ -63,8 +63,9 @@ endif ()
 
 find_package(Boost 1.66.0 REQUIRED COMPONENTS date_time system filesystem iostreams)
 
-include_directories(${Boost_INCLUDE_DIRS} ${Crypto++_INCLUDE_DIR} ${LUA_INCLUDE_DIR} ${MYSQL_INCLUDE_DIR} ${PUGIXML_INCLUDE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}libs/include)
+include_directories(${Boost_INCLUDE_DIRS} ${Crypto++_INCLUDE_DIR} ${LUA_INCLUDE_DIR} ${MYSQL_INCLUDE_DIR} ${PUGIXML_INCLUDE_DIR} libs/DPP/include)
 target_link_libraries(tfs PRIVATE
+        dpp
         Boost::date_time
         Boost::system
         Boost::filesystem
