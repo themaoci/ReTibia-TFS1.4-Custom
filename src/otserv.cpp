@@ -25,12 +25,14 @@
 #if __has_include("gitmetadata.h")
 	#include "gitmetadata.h"
 #endif
+#include "discord/discord.h"
 
 DatabaseTasks g_databaseTasks;
 Dispatcher g_dispatcher;
 Scheduler g_scheduler;
 
 Game g_game;
+Discord g_discord;
 ConfigManager g_config;
 Monsters g_monsters;
 Vocations g_vocations;
