@@ -7,7 +7,7 @@ function god_broadcast.onSay(player, words, param)
   	Helpers.logCommand(player, words, param)
 
 	print("> " .. player:getName() .. " broadcasted: \"" .. param .. "\".")
-	Discord.webhook("https://discord.com/api/webhooks/1022938910361387120/SADLVfZd2NWT_H1YEQGUcT_ucrz-g9_DV4ya3Abv2EWkwxrgTZH0zN6oHx7KSbYSw_cW", "BROADCAST: " .. param)
+	Discord.webhook("https://discord.com/api/webhooks/1022938910361387120/SADLVfZd2NWT_H1YEQGUcT_ucrz-g9_DV4ya3Abv2EWkwxrgTZH0zN6oHx7KSbYSw_cW", "**" .. param .. "**")
 	for _, targetPlayer in ipairs(Game.getPlayers()) do
 		targetPlayer:sendPrivateMessage(player, param, TALKTYPE_BROADCAST)
 	end

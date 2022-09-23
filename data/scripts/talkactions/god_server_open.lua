@@ -11,6 +11,9 @@ function god_server_open.onSay(player, words, param)
   	Helpers.logCommand(player, words, param)
 
 	Game.setGameState(GAME_STATE_NORMAL)
+	Discord.webhook(
+		"https://discord.com/api/webhooks/1022947548610187288/P2TwdzMiAe-9Ei9cYGhb3KtHL4XeGkEMbfOWjm06B2Hg5rY_ODbNK3UBJt2Ww1dSX3B_", 
+		"**Server has been opened now. You can login to the game now.**")
 	player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Server is now open.")
 	return false
 end
