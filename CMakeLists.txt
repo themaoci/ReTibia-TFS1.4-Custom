@@ -6,6 +6,7 @@ set(CMAKE_DISABLE_IN_SOURCE_BUILD ON)
 project(tfs CXX)
 
 add_subdirectory(src)
+add_subdirectory(libs/DPP)
 add_executable(tfs ${tfs_SRC})
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
@@ -65,7 +66,6 @@ find_package(Boost 1.66.0 REQUIRED COMPONENTS date_time system filesystem iostre
 
 include_directories(${Boost_INCLUDE_DIRS} ${Crypto++_INCLUDE_DIR} ${LUA_INCLUDE_DIR} ${MYSQL_INCLUDE_DIR} ${PUGIXML_INCLUDE_DIR} libs/DPP/include)
 target_link_libraries(tfs PRIVATE
-        dpp
         Boost::date_time
         Boost::system
         Boost::filesystem
@@ -76,6 +76,7 @@ target_link_libraries(tfs PRIVATE
         ${LUA_LIBRARIES}
         ${MYSQL_CLIENT_LIBS}
         ${PUGIXML_LIBRARIES}
+        dpp
         )
 
 ### INTERPROCEDURAL_OPTIMIZATION ###
