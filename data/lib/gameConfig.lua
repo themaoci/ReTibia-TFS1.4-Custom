@@ -51,7 +51,7 @@ Unmute Player: /unmute nick.
   },
   ["Vocations"] = {
     ["warrior"] = {
-      text = "You have been blessed by ▒▒▒▒▒▒▒ ▒▒▒▒▒▒▒ and now you can call yourself a Warrior!",
+      text = "You have been blessed by ▒▒▒ ▒▒ and now you can call yourself a Warrior!",
       vocationId = 2,
       --equipment
       {
@@ -66,7 +66,7 @@ Unmute Player: /unmute nick.
       }
     },		
     ["rogue"] = {
-      text = "You have been blessed by ▒▒▒▒▒▒▒ ▒▒▒▒▒▒▒ and now you can call yourself a Rogue!",
+      text = "You have been blessed by ▒▒▒ ▒▒ and now you can call yourself a Rogue!",
       vocationId = 4,
       --equipment
       {
@@ -81,7 +81,7 @@ Unmute Player: /unmute nick.
       }
     },
     ["mage"] = {
-      text = "You have been blessed by ▒▒▒▒▒▒▒ ▒▒▒▒▒▒▒ and now you can call yourself a Mage!",
+      text = "You have been blessed by ▒▒▒ ▒▒ and now you can call yourself a Mage!",
       vocationId = 3,
       --equipment
       {
