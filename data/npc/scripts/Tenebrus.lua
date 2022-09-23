@@ -70,6 +70,8 @@ npcHandler:setMessage(MESSAGE_WALKAWAY, 'See you then.')
 npcHandler:setMessage(MESSAGE_FAREWELL, 'Bless you on your journeys.')
 npcHandler:setMessage(MESSAGE_SENDTRADE, 'Here you go. Don\'t forget, if you buy potions, there\'s a {deposit} of 5 gold on the empty flask.')
 npcHandler:setMessage(MESSAGE_GREET, 'Greetings, traveller |PLAYERNAME|. As you have found me in this depths of books, how can i {help} you ?')
+
+
 function creatureSayCallback(cid, type, msg)
     if(not npcHandler:isFocused(cid)) then
         return false
@@ -109,17 +111,18 @@ function creatureSayCallback(cid, type, msg)
 
         return true
     end
-    if msgcontains(msg, 'spells') then
+    if msgcontains(msg, 'trade') or msgcontains(msg, 'spells') then
         for var, item in pairs(spells) do
-            --if  then
+            if then
                 shopWindow[item.id] = {Level = item.level, Vocs = item.vocations, Price = item.buy, subType = 0, Words = item.spell, SpellName = item.name}
-            --end
+            end
         end
         openShopWindow(cid, spells, onBuy, onSell) end
         return true
     end
     return true
 end
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 
 npcHandler:addModule(FocusModule:new())
