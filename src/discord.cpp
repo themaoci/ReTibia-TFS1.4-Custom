@@ -1,6 +1,6 @@
 
-#include "discord.h";
-#include "../include/dpp/dpp.h";
+#include "otpch.h"
+#include "discord.h"
 
 Discord::Discord() {}
 Discord::~Discord() {}

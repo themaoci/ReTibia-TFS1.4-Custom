@@ -25,7 +25,7 @@
 #if __has_include("gitmetadata.h")
 	#include "gitmetadata.h"
 #endif
-#include "discord/discord.h"
+#include "discord.h"
 
 DatabaseTasks g_databaseTasks;
 Dispatcher g_dispatcher;

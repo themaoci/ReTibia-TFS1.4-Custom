@@ -26,7 +26,7 @@
 #include "globalevent.h"
 #include "script.h"
 #include "weapons.h"
-#include "discord/discord.h"
+#include "discord.h"
 
 extern Chat* g_chat;
 extern Game g_game;
@@ -2008,6 +2008,10 @@ void LuaScriptInterface::registerFunctions()
 	// table
 	registerMethod("table", "create", LuaScriptInterface::luaTableCreate);
 	registerMethod("table", "pack", LuaScriptInterface::luaTablePack);
+
+	// Discord
+	registerTable("Discord");
+	registerMethod("Game", "webhook", LuaScriptInterface::luaDiscordWebhook);
 
 	// Game
 	registerTable("Game");
@@ -4201,6 +4205,18 @@ int LuaScriptInterface::luaTablePack(lua_State* L)
 	lua_pushinteger(L, n);
 	lua_setfield(L, 1, "n");  /* t.n = number of elements */
 	return 1;  /* return table */
+}
+
+//Discord
+
+int LuaScriptInterface::luaDiscordWebhook(lua_State* L)
+{
+	const std::string& webhookUrl = getString(L, 1);
+	const std::string& Text = getString(L, 2);
+
+	g_discord->webhook(webhookUrl, Text);
+
+	return 1;
 }
 
 // Game
