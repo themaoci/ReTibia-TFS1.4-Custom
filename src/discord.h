@@ -3,7 +3,7 @@
 
 #ifndef FS_DISCORD_H_1
 #define FS_DISCORD_H_1
-#include "../include/dpp/dpp.h";
+#include "../include/dpp/dpp.h"
 
 class Discord {
 public:
