@@ -117,6 +117,10 @@
 		<monster name="Wolf" x="1" y="3" z="6" spawntime="450" />
 		<monster name="Wolf" x="3" y="3" z="6" spawntime="450" />
 	</spawn>
+	<spawn centerx="364" centery="374" centerz="6" radius="5">
+		<npc name="Yasir" x="-3" y="-2" z="6" spawntime="60" direction="1" />
+		<npc name="Rashid" x="-2" y="1" z="6" spawntime="60" />
+	</spawn>
 	<spawn centerx="307" centery="378" centerz="6" radius="1">
 		<npc name="Zerbrus" x="0" y="-1" z="6" spawntime="240" />
 	</spawn>
@@ -480,17 +484,13 @@
 	</spawn>
 	<spawn centerx="329" centery="410" centerz="7" radius="20">
 		<monster name="Rabbit" x="-1" y="-20" z="7" spawntime="450" />
-		<monster name="Snake" x="-12" y="-19" z="7" spawntime="450" />
 		<monster name="Rabbit" x="6" y="-18" z="7" spawntime="450" />
 		<monster name="Chicken" x="-8" y="-17" z="7" spawntime="450" />
 		<monster name="Chicken" x="-4" y="-15" z="7" spawntime="450" />
 		<monster name="Spider" x="-14" y="-14" z="7" spawntime="450" />
 		<monster name="Rabbit" x="5" y="-8" z="7" spawntime="450" />
 		<monster name="Chicken" x="-1" y="-7" z="7" spawntime="450" />
-		<monster name="Snake" x="-15" y="-5" z="7" spawntime="450" />
-		<monster name="Snake" x="-16" y="-4" z="7" spawntime="450" />
 		<monster name="Chicken" x="-5" y="-3" z="7" spawntime="450" />
-		<monster name="Chicken" x="-18" y="-2" z="7" spawntime="450" />
 		<monster name="Chicken" x="-12" y="0" z="7" spawntime="450" />
 		<monster name="Rabbit" x="7" y="0" z="7" spawntime="450" />
 		<monster name="Rabbit" x="-15" y="2" z="7" spawntime="450" />
@@ -1182,35 +1182,16 @@
 		<monster name="Skeleton" x="27" y="20" z="9" spawntime="450" />
 		<monster name="Cave Rat" x="-1" y="24" z="9" spawntime="450" />
 	</spawn>
-	<spawn centerx="397" centery="398" centerz="9" radius="1">
-		<monster name="Elder Mummy" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
 	<spawn centerx="306" centery="399" centerz="9" radius="1">
 		<monster name="Cave Rat" x="1" y="0" z="9" spawntime="450" />
 	</spawn>
-	<spawn centerx="383" centery="400" centerz="9" radius="1">
-		<monster name="Tomb Servant" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="396" centery="400" centerz="9" radius="1">
-		<monster name="Elder Mummy" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="383" centery="404" centerz="9" radius="1">
-		<monster name="Tomb Servant" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="394" centery="411" centerz="9" radius="1">
-		<monster name="Mummy" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="390" centery="413" centerz="9" radius="1">
-		<monster name="Tomb Servant" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="374" centery="421" centerz="9" radius="1">
-		<monster name="Tomb Servant" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="383" centery="421" centerz="9" radius="1">
-		<monster name="Mummy" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="374" centery="427" centerz="9" radius="1">
-		<monster name="Tomb Servant" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="388" centery="408" centerz="9" radius="10">
+		<monster name="Elder Mummy" x="-5" y="-9" z="9" spawntime="60" />
+		<monster name="Elder Mummy" x="8" y="-9" z="9" spawntime="60" />
+		<monster name="Mummy" x="3" y="-4" z="9" spawntime="60" />
+		<monster name="Mummy" x="-5" y="-1" z="9" spawntime="60" />
+		<monster name="Mummy" x="6" y="3" z="9" spawntime="60" />
+		<monster name="Mummy" x="1" y="5" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="421" centery="427" centerz="9" radius="25">
 		<monster name="Dragon Hatchling" x="1" y="-15" z="9" spawntime="240" />
@@ -1230,23 +1211,16 @@
 		<monster name="Dragon" x="-11" y="24" z="9" spawntime="240" />
 		<monster name="Dragon" x="-6" y="25" z="9" spawntime="240" />
 	</spawn>
-	<spawn centerx="367" centery="430" centerz="9" radius="1">
-		<monster name="Elder Mummy" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="371" centery="432" centerz="9" radius="1">
-		<monster name="Mummy" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="375" centery="432" centerz="9" radius="1">
-		<monster name="Tomb Servant" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="381" centery="432" centerz="9" radius="1">
-		<monster name="Elder Mummy" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="374" centery="437" centerz="9" radius="1">
-		<monster name="Tomb Servant" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="379" centery="439" centerz="9" radius="1">
-		<monster name="Elder Mummy" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="375" centery="429" centerz="9" radius="10">
+		<monster name="Mummy" x="8" y="-8" z="9" spawntime="60" />
+		<monster name="Mummy" x="0" y="-5" z="9" spawntime="60" />
+		<monster name="Elder Mummy" x="-9" y="-4" z="9" spawntime="60" />
+		<monster name="Mummy" x="8" y="-4" z="9" spawntime="60" />
+		<monster name="Mummy" x="-8" y="3" z="9" spawntime="60" />
+		<monster name="Mummy" x="7" y="3" z="9" spawntime="60" />
+		<monster name="Mummy" x="0" y="4" z="9" spawntime="60" />
+		<monster name="Elder Mummy" x="-1" y="10" z="9" spawntime="60" />
+		<monster name="Mummy" x="6" y="10" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="472" centery="442" centerz="9" radius="25">
 		<monster name="Dragon Hatchling" x="-24" y="-21" z="9" spawntime="240" />
@@ -1271,8 +1245,8 @@
 		<monster name="Dragon Hatchling" x="-3" y="17" z="9" spawntime="240" />
 		<monster name="Dragon Hatchling" x="9" y="17" z="9" spawntime="240" />
 	</spawn>
-	<spawn centerx="379" centery="448" centerz="9" radius="1">
-		<monster name="Elder Mummy" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="379" centery="447" centerz="9" radius="1">
+		<monster name="Elder Mummy" x="0" y="1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="292" centery="451" centerz="9" radius="20">
 		<monster name="Minotaur" x="0" y="-19" z="9" spawntime="240" />
