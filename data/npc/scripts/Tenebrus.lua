@@ -112,7 +112,7 @@ function creatureSayCallback(cid, type, msg)
         end
 
         local onBuy = function(cid, item, subType, amount, ignoreCap, inBackpacks)
-            Discord_Debug(" item:" .. item .. " subType:" .. subType .. " amount:" .. amount .. " ignoreCap:" .. ignoreCap .. " inBackpacks:" .. inBackpacks)
+            Discord_Debug(" item:" .. tostring(item) .. " subType:" .. tostring(subType) .. " amount:" .. tostring(amount) .. " ignoreCap:" .. tostring(ignoreCap) .. " inBackpacks:" .. tostring(inBackpacks))
             --print(shopWindow[subType].name)
             -- if not getPlayerLearnedInstantSpell(cid, shopWindow[item].Words) then
             --     if getPlayerLevel(cid) >= shopWindow[item].Level then
