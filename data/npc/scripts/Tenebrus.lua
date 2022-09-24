@@ -72,6 +72,15 @@ npcHandler:setMessage(MESSAGE_SENDTRADE, 'Here you go. Don\'t forget, if you buy
 npcHandler:setMessage(MESSAGE_GREET, 'Greetings, traveller |PLAYERNAME|. As you have found me in this depths of books, how can i {help} you ?')
 
 
+local booksByType = {
+    ["attack"] = 1955,
+    ["healing"] = 1960,
+    ["support"] = 1959,
+    ["runeMaking"] = 1958,
+    ["conjure"] = 1958,
+    ["enchant"] = 1958
+}
+
 function creatureSayCallback(cid, type, msg)
     if(not npcHandler:isFocused(cid)) then
         return false
@@ -90,7 +99,7 @@ function creatureSayCallback(cid, type, msg)
 
             shopWindow[index] = {Level = level, MLevel = magiclevel, CLevel = skill_closeCombat, DLevel = skill_distance, Price = item.price, Words = item.words, SpellName = item.name}
             
-            table.insert(spells, {id=1950, subType=index, buy = item.price, name = item.words, spell = item.name, vocations = {0,1,2,3,4,5,6,7,8}, level = level})
+            table.insert(spells, {id=booksByType[item.group], subType=index, buy = item.price, name = item.words, spell = item.name, vocations = {0,1,2,3,4,5,6,7,8}, level = level})
             
             index = index + 1
         end
