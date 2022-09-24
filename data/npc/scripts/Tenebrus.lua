@@ -100,7 +100,7 @@ function creatureSayCallback(cid, type, msg)
             shopWindow[index] = {Level = level, MLevel = magiclevel, CLevel = skill_closeCombat, DLevel = skill_distance, Price = item.price, Words = item.words, SpellName = item.name}
             
             table.insert(spells, {id=booksByType[item.group], subType=index, buy = item.price, name = item.words, spell = item.name, vocations = {0,1,2,3,4,5,6,7,8}, level = level})
-            
+            print(booksByType[item.group] .. " - " .. index .. " " .. item.words)
             index = index + 1
         end
 
@@ -108,7 +108,7 @@ function creatureSayCallback(cid, type, msg)
     
         local onBuy = function(cid, item, subType, amount, ignoreCap, inBackpacks)
             print(item .. " " .. subType)
-            print(shopWindow[subType].name)
+            --print(shopWindow[subType].name)
             -- if not getPlayerLearnedInstantSpell(cid, shopWindow[item].Words) then
             --     if getPlayerLevel(cid) >= shopWindow[item].Level then
             --         if isInArray(shopWindow[item].Vocs, getPlayerVocation(cid)) then
