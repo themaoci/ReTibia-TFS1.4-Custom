@@ -4,18 +4,19 @@ local gwp_wallLeftpos = {x=454, y=321, z=11}
 function onUse(cid, item, frompos, item2, topos)
  
   if getPlayerStorageValue(cid, 7019) == 1 and getPlayerStorageValue(cid, 7038) == 1 then 
-    Discord_Debug(frompos.x .. " == " .. gwp_wallRightpos.x .. " " ..  frompos.y .. " == " .. gwp_wallRightpos.y)
-    Discord_Debug(frompos.x .. " == " .. gwp_wallLeftpos.x .. " " ..  frompos.y .. " == " .. gwp_wallLeftpos.y)
-    if frompos.x == gwp_wallRightpos.x and frompos.y == gwp_wallRightpos.y then
-      frompos.x = gwp_wallLeftpos.x
-      frompos.y = gwp_wallLeftpos.y
-      player:teleportTo(frompos, false)
+    local playerPos = Player(cid):getPosition()
+    Discord_Debug(playerPos.x .. " == " .. gwp_wallRightpos.x .. " " ..  playerPos.y .. " == " .. gwp_wallRightpos.y)
+    Discord_Debug(playerPos.x .. " == " .. gwp_wallLeftpos.x .. " " ..  playerPos.y .. " == " .. gwp_wallLeftpos.y)
+    if playerPos.x == gwp_wallRightpos.x and playerPos.y == gwp_wallRightpos.y then
+      playerPos.x = gwp_wallLeftpos.x
+      playerPos.y = gwp_wallLeftpos.y
+      player:teleportTo(playerPos, false)
       return 1
     end
-    if frompos.x == gwp_wallLeftpos.x and frompos.y == gwp_wallLeftpos.y then
-      frompos.x = gwp_wallRightpos.x
-      frompos.y = gwp_wallRightpos.y
-      player:teleportTo(frompos, false)
+    if playerPos.x == gwp_wallLeftpos.x and playerPos.y == gwp_wallLeftpos.y then
+      playerPos.x = gwp_wallRightpos.x
+      playerPos.y = gwp_wallRightpos.y
+      player:teleportTo(playerPos, false)
       return 1
     end
     return 1
