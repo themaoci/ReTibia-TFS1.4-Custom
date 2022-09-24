@@ -91,10 +91,10 @@ function creatureSayCallback(cid, type, msg)
         
         local spells = {}
         local index = 1
-        local playerLevel = getPlayerLevel(cid)
-        local playerMLevel = getPlayerMagLevel(cid)
-        local playerDLevel = getPlayerSkill(cid, 4)
-        local playerCLevel = math.max(unpack({getPlayerSkill(cid, 0), getPlayerSkill(cid, 1), getPlayerSkill(cid, 2), getPlayerSkill(cid, 3)}))
+        local playerLevel = tonumber(getPlayerLevel(cid))
+        local playerMLevel = tonumber(getPlayerMagLevel(cid))
+        local playerDLevel = tonumber(getPlayerSkill(cid, 4))
+        local playerCLevel = tonumber(math.max(unpack({getPlayerSkill(cid, 0), getPlayerSkill(cid, 1), getPlayerSkill(cid, 2), getPlayerSkill(cid, 3)})))
 
         for var, item in pairs(GameConfig.BuySpellList) do
             if not getPlayerLearnedInstantSpell(item.words) then
@@ -102,10 +102,10 @@ function creatureSayCallback(cid, type, msg)
                 if item.group == "runeMaking" then
                     additionalName = " Making"
                 end
-                local item_level = item.level or 0
-                local item_mlevel = item.mlevel or 0
-                local item_clevel = item.clevel or 0
-                local item_dlevel = item.dlevel or 0
+                local item_level = tonumber(item.level or 0)
+                local item_mlevel = tonumber(item.mlevel or 0)
+                local item_clevel = tonumber(item.clevel or 0)
+                local item_dlevel = tonumber(item.dlevel or 0)
 
                 local CanLearnNow = ""
                 
@@ -135,10 +135,10 @@ function creatureSayCallback(cid, type, msg)
             else
                 local missingRequirements = ""
 
-                local item_level = item.level or 0
-                local item_mlevel = item.mlevel or 0
-                local item_clevel = item.clevel or 0
-                local item_dlevel = item.dlevel or 0
+                local item_level = tonumber(item.level or 0)
+                local item_mlevel = tonumber(item.mlevel or 0)
+                local item_clevel = tonumber(item.clevel or 0)
+                local item_dlevel = tonumber(item.dlevel or 0)
 
                 if item_level <= playerLevel then
                     missingRequirements = missingRequirements .. "Level required is " .. item_level .. " but you have " .. playerLevel
