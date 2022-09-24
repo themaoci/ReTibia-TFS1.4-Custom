@@ -99,23 +99,20 @@ function creatureSayCallback(cid, type, msg)
 
             shopWindow[index] = {Level = level, MLevel = magiclevel, CLevel = skill_closeCombat, DLevel = skill_distance, Price = item.price, Words = item.words, SpellName = item.name}
             
-            table.insert(spells, 
-                {
-                    id=booksByType[item.group], 
-                    subType=1, 
-                    subtype=1, 
+            
+            spells[#spells + 1] = {
+                    id = booksByType[item.group], 
                     buy = item.price, 
-                    name = item.words, 
-                    spell = item.name, 
-                    vocations = {0,1,2,3,4,5,6,7,8}, 
-                    level = level
+                    sell = -1, 
+                    subType = index, 
+                    name = item.name
                 })
-            print(booksByType[item.group] .. " - " .. index .. " " .. item.words)
+            --print(booksByType[item.group] .. " - " .. index .. " " .. item.words)
             index = index + 1
         end
 
         local onBuy = function(cid, item, subType, amount, ignoreCap, inBackpacks)
-            print(item .. " " .. subType)
+            Discord_Debug(" item:" .. item .. " subType:" .. subType .. " amount:" .. amount .. " ignoreCap:" .. ignoreCap .. " inBackpacks:" .. inBackpacks)
             --print(shopWindow[subType].name)
             -- if not getPlayerLearnedInstantSpell(cid, shopWindow[item].Words) then
             --     if getPlayerLevel(cid) >= shopWindow[item].Level then
