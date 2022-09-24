@@ -194,7 +194,7 @@
 	<action actionid="3111" script="switch/rookgaard/minomage door.lua" />
 	<action actionid="3112" script="switch/rookgaard/spike sword door.lua" />
 	<action uniqueid="15068" script="switch/rookgaard/rook-stone-switch.lua" />
-	<action uniqueid="3200" script="rookgaard/ghoul_wall_passing.lua" />
+	<action actionid="3200" script="rookgaard/ghoul_wall_passing.lua" />
   
   <!-- Quest Rook, 7000 -->
 	<action actionid="7000" script="quest/rookgaard/questItems.lua" /> 
