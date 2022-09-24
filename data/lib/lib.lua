@@ -17,9 +17,9 @@ dofile('data/lib/compat/compat.lua')
 -- Debugging helper function for Lua developers
 dofile('data/lib/debugging/dump.lua')
 dofile('data/lib/debugging/lua_version.lua')
+dofile('data/lib/debugging/logger.lua') -- Discord Webhooks and other loggers to console etc.
 
 -- Location data constants.
 dofile('data/lib/locationData/rookgaard.lua')
-
 -- Server config data in lua - can be changed by using commands.
 dofile('data/lib/gameConfig.lua') -- GameConfig
