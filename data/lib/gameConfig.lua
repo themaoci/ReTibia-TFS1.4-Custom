@@ -216,7 +216,7 @@ Unmute Player: /unmute nick.
     {group="support", price=0, spellid="176", name="Arrow Call", words="exevo infir con", level="1", premium="0", needlearn="1" },
     {group="support", price=1200, name="Animate Dead Rune", words="adana mort", level="27", premium="1", needlearn="1" },
     {group="support", price=1200, name="Avalanche Rune", words="adori mas frigo", level="30", needlearn="1" },
-    {group="support", price=0, name="Blank Rune", words="adori blank", level="5", magiclevel="1" needlearn="1" },
+    {group="support", price=0, name="Blank Rune", words="adori blank", level="5", magiclevel="1", needlearn="1" },
     {group="support", price=1300, name="Chameleon Rune", words="adevo ina", level="27", needlearn="1" },
     {group="support", price=450, spellid="51", name="Conjure Arrow", words="exevo con", level="13", premium="0", needlearn="1" },
     {group="support", price=450, spellid="79", name="Conjure Bolt", words="exevo con mort", level="17", premium="1", needlearn="1" },
