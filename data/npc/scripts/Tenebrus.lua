@@ -103,7 +103,7 @@ function creatureSayCallback(cid, type, msg)
             spells[#spells + 1] = {
                     id = booksByType[item.group], 
                     buy = item.price, 
-                    sell = -1, 
+                    sell = 0, 
                     subType = index, 
                     name = item.name
                 }
