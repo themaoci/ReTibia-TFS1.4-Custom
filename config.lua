@@ -146,10 +146,10 @@ experienceStages = nil
 
 -- Rates
 -- NOTE: rateExp is not used if you have enabled stages above
-rateExp = 2
-rateSkill = 1
+rateExp = 3
+rateSkill = 2
 rateLoot = 1
-rateMagic = 1
+rateMagic = 2
 rateSpawn = 2
 
 -- Monster Despawn Config
