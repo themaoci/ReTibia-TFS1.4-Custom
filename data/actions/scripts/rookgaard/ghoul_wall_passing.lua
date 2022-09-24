@@ -17,8 +17,8 @@ function onUse(cid, item, frompos, item2, topos)
       return 1
     end
   end
-  --print(getPlayerStorageValue(cid, 7019))
-  --print(getPlayerStorageValue(cid, 7038))
+  print(getPlayerStorageValue(cid, 7019))
+  print(getPlayerStorageValue(cid, 7038))
   doPlayerSendCancel(cid, "Seems like this wall is different from the others here...")
   return 1
 end
