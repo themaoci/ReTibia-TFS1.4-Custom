@@ -146,11 +146,11 @@ experienceStages = nil
 
 -- Rates
 -- NOTE: rateExp is not used if you have enabled stages above
-rateExp = 5
-rateSkill = 5
-rateLoot = 2
-rateMagic = 5
-rateSpawn = 1
+rateExp = 2
+rateSkill = 1
+rateLoot = 1
+rateMagic = 1
+rateSpawn = 2
 
 -- Monster Despawn Config
 -- despawnRange is the amount of floors a monster can be from its spawn position
@@ -159,7 +159,7 @@ rateSpawn = 1
 -- walkToSpawnRadius is the allowed distance that the monster will stay away from spawn position when left with no targets, 0 to disable
 deSpawnRange = 2
 deSpawnRadius = 50
-removeOnDespawn = true
+removeOnDespawn = false
 walkToSpawnRadius = 15
 
 -- Stamina
@@ -173,7 +173,7 @@ convertUnsafeScripts = true
 -- NOTE: defaultPriority only works on Windows and sets process
 -- priority, valid values are: "normal", "above-normal", "high"
 defaultPriority = "high"
-startupDatabaseOptimization = false
+startupDatabaseOptimization = true
 
 -- Status Server Information
 ownerName = ""
