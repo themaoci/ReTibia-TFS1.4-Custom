@@ -122,7 +122,7 @@ Unmute Player: /unmute nick.
     {group="attack", price=6000, spellid="139", name="Curse", words="utori mort", level="75", premium="1", needlearn="1" },
     {group="attack", price=800, spellid="87", name="Death Strike", words="exori mort", level="16", premium="1", needlearn="1" },
     {group="attack", price=3000, spellid="124", name="Divine Caldera", words="exevo mas san", level="50", premium="1", needlearn="1" },
-    {group="attack", price=1800, spellid="122", name="Divine Missile", words="exori san", level="40", premium="1", needlearn="1",
+    {group="attack", price=1800, spellid="122", name="Divine Missile", words="exori san", level="40", premium="1", needlearn="1" },
     {group="attack", price=2500, spellid="140", name="Electrify", words="utori vis", level="34", premium="1", needlearn="1" },
     {group="attack", price=1000, spellid="22", name="Energy Beam", words="exevo vis lux", level="23", needlearn="1" },
     {group="attack", price=800, spellid="88", name="Energy Strike", words="exori vis", level="12", premium="1", needlearn="1" },
@@ -260,5 +260,5 @@ Unmute Player: /unmute nick.
     {group="support", price=1100, name="Thunderstorm Rune", words="adori mas vis", level="28", premium="1", needlearn="1" },
     {group="support", price=1500, name="Ultimate Healing Rune", words="adura vita", level="24", needlearn="1" },
     {group="support", price=2000, name="Wild Growth Rune", words="adevo grav vita", level="27", premium="1", needlearn="1" }
-}
+  }
 }
