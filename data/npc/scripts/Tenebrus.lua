@@ -106,7 +106,7 @@ function creatureSayCallback(cid, type, msg)
                     sell = -1, 
                     subType = index, 
                     name = item.name
-                })
+                }
             --print(booksByType[item.group] .. " - " .. index .. " " .. item.words)
             index = index + 1
         end
