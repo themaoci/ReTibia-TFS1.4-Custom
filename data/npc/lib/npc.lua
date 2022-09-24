@@ -14,6 +14,7 @@ function msgcontains(message, keyword)
 end
 
 function doNpcSellItem(cid, itemid, amount, subType, ignoreCap, inBackpacks, backpack)
+	Discord_Debug("doNpcSellItem item:" .. tostring(itemid) .. " subType:" .. tostring(subType) .. " amount:" .. tostring(amount) .. " ignoreCap:" .. tostring(ignoreCap) .. " inBackpacks:" .. tostring(inBackpacks))
 	local amount = amount or 1
 	local subType = subType or 0
 	local item = 0

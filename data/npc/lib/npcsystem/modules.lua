@@ -953,6 +953,7 @@ if Modules == nil then
 
 	-- Callback onBuy() function. If you wish, you can change certain Npc to use your onBuy().
 	function ShopModule:callbackOnBuy(cid, itemid, subType, amount, ignoreCap, inBackpacks)
+		Discord_Debug("ShopModule:callbackOnBuy item:" .. tostring(itemid) .. " subType:" .. tostring(subType) .. " amount:" .. tostring(amount) .. " ignoreCap:" .. tostring(ignoreCap) .. " inBackpacks:" .. tostring(inBackpacks))
 		local shopItem = self:getShopItem(itemid, subType)
 		if shopItem == nil then
 			error("[ShopModule.onBuy] shopItem == nil")
