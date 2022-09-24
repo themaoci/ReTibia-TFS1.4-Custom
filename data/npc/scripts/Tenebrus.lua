@@ -96,7 +96,7 @@ function creatureSayCallback(cid, type, msg)
 
     
         local onBuy = function(cid, item, subType, amount, ignoreCap, inBackpacks)
-            print(item .. " " subType)
+            print(item .. " " .. subType)
             print(shopWindow[subType].name)
             -- if not getPlayerLearnedInstantSpell(cid, shopWindow[item].Words) then
             --     if getPlayerLevel(cid) >= shopWindow[item].Level then
