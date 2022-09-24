@@ -76,44 +76,44 @@ function creatureSayCallback(cid, type, msg)
     if(not npcHandler:isFocused(cid)) then
         return false
     end
-
-    local shopWindow = {}
-    local spells = {
-        {id=1950, buy = 150, name = "Exana Pox", spell = "Andidote", vocations = {1,2,3,4,5,6,7,8}, level = 10},
-        {id=1950, buy = 2500, name = "Exori", spell = "Berserk", vocations = {4,8}, level = 35},
-        {id=1950, buy = 80, name = "Exiva", spell = "Find Person", vocations = {1,2,3,4,5,6,7,8}, level = 8},
-        {id=2182, buy = 5000, name = "Exori Flam", spell = "Flame Strike", vocations = {1,2,5,6}, level = 12},
-        {id=1950, buy = 8000, name = "Utito Tempo", spell = "Blood Rage", vocations = {4,8}, level = 60},
-        {id=1950, buy = 2000, name = "Exeta Res", spell = "Challenge", vocations = {8}, level = 20},
-        {id=1950, buy = 5000, name = "Exori Gran", spell = "Fierce Berserk", vocations = {4,8}, level = 70},
-        {id=1950, buy = 500, name = "Utevo Gran Lux", spell = "Great Light", vocations = {1,2,3,4,5,6,7,8}, level = 13},
-        {id=1950, buy = 1500, name = "Exori Mas", spell = "Groundshaker", vocations = {4,8}, level = 33},
-        {id=1950, buy = 1500, name = "Exana Mort", spell = "Wound Cleansing", vocations = {4,8}, level = 30}
-    }
-    
-    local onBuy = function(cid, item, subType, amount, ignoreCap, inBackpacks)
-        if not getPlayerLearnedInstantSpell(cid, shopWindow[item].Words) then
-            if getPlayerLevel(cid) >= shopWindow[item].Level then
-                if isInArray(shopWindow[item].Vocs, getPlayerVocation(cid)) then
-                    doPlayerRemoveMoney(cid, shopWindow[item].Price)
-                    doPlayerLearnInstantSpell(cid, shopWindow[item].Words)
-                    npcHandler:say("You have learned " .. shopWindow[item].Words, cid)
-                else
-                    npcHandler:say("This spell is not for your vocation.", cid)
-                end
-            else
-                npcHandler:say("You need to obtain a level of " .. shopWindow[item].Level .. " or higher to be able to learn this spell.", cid)
-            end
-        else
-            npcHandler:say("You already know this spell.", cid)
-        end
-            
-
-        return true
-    end
     if msgcontains(msg, 'trade') or msgcontains(msg, 'spells') then
-        for var, item in pairs(spells) do
-                shopWindow[item.id] = {Level = item.level, Vocs = item.vocations, Price = item.buy, subType = 0, Words = item.spell, SpellName = item.name}
+
+        local shopWindow = {}
+        
+        local spells = {}
+
+        for var, item in pairs(GameConfig.BuySpellsList) do
+            local magiclevel = item.magiclevel or 0
+            local level = item.level or 0
+            local skill_closeCombat = item.meelelevel or 0
+            local skill_distance = item.distlevel or 0
+
+            shopWindow[item.id] = {Level = level, MLevel = magiclevel, CLevel = skill_closeCombat, DLevel = skill_distance, Price = item.price, Words = item.words, SpellName = item.name}
+            table.insert(spells, {id=1950, buy = item.price, name = item.words, spell = item.name, vocations = {0,1,2,3,4,5,6,7,8}, level = level}
+        end
+
+
+    
+        local onBuy = function(cid, item, subType, amount, ignoreCap, inBackpacks)
+            print(item)
+            -- if not getPlayerLearnedInstantSpell(cid, shopWindow[item].Words) then
+            --     if getPlayerLevel(cid) >= shopWindow[item].Level then
+            --         if isInArray(shopWindow[item].Vocs, getPlayerVocation(cid)) then
+            --             doPlayerRemoveMoney(cid, shopWindow[item].Price)
+            --             doPlayerLearnInstantSpell(cid, shopWindow[item].Words)
+            --             npcHandler:say("You have learned " .. shopWindow[item].Words, cid)
+            --         else
+            --             npcHandler:say("This spell is not for your vocation.", cid)
+            --         end
+            --     else
+            --         npcHandler:say("You need to obtain a level of " .. shopWindow[item].Level .. " or higher to be able to learn this spell.", cid)
+            --     end
+            -- else
+            --     npcHandler:say("You already know this spell.", cid)
+            -- end
+                
+
+            return true
         end
         openShopWindow(cid, spells, onBuy, onSell)
         return true
