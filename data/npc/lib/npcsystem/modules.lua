@@ -823,7 +823,7 @@ if Modules == nil then
 
 			local shopItem = self:getShopItem(itemid, itemSubType)
 			if shopItem == nil then
-				self.npcHandler.shopItems[#self.npcHandler.shopItems + 1] = {id = itemid, buy = cost, sell = -1, subType = itemSubType, name = realName or ItemType(itemid):getName()}
+				self.npcHandler.shopItems[#self.npcHandler.shopItems + 1] = {id = itemid, buy = cost, sell = 0, subType = itemSubType, name = realName or ItemType(itemid):getName()}
 			else
 				shopItem.buy = cost
 			end
