@@ -123,7 +123,7 @@ function creatureSayCallback(cid, type, msg)
                     }
             end
         end
-        Discord_Debug("Tenebrus Skill Learning | Spells that can be learn:" .. tostring(#spells)))
+        Discord_Debug("Tenebrus Skill Learning | Spells that can be learn:" .. tostring(#spells))
         local onBuy = function(cid, item, subType, amount, ignoreCap, inBackpacks)
             Discord_Debug("Tenebrus Skill Learning | Displayed Item Id:" .. tostring(item) .. " Skill Name:" .. tostring(GameConfig.BuySpellList[item].name))
             
