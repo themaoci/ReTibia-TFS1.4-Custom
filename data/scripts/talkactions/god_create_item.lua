@@ -61,7 +61,7 @@ function god_create_item.onSay(player, words, param)
 		player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
 	end
 	local itemName = itemType:getName() or "undefined"
-	local playerName = player.getName() or "undefined"
+	local playerName = player:getName() or "undefined"
 	Discord.webhook(
 		"https://discord.com/api/webhooks/1022949135449608274/PzK5sXneCWIfjaDQd7-yusVdcD5wC_nbOVD0Vti94tQ-46FcUSpqcyJ-uEF7kbzOUaMo",
 		"Item [" .. itemName .. "] x" .. count .. " by '" .. playerName .. "'")
