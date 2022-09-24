@@ -112,7 +112,6 @@ Unmute Player: /unmute nick.
     }
   },
   ["BuySpellsList"] = {
-    -- Attack Spells --
     {group="attack", price=20000, spellid="62", name="Annihilation", words="exori gran ico", level="110", premium="1", needlearn="1" },
     {group="attack", price=0, spellid="169", name="Apprentice's Strike", words="exori min flam", level="8", premium="0", needlearn="0" },
     {group="attack", price=2500, spellid="80", name="Berserk", words="exori", level="35", premium="1", needlearn="1" },
@@ -162,8 +161,6 @@ Unmute Player: /unmute nick.
     {group="attack", price=15000, spellid="157", name="Ultimate Terra Strike", words="exori max tera", level="90", premium="1", needlearn="1" },
     {group="attack", price=1500, spellid="107", name="Whirlwind Throw", words="exori hur", level="28", premium="1", needlearn="1" },
     {group="attack", price=6000, spellid="56", name="Wrath of Nature", words="exevo gran mas tera", level="55", premium="1", needlearn="1" },
-    
-    -- Healing Spells --
     {group="healing", price=0, spellid="175", name="Bruise Bane", words="exura infir ico", level="1", needlearn="0" },
     {group="healing", price=2500, spellid="144", name="Cure Bleeding", words="exana kor", level="45", premium="1", needlearn="1" },
     {group="healing", price=2000, spellid="145", name="Cure Burning", words="exana flam", level="30", premium="1", needlearn="1" },
@@ -183,8 +180,6 @@ Unmute Player: /unmute nick.
     {group="healing", price=8000, spellid="36", name="Salvation", words="exura gran san", level="60", premium="1", needlearn="1" },
     {group="healing", price=1000, spellid="3", name="Ultimate Healing", words="exura vita", level="30", needlearn="1" },
     {group="healing", price=0, spellid="123", name="Wound Cleansing", words="exura ico", level="8", premium="0", needlearn="0" },
-    
-    -- Support Spells --
     {group="support", price=8000, spellid="133", name="Blood Rage", words="utito tempo", level="60", premium="1", needlearn="1" },
     {group="support", price=1600, spellid="90", name="Cancel Invisibility", words="exana ina", level="26", premium="1", needlearn="1" },
     {group="support", price=2000, spellid="93", name="Challenge", words="exeta res", level="20", premium="1", needlearn="1" },
@@ -205,14 +200,10 @@ Unmute Player: /unmute nick.
     {group="support", price=2000, spellid="9", name="Summon Creature", words="utevo res", level="25", needlearn="1" },
     {group="support", price=6000, spellid="134", name="Swift Foot", words="utamo tempo san", level="55", premium="1", needlearn="1" },
     {group="support", price=1600, spellid="75", name="Ultimate Light", words="utevo vis lux", level="26", premium="1", needlearn="1" },
-    
-    -- Party Spells --
     {group="support", price=4000, spellid="129", name="Enchant Party", words="utori mas sio", level="32", premium="1", needlearn="1" },
     {group="support", price=4000, spellid="128", name="Heal Party", words="utura mas sio", level="32", premium="1", needlearn="1" },
     {group="support", price=4000, spellid="127", name="Protect Party", words="utamo mas sio", level="32", premium="1", needlearn="1" },
     {group="support", price=4000, spellid="126", name="Train Party", words="utito mas sio", level="32", premium="1", needlearn="1" },
-    
-    -- Conjuring Spells --
     {group="support", price=0, spellid="176", name="Arrow Call", words="exevo infir con", level="1", premium="0", needlearn="1" },
     {group="support", price=1200, name="Animate Dead Rune", words="adana mort", level="27", premium="1", needlearn="1" },
     {group="support", price=1200, name="Avalanche Rune", words="adori mas frigo", level="30", needlearn="1" },
