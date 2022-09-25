@@ -1946,6 +1946,9 @@
 	<spawn centerx="407" centery="283" centerz="11" radius="1">
 		<monster name="Orc" x="1" y="0" z="11" spawntime="450" />
 	</spawn>
+	<spawn centerx="514" centery="283" centerz="11" radius="5">
+		<monster name="Dragon Lord" x="1" y="2" z="11" spawntime="240" />
+	</spawn>
 	<spawn centerx="432" centery="284" centerz="11" radius="1">
 		<monster name="Minotaur" x="0" y="-1" z="11" spawntime="450" />
 	</spawn>
@@ -1955,14 +1958,18 @@
 	<spawn centerx="566" centery="290" centerz="11" radius="1">
 		<monster name="Dragon Lord" x="0" y="0" z="11" spawntime="240" />
 	</spawn>
+	<spawn centerx="500" centery="291" centerz="11" radius="5">
+		<monster name="Dragon Lord" x="-3" y="1" z="11" spawntime="240" />
+		<monster name="Dragon Lord" x="4" y="1" z="11" spawntime="240" />
+	</spawn>
 	<spawn centerx="320" centery="297" centerz="11" radius="1">
 		<monster name="Skeleton" x="0" y="-1" z="11" spawntime="450" />
 	</spawn>
 	<spawn centerx="567" centery="300" centerz="11" radius="1">
 		<monster name="Dragon Lord" x="0" y="0" z="11" spawntime="240" />
 	</spawn>
-	<spawn centerx="521" centery="303" centerz="11" radius="1">
-		<monster name="Dragon Lord" x="0" y="0" z="11" spawntime="240" />
+	<spawn centerx="522" centery="303" centerz="11" radius="1">
+		<monster name="Dragon Lord" x="-1" y="0" z="11" spawntime="240" />
 	</spawn>
 	<spawn centerx="512" centery="309" centerz="11" radius="1">
 		<monster name="Dragon Lord" x="0" y="0" z="11" spawntime="240" />
@@ -2044,6 +2051,11 @@
 	<spawn centerx="557" centery="357" centerz="11" radius="1">
 		<monster name="Dragon Lord" x="0" y="0" z="11" spawntime="240" />
 	</spawn>
+	<spawn centerx="429" centery="366" centerz="11" radius="5">
+		<monster name="Dragon Lord Hatchling" x="-1" y="-4" z="11" spawntime="240" />
+		<monster name="Dragon Lord Hatchling" x="3" y="0" z="11" spawntime="240" />
+		<monster name="Dragon Lord Hatchling" x="-3" y="4" z="11" spawntime="240" />
+	</spawn>
 	<spawn centerx="546" centery="366" centerz="11" radius="1">
 		<monster name="Dragon Lord" x="0" y="0" z="11" spawntime="240" />
 	</spawn>
@@ -2083,30 +2095,44 @@
 	<spawn centerx="579" centery="391" centerz="11" radius="1">
 		<monster name="Dragon Lord" x="0" y="0" z="11" spawntime="240" />
 	</spawn>
-	<spawn centerx="481" centery="400" centerz="11" radius="1">
-		<monster name="Dragon Lord Hatchling" x="-1" y="0" z="11" spawntime="240" />
-		<monster name="Dragon Lord Hatchling" x="0" y="0" z="11" spawntime="240" />
-	</spawn>
 	<spawn centerx="524" centery="400" centerz="11" radius="1">
 		<monster name="Dragon Lord" x="0" y="0" z="11" spawntime="240" />
 	</spawn>
-	<spawn centerx="445" centery="401" centerz="11" radius="1">
-		<monster name="Dragon Lord Hatchling" x="0" y="0" z="11" spawntime="240" />
+	<spawn centerx="478" centery="402" centerz="11" radius="5">
+		<monster name="Dragon Lord Hatchling" x="-1" y="-2" z="11" spawntime="240" />
+		<monster name="Dragon Lord Hatchling" x="3" y="-2" z="11" spawntime="240" />
+		<monster name="Dragon Lord Hatchling" x="-2" y="2" z="11" spawntime="240" />
+	</spawn>
+	<spawn centerx="278" centery="403" centerz="11" radius="5">
+		<monster name="Goblin" x="-3" y="-3" z="11" spawntime="450" />
+		<monster name="Goblin" x="3" y="-3" z="11" spawntime="450" />
+		<monster name="Goblin" x="-3" y="-1" z="11" spawntime="450" />
+		<monster name="Goblin" x="3" y="-1" z="11" spawntime="450" />
+		<monster name="Goblin" x="-3" y="1" z="11" spawntime="450" />
+		<monster name="Goblin" x="3" y="1" z="11" spawntime="450" />
 	</spawn>
 	<spawn centerx="515" centery="403" centerz="11" radius="1">
 		<monster name="Dragon Lord" x="0" y="0" z="11" spawntime="240" />
 	</spawn>
-	<spawn centerx="476" centery="404" centerz="11" radius="1">
-		<monster name="Dragon Lord Hatchling" x="0" y="0" z="11" spawntime="240" />
+	<spawn centerx="447" centery="404" centerz="11" radius="5">
+		<monster name="Dragon Lord Hatchling" x="-2" y="-3" z="11" spawntime="240" />
+		<monster name="Dragon Lord Hatchling" x="1" y="2" z="11" spawntime="240" />
 	</spawn>
-	<spawn centerx="391" centery="406" centerz="11" radius="1">
-		<monster name="Dragon Lord Hatchling" x="0" y="0" z="11" spawntime="240" />
+	<spawn centerx="387" centery="407" centerz="11" radius="5">
+		<monster name="Dragon Lord Hatchling" x="4" y="-1" z="11" spawntime="240" />
+		<monster name="Dragon Lord Hatchling" x="-5" y="1" z="11" spawntime="240" />
 	</spawn>
-	<spawn centerx="448" centery="406" centerz="11" radius="1">
-		<monster name="Dragon Lord Hatchling" x="0" y="0" z="11" spawntime="240" />
-	</spawn>
-	<spawn centerx="382" centery="408" centerz="11" radius="1">
-		<monster name="Dragon Lord Hatchling" x="0" y="0" z="11" spawntime="240" />
+	<spawn centerx="348" centery="410" centerz="11" radius="20">
+		<monster name="Vicious Manbat" x="-15" y="-13" z="11" spawntime="60" />
+		<monster name="Vicious Manbat" x="-2" y="-11" z="11" spawntime="60" />
+		<monster name="Vicious Manbat" x="5" y="-8" z="11" spawntime="60" />
+		<monster name="Vicious Manbat" x="17" y="-7" z="11" spawntime="60" />
+		<monster name="Vicious Manbat" x="-14" y="-3" z="11" spawntime="60" />
+		<monster name="Vicious Manbat" x="2" y="0" z="11" spawntime="60" />
+		<monster name="Vicious Manbat" x="-8" y="3" z="11" spawntime="60" />
+		<monster name="Vicious Manbat" x="15" y="10" z="11" spawntime="60" />
+		<monster name="Vicious Manbat" x="-8" y="13" z="11" spawntime="60" />
+		<monster name="Vicious Manbat" x="3" y="14" z="11" spawntime="60" />
 	</spawn>
 	<spawn centerx="302" centery="413" centerz="11" radius="15">
 		<monster name="Goblin" x="-3" y="-10" z="11" spawntime="450" />
@@ -2118,17 +2144,15 @@
 		<monster name="Cave Rat" x="3" y="4" z="11" spawntime="450" />
 		<monster name="Goblin" x="-3" y="11" z="11" spawntime="450" />
 	</spawn>
-	<spawn centerx="442" centery="418" centerz="11" radius="1">
-		<monster name="Dragon Lord Hatchling" x="0" y="0" z="11" spawntime="240" />
-	</spawn>
 	<spawn centerx="484" centery="419" centerz="11" radius="1">
 		<monster name="Dragon Lord Hatchling" x="0" y="0" z="11" spawntime="240" />
 	</spawn>
 	<spawn centerx="400" centery="420" centerz="11" radius="1">
 		<monster name="Dragon Lord Hatchling" x="0" y="0" z="11" spawntime="240" />
 	</spawn>
-	<spawn centerx="451" centery="421" centerz="11" radius="1">
-		<monster name="Dragon Lord Hatchling" x="0" y="0" z="11" spawntime="240" />
+	<spawn centerx="446" centery="420" centerz="11" radius="5">
+		<monster name="Dragon Lord Hatchling" x="-4" y="-2" z="11" spawntime="240" />
+		<monster name="Dragon Lord Hatchling" x="5" y="1" z="11" spawntime="240" />
 	</spawn>
 	<spawn centerx="489" centery="422" centerz="11" radius="1">
 		<monster name="Dragon Lord Hatchling" x="0" y="0" z="11" spawntime="240" />
@@ -2148,22 +2172,27 @@
 	<spawn centerx="557" centery="448" centerz="11" radius="1">
 		<monster name="Dragon Lord" x="0" y="0" z="11" spawntime="240" />
 	</spawn>
-	<spawn centerx="349" centery="449" centerz="11" radius="17">
-		<monster name="Vampire Bride" x="-8" y="-13" z="11" spawntime="60" />
-		<monster name="Vampire Bride" x="11" y="-13" z="11" spawntime="60" />
-		<monster name="Vampire Viscount" x="11" y="-3" z="11" spawntime="60" />
-		<monster name="Vampire Bride" x="4" y="1" z="11" spawntime="60" />
-		<monster name="Vampire Viscount" x="-9" y="3" z="11" spawntime="60" />
-		<monster name="Vampire Viscount" x="10" y="7" z="11" spawntime="60" />
-		<monster name="Vampire Bride" x="-3" y="10" z="11" spawntime="60" />
-		<monster name="Vampire Viscount" x="-2" y="14" z="11" spawntime="60" />
-		<monster name="Vampire Bride" x="10" y="14" z="11" spawntime="60" />
-	</spawn>
 	<spawn centerx="576" centery="449" centerz="11" radius="1">
 		<monster name="Dragon Lord" x="0" y="0" z="11" spawntime="240" />
 	</spawn>
 	<spawn centerx="509" centery="454" centerz="11" radius="1">
 		<monster name="Dragon Lord" x="0" y="0" z="11" spawntime="240" />
+	</spawn>
+	<spawn centerx="345" centery="457" centerz="11" radius="25">
+		<monster name="Vampire Bride" x="-4" y="-21" z="11" spawntime="60" />
+		<monster name="Vampire Bride" x="15" y="-21" z="11" spawntime="60" />
+		<monster name="Vampire Viscount" x="15" y="-11" z="11" spawntime="60" />
+		<monster name="Vampire Bride" x="8" y="-7" z="11" spawntime="60" />
+		<monster name="Vampire Viscount" x="-18" y="-6" z="11" spawntime="60" />
+		<monster name="Vampire Viscount" x="-5" y="-5" z="11" spawntime="60" />
+		<monster name="Vampire Viscount" x="14" y="-1" z="11" spawntime="60" />
+		<monster name="Vampire Bride" x="1" y="2" z="11" spawntime="60" />
+		<monster name="Vampire Viscount" x="-18" y="6" z="11" spawntime="60" />
+		<monster name="Vampire Viscount" x="2" y="6" z="11" spawntime="60" />
+		<monster name="Vampire Bride" x="14" y="6" z="11" spawntime="60" />
+		<monster name="Vampire Viscount" x="-17" y="22" z="11" spawntime="60" />
+		<monster name="Vampire Viscount" x="-2" y="23" z="11" spawntime="60" />
+		<monster name="Vampire Viscount" x="13" y="23" z="11" spawntime="60" />
 	</spawn>
 	<spawn centerx="575" centery="457" centerz="11" radius="1">
 		<monster name="Dragon Lord" x="0" y="0" z="11" spawntime="240" />
@@ -2342,12 +2371,25 @@
 		<monster name="Bug" x="2" y="-1" z="13" spawntime="450" />
 		<monster name="Bug" x="-2" y="1" z="13" spawntime="450" />
 	</spawn>
-	<spawn centerx="256" centery="347" centerz="13" radius="15">
-		<monster name="Rotworm Queen" x="6" y="-9" z="13" spawntime="60" />
-		<monster name="Rotworm" x="-10" y="-8" z="13" spawntime="60" />
-		<monster name="Rotworm" x="1" y="4" z="13" spawntime="60" />
-		<monster name="Rotworm" x="-8" y="5" z="13" spawntime="60" />
-		<monster name="Rotworm Queen" x="7" y="13" z="13" spawntime="60" />
+	<spawn centerx="269" centery="347" centerz="13" radius="25">
+		<monster name="Rotworm Queen" x="-4" y="-21" z="13" spawntime="60" />
+		<monster name="Rotworm Queen" x="10" y="-14" z="13" spawntime="60" />
+		<monster name="Rotworm Queen" x="-7" y="-9" z="13" spawntime="60" />
+		<monster name="Rotworm Queen" x="-23" y="-8" z="13" spawntime="60" />
+		<monster name="Rotworm Queen" x="11" y="-8" z="13" spawntime="60" />
+		<monster name="Rotworm Queen" x="18" y="-6" z="13" spawntime="60" />
+		<monster name="Rotworm Queen" x="24" y="2" z="13" spawntime="60" />
+		<monster name="Rotworm Queen" x="-12" y="4" z="13" spawntime="60" />
+		<monster name="Rotworm Queen" x="14" y="4" z="13" spawntime="60" />
+		<monster name="Rotworm" x="-21" y="5" z="13" spawntime="60" />
+		<monster name="Rotworm Queen" x="-6" y="13" z="13" spawntime="60" />
+		<monster name="Rotworm Queen" x="20" y="14" z="13" spawntime="60" />
+		<monster name="Rotworm Queen" x="11" y="15" z="13" spawntime="60" />
+		<monster name="Rotworm Queen" x="4" y="23" z="13" spawntime="60" />
+	</spawn>
+	<spawn centerx="232" centery="352" centerz="13" radius="5">
+		<monster name="Rotworm" x="3" y="-3" z="13" spawntime="60" />
+		<monster name="Rotworm" x="-3" y="1" z="13" spawntime="60" />
 	</spawn>
 	<spawn centerx="237" centery="375" centerz="13" radius="1">
 		<monster name="Rotworm Queen" x="1" y="-1" z="13" spawntime="60" direction="2" />
