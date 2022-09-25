@@ -123,6 +123,7 @@ function creatureSayCallback(cid, type, msg)
                         sell = 0, 
                         subType = index, 
                         name = "Spellbook" .. CanLearnNow .. ":\n" .. item.name .. additionalName
+                    }
                 else
                     if CanLearnNow == "[*]" then
                         spells[#spells + 1] = {
@@ -131,6 +132,7 @@ function creatureSayCallback(cid, type, msg)
                             sell = 0, 
                             subType = index, 
                             name = "Spellbook" .. CanLearnNow .. ":\n" .. item.name .. additionalName
+                        }
                     end
                 end
 
