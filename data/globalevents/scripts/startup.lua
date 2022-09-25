@@ -45,7 +45,7 @@ function onStartup()
 --GameConfig.Spells.Instant = Game.getAllInstants()
 --GameConfig.Spells.Rune = Game.getAllRunes()
 --GameConfig.Outfits = Game.getAllOutfits()
-print("GameConfig.Mounts: " .. #GameConfig.Mounts)
+--print("GameConfig.Mounts: " .. #GameConfig.Mounts)
 GameConfig.Mounts = Game.getAllMounts()
 
 
