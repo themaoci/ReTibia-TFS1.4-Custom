@@ -5,7 +5,7 @@ function god_mount.onSay(player, words, param)
 		return true
 	end
   	Helpers.logCommand(player, words, param)
-	local params = param.split(",")
+	local params = param.split(param, ",")
 	local player = Player(param[2])
 	if(player == nil) then 
 		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Wrong player specified, unable to find " .. param[2])

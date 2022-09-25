@@ -6,7 +6,7 @@ function god_outfit.onSay(player, words, param)
 	end
   	Helpers.logCommand(player, words, param)
 
-	local params = param.split(",")
+	local params = param.split(param, ",")
 	local playerSex = player:getSex()
 	local player = Player(param[2])
 	if(player == nil) then 
