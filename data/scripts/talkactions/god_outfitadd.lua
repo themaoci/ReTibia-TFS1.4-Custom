@@ -33,6 +33,8 @@ function god_outfit.onSay(player, words, param)
 			return 
 		end
 		target:addOutfitAddon(foundOutfit.id, 3)
+		target:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Outfit " .. foundMount.name .. " has been added to your character.")
+		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "You added outfit " .. foundMount.name .. " to player " .. target:getName())
 		return 
 	end
 	if params[1] == "del" or params[1] == "remove" then
@@ -55,6 +57,8 @@ function god_outfit.onSay(player, words, param)
 			return 
 		end
 		target:removeOutfit(foundOutfit.id)
+		target:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Outfit " .. foundMount.name .. " has been removed from your character.")
+		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "You removed outfit " .. foundMount.name .. " from player " .. target:getName())
 		return 
 	end
 	if params[1] == "showall" then

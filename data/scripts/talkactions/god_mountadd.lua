@@ -23,7 +23,9 @@ function god_mount.onSay(player, words, param)
 			player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Outfit not found, unable to find " .. outfitName)
 			return 
 		end
-		player:addMount(foundMount.id)
+		target:addMount(foundMount.id)
+		target:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Mount " .. foundMount.name .. " has been added to your character.")
+		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "You added mount " .. foundMount.name .. " to player " .. target:getName())
 	end
 	if params[1] == "del" or params[1] == "remove" then
 		local outfitName = params[3]
@@ -42,7 +44,9 @@ function god_mount.onSay(player, words, param)
 			player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Outfit not found, unable to find " .. outfitName)
 			return 
 		end
-		player:removeMount(foundMount.id)
+		target:removeMount(foundMount.id)
+		target:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Mount " .. foundMount.name .. " has been removed from your character.")
+		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "You removed mount " .. foundMount.name .. " from player " .. target:getName())
 	end
 	if params[1] == "showall" then
 		local from = tonumber(params[2]) or 1
