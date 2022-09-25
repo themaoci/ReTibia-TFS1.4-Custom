@@ -10,34 +10,34 @@ local IRConfig = {
         col = 15
     },
     mapTiles = {
-      {4470}, -- 1 -- mountain left-top
-      {876},  -- 2 -- mountain top-v1
-      {598, 875},  -- 3 -- mountain left
-      {598, 4473}, -- 4 -- mountain right-top
-      {598, 4472}, -- 5 -- mountain right-v1
-      {598, 4475}, -- 6 -- mountain right-bottom
-      {598, 4471}, -- 7 -- mountain bottom
-      {919},  -- 8 -- mountain OverTop
-      {919, 1051}, -- 9 -- wall top-left
-      {1053}, -- 10 -- wall bottom-right
-      {919, 1049}, -- 11 -- wall left
-      {1049}, -- 12 -- wall right
-      {919, 1050}, -- 13 -- wall top
-      {1050}, -- 14 -- wall bottom
+      {4470},           -- 1 -- mountain left-top
+      {876},            -- 2 -- mountain top-v1
+      {598, 875},       -- 3 -- mountain left
+      {598, 4473},      -- 4 -- mountain right-top
+      {598, 4472},      -- 5 -- mountain right-v1
+      {598, 4475},      -- 6 -- mountain right-bottom
+      {598, 4471},      -- 7 -- mountain bottom
+      {919},            -- 8 -- mountain OverTop
+      {919, 1051},      -- 9 -- wall top-left
+      {1053},           -- 10 -- wall bottom-right
+      {919, 1049},      -- 11 -- wall left
+      {1049},           -- 12 -- wall right
+      {919, 1050},      -- 13 -- wall top
+      {1050},           -- 14 -- wall bottom
       {424, "trainer"}, -- 15 -- TrainerSandingTile
       {424, 1642, 7159, "foodhuge"}, -- 16 -- TrainerFood
-      {3216}, -- 17 -- Center
-      {424, 1484}, -- 18 -- Coal Basin
-      {424, 1642}, -- 19 -- Pedestal
+      {3216},           -- 17 -- Center
+      {424, 1484},      -- 18 -- Coal Basin
+      {424, 1642, 2590},      -- 19 -- Pedestal With Depo
       {424, 1387, "teleport"}, -- 20 - teleport
-      {598} -- 21 -- just lava
+      {598}             -- 21 -- just lava
     },
     map = { -- room drawing mask
       { 1,  2,  2,  2,  2,  2, 2, 4 },
       { 3,  9, 13, 13, 13, 13, 8, 5 },
-      { 3, 11, 15, 18, 15, 12, 8, 5 },
-      { 3, 11, 19, 17, 16, 12, 8, 5 },
       { 3, 11, 15, 20, 15, 12, 8, 5 },
+      { 3, 11, 19, 17, 16, 12, 8, 5 },
+      { 3, 11, 15, 18, 15, 12, 8, 5 },
       { 3, 11, 14, 14, 14, 10, 8, 5 },
       { 3,  8,  8,  8,  8,  8, 8, 5 },
       { 21,  7,  7,  7,  7,  7, 7, 6 }
