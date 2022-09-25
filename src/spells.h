@@ -49,13 +49,14 @@ class Spells final : public BaseEvents
 		bool registerInstantLuaEvent(InstantSpell* event);
 		bool registerRuneLuaEvent(RuneSpell* event);
 
+		std::map<uint16_t, RuneSpell> runes;
+		std::map<std::string, InstantSpell> instants;
+
 	private:
 		LuaScriptInterface& getScriptInterface() override;
 		Event_ptr getEvent(const std::string& nodeName) override;
 		bool registerEvent(Event_ptr event, const pugi::xml_node& node) override;
 
-		std::map<uint16_t, RuneSpell> runes;
-		std::map<std::string, InstantSpell> instants;
 
 		friend class CombatSpell;
 		LuaScriptInterface scriptInterface { "Spell Interface" };

@@ -589,6 +589,11 @@ class LuaScriptInterface
 		static int luaGameSetAccountStorageValue(lua_State* L);
 		static int luaGameSaveAccountStorageValues(lua_State* L);
 
+		static int LuaScriptInterface::luaGameGetAllSpells(lua_State* L);
+		static int LuaScriptInterface::luaGameGetAllRunes(lua_State* L);
+		static int LuaScriptInterface::luaGameGetAllOutfits(lua_State* L);
+		static int LuaScriptInterface::luaGameGetAllMounts(lua_State* L);
+		
 		// Variant
 		static int luaVariantCreate(lua_State* L);
 

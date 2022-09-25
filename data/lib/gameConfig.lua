@@ -1,4 +1,10 @@
 GameConfig = {
+  ['Outfits'] = nil
+  ['Mounts'] = nil
+  ['Spells'] = {
+    ['Instant'] = nil,
+    ['Rune'] = nil
+  },
   ['sharedExpPercentage'] = 1.2,
   ['autoGhostStaffMembers'] = true,
   ["God"] = {
@@ -169,7 +175,7 @@ Unmute Player: /unmute nick.
     [10092] = {group="healing", price=150, spellid="29", name="Cure Poison", words="exana pox", level="10", needlearn="1" },
     [7588] = {group="healing", price=3000, spellid="125", name="Divine Healing", words="exura san", level="35", premium="0", needlearn="1" },
     [7488] = {group="healing", price=800, spellid="84", name="Heal Friend", words="exura sio", level="18", premium="1", needlearn="1" },
-    [2265] = {group="healing", price=350, spellid="2", name="Intense Healing", words="exura gran", level="20", needlearn="1" },
+    [2266] = {group="healing", price=350, spellid="2", name="Intense Healing", words="exura gran", level="20", needlearn="1" },
     [2640] = {group="healing", price=10000, spellid="160", name="Intense Recovery", words="utura gran", level="100", premium="1", needlearn="1" },
     [8473] = {group="healing", price=6000, spellid="158", name="Intense Wound Cleansing", words="exura gran ico", level="80", premium="1", needlearn="1" },
     [7618] = {group="healing", price=0, spellid="1", name="Light Healing", words="exura", level="8", needlearn="0" },
@@ -253,3 +259,15 @@ Unmute Player: /unmute nick.
     [2269] = {group="runeMaking", price=2000, name="Wild Growth Rune", words="adevo grav vita", level="27", premium="1", needlearn="1" }
   }
 }
+
+
+GameConfig.Spells.Instant = Game.getAllInstants()
+GameConfig.Spells.Rune = Game.getAllRunes()
+GameConfig.Outfits = Game.getAllOutfits()
+GameConfig.Mounts = Game.getAllMounts()
+
+
+print("GameConfig.Spells.Instant: " .. #GameConfig.Spells.Instant)
+print("GameConfig.Spells.Rune: " .. #GameConfig.Spells.Rune)
+print("GameConfig.Outfits: " .. #GameConfig.Outfits)
+print("GameConfig.Mounts: " .. #GameConfig.Mounts)
