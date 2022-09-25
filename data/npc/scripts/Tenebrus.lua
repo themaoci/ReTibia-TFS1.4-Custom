@@ -85,10 +85,13 @@ function creatureSayCallback(cid, type, msg)
     if(not npcHandler:isFocused(cid)) then
         return false
     end
-    if msgcontains(msg, 'trade') or msgcontains(msg, 'spells') then
+    if msgcontains(msg, 'spells') then
 
         local canLearnSpell = {}
-        
+        local showAll = false
+        if msgcontains(msg, 'all') then
+            showAll = true
+        end
         local spells = {}
         local index = 1
         local playerLevel = tonumber(getPlayerLevel(cid))
@@ -113,12 +116,24 @@ function creatureSayCallback(cid, type, msg)
                     CanLearnNow = "[*]"
                     canLearnSpell[var] = item
                 end
-                spells[#spells + 1] = {
-                    id = var, 
-                    buy = item.price, 
-                    sell = 0, 
-                    subType = index, 
-                    name = "Spellbook" .. CanLearnNow .. ":\n" .. item.name .. additionalName
+                if showAll then
+                    spells[#spells + 1] = {
+                        id = var, 
+                        buy = item.price, 
+                        sell = 0, 
+                        subType = index, 
+                        name = "Spellbook" .. CanLearnNow .. ":\n" .. item.name .. additionalName
+                else
+                    if CanLearnNow == "[*]" then
+                        spells[#spells + 1] = {
+                            id = var, 
+                            buy = item.price, 
+                            sell = 0, 
+                            subType = index, 
+                            name = "Spellbook" .. CanLearnNow .. ":\n" .. item.name .. additionalName
+                    end
+                end
+
                 }
             end
         end
