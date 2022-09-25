@@ -8,11 +8,7 @@ function god_outfit.onSay(player, words, param)
 
 	local params = param.split(param, ",")
 	local playerSex = player:getSex()
-	local player = Player(param[2])
-	if(player == nil) then 
-		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Wrong player specified, unable to find " .. param[2])
-		return
-	end
+
 	if params[1] == "help" then
 		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Usage:\n/outfit add{del,showall},PnayerName,OutfitName")
 		return
@@ -20,6 +16,11 @@ function god_outfit.onSay(player, words, param)
 	if params[1] == "add" then
 		local outfitName = param[3]
 		local foundOutfit = nil
+		local target = Player(param[2])
+		if(target == nil) then 
+			player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Wrong player specified, unable to find " .. param[2])
+			return
+		end
 		for i = 1, #GameConfig.Outfits do
 			if GameConfig.Outfits[i].name == outfitName then
 				if GameConfig.Outfits[i].sex == playerSex then
@@ -31,12 +32,17 @@ function god_outfit.onSay(player, words, param)
 			player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Outfit not found, unable to find " .. outfitName)
 			return 
 		end
-		player:addOutfitAddon(foundOutfit.id, 3)
+		target:addOutfitAddon(foundOutfit.id, 3)
 		return 
 	end
 	if params[1] == "del" or params[1] == "remove" then
 		local outfitName = param[3]
 		local foundOutfit = nil
+		local target = Player(param[2])
+		if(target == nil) then 
+			player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Wrong player specified, unable to find " .. param[2])
+			return
+		end
 		for i = 1, #GameConfig.Outfits do
 			if GameConfig.Outfits[i].name == outfitName then
 				if GameConfig.Outfits[i].sex == playerSex then
@@ -48,7 +54,7 @@ function god_outfit.onSay(player, words, param)
 			player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Outfit not found, unable to find " .. outfitName)
 			return 
 		end
-		player:removeOutfit(foundOutfit.id)
+		target:removeOutfit(foundOutfit.id)
 		return 
 	end
 	if params[1] == "showall" then
