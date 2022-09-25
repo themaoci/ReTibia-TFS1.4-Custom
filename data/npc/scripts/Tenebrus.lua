@@ -110,18 +110,16 @@ function creatureSayCallback(cid, type, msg)
                 local CanLearnNow = ""
                 
                 if item_level <= playerLevel and item_mlevel <= playerMLevel and item_dlevel <= playerDLevel and item_clevel <= playerCLevel then
-                    --CanLearnNow = "*"
+                    CanLearnNow = "[*]"
                     canLearnSpell[var] = item
-                
-
-                spells[#spells + 1] = {
-                        id = var, 
-                        buy = item.price, 
-                        sell = 0, 
-                        subType = index, 
-                        name = "Spellbook" .. CanLearnNow .. ":\n" .. item.name .. additionalName
-                    }
                 end
+                spells[#spells + 1] = {
+                    id = var, 
+                    buy = item.price, 
+                    sell = 0, 
+                    subType = index, 
+                    name = "Spellbook" .. CanLearnNow .. ":\n" .. item.name .. additionalName
+                }
             end
         end
         --Discord_Debug("Tenebrus Skill Learning | Spells that can be learn:" .. tostring(#spells))
