@@ -1613,28 +1613,21 @@
 		<monster name="Skeleton" x="-8" y="5" z="10" spawntime="450" />
 		<monster name="Skeleton" x="-3" y="5" z="10" spawntime="450" />
 	</spawn>
-	<spawn centerx="356" centery="412" centerz="10" radius="1">
-		<monster name="Lich" x="0" y="0" z="10" spawntime="60" />
-	</spawn>
-	<spawn centerx="362" centery="412" centerz="10" radius="1">
-		<monster name="Vampire" x="0" y="0" z="10" spawntime="60" />
-	</spawn>
-	<spawn centerx="368" centery="412" centerz="10" radius="1">
-		<monster name="Elder Mummy" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="369" centery="415" centerz="10" radius="5">
+		<monster name="Elder Mummy" x="-2" y="-3" z="10" spawntime="60" />
+		<monster name="Vampire" x="-2" y="3" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="285" centery="417" centerz="10" radius="8">
 		<monster name="Skeleton" x="2" y="-2" z="10" spawntime="450" />
 		<monster name="Skeleton" x="-2" y="1" z="10" spawntime="450" />
 		<monster name="Skeleton" x="4" y="1" z="10" spawntime="450" />
 	</spawn>
-	<spawn centerx="356" centery="418" centerz="10" radius="1">
-		<monster name="Elder Mummy" x="0" y="0" z="10" spawntime="60" />
-	</spawn>
-	<spawn centerx="369" centery="418" centerz="10" radius="1">
-		<monster name="Vampire" x="0" y="0" z="10" spawntime="60" />
-	</spawn>
-	<spawn centerx="347" centery="419" centerz="10" radius="1">
-		<monster name="Elder Mummy" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="355" centery="418" centerz="10" radius="10">
+		<monster name="Vampire" x="1" y="-6" z="10" spawntime="60" />
+		<monster name="Elder Mummy" x="-1" y="0" z="10" spawntime="60" />
+		<monster name="Elder Mummy" x="-6" y="2" z="10" spawntime="60" />
+		<monster name="Vampire" x="9" y="7" z="10" spawntime="60" />
+		<monster name="Elder Mummy" x="-6" y="9" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="506" centery="419" centerz="10" radius="15">
 		<monster name="Dragonling" x="-2" y="-14" z="10" spawntime="240" />
@@ -1653,29 +1646,9 @@
 		<monster name="Dragonling" x="-7" y="-2" z="10" spawntime="240" />
 		<monster name="Dragonling" x="11" y="12" z="10" spawntime="240" />
 	</spawn>
-	<spawn centerx="363" centery="424" centerz="10" radius="1">
-		<monster name="Vampire" x="0" y="0" z="10" spawntime="60" />
-	</spawn>
-	<spawn centerx="377" centery="424" centerz="10" radius="1">
-		<monster name="Vampire" x="0" y="0" z="10" spawntime="60" />
-	</spawn>
-	<spawn centerx="385" centery="427" centerz="10" radius="1">
-		<monster name="Elder Mummy" x="0" y="0" z="10" spawntime="60" />
-	</spawn>
-	<spawn centerx="344" centery="432" centerz="10" radius="1">
-		<monster name="Elder Mummy" x="0" y="0" z="10" spawntime="60" />
-	</spawn>
-	<spawn centerx="355" centery="432" centerz="10" radius="1">
-		<monster name="Elder Mummy" x="0" y="0" z="10" spawntime="60" />
-	</spawn>
-	<spawn centerx="372" centery="435" centerz="10" radius="1">
-		<monster name="Elder Mummy" x="0" y="0" z="10" spawntime="60" />
-	</spawn>
-	<spawn centerx="383" centery="435" centerz="10" radius="1">
-		<monster name="Elder Mummy" x="0" y="0" z="10" spawntime="60" />
-	</spawn>
-	<spawn centerx="362" centery="441" centerz="10" radius="1">
-		<monster name="Elder Mummy" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="382" centery="430" centerz="10" radius="5">
+		<monster name="Vampire" x="1" y="-5" z="10" spawntime="60" />
+		<monster name="Elder Mummy" x="1" y="5" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="411" centery="441" centerz="10" radius="15">
 		<monster name="Wyrm" x="0" y="-3" z="10" spawntime="240" />
@@ -1735,20 +1708,17 @@
 		<monster name="Minotaur" x="4" y="7" z="10" spawntime="240" />
 		<monster name="Minotaur" x="11" y="7" z="10" spawntime="240" />
 	</spawn>
-	<spawn centerx="366" centery="446" centerz="10" radius="1">
-		<monster name="Elder Mummy" x="0" y="0" z="10" spawntime="60" />
-	</spawn>
-	<spawn centerx="347" centery="447" centerz="10" radius="1">
-		<monster name="Elder Mummy" x="0" y="0" z="10" spawntime="60" />
-	</spawn>
-	<spawn centerx="345" centery="453" centerz="10" radius="1">
-		<monster name="Elder Mummy" x="0" y="0" z="10" spawntime="60" />
-	</spawn>
-	<spawn centerx="345" centery="461" centerz="10" radius="1">
-		<monster name="Elder Mummy" x="0" y="0" z="10" spawntime="60" />
-	</spawn>
-	<spawn centerx="357" centery="461" centerz="10" radius="1">
-		<monster name="Elder Mummy" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="359" centery="447" centerz="10" radius="15">
+		<monster name="Elder Mummy" x="-3" y="-15" z="10" spawntime="60" />
+		<monster name="Elder Mummy" x="5" y="-13" z="10" spawntime="60" />
+		<monster name="Elder Mummy" x="13" y="-12" z="10" spawntime="60" />
+		<monster name="Elder Mummy" x="-15" y="-7" z="10" spawntime="60" />
+		<monster name="Elder Mummy" x="3" y="-6" z="10" spawntime="60" />
+		<monster name="Elder Mummy" x="7" y="-1" z="10" spawntime="60" />
+		<monster name="Elder Mummy" x="-12" y="0" z="10" spawntime="60" />
+		<monster name="Elder Mummy" x="-14" y="6" z="10" spawntime="60" />
+		<monster name="Elder Mummy" x="-14" y="14" z="10" spawntime="60" />
+		<monster name="Elder Mummy" x="-2" y="14" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="520" centery="462" centerz="10" radius="15">
 		<monster name="Wyvern" x="-10" y="4" z="10" spawntime="240" />
@@ -2179,7 +2149,6 @@
 		<monster name="Dragon Lord" x="0" y="0" z="11" spawntime="240" />
 	</spawn>
 	<spawn centerx="349" centery="449" centerz="11" radius="17">
-		<monster name="Vicious Manbat" x="2" y="-17" z="11" spawntime="450" direction="2" />
 		<monster name="Vampire Bride" x="-8" y="-13" z="11" spawntime="60" />
 		<monster name="Vampire Bride" x="11" y="-13" z="11" spawntime="60" />
 		<monster name="Vampire Viscount" x="11" y="-3" z="11" spawntime="60" />
