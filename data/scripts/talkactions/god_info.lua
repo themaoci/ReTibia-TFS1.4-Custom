@@ -1,4 +1,4 @@
-local god_info = TalkAction("/info")
+local god_info = TalkAction("/check")
 
 function god_info.onSay(player, words, param)
 	if not player:getGroup():getAccess() then
@@ -12,7 +12,7 @@ function god_info.onSay(player, words, param)
 		return false
 	end
 
-	if target:getAccountType() > player:getAccountType() then
+	if target:getAccountType() >= player:getAccountType() then
 		player:sendCancelMessage("You can not get info about this player.")
 		return false
 	end
