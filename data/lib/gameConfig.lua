@@ -1,6 +1,6 @@
 GameConfig = {
-  ['Outfits'] = nil
-  ['Mounts'] = nil
+  ['Outfits'] = nil,
+  ['Mounts'] = nil,
   ['Spells'] = {
     ['Instant'] = nil,
     ['Rune'] = nil
