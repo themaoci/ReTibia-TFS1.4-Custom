@@ -5,23 +5,27 @@ function StaffMembersAutoGhost(player)
 end
 function TutorMessage(player) 
 	if (player:getAccountType() == ACCOUNT_TYPE_TUTOR) then
-        player:popupFYI(GameConfig.Tutor.WelcomeMessageRules)
+		if GameConfig.Tutor.WelcomeMessageEnabled then
+        	player:popupFYI(GameConfig.Tutor.WelcomeMessageRules)
+		end
     end
 end
 function GodAndGMMessage(player)
 	if (player:getAccountType() >= ACCOUNT_TYPE_GAMEMASTER) then
-        player:popupFYI(GameConfig.God.WelcomeMessageCommands)
+		if GameConfig.God.WelcomeMessageEnabled then
+        	player:popupFYI(GameConfig.God.WelcomeMessageRules)
+		end
     end
 end
 function AutoOpenChannels(player)
  	-- OPEN CHANNELS
-	if table.contains({"Rookgaard", "Dawnport"}, player:getTown():getName())then
-		player:openChannel(3) -- world chat
-		player:openChannel(6) -- advertsing rook main
-	else
+	--if table.contains({"Rookgaard", "Dawnport"}, player:getTown():getName())then
+	--	player:openChannel(3) -- world chat
+	--	player:openChannel(6) -- advertsing rook main
+	--else
 		player:openChannel(3) -- world chat
 		player:openChannel(5) -- advertsing main
-	end
+	--end
 
 end
 local function onMovementRemoveProtection(cid, oldPosition, time)
@@ -102,6 +106,6 @@ function onLogin(player)
 	-- Events
 	player:registerEvent("PlayerDeath")
 	player:registerEvent("DropLoot")
-  db.query("UPDATE `players` SET `isonline` = '1' WHERE `id` = " .. player:getGuid())
+  	db.query("UPDATE `players` SET `isonline` = '1' WHERE `id` = " .. player:getGuid())
 	return true
 end
