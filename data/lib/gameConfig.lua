@@ -261,13 +261,13 @@ Unmute Player: /unmute nick.
 }
 
 
-GameConfig.Spells.Instant = Game.getAllInstants()
-GameConfig.Spells.Rune = Game.getAllRunes()
-GameConfig.Outfits = Game.getAllOutfits()
-GameConfig.Mounts = Game.getAllMounts()
+-- GameConfig.Spells.Instant = Game.getAllInstants()
+-- GameConfig.Spells.Rune = Game.getAllRunes()
+-- GameConfig.Outfits = Game.getAllOutfits()
+-- GameConfig.Mounts = Game.getAllMounts()
 
 
-print("GameConfig.Spells.Instant: " .. #GameConfig.Spells.Instant)
-print("GameConfig.Spells.Rune: " .. #GameConfig.Spells.Rune)
-print("GameConfig.Outfits: " .. #GameConfig.Outfits)
-print("GameConfig.Mounts: " .. #GameConfig.Mounts)
+-- print("GameConfig.Spells.Instant: " .. #GameConfig.Spells.Instant)
+-- print("GameConfig.Spells.Rune: " .. #GameConfig.Spells.Rune)
+-- print("GameConfig.Outfits: " .. #GameConfig.Outfits)
+-- print("GameConfig.Mounts: " .. #GameConfig.Mounts)
