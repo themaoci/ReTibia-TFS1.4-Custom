@@ -59,10 +59,16 @@ function god_outfit.onSay(player, words, param)
 	end
 	if params[1] == "showall" then
 		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Outfit List:")
+		local from = tonumber(params[2]) or 1
+		local to = tonumber(params[3]) or #GameConfig.Outfits
+		local intex = 1
 		for i = 1, #GameConfig.Outfits do
 			if GameConfig.Outfits[i].sex == playerSex then
-				player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, GameConfig.Outfits[i].name)
-				foundOutfit = GameConfig.Outfits[i]
+				if intex >= from and intex <= to then
+					player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, GameConfig.Outfits[i].name)
+					foundOutfit = GameConfig.Outfits[i]
+				end
+				intex = intex + 1
 			end
 		end
 		return

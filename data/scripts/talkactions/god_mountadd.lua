@@ -45,9 +45,14 @@ function god_mount.onSay(player, words, param)
 		player:removeMount(foundMount.id)
 	end
 	if params[1] == "showall" then
+		local from = tonumber(params[2]) or 1
+		local to = tonumber(params[3]) or #GameConfig.Mounts
+
 		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Mount List:")
 		for i = 1, #GameConfig.Mounts do
-			player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, GameConfig.Mounts[i].id .. " -> " ..GameConfig.Mounts[i].name)
+			if i >= from and i <= to then
+				player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, GameConfig.Mounts[i].id .. " -> " ..GameConfig.Mounts[i].name)
+			end
 		end
 	end
 end
