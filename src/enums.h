@@ -509,6 +509,7 @@ struct ShopInfo {
 	uint32_t buyPrice = 0;
 	uint32_t sellPrice = 0;
 	std::string realName = "";
+	bool funcSell = false;
 
 	ShopInfo() = default;
 	ShopInfo(uint16_t itemId, int32_t subType = 0, uint32_t buyPrice = 0, uint32_t sellPrice = 0, std::string realName = "")

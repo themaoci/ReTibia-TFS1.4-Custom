@@ -122,7 +122,8 @@ function creatureSayCallback(cid, type, msg)
                         buy = item.price, 
                         sell = 0, 
                         subType = index, 
-                        name = "Spellbook" .. CanLearnNow .. ":\n" .. item.name .. additionalName
+                        name = "Spellbook" .. CanLearnNow .. ":\n" .. item.name .. additionalName,
+                        funcShop = 1
                     }
                 else
                     if CanLearnNow == "[*]" then
@@ -131,7 +132,8 @@ function creatureSayCallback(cid, type, msg)
                             buy = item.price, 
                             sell = 0, 
                             subType = index, 
-                            name = "Spellbook" .. CanLearnNow .. ":\n" .. item.name .. additionalName
+                            name = "Spellbook" .. CanLearnNow .. ":\n" .. item.name .. additionalName,
+                            funcShop = 1
                         }
                     end
                 end
