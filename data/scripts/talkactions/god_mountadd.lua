@@ -7,11 +7,11 @@ function god_mount.onSay(player, words, param)
   	Helpers.logCommand(player, words, param)
 	local params = param.split(param, ",")
 	if params[1] == "add" then
-		local outfitName = param[3]
+		local outfitName = params[3]
 		local foundMount = nil
-		local target = Player(param[2])
+		local target = Player(params[2])
 		if(target == nil) then 
-			player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Wrong player specified, unable to find " .. param[2])
+			player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Wrong player specified, unable to find " .. params[2])
 			return
 		end
 		for i = 1, #GameConfig.Mounts do
@@ -26,11 +26,11 @@ function god_mount.onSay(player, words, param)
 		player:addMount(foundMount.id)
 	end
 	if params[1] == "del" or params[1] == "remove" then
-		local outfitName = param[3]
+		local outfitName = params[3]
 		local foundMount = nil
-		local target = Player(param[2])
+		local target = Player(params[2])
 		if(target == nil) then 
-			player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Wrong player specified, unable to find " .. param[2])
+			player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Wrong player specified, unable to find " .. params[2])
 			return
 		end
 		for i = 1, #GameConfig.Mounts do
