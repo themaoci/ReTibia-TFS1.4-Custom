@@ -135,8 +135,6 @@ function creatureSayCallback(cid, type, msg)
                         }
                     end
                 end
-
-                }
             end
         end
         --Discord_Debug("Tenebrus Skill Learning | Spells that can be learn:" .. tostring(#spells))
