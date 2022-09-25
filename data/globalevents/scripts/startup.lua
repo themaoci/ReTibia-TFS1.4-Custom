@@ -42,6 +42,16 @@ function onStartup()
 		local position = town:getTemplePosition()
 		db.query("INSERT INTO `towns` (`id`, `name`, `posx`, `posy`, `posz`) VALUES (" .. town:getId() .. ", " .. db.escapeString(town:getName()) .. ", " .. position.x .. ", " .. position.y .. ", " .. position.z .. ")")
 	end
+--GameConfig.Spells.Instant = Game.getAllInstants()
+--GameConfig.Spells.Rune = Game.getAllRunes()
+--GameConfig.Outfits = Game.getAllOutfits()
+print("GameConfig.Mounts: " .. #GameConfig.Mounts)
+GameConfig.Mounts = Game.getAllMounts()
 
+
+--print("GameConfig.Spells.Instant: " .. #GameConfig.Spells.Instant)
+--print("GameConfig.Spells.Rune: " .. #GameConfig.Spells.Rune)
+--print("GameConfig.Outfits: " .. #GameConfig.Outfits)
+print("GameConfig.Mounts: " .. #GameConfig.Mounts)
 	Discord.webhook("https://discord.com/api/webhooks/1022947548610187288/P2TwdzMiAe-9Ei9cYGhb3KtHL4XeGkEMbfOWjm06B2Hg5rY_ODbNK3UBJt2Ww1dSX3B_", "**Server is Online!!**")
 end
