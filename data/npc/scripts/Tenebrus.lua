@@ -97,7 +97,7 @@ function creatureSayCallback(cid, type, msg)
         local playerCLevel = tonumber(math.max(unpack({getPlayerSkill(cid, 0), getPlayerSkill(cid, 1), getPlayerSkill(cid, 2), getPlayerSkill(cid, 3)})))
 
         for var, item in pairs(GameConfig.BuySpellList) do
-            if not getPlayerLearnedInstantSpell(cid, item.words) then
+            if not getPlayerLearnedInstantSpell(cid, item.name) then
                 local additionalName = ""
                 if item.group == "runeMaking" then
                     additionalName = " Making"
@@ -130,9 +130,9 @@ function creatureSayCallback(cid, type, msg)
             
             local canlearnspellexists = canLearnSpell[item]
             if canlearnspellexists ~= nil then
-                if not getPlayerLearnedInstantSpell(cid, canlearnspellexists.words) then
+                if not getPlayerLearnedInstantSpell(cid, canlearnspellexists.name) then
                     doPlayerRemoveMoney(cid, canlearnspellexists.price)
-                    doPlayerLearnInstantSpell(cid, canlearnspellexists.words)
+                    doPlayerLearnInstantSpell(cid, canlearnspellexists.name)
                     npcHandler:say("Thank you, I received your payment of " .. canlearnspellexists.price .. "gp. So you have learned spell " .. canlearnspellexists.name .. " with incantation of '" .. canlearnspellexists.words .. "'. Now you can use it freely untill you have enough of mana.", cid)
                 else
                     npcHandler:say("You already know this spell.", cid)
