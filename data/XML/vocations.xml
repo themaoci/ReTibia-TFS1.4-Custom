@@ -50,7 +50,7 @@
 	</vocation>
 	<vocation id="4" clientid="4" name="Archer" description="an archer" 
     	gaincap="15" gainhp="15" gainmana="15" gainhpticks="5" gainhpamount="1" gainmanaticks="3" gainmanaamount="1" 
-      	manamultiplier="1.75" attackspeed="1000" basespeed="230" soulmax="100" gainsoulticks="120" allowPvp="1" fromvoc="0">
+      	manamultiplier="1.75" attackspeed="1800" basespeed="230" soulmax="100" gainsoulticks="120" allowPvp="1" fromvoc="0">
 		<formula meleeDamage="1.0" distDamage="1.1" defense="1.0" armor="1.0" />
 		<skill id="0" multiplier="2.0" /><!-- Fist -->
 		<skill id="1" multiplier="2.0" /><!-- Club -->
