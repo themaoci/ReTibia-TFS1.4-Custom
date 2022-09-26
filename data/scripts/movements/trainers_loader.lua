@@ -104,7 +104,7 @@ function IRoom:destroy()
                   if index ~= 1 then
                     local thing = tile:getThing(index)
                     if thing then
-                        print(x .. "," .. y .. " - " .. thing.getId())
+                        print(x .. "," .. y .. " - " .. thing:getId())
                         if thing:isPlayer() then
                             thing:teleportTo(self.fromPos)
                         else
