@@ -104,16 +104,14 @@ function IRoom:destroy()
                   if index ~= 1 then
                     local thing = tile:getThing(index)
                     if thing then
-                        if(thing:getId() == 2590) then
-                            print(x .. "," .. y .. " - " .. thing:getId())
-                        end
                         if thing:isPlayer() then
                             thing:teleportTo(self.fromPos)
                         else
                             if(thing:getId() == 2590) then
-                                print("trying to remove")
+                                g_game.internalRemoveItem(thing);
+                            else
+                                thing:remove()
                             end
-                            print(thing:remove())
                         end
                     end
                   end
