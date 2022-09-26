@@ -51,12 +51,14 @@ GameConfig.Mounts = Game.getAllMounts()
 
 print("------------- Instanty")
 for i in pairs(GameConfig.Spells.Instant) do
-	print("{ id=\"".. GameConfig.Spells.Instant[i].id .."\", name=\"".. GameConfig.Spells.Instant[i].name .."\", words=\"".. GameConfig.Spells.Instant[i].words .."\" },")
+	print(" [\"".. GameConfig.Spells.Instant[i].words .."\"] = { name=\"".. GameConfig.Spells.Instant[i].name .."\", isPremium=\"".. GameConfig.Spells.Instant[i].isPremium .."\" }, ")
 end
+
 print("------------- Runy")
 for i in pairs(GameConfig.Spells.Rune[1]) do 
-	print("{ id=\"".. GameConfig.Spells.Instant[i].id .."\", name=\"".. GameConfig.Spells.Instant[i].name .."\", words=\"".. GameConfig.Spells.Instant[i].words .."\" },")
+	print("{ [\"".. GameConfig.Spells.Instant[i].id .."\"] = { name=\"".. GameConfig.Spells.Instant[i].name .."\", isPremium=\"".. GameConfig.Spells.Instant[i].isPremium .."\" },")
 end
+
 print("GameConfig.Spells.Instant: " .. #GameConfig.Spells.Instant)
 print("GameConfig.Spells.Rune: " .. #GameConfig.Spells.Rune)
 print("GameConfig.Outfits: " .. #GameConfig.Outfits)
