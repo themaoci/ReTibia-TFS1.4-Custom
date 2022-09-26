@@ -509,11 +509,11 @@ struct ShopInfo {
 	uint32_t buyPrice = 0;
 	uint32_t sellPrice = 0;
 	std::string realName = "";
-	bool funcSell = false;
+	uint8_t funcSell = 0;
 
 	ShopInfo() = default;
-	ShopInfo(uint16_t itemId, int32_t subType = 0, uint32_t buyPrice = 0, uint32_t sellPrice = 0, std::string realName = "")
-		: itemId(itemId), subType(subType), buyPrice(buyPrice), sellPrice(sellPrice), realName(std::move(realName)) {}
+	ShopInfo(uint16_t itemId, int32_t subType = 0, uint32_t buyPrice = 0, uint32_t sellPrice = 0, std::string realName = "", uint8_t funcSell = false)
+		: itemId(itemId), subType(subType), buyPrice(buyPrice), sellPrice(sellPrice), realName(std::move(realName), funcSell(funcSell)) {}
 };
 
 struct MarketOffer {
