@@ -8,6 +8,16 @@ function onCastSpell(creature, variant)
 	print(type(creature))
 	print(type(variant))
 	print(variant)
+	print("---variant---")
+	for i in pairs(variant) do
+		print(i)
+	end
+	print("---creature---")
+	for i in pairs(creature) do
+		print(i)
+	end
+	print("---end---")
+	
 	if creature == nil then 
 		print(creature)
 		print(creature:getName())
