@@ -108,7 +108,13 @@ function IRoom:destroy()
                             thing:teleportTo(self.fromPos)
                         else
                             if(thing:getId() == 2590) then
-                                thing:getItem():remove()
+                                print(thing:getItem())
+                                print(type(thing:getItem()))
+                                print(thing)
+                                print(type(thing))
+                                print(thing:getContainer())
+                                print(type(thing:getContainer()))
+                                thing:remove()
                             else
                                 thing:remove()
                             end
