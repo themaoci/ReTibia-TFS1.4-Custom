@@ -6,7 +6,9 @@ combat:setArea(createCombatArea(AREA_CIRCLE3X3))
 
 function onCastSpell(creature, variant)
 
-if creature == nil then 
+if creature == nil or type(creature:getLevel) then 
+	print(creature)
+	print(creature:getName())
 	--local min = 104.8
 	--local max = 134.8
 	return true 
