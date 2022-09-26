@@ -5,7 +5,7 @@ local IRConfig = {
     tpOutAid = 65001, -- actionid for exit teleport
     foodAid = 65002, -- actionid for infinity food (only work with EventCallback)
     replacableTile = 598,
-    maxRoomsPer = { -- 10 x 10 = 100 rooms max
+    maxRoomsPer = { -- 15 x 15 = 225 rooms max
         row = 15,
         col = 15
     },
