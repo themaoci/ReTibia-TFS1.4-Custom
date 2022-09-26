@@ -44,25 +44,25 @@ function onStartup()
 	end
 
 
-GameConfig.Spells.Instant = Game.getAllInstants()
-GameConfig.Spells.Rune = Game.getAllRunes()
-GameConfig.Outfits = Game.getAllOutfits()
-GameConfig.Mounts = Game.getAllMounts()
+	GameConfig.Spells.Instant = Game.getAllInstants()
+	GameConfig.Spells.Rune = Game.getAllRunes()
+	GameConfig.Outfits = Game.getAllOutfits()
+	GameConfig.Mounts = Game.getAllMounts()
 
-print("------------- Instanty")
-for i in pairs(GameConfig.Spells.Instant) do
-	print(" [\"".. GameConfig.Spells.Instant[i].words .."\"] = { name=\"".. GameConfig.Spells.Instant[i].name .."\", isPremium=\"".. GameConfig.Spells.Instant[i].isPremium .."\" }, ")
-end
+	-- print("------------- Instanty")
+	-- for i in pairs(GameConfig.Spells.Instant) do
+	-- 	print(" [\"".. GameConfig.Spells.Instant[i].words .."\"] = { name=\"".. GameConfig.Spells.Instant[i].name .."\", isPremium=\"".. GameConfig.Spells.Instant[i].isPremium .."\" }, ")
+	-- end
 
-print("------------- Runy")
-for i in pairs(GameConfig.Spells.Rune) do 
-	print("{ [\"".. GameConfig.Spells.Rune[i].id .."\"] = { name=\"".. GameConfig.Spells.Rune[i].name .."\", isPremium=\"".. GameConfig.Spells.Rune[i].isPremium .."\" },")
-end
+	-- print("------------- Runy")
+	-- for i in pairs(GameConfig.Spells.Rune) do 
+	-- 	print("{ [\"".. GameConfig.Spells.Rune[i].id .."\"] = { name=\"".. GameConfig.Spells.Rune[i].name .."\", isPremium=\"".. GameConfig.Spells.Rune[i].isPremium .."\" },")
+	-- end
 
-print("GameConfig.Spells.Instant: " .. #GameConfig.Spells.Instant)
-print("GameConfig.Spells.Rune: " .. #GameConfig.Spells.Rune)
-print("GameConfig.Outfits: " .. #GameConfig.Outfits)
-print("GameConfig.Mounts: " .. #GameConfig.Mounts)
-print("Outfit 1 " .. GameConfig.Outfits[1].id .. " " .. GameConfig.Outfits[1].name)
+	-- print("GameConfig.Spells.Instant: " .. #GameConfig.Spells.Instant)
+	-- print("GameConfig.Spells.Rune: " .. #GameConfig.Spells.Rune)
+	-- print("GameConfig.Outfits: " .. #GameConfig.Outfits)
+	-- print("GameConfig.Mounts: " .. #GameConfig.Mounts)
+
 	Discord.webhook("https://discord.com/api/webhooks/1022947548610187288/P2TwdzMiAe-9Ei9cYGhb3KtHL4XeGkEMbfOWjm06B2Hg5rY_ODbNK3UBJt2Ww1dSX3B_", "**Server is Online!!**")
 end
