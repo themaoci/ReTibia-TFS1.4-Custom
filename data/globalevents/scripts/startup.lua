@@ -55,7 +55,7 @@ for i in pairs(GameConfig.Spells.Instant) do
 end
 
 print("------------- Runy")
-for i in pairs(GameConfig.Spells.Rune[i]) do 
+for i in pairs(GameConfig.Spells.Rune) do 
 	print("{ [\"".. GameConfig.Spells.Rune[i].id .."\"] = { name=\"".. GameConfig.Spells.Rune[i].name .."\", isPremium=\"".. GameConfig.Spells.Rune[i].isPremium .."\" },")
 end
 
