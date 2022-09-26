@@ -85,13 +85,14 @@ function creatureSayCallback(cid, type, msg)
     if(not npcHandler:isFocused(cid)) then
         return false
     end
-    if msgcontains(msg, 'spells') then
+    if msgcontains(msg, 'spells') or msgcontains(msg, 'spellsall') then
 
         local canLearnSpell = {}
         local showAll = false
         if msgcontains(msg, 'all') then
             showAll = true
         end
+        Discord_Debug("Tenebrus Skills | Showall:" .. tostring(showAll) .. )
         local spells = {}
         local index = 1
         local playerLevel = tonumber(getPlayerLevel(cid))
@@ -99,40 +100,69 @@ function creatureSayCallback(cid, type, msg)
         local playerDLevel = tonumber(getPlayerSkill(cid, 4))
         local playerCLevel = tonumber(math.max(unpack({getPlayerSkill(cid, 0), getPlayerSkill(cid, 1), getPlayerSkill(cid, 2), getPlayerSkill(cid, 3)})))
 
-        for var, item in pairs(GameConfig.BuySpellList) do
-            if not getPlayerLearnedInstantSpell(cid, item.name) then
-                local additionalName = ""
-                if item.group == "runeMaking" then
-                    additionalName = " Making"
-                end
-                local item_level = tonumber(item.level or 0)
-                local item_mlevel = tonumber(item.mlevel or 0)
-                local item_clevel = tonumber(item.clevel or 0)
-                local item_dlevel = tonumber(item.dlevel or 0)
-
-                local CanLearnNow = ""
-                
-                if item_level <= playerLevel and item_mlevel <= playerMLevel and item_dlevel <= playerDLevel and item_clevel <= playerCLevel then
-                    CanLearnNow = "[*]"
-                    canLearnSpell[var] = item
-                end
+        for i, spell in pairs(GameConfig.Spells.Free) do
+            if not getPlayerLearnedInstantSpell(cid, spell.name) then
                 if showAll then
+                    canLearnSpell[i] = item
                     spells[#spells + 1] = {
-                        id = var, 
-                        buy = item.price, 
+                        id = booksByType["attack"], 
+                        buy = spell.price, 
                         sell = 0, 
-                        subType = index, 
-                        name = "Spellbook" .. CanLearnNow .. ":\n" .. item.name .. additionalName,
+                        subType = i, 
+                        name = "Spellbook:\n" .. spell.name,
                         funcShop = 1
                     }
                 else
-                    if CanLearnNow == "[*]" then
+                    local item_level = tonumber(spell.level or 0)
+                    local item_mlevel = tonumber(spell.mlevel or 0)
+                    local item_clevel = tonumber(spell.clevel or 0)
+                    local item_dlevel = tonumber(spell.dlevel or 0)
+    
+                    local CanLearnNow = ""
+                    if item_level <= playerLevel and item_mlevel <= playerMLevel and item_dlevel <= playerDLevel and item_clevel <= playerCLevel then
+                        CanLearnNow = "[*]"
+                        canLearnSpell[i] = item
                         spells[#spells + 1] = {
-                            id = var, 
-                            buy = item.price, 
+                            id = booksByType["attack"], 
+                            buy = spell.price, 
                             sell = 0, 
-                            subType = index, 
-                            name = "Spellbook" .. CanLearnNow .. ":\n" .. item.name .. additionalName,
+                            subType = i, 
+                            name = "Spellbook" .. CanLearnNow .. ":\n" .. spell.name,
+                            funcShop = 1
+                        }
+                    end
+                end
+            end
+        end
+
+        for i, spell in pairs(GameConfig.Spells.Premium) do
+            if not getPlayerLearnedInstantSpell(cid, spell.name) then
+                if showAll then
+                    canLearnSpell[i] = item
+                    spells[#spells + 1] = {
+                        id = booksByType["attack"], 
+                        buy = spell.price, 
+                        sell = 0, 
+                        subType = i, 
+                        name = "Old Spellbook:\n" .. spell.name,
+                        funcShop = 1
+                    }
+                else
+                    local item_level = tonumber(spell.level or 0)
+                    local item_mlevel = tonumber(spell.mlevel or 0)
+                    local item_clevel = tonumber(spell.clevel or 0)
+                    local item_dlevel = tonumber(spell.dlevel or 0)
+    
+                    local CanLearnNow = ""
+                    if item_level <= playerLevel and item_mlevel <= playerMLevel and item_dlevel <= playerDLevel and item_clevel <= playerCLevel then
+                        CanLearnNow = "[*]"
+                        canLearnSpell[i] = item
+                        spells[#spells + 1] = {
+                            id = booksByType["attack"], 
+                            buy = spell.price, 
+                            sell = 0, 
+                            subType = i, 
+                            name = "Spellbook" .. CanLearnNow .. ":\n" .. spell.name,
                             funcShop = 1
                         }
                     end
@@ -141,48 +171,49 @@ function creatureSayCallback(cid, type, msg)
         end
         --Discord_Debug("Tenebrus Skill Learning | Spells that can be learn:" .. tostring(#spells))
         local onBuy = function(cid, item, subType, amount, ignoreCap, inBackpacks)
-            --Discord_Debug("Tenebrus Skill Learning | Displayed Item Id:" .. tostring(item) .. " Skill Name:" .. tostring(GameConfig.BuySpellList[item].name))
+            Discord_Debug("Tenebrus Skill Learning | Displayed Item Id:" .. tostring(subType) .. " Skill Name:" .. tostring(canLearnSpell[subType].name))
+            -- TESTUJE TU
             
-            local canlearnspellexists = canLearnSpell[item]
-            if canlearnspellexists ~= nil then
-                if not getPlayerLearnedInstantSpell(cid, canlearnspellexists.name) then
-                    doPlayerRemoveMoney(cid, canlearnspellexists.price)
-                    doPlayerLearnInstantSpell(cid, canlearnspellexists.name)
-                    npcHandler:say("Thank you, I received your payment of " .. canlearnspellexists.price .. "gp. So you have learned spell " .. canlearnspellexists.name .. " with incantation of '" .. canlearnspellexists.words .. "'. Now you can use it freely untill you have enough of mana.", cid)
-                else
-                    npcHandler:say("You already know this spell.", cid)
-                end
-            else
-                local missingRequirements = ""
+            -- local canlearnspellexists = canLearnSpell[item]
+            -- if canlearnspellexists ~= nil then
+            --     if not getPlayerLearnedInstantSpell(cid, canlearnspellexists.name) then
+            --         doPlayerRemoveMoney(cid, canlearnspellexists.price)
+            --         doPlayerLearnInstantSpell(cid, canlearnspellexists.name)
+            --         npcHandler:say("Thank you, I received your payment of " .. canlearnspellexists.price .. "gp. So you have learned spell " .. canlearnspellexists.name .. " with incantation of '" .. canlearnspellexists.words .. "'. Now you can use it freely untill you have enough of mana.", cid)
+            --     else
+            --         npcHandler:say("You already know this spell.", cid)
+            --     end
+            -- else
+            --     local missingRequirements = ""
 
-                local item_level = tonumber(canlearnspellexists.level or 0)
-                local item_mlevel = tonumber(canlearnspellexists.mlevel or 0)
-                local item_clevel = tonumber(canlearnspellexists.clevel or 0)
-                local item_dlevel = tonumber(canlearnspellexists.dlevel or 0)
+            --     local item_level = tonumber(canlearnspellexists.level or 0)
+            --     local item_mlevel = tonumber(canlearnspellexists.mlevel or 0)
+            --     local item_clevel = tonumber(canlearnspellexists.clevel or 0)
+            --     local item_dlevel = tonumber(canlearnspellexists.dlevel or 0)
 
-                if item_level <= playerLevel then
-                    missingRequirements = missingRequirements .. "Level required is " .. item_level .. " but you have " .. playerLevel
-                end
-                if item_mlevel <= playerMLevel then
-                    if missingRequirements ~= "" then
-                        missingRequirements = missingRequirements .. ", "
-                    end
-                    missingRequirements = missingRequirements .. "Magic Level required is " .. item_mlevel .. " but you have " .. playerMLevel
-                end
-                if item_dlevel <= playerDLevel then
-                    if missingRequirements ~= "" then
-                        missingRequirements = missingRequirements .. ", "
-                    end
-                    missingRequirements = missingRequirements .. "Distance Skill Level required is " .. item_dlevel .. " but you have " .. playerDLevel
-                end
-                if item_clevel <= playerCLevel then
-                    if missingRequirements ~= "" then
-                        missingRequirements = missingRequirements .. ", "
-                    end
-                    missingRequirements = missingRequirements .. "Any Combat Skill Level required is " .. item_clevel .. " but you have " .. playerCLevel
-                end
-                npcHandler:say("You are unable to learn " .. GameConfig.BuySpellList[item].name .. ", because " .. missingRequirements, cid)
-            end
+            --     if item_level <= playerLevel then
+            --         missingRequirements = missingRequirements .. "Level required is " .. item_level .. " but you have " .. playerLevel
+            --     end
+            --     if item_mlevel <= playerMLevel then
+            --         if missingRequirements ~= "" then
+            --             missingRequirements = missingRequirements .. ", "
+            --         end
+            --         missingRequirements = missingRequirements .. "Magic Level required is " .. item_mlevel .. " but you have " .. playerMLevel
+            --     end
+            --     if item_dlevel <= playerDLevel then
+            --         if missingRequirements ~= "" then
+            --             missingRequirements = missingRequirements .. ", "
+            --         end
+            --         missingRequirements = missingRequirements .. "Distance Skill Level required is " .. item_dlevel .. " but you have " .. playerDLevel
+            --     end
+            --     if item_clevel <= playerCLevel then
+            --         if missingRequirements ~= "" then
+            --             missingRequirements = missingRequirements .. ", "
+            --         end
+            --         missingRequirements = missingRequirements .. "Any Combat Skill Level required is " .. item_clevel .. " but you have " .. playerCLevel
+            --     end
+            --     npcHandler:say("You are unable to learn " .. GameConfig.BuySpellList[item].name .. ", because " .. missingRequirements, cid)
+            -- end
             return true
         end
         openShopWindow(cid, spells, onBuy, onSell)
