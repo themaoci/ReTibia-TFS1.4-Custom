@@ -146,11 +146,16 @@ experienceStages = nil
 
 -- Rates
 -- NOTE: rateExp is not used if you have enabled stages above
-rateExp = 3
-rateSkill = 2
+-- rateExp = 3
+-- rateSkill = 2
+-- rateLoot = 1
+-- rateMagic = 2
+-- rateSpawn = 2
+rateExp = 15
+rateSkill = 5
 rateLoot = 1
-rateMagic = 2
-rateSpawn = 2
+rateMagic = 5
+rateSpawn = 4
 
 -- Monster Despawn Config
 -- despawnRange is the amount of floors a monster can be from its spawn position
