@@ -110,6 +110,10 @@ function IRoom:destroy()
                             thing:remove()
                         end
                     end
+                    local item = tile:getItem(index)
+                    if item then
+                        item:remove()
+                    end
                   --end
                 end
                 tile:remove()
