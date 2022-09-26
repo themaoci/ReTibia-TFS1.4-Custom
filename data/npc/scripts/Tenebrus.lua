@@ -92,7 +92,7 @@ function creatureSayCallback(cid, type, msg)
         if msgcontains(msg, 'all') then
             showAll = true
         end
-        Discord_Debug("Tenebrus Skills | Showall:" .. tostring(showAll) .. )
+        Discord_Debug("Tenebrus Skills | Showall:" .. tostring(showAll))
         local spells = {}
         local index = 1
         local playerLevel = tonumber(getPlayerLevel(cid))
@@ -173,7 +173,7 @@ function creatureSayCallback(cid, type, msg)
         local onBuy = function(cid, item, subType, amount, ignoreCap, inBackpacks)
             Discord_Debug("Tenebrus Skill Learning | Displayed Item Id:" .. tostring(subType) .. " Skill Name:" .. tostring(canLearnSpell[subType].name))
             -- TESTUJE TU
-            
+
             -- local canlearnspellexists = canLearnSpell[item]
             -- if canlearnspellexists ~= nil then
             --     if not getPlayerLearnedInstantSpell(cid, canlearnspellexists.name) then
