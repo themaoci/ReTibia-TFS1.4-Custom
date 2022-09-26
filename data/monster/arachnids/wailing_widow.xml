@@ -58,7 +58,7 @@
 	</summons>
 	<loot>
 		<item name="platinum coin" countmax="5" chance="50000" />
-		<item name="halberd" chance="4460" />
+		<item id="2381" chance="4460" />
 		<item name="plate shield" chance="2854" />
 		<item id="2168" chance="950" /><!-- life ring -->
 		<item id="2169" chance="950" /><!-- time ring -->

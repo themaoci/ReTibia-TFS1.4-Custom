@@ -67,7 +67,7 @@
 		<item name="katana" chance="1560" />
 		<item name="strange helmet" chance="420" />
 		<item name="vampire shield" chance="230" />
-		<item name="grave flower" chance="1910" />
+		<item id="2747" chance="1910" />
 		<item name="strong health potion" chance="1500" />
 		<item name="vampire teeth" chance="7600" />
 		<item name="blood preservation" chance="5100" />
