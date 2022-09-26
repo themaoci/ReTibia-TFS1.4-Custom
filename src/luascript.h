@@ -768,7 +768,8 @@ class LuaScriptInterface
 
 		// Container
 		static int luaContainerCreate(lua_State* L);
-
+		
+		static int luaContainerRemove(lua_State* L);
 		static int luaContainerGetSize(lua_State* L);
 		static int luaContainerGetCapacity(lua_State* L);
 		static int luaContainerGetEmptySlots(lua_State* L);

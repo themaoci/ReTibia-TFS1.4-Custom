@@ -2245,6 +2245,7 @@ void LuaScriptInterface::registerFunctions()
 	registerClass("Container", "Item", LuaScriptInterface::luaContainerCreate);
 	registerMetaMethod("Container", "__eq", LuaScriptInterface::luaUserdataCompare);
 
+	registerMethod("Container", "remove", LuaScriptInterface::luaContainerRemove);
 	registerMethod("Container", "getSize", LuaScriptInterface::luaContainerGetSize);
 	registerMethod("Container", "getCapacity", LuaScriptInterface::luaContainerGetCapacity);
 	registerMethod("Container", "getEmptySlots", LuaScriptInterface::luaContainerGetEmptySlots);
@@ -6972,6 +6973,22 @@ int LuaScriptInterface::luaContainerCreate(lua_State* L)
 	if (container) {
 		pushUserdata(L, container);
 		setMetatable(L, -1, "Container");
+	} else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaContainerRemove(lua_State* L)
+{
+// 	// container:getSize()
+// 	Container* container = getUserdata<Container>(L, 1);
+	// item:remove([count = -1])
+	Container* item = getUserdata<Container>(L, 1);
+	if (item) {
+		int32_t count = getNumber<int32_t>(L, 2, -1);
+		if (count == 0) { count = 1; }
+		pushBoolean(L, g_game.internalRemoveItem(item, count) == RETURNVALUE_NOERROR);
 	} else {
 		lua_pushnil(L);
 	}
