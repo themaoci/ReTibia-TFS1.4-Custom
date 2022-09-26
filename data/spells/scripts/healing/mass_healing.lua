@@ -5,38 +5,19 @@ combat:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 combat:setArea(createCombatArea(AREA_CIRCLE3X3))
 
 function onCastSpell(creature, variant)
-	
-	print("--- MASS HEALING ---")
-	print(creature:getName())
-	print(type(creature))
-	print(type(variant))
-	print(variant)
-	print("---variant---")
-	for i in pairs(variant) do
-		print(i)
-	end
-	print("---creature---")
-	for i in pairs(creature) do
-		print(i)
-	end
-	print("---end---")
-	
-	if creature == nil then 
-		print(creature)
-		print(creature:getName())
-		--local min = 104.8
-		--local max = 134.8
-		return true 
-	end
-	local creatureLevel = creature:getLevel() or 1
-	local creatureMLevel = creature:getMagicLevel() or 1
-	local min = (creatureLevel / 5) + (creatureMLevel * 4.6) + 100
-	local max = (creatureLevel / 5) + (creatureMLevel * 9.6) + 125
-	for _, target in ipairs(combat:getTargets(creature, variant)) do
-		local master = target:getMaster()
-		if target:isPlayer() or master and master:isPlayer() then
-			doTargetCombat(creature, target, COMBAT_HEALING, min, max)
-		end
-	end
+	local player = creature:getPlayer()
+	if player == nil then return true end
+    local min = (player:getLevel() / 5) + (player:getMagicLevel() * 4.6) + 100
+    local max = (player:getLevel() / 5) + (player:getMagicLevel() * 9.6) + 125
+
+    if not healMonsters then
+        local master = target:getMaster()
+        if target:isMonster() and not master or master and master:isMonster() then
+            return true
+        end
+    end
+
+    doTargetCombatHealth(creature:getId(), target, COMBAT_HEALING, min, max, CONST_ME_NONE)
+
 	return true
 end
