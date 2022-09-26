@@ -5,7 +5,9 @@ combat:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 combat:setArea(createCombatArea(AREA_CIRCLE3X3))
 
 function onCastSpell(creature, variant)
-print(type(creature))
+	print(type(creature))
+	print(type(variant))
+	print(variant)
 if creature == nil then 
 	print(creature)
 	print(creature:getName())
