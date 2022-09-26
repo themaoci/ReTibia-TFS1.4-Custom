@@ -101,20 +101,17 @@ function IRoom:destroy()
             if tile then
                 local thingCount = tile:getThingCount()
                 for index = thingCount, 0, -1 do
-                  --if index ~= 1 then
+                  if index ~= 1 then
                     local thing = tile:getThing(index)
                     if thing then
+                        print(x .. "," .. y .. " - " .. thing.getId())
                         if thing:isPlayer() then
                             thing:teleportTo(self.fromPos)
                         else
                             thing:remove()
                         end
                     end
-                    local item = tile:getItem(index)
-                    if item then
-                        item:remove()
-                    end
-                  --end
+                  end
                 end
                 tile:remove()
             end
