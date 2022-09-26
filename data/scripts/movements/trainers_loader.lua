@@ -108,7 +108,7 @@ function IRoom:destroy()
                             thing:teleportTo(self.fromPos)
                         else
                             if(thing:getId() == 2590) then
-                                g_game.internalRemoveItem(thing);
+                                thing:getItem():remove()
                             else
                                 thing:remove()
                             end
