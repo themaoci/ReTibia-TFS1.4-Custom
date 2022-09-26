@@ -5,8 +5,8 @@ combat:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 combat:setArea(createCombatArea(AREA_CIRCLE3X3))
 
 function onCastSpell(creature, variant)
-
-if creature == nil or type(creature:getLevel) then 
+print(type(creature))
+if creature == nil then 
 	print(creature)
 	print(creature:getName())
 	--local min = 104.8
