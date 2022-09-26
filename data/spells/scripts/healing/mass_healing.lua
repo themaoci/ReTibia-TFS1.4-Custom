@@ -5,6 +5,9 @@ combat:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 combat:setArea(createCombatArea(AREA_CIRCLE3X3))
 
 function onCastSpell(creature, variant)
+	
+	print("--- MASS HEALING ---")
+	print(creature:getName())
 	print(type(creature))
 	print(type(variant))
 	print(variant)
