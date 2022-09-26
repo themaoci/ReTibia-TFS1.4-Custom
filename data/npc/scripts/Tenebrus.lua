@@ -172,7 +172,7 @@ function creatureSayCallback(cid, type, msg)
             local text = "Tenebrus Skill Learning | Displayed Item Id:"
             text = text .. tostring(subType)
             text = text .. " Skill Name:"
-            text = text .. tostring(canLearnSpell[subType].name)
+            --text = text .. tostring(canLearnSpell[subType].name)
             Discord_Debug(text)
             -- TESTUJE TU
 
