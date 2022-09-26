@@ -3217,7 +3217,7 @@ void ProtocolGame::AddShopItem(NetworkMessage& msg, const ShopInfo& item)
 {
 	const ItemType& it = Item::items[item.itemId];
 	msg.add<uint16_t>(it.clientId);
-	if (item.funcSell) {
+	if (item.funcShop) {
 		msg.addByte(item.subType);
 	} else if (it.isSplash() || it.isFluidContainer()) {
 		msg.addByte(serverFluidToClient(item.subType));
@@ -3229,7 +3229,7 @@ void ProtocolGame::AddShopItem(NetworkMessage& msg, const ShopInfo& item)
 	msg.add<uint32_t>(it.weight);
 	msg.add<uint32_t>(item.buyPrice);
 	msg.add<uint32_t>(item.sellPrice);
-	msg.addByte(item.funcSell);
+	msg.addByte(item.funcShop);
 }
 
 void ProtocolGame::parseExtendedOpcode(NetworkMessage& msg)

@@ -834,6 +834,7 @@ int NpcScriptInterface::luaOpenShopWindow(lua_State* L)
 		item.buyPrice = getField<uint32_t>(L, tableIndex, "buy");
 		item.sellPrice = getField<uint32_t>(L, tableIndex, "sell");
 		item.realName = getFieldString(L, tableIndex, "name");
+		item.funcShop = getField<uint32_t>(L, tableIndex, "funcShop");
 
 		items.push_back(item);
 		lua_pop(L, 6);
