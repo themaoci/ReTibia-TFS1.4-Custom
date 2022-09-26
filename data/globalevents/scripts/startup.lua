@@ -50,12 +50,11 @@ GameConfig.Outfits = Game.getAllOutfits()
 GameConfig.Mounts = Game.getAllMounts()
 
 print("-------------")
-for i in pairs(GameConfig.Spells.Instant[1]) 
+for i in pairs(GameConfig.Spells.Instant[1]) do
 	print(i)
 end
 print("-------------")
-
-for i in pairs(GameConfig.Spells.Instant[1]) 
+for i in pairs(GameConfig.Spells.Rune[1]) do 
 	print(i)
 end
 print("GameConfig.Spells.Instant: " .. #GameConfig.Spells.Instant)
