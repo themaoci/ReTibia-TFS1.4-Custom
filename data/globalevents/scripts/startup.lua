@@ -49,13 +49,13 @@ GameConfig.Spells.Rune = Game.getAllRunes()
 GameConfig.Outfits = Game.getAllOutfits()
 GameConfig.Mounts = Game.getAllMounts()
 
-print("-------------")
-for i in pairs(GameConfig.Spells.Instant[1]) do
-	print(i)
+print("------------- Instanty")
+for i in pairs(GameConfig.Spells.Instant) do
+	print("{ id=\"".. GameConfig.Spells.Instant[i].id .."\", name=\"".. GameConfig.Spells.Instant[i].name .."\", words=\"".. GameConfig.Spells.Instant[i].words .."\" },")
 end
-print("-------------")
+print("------------- Runy")
 for i in pairs(GameConfig.Spells.Rune[1]) do 
-	print(i)
+	print("{ id=\"".. GameConfig.Spells.Instant[i].id .."\", name=\"".. GameConfig.Spells.Instant[i].name .."\", words=\"".. GameConfig.Spells.Instant[i].words .."\" },")
 end
 print("GameConfig.Spells.Instant: " .. #GameConfig.Spells.Instant)
 print("GameConfig.Spells.Rune: " .. #GameConfig.Spells.Rune)
