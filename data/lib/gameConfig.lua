@@ -118,7 +118,7 @@ Unmute Player: /unmute nick.
     }
   },
   ["Spells"] = {
-    ["free"] = {
+    ["Free"] = {
       ["irrumabo mana"] =           { name="Fuck mana",                     isPremium="0", price=0, level=0, mlevel=0, clevel=0, dlevel=0 }, 
       ["exori infir tera"] =        { name="Mud Attack",                    isPremium="0", price=0, level=1, mlevel=0, clevel=0, dlevel=0 }, 
       ["exori infir vis"] =         { name="Buzz",                          isPremium="0", price=0, level=1, mlevel=0, clevel=0, dlevel=0 }, 
@@ -181,7 +181,7 @@ Unmute Player: /unmute nick.
       ["aleta sio"] =               { name="Invite Guests",                 isPremium="0", price=0, level=1, mlevel=0, clevel=0, dlevel=0 }, 
       ["aleta som"] =               { name="Invite Subowners",              isPremium="0", price=0, level=1, mlevel=0, clevel=0, dlevel=0 }
     },
-    ["premium"] = {
+    ["Premium"] = {
       ["adori infir mas tera"] =    { name="Light Stone Shower Rune",   isPremium="1", price=500, level=1, mlevel=0, clevel=0, dlevel=0 }, 
       ["exori vis"] =               { name="Energy Strike",             isPremium="1", price=800, level=12, mlevel=0, clevel=0, dlevel=0 }, 
       ["exori tera"] =              { name="Terra Strike",              isPremium="1", price=800, level=13, mlevel=0, clevel=0, dlevel=0 }, 
