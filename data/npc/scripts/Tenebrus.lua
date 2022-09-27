@@ -80,7 +80,6 @@ local booksByType = {
     ["conjure"] = 1958,
     ["enchant"] = 1958
 }
-local skillAvailableToBuy = {}
 function creatureSayCallback(cid, type, msg)
     if(not npcHandler:isFocused(cid)) then
         return false
@@ -88,7 +87,7 @@ function creatureSayCallback(cid, type, msg)
     local showAll = msgcontains(msg, 'spellsall')
     if msgcontains(msg, 'spells') or showAll then
 
-        skillAvailableToBuy = {}
+        local skillAvailableToBuy = {}
         Discord_Debug("Tenebrus Skills | Showall:" .. tostring(showAll))
         local spells = {}
         local index = 1
@@ -100,7 +99,7 @@ function creatureSayCallback(cid, type, msg)
         for i, spell in pairs(GameConfig.Spells.Free) do
             if not getPlayerLearnedInstantSpell(cid, spell.name) then
                 if showAll then
-                    skillAvailableToBuy[#spells + 1] = item
+                    skillAvailableToBuy[#spells + 1] = spell
                     spells[#spells + 1] = {
                         id = booksByType["attack"], 
                         buy = spell.price, 
@@ -119,7 +118,7 @@ function creatureSayCallback(cid, type, msg)
                     local CanLearnNow = ""
                     if item_level <= playerLevel and item_mlevel <= playerMLevel and item_dlevel <= playerDLevel and item_clevel <= playerCLevel then
                         CanLearnNow = "[*]"
-                        skillAvailableToBuy[#spells + 1] = item
+                        skillAvailableToBuy[#spells + 1] = spell
                         spells[#spells + 1] = {
                             id = booksByType["attack"], 
                             buy = spell.price, 
@@ -137,7 +136,7 @@ function creatureSayCallback(cid, type, msg)
         for i, spell in pairs(GameConfig.Spells.Premium) do
             if not getPlayerLearnedInstantSpell(cid, spell.name) then
                 if showAll then
-                    skillAvailableToBuy[#spells + 1] = item
+                    skillAvailableToBuy[#spells + 1] = spell
                     spells[#spells + 1] = {
                         id = booksByType["attack"], 
                         buy = spell.price, 
@@ -156,7 +155,7 @@ function creatureSayCallback(cid, type, msg)
                     local CanLearnNow = ""
                     if item_level <= playerLevel and item_mlevel <= playerMLevel and item_dlevel <= playerDLevel and item_clevel <= playerCLevel then
                         CanLearnNow = "[*]"
-                        skillAvailableToBuy[#spells + 1] = item
+                        skillAvailableToBuy[#spells + 1] = spell
                         spells[#spells + 1] = {
                             id = booksByType["attack"], 
                             buy = spell.price, 
@@ -176,7 +175,7 @@ function creatureSayCallback(cid, type, msg)
         local onBuy = function(cid, item, subType, amount, ignoreCap, inBackpacks, specialId)
             local text = "Tenebrus Skill Learning | Displayed Item position:"
             text = text .. tostring(specialId)
-            text = text .. " Skill Name:"
+            text = text .. " Skill Name: "
             if skillAvailableToBuy[specialId] ~= nil then
                 text = text .. tostring(skillAvailableToBuy[specialId].name)
             end
