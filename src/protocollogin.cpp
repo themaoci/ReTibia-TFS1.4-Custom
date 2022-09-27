@@ -235,27 +235,27 @@ void ProtocolLogin::onRecvFirstMessage(NetworkMessage& msg)
   
   
   if(signature_module != SEC_moduleSig){
-    std::cout << "fail = SEC_moduleSig <" << signature_module << " != " << SEC_moduleSig << "> [" << connection->getIP() << "]" << std::endl;
+    std::cout << "CheckFailed for SEC_moduleSig (" << signature_module << " != " << SEC_moduleSig << ") [" << connection->getIP() << "]" << std::endl;
 		//disconnectClient("Usage of custom client detected!! Check #1", version);
 		//return;
   }
   if(clientFileSize != SEC_fileSize){
-    std::cout << "fail = SEC_fileSize" << std::endl;
+    std::cout << "CheckFailed for SEC_fileSize (" << clientFileSize << " != " << SEC_fileSize << "> [" << connection->getIP() << "]" << std::endl;
 		//disconnectClient("Usage of custom client detected!! Check #1", version);
 		//return;
   }
   if(signature_dat != SEC_datSig){
-    std::cout << "fail = SEC_datSig" << std::endl;
+    std::cout << "CheckFailed for SEC_datSig (" << signature_dat << " != " << SEC_datSig << ") [" << connection->getIP() << "]" << std::endl;
 		//disconnectClient("Usage of custom client detected!! Check #2", version);
 		//return;
   }
   if(signature_spr != SEC_sprSig){
-    std::cout << "fail = SEC_sprSig" << std::endl;
+    std::cout << "CheckFailed for SEC_sprSig (" << signature_spr << " != " << SEC_sprSig << ") [" << connection->getIP() << "]" << std::endl;
 		//disconnectClient("Usage of custom client detected!! Check #3", version);
 		//return;
   }
   if(signature_pic != SEC_picSig){
-    std::cout << "fail = SEC_picSig" << std::endl;
+    std::cout << "CheckFailed for SEC_picSig (" << signature_pic << " != " << SEC_picSig << ") [" << connection->getIP() << "]" << std::endl;
 		//disconnectClient("Usage of custom client detected!! Check #4", version);
 		//return;
   }
