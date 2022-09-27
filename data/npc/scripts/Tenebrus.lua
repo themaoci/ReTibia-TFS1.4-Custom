@@ -90,7 +90,6 @@ function creatureSayCallback(cid, type, msg)
         local skillAvailableToBuy = {}
         local allSkills = {}
         local spells = {}
-        local index = 1
         local playerLevel = tonumber(getPlayerLevel(cid))
         local playerMLevel = tonumber(getPlayerMagLevel(cid))
         local playerDLevel = tonumber(getPlayerSkill(cid, 4))
