@@ -821,18 +821,15 @@ int NpcScriptInterface::luaOpenShopWindow(lua_State* L)
 	std::list<ShopInfo> items;
 	lua_pushnil(L);
 
-	std::cout << "test s" << std::endl;
 	while (lua_next(L, -2) != 0) {
-		std::cout << "test start" << std::endl;
 		const auto tableIndex = lua_gettop(L);
 		ShopInfo item;
-		std::cout << "test var getter" << std::endl;
 
 		item.itemId = getField<uint32_t>(L, tableIndex, "id");
 		item.subType = getField<int32_t>(L, tableIndex, "subType");
 		if (item.subType == 0) {
 			item.subType = getField<int32_t>(L, tableIndex, "subtype");
-			lua_pop(L, 1);
+			lua_pop(L, 1); // should go back 1 place ?
 		}
 
 		item.specialId = getField<uint32_t>(L, tableIndex, "specialId");
@@ -843,12 +840,10 @@ int NpcScriptInterface::luaOpenShopWindow(lua_State* L)
 		item.funcShop = getField<uint32_t>(L, tableIndex, "funcShop");
 
 		items.push_back(item);
-		lua_pop(L, 8);
-		std::cout << "test end" << std::endl;
+		lua_pop(L, 8); // should go back 8 places ?
 	}
 	lua_pop(L, 1);
 
-	std::cout << "test works" << std::endl;
 	Player* player = getPlayer(L, -1);
 	if (!player) {
 		reportErrorFunc(L, getErrorDesc(LUA_ERROR_PLAYER_NOT_FOUND));
