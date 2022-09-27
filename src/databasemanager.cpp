@@ -25,9 +25,9 @@ bool DatabaseManager::optimizeTables()
 		std::cout << "> Optimizing table " << tableName << "..." << std::flush;
 
 		if (db.executeQuery(fmt::format("OPTIMIZE TABLE `{:s}`", tableName))) {
-			std::cout << " [success]" << std::endl;
+			std::cout << " [success]";
 		} else {
-			std::cout << " [failed]" << std::endl;
+			std::cout << " [failed]";
 		}
 	} while (result->next());
 	return true;

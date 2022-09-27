@@ -98,7 +98,7 @@ int main(int argc, char* argv[])
 void printServerVersion()
 {
 	std::cout << 
-	"----------------------- " << STATUS_SERVER_NAME << " - " << STATUS_SERVER_VERSION << "--------------------------------" << 
+	"----------------------- " << STATUS_SERVER_NAME << " - " << STATUS_SERVER_VERSION << "--------------------------------\n" << 
 	"Compiled: " << BOOST_COMPILER << " | " << __DATE__ << ' ' << __TIME__ << " | " << 
 #if defined(__amd64__) || defined(_M_X64)
 	"x64" << 
@@ -116,7 +116,7 @@ void printServerVersion()
 	LUA_RELEASE << 
 #endif
 	"\nNetMsgSize: " << NETWORKMESSAGE_MAXSIZE << "\n" <<
-	"Devs: " << STATUS_SERVER_DEVELOPERS << "\nWeb: https://retibia.app/" 
+	"Devs: " << STATUS_SERVER_DEVELOPERS << "\nWeb: https://retibia.app/\n" 
 	"-----------------------------------------------------------" << std::endl;
 }
 
@@ -304,7 +304,7 @@ void mainLoader(int, char*[], ServiceManager* services)
 	std::cout << " | (All Done!!)" << std::endl;
 	auto ServerEndTime = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
 
-	std::cout << "Elapsed: " << ServerStartTime - ServerEndTime << "ms" << std::endl;
+	std::cout << "Elapsed: " << ServerEndTime - ServerStartTime << "ms" << std::endl;
 #ifndef _WIN32
 	if (getuid() == 0 || geteuid() == 0) {
 		std::cout << "> Warning: " << STATUS_SERVER_NAME << " has been executed as root user, please consider running it as a normal user." << std::endl;
