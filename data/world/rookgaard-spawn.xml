@@ -487,7 +487,6 @@
 		<monster name="Rabbit" x="6" y="-18" z="7" spawntime="450" />
 		<monster name="Chicken" x="-8" y="-17" z="7" spawntime="450" />
 		<monster name="Chicken" x="-4" y="-15" z="7" spawntime="450" />
-		<monster name="Spider" x="-14" y="-14" z="7" spawntime="450" />
 		<monster name="Rabbit" x="5" y="-8" z="7" spawntime="450" />
 		<monster name="Chicken" x="-1" y="-7" z="7" spawntime="450" />
 		<monster name="Chicken" x="-5" y="-3" z="7" spawntime="450" />
