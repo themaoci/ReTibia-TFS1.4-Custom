@@ -825,27 +825,35 @@ int NpcScriptInterface::luaOpenShopWindow(lua_State* L)
 	while (lua_next(L, -2) != 0) {
 		const auto tableIndex = lua_gettop(L);
 		ShopInfo item;
+		std::cout << "test 1" << std::endl;
 
 		item.itemId = getField<uint32_t>(L, tableIndex, "id");
+		std::cout << "test 2" << std::endl;
 		item.subType = getField<int32_t>(L, tableIndex, "subType");
 		if (item.subType == 0) {
 			item.subType = getField<int32_t>(L, tableIndex, "subtype");
 			lua_pop(L, 1);
 		}
+		std::cout << "test 3" << std::endl;
 
 		item.specialId = getField<uint32_t>(L, tableIndex, "specialId");
+		std::cout << "test 4" << std::endl;
 
 		item.buyPrice = getField<uint32_t>(L, tableIndex, "buy");
+		std::cout << "test 5" << std::endl;
 		item.sellPrice = getField<uint32_t>(L, tableIndex, "sell");
+		std::cout << "test 6" << std::endl;
 		item.realName = getFieldString(L, tableIndex, "name");
+		std::cout << "test 7" << std::endl;
 		item.funcShop = getField<uint32_t>(L, tableIndex, "funcShop");
+		std::cout << "test zzz" << std::endl;
 
 		items.push_back(item);
 		lua_pop(L, 7);
 	}
 	lua_pop(L, 1);
 
-	std::cout << "test mid" << std::endl;
+	std::cout << "test works" << std::endl;
 	Player* player = getPlayer(L, -1);
 	if (!player) {
 		reportErrorFunc(L, getErrorDesc(LUA_ERROR_PLAYER_NOT_FOUND));
@@ -866,7 +874,6 @@ int NpcScriptInterface::luaOpenShopWindow(lua_State* L)
 	npc->addShopPlayer(player);
 	player->setShopOwner(npc, buyCallback, sellCallback);
 	player->openShopWindow(npc, items);
-	std::cout << "test end" << std::endl;
 	pushBoolean(L, true);
 	return 1;
 }
