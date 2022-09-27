@@ -823,8 +823,10 @@ int NpcScriptInterface::luaOpenShopWindow(lua_State* L)
 
 	std::cout << "test s" << std::endl;
 	while (lua_next(L, -2) != 0) {
+		std::cout << "test start" << std::endl;
 		const auto tableIndex = lua_gettop(L);
 		ShopInfo item;
+		std::cout << "test var getter" << std::endl;
 
 		item.itemId = getField<uint32_t>(L, tableIndex, "id");
 		item.subType = getField<int32_t>(L, tableIndex, "subType");
@@ -839,12 +841,10 @@ int NpcScriptInterface::luaOpenShopWindow(lua_State* L)
 		item.sellPrice = getField<uint32_t>(L, tableIndex, "sell");
 		item.realName = getFieldString(L, tableIndex, "name");
 		item.funcShop = getField<uint32_t>(L, tableIndex, "funcShop");
-		std::cout << "test zzz1" << std::endl;
 
 		items.push_back(item);
-		std::cout << "test zzz2" << std::endl;
-		lua_pop(L, 7);
-		std::cout << "test zzz3" << std::endl;
+		lua_pop(L, 6);
+		std::cout << "test end" << std::endl;
 	}
 	lua_pop(L, 1);
 
