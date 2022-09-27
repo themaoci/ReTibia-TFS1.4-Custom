@@ -1029,7 +1029,9 @@ void ProtocolGame::parsePlayerPurchase(NetworkMessage& msg)
 	uint8_t amount = msg.getByte();
 	bool ignoreCap = msg.getByte() != 0;
 	bool inBackpacks = msg.getByte() != 0;
-	addGameTaskTimed(DISPATCHER_TASK_EXPIRATION, &Game::playerPurchaseItem, player->getID(), id, count, amount, ignoreCap, inBackpacks);
+	uint16_t specialId = msg.get<uint16_t>();
+
+	addGameTaskTimed(DISPATCHER_TASK_EXPIRATION, &Game::playerPurchaseItem, player->getID(), id, count, amount, ignoreCap, inBackpacks, specialId);
 }
 
 void ProtocolGame::parsePlayerSale(NetworkMessage& msg)
@@ -1038,7 +1040,8 @@ void ProtocolGame::parsePlayerSale(NetworkMessage& msg)
 	uint8_t count = msg.getByte();
 	uint8_t amount = msg.getByte();
 	bool ignoreEquipped = msg.getByte() != 0;
-	addGameTaskTimed(DISPATCHER_TASK_EXPIRATION, &Game::playerSellItem, player->getID(), id, count, amount, ignoreEquipped);
+	uint16_t specialId = msg.get<uint16_t>();
+	addGameTaskTimed(DISPATCHER_TASK_EXPIRATION, &Game::playerSellItem, player->getID(), id, count, amount, ignoreEquipped, specialId);
 }
 
 void ProtocolGame::parseRequestTrade(NetworkMessage& msg)
@@ -3217,13 +3220,12 @@ void ProtocolGame::AddShopItem(NetworkMessage& msg, const ShopInfo& item)
 {
 	const ItemType& it = Item::items[item.itemId];
 	msg.add<uint16_t>(it.clientId);
-	if (item.funcShop) {
-		msg.add<uint16_t>(item.subType);
-	} else if (it.isSplash() || it.isFluidContainer()) {
+	if (it.isSplash() || it.isFluidContainer()) {
 		msg.add<uint16_t>(serverFluidToClient(item.subType));
 	} else {
 		msg.add<uint16_t>(0x00);
 	}
+	msg.add<uint16_t>(item.specialId);
 
 	msg.addString(item.realName);
 	msg.add<uint32_t>(it.weight);

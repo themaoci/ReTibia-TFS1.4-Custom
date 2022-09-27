@@ -2983,7 +2983,7 @@ void Game::internalCloseTrade(Player* player, bool sendCancel/* = true*/)
 }
 
 void Game::playerPurchaseItem(uint32_t playerId, uint16_t spriteId, uint8_t count, uint8_t amount,
-                              bool ignoreCap/* = false*/, bool inBackpacks/* = false*/)
+                              bool ignoreCap/* = false*/, bool inBackpacks/* = false*/, uint32_t specialId)
 {
 	if (amount == 0 || amount > 100) {
 		return;
@@ -3017,10 +3017,10 @@ void Game::playerPurchaseItem(uint32_t playerId, uint16_t spriteId, uint8_t coun
 		return;
 	}
 
-	merchant->onPlayerTrade(player, onBuy, it.id, subType, amount, ignoreCap, inBackpacks);
+	merchant->onPlayerTrade(player, onBuy, it.id, subType, amount, ignoreCap, inBackpacks, specialId);
 }
 
-void Game::playerSellItem(uint32_t playerId, uint16_t spriteId, uint8_t count, uint8_t amount, bool ignoreEquipped)
+void Game::playerSellItem(uint32_t playerId, uint16_t spriteId, uint8_t count, uint8_t amount, bool ignoreEquipped, uint32_t specialId)
 {
 	if (amount == 0 || amount > 100) {
 		return;
@@ -3050,7 +3050,7 @@ void Game::playerSellItem(uint32_t playerId, uint16_t spriteId, uint8_t count, u
 		subType = count;
 	}
 
-	merchant->onPlayerTrade(player, onSell, it.id, subType, amount, ignoreEquipped);
+	merchant->onPlayerTrade(player, onSell, it.id, subType, amount, ignoreEquipped, false, specialId);
 }
 
 void Game::playerCloseShop(uint32_t playerId)

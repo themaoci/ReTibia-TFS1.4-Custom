@@ -368,10 +368,10 @@ void Npc::doSayToPlayer(Player* player, const std::string& text)
 }
 
 void Npc::onPlayerTrade(Player* player, int32_t callback, uint16_t itemId, uint8_t count,
-                        uint8_t amount, bool ignore/* = false*/, bool inBackpacks/* = false*/)
+                        uint8_t amount, bool ignore/* = false*/, bool inBackpacks/* = false*/, uint16_t specialId)
 {
 	if (npcEventHandler) {
-		npcEventHandler->onPlayerTrade(player, callback, itemId, count, amount, ignore, inBackpacks);
+		npcEventHandler->onPlayerTrade(player, callback, itemId, count, amount, ignore, inBackpacks, specialId);
 	}
 	player->sendSaleItemList();
 }
@@ -1230,7 +1230,7 @@ void NpcEventsHandler::onCreatureSay(Creature* creature, SpeakClasses type, cons
 }
 
 void NpcEventsHandler::onPlayerTrade(Player* player, int32_t callback, uint16_t itemId,
-                              uint8_t count, uint8_t amount, bool ignore, bool inBackpacks)
+                              uint8_t count, uint8_t amount, bool ignore, bool inBackpacks, uint16_t specialId)
 {
 	if (callback == -1) {
 		return;
@@ -1255,6 +1255,7 @@ void NpcEventsHandler::onPlayerTrade(Player* player, int32_t callback, uint16_t 
 	lua_pushnumber(L, amount);
 	LuaScriptInterface::pushBoolean(L, ignore);
 	LuaScriptInterface::pushBoolean(L, inBackpacks);
+	lua_pushnumber(L, specialId);
 	scriptInterface->callFunction(6);
 }
 

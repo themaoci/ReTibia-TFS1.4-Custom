@@ -506,13 +506,14 @@ struct LightInfo {
 struct ShopInfo {
 	uint16_t itemId = 0;
 	int32_t subType = 1;
+	int32_t specialId = 0;
 	uint32_t buyPrice = 0;
 	uint32_t sellPrice = 0;
 	std::string realName = "";
 	uint32_t funcShop = 0;
 
 	ShopInfo() = default;
-	ShopInfo(uint16_t itemId, int32_t subType = 0, uint32_t buyPrice = 0, uint32_t sellPrice = 0, std::string realName = "", uint32_t funcShop = false)
+	ShopInfo(uint16_t itemId, int32_t subType = 0, uint32_t buyPrice = 0, uint32_t sellPrice = 0, std::string realName = "", int32_t specialId = 0, uint32_t funcShop = false)
 		: itemId(itemId), subType(subType), buyPrice(buyPrice), sellPrice(sellPrice), realName(std::move(realName)) {}
 };
 
