@@ -88,7 +88,7 @@ function creatureSayCallback(cid, type, msg)
     local showAll = msgcontains(msg, 'spellsall')
     if msgcontains(msg, 'spells') or showAll then
 
-        canLearnSpell = {}
+        local canLearnSpell = {}
         Discord_Debug("Tenebrus Skills | Showall:" .. tostring(showAll))
         local spells = {}
         local index = 1

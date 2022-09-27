@@ -831,13 +831,15 @@ int NpcScriptInterface::luaOpenShopWindow(lua_State* L)
 			lua_pop(L, 1);
 		}
 
+		item.specialId = getField<uint32_t>(L, tableIndex, "specialId");
+
 		item.buyPrice = getField<uint32_t>(L, tableIndex, "buy");
 		item.sellPrice = getField<uint32_t>(L, tableIndex, "sell");
 		item.realName = getFieldString(L, tableIndex, "name");
 		item.funcShop = getField<uint32_t>(L, tableIndex, "funcShop");
 
 		items.push_back(item);
-		lua_pop(L, 6);
+		lua_pop(L, 7);
 	}
 	lua_pop(L, 1);
 
@@ -1256,7 +1258,7 @@ void NpcEventsHandler::onPlayerTrade(Player* player, int32_t callback, uint16_t 
 	LuaScriptInterface::pushBoolean(L, ignore);
 	LuaScriptInterface::pushBoolean(L, inBackpacks);
 	lua_pushnumber(L, specialId);
-	scriptInterface->callFunction(6);
+	scriptInterface->callFunction(7); // was 6 b4 Mao!!
 }
 
 void NpcEventsHandler::onPlayerCloseChannel(Player* player)
