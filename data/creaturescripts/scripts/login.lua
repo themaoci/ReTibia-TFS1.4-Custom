@@ -54,7 +54,7 @@ function onLogin(player)
 		end
 
 		convertedIp = ""
-		print(Game.convertIpToString(player:getIp()))
+		--print(Game.convertIpToString(player:getIp()))
 		local index = 1
 		for k, v in string.gmatch(Game.convertIpToString(player:getIp()), "([^.]+)") do
 			if index == 1 or index == 4 then
