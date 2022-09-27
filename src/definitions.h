@@ -4,9 +4,9 @@
 #ifndef FS_DEFINITIONS_H_877452FEC245450C9F96B8FD268D8963
 #define FS_DEFINITIONS_H_877452FEC245450C9F96B8FD268D8963
 
-static constexpr auto STATUS_SERVER_NAME = "TFS (Custom)";
-static constexpr auto STATUS_SERVER_VERSION = "1.4";
-static constexpr auto STATUS_SERVER_DEVELOPERS = "The Forgotten Server Team";
+static constexpr auto STATUS_SERVER_NAME = L"TFS";
+static constexpr auto STATUS_SERVER_VERSION = "1.4C";
+static constexpr auto STATUS_SERVER_DEVELOPERS = "TheMaoci";
 
 static constexpr auto CLIENT_VERSION_MIN = 1098;
 static constexpr auto CLIENT_VERSION_MAX = 1098;

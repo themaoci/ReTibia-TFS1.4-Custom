@@ -97,43 +97,32 @@ int main(int argc, char* argv[])
 
 void printServerVersion()
 {
-	std::cout << "Size of data send: " << NETWORKMESSAGE_MAXSIZE << std::endl;
-#if defined(GIT_RETRIEVED_STATE) && GIT_RETRIEVED_STATE
-	std::cout << STATUS_SERVER_NAME << " - Version " << GIT_DESCRIBE << std::endl;
-	std::cout << "Git SHA1 " << GIT_SHORT_SHA1  << " dated " << GIT_COMMIT_DATE_ISO8601 << std::endl;
-	#if GIT_IS_DIRTY
-	std::cout << "*** DIRTY - NOT OFFICIAL RELEASE ***" << std::endl;
-	#endif
-#else
-	std::cout << STATUS_SERVER_NAME << " - Version " << STATUS_SERVER_VERSION << std::endl;
-#endif
-	std::cout << std::endl;
-
-	std::cout << "Compiled with " << BOOST_COMPILER << std::endl;
-	std::cout << "Compiled on " << __DATE__ << ' ' << __TIME__ << " for platform ";
+	std::cout << 
+	"----------------------- " << STATUS_SERVER_NAME << " - " << STATUS_SERVER_VERSION << "--------------------------------" << 
+	"Compiled: " << BOOST_COMPILER << " | " << __DATE__ << ' ' << __TIME__ << " | " << 
 #if defined(__amd64__) || defined(_M_X64)
-	std::cout << "x64" << std::endl;
+	"x64" << 
 #elif defined(__i386__) || defined(_M_IX86) || defined(_X86_)
-	std::cout << "x86" << std::endl;
+	"x86" << 
 #elif defined(__arm__)
-	std::cout << "ARM" << std::endl;
+	"ARM" << 
 #else
-	std::cout << "unknown" << std::endl;
+	"unknown" << 
 #endif
+	"\nLua: " <<
 #if defined(LUAJIT_VERSION)
-	std::cout << "Linked with " << LUAJIT_VERSION << " for Lua support" << std::endl;
+	LUAJIT_VERSION << 
 #else
-	std::cout << "Linked with " << LUA_RELEASE << " for Lua support"  << std::endl;
+	LUA_RELEASE << 
 #endif
-	std::cout << std::endl;
-
-	std::cout << "A server developed by " << STATUS_SERVER_DEVELOPERS << std::endl;
-	std::cout << "Visit our forum for updates, support, and resources: https://otland.net/." << std::endl;
-	std::cout << std::endl;
+	"\nNetMsgSize: " << NETWORKMESSAGE_MAXSIZE << "\n" <<
+	"Devs: " << STATUS_SERVER_DEVELOPERS << "\nWeb: https://retibia.app/" 
+	"-----------------------------------------------------------" << std::endl;
 }
 
 void mainLoader(int, char*[], ServiceManager* services)
 {
+	auto ServerStartTime = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
 	//dispatcher thread
 	g_game.setGameState(GAME_STATE_STARTUP);
 
@@ -161,7 +150,7 @@ void mainLoader(int, char*[], ServiceManager* services)
 	}
 
 	// read global config
-	std::cout << ">> Loading config" << std::endl;
+	std::cout << ">> Loading config";
 	if (!g_config.load()) {
 		startupErrorMessage("Unable to load " + configFile + "!");
 		return;
@@ -177,7 +166,7 @@ void mainLoader(int, char*[], ServiceManager* services)
 #endif
 
 	//set RSA key
-	std::cout << ">> Loading RSA key " << std::endl;
+	std::cout << " | Loading RSA key ";
 	try {
 		g_RSA.loadPEM("key.pem");
 	} catch(const std::exception& e) {
@@ -185,17 +174,17 @@ void mainLoader(int, char*[], ServiceManager* services)
 		return;
 	}
 
-	std::cout << ">> Establishing database connection..." << std::flush;
+	std::cout << " | DB:" << std::flush;
 
 	if (!Database::getInstance().connect()) {
 		startupErrorMessage("Failed to connect to database.");
 		return;
 	}
 
-	std::cout << " MySQL " << Database::getClientVersion() << std::endl;
+	std::cout << " MySQL " << Database::getClientVersion();
 
 	// run database manager
-	std::cout << ">> Running database manager" << std::endl;
+	std::cout << " | db manager";
 
 	if (!DatabaseManager::isDatabaseSetup()) {
 		startupErrorMessage("The database you have specified in config.lua is empty, please import the schema.sql to your database.");
@@ -206,18 +195,18 @@ void mainLoader(int, char*[], ServiceManager* services)
 	DatabaseManager::updateDatabase();
 
 	if (g_config.getBoolean(ConfigManager::OPTIMIZE_DATABASE) && !DatabaseManager::optimizeTables()) {
-		std::cout << "> No tables were optimized." << std::endl;
+		std::cout << " | (**No tables were optimized**)";
 	}
 
 	//load vocations
-	std::cout << ">> Loading vocations" << std::endl;
+	std::cout << " | vocations";
 	if (!g_vocations.loadFromXml()) {
 		startupErrorMessage("Unable to load vocations!");
 		return;
 	}
 
 	// load item data
-	std::cout << ">> Loading items" << std::endl;
+	std::cout << " | items";
 	if (!Item::items.loadFromOtb("data/items/items.otb")) {
 		startupErrorMessage("Unable to load items (OTB)!");
 		return;
@@ -228,37 +217,37 @@ void mainLoader(int, char*[], ServiceManager* services)
 		return;
 	}
 
-	std::cout << ">> Loading script systems" << std::endl;
+	std::cout << " | scripts";
 	if (!ScriptingManager::getInstance().loadScriptSystems()) {
 		startupErrorMessage("Failed to load script systems");
 		return;
 	}
 
-	std::cout << ">> Loading lua scripts" << std::endl;
+	std::cout << " | lua scripts";
 	if (!g_scripts->loadScripts("scripts", false, false)) {
 		startupErrorMessage("Failed to load lua scripts");
 		return;
 	}
 
-	std::cout << ">> Loading monsters" << std::endl;
+	std::cout << " | monsters";
 	if (!g_monsters.loadFromXml()) {
 		startupErrorMessage("Unable to load monsters!");
 		return;
 	}
 
-	std::cout << ">> Loading lua monsters" << std::endl;
+	std::cout << " | lua monsters";
 	if (!g_scripts->loadScripts("monster", false, false)) {
 		startupErrorMessage("Failed to load lua monsters");
 		return;
 	}
 
-	std::cout << ">> Loading outfits" << std::endl;
+	std::cout << " | outfits";
 	if (!Outfits::getInstance().loadFromXml()) {
 		startupErrorMessage("Unable to load outfits!");
 		return;
 	}
 
-	std::cout << ">> Checking world type... " << std::flush;
+	std::cout << " | world type: " << std::flush;
 	std::string worldType = asLowerCaseString(g_config.getString(ConfigManager::WORLD_TYPE));
 	if (worldType == "pvp") {
 		g_game.setWorldType(WORLD_TYPE_PVP);
@@ -271,15 +260,15 @@ void mainLoader(int, char*[], ServiceManager* services)
 		startupErrorMessage(fmt::format("Unknown world type: {:s}, valid world types are: pvp, no-pvp and pvp-enforced.", g_config.getString(ConfigManager::WORLD_TYPE)));
 		return;
 	}
-	std::cout << asUpperCaseString(worldType) << std::endl;
+	std::cout << asUpperCaseString(worldType);
 
-	std::cout << ">> Loading map" << std::endl;
+	std::cout << " | Loading map";
 	if (!g_game.loadMainMap(g_config.getString(ConfigManager::MAP_NAME))) {
 		startupErrorMessage("Failed to load map");
 		return;
 	}
 
-	std::cout << ">> Initializing gamestate" << std::endl;
+	std::cout << " | Initializing";
 	g_game.setGameState(GAME_STATE_INIT);
 
 	// Game client protocols
@@ -312,8 +301,10 @@ void mainLoader(int, char*[], ServiceManager* services)
 	IOMarket::checkExpiredOffers();
 	IOMarket::getInstance().updateStatistics();
 
-	std::cout << ">> Loaded all modules, server starting up..." << std::endl;
+	std::cout << " | (All Done!!)" << std::endl;
+	auto ServerEndTime = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
 
+	std::cout << "Elapsed: " << ServerStartTime - ServerEndTime << "ms" << std::endl;
 #ifndef _WIN32
 	if (getuid() == 0 || geteuid() == 0) {
 		std::cout << "> Warning: " << STATUS_SERVER_NAME << " has been executed as root user, please consider running it as a normal user." << std::endl;
