@@ -150,7 +150,8 @@ function creatureSayCallback(cid, type, msg)
                 if not getPlayerLearnedInstantSpell(cid, SpellToBuy.name) then
                     doPlayerRemoveMoney(cid, SpellToBuy.price)
                     doPlayerLearnInstantSpell(cid, SpellToBuy.name)
-                    npcHandler:say("Thank you. I have received your payment of " .. SpellToBuy.price .. "gp for " .. SpellToBuy.name .. " spellbook. You can use that spell now with incantation of {" .. SpellToBuy.words .. "}.", cid)
+                    --You can use that spell now with incantation of {" .. SpellToBuy.words .. "}.
+                    npcHandler:say("Thank you. I have received your payment of " .. SpellToBuy.price .. "gp for " .. SpellToBuy.name .. " spellbook.", cid)
                 else
                     npcHandler:say("You already know this spell.", cid)
                 end
