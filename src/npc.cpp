@@ -843,7 +843,7 @@ int NpcScriptInterface::luaOpenShopWindow(lua_State* L)
 		item.funcShop = getField<uint32_t>(L, tableIndex, "funcShop");
 
 		items.push_back(item);
-		lua_pop(L, 6);
+		lua_pop(L, 8);
 		std::cout << "test end" << std::endl;
 	}
 	lua_pop(L, 1);
