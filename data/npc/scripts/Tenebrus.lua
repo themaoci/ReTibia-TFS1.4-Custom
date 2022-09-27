@@ -106,7 +106,7 @@ function creatureSayCallback(cid, type, msg)
                         buy = spell.price, 
                         sell = 0, 
                         subType = i, 
-                        specialId = #spells + 1
+                        specialId = #spells + 1,
                         name = "Spellbook:\n" .. spell.name,
                         funcShop = 1
                     }
@@ -125,7 +125,7 @@ function creatureSayCallback(cid, type, msg)
                             buy = spell.price, 
                             sell = 0, 
                             subType = 0,
-                            specialId = #spells + 1
+                            specialId = #spells + 1,
                             name = "Spellbook" .. CanLearnNow .. ":\n" .. spell.name,
                             funcShop = 1
                         }
@@ -143,7 +143,7 @@ function creatureSayCallback(cid, type, msg)
                         buy = spell.price, 
                         sell = 0, 
                         subType = 0, 
-                        specialId = #spells + 1
+                        specialId = #spells + 1,
                         name = "Old Spellbook:\n" .. spell.name,
                         funcShop = 1
                     }
@@ -162,7 +162,7 @@ function creatureSayCallback(cid, type, msg)
                             buy = spell.price, 
                             sell = 0, 
                             subType = 0, 
-                            specialId = #spells + 1
+                            specialId = #spells + 1,
                             name = "Spellbook" .. CanLearnNow .. ":\n" .. spell.name,
                             funcShop = 1
                         }
