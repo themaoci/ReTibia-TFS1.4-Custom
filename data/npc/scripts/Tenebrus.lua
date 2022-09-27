@@ -106,6 +106,7 @@ function creatureSayCallback(cid, type, msg)
                         buy = spell.price, 
                         sell = 0, 
                         subType = i, 
+                        specialId = #spells + 1
                         name = "Spellbook:\n" .. spell.name,
                         funcShop = 1
                     }
@@ -123,7 +124,8 @@ function creatureSayCallback(cid, type, msg)
                             id = booksByType["attack"], 
                             buy = spell.price, 
                             sell = 0, 
-                            subType = i, 
+                            subType = 0,
+                            specialId = #spells + 1
                             name = "Spellbook" .. CanLearnNow .. ":\n" .. spell.name,
                             funcShop = 1
                         }
@@ -131,7 +133,7 @@ function creatureSayCallback(cid, type, msg)
                 end
             end
         end
-        Discord_Debug("Tenebrus Skills | " .. tostring(#spells))
+        Discord_Debug("Tenebrus Skills | Free " .. tostring(#spells))
         for i, spell in pairs(GameConfig.Spells.Premium) do
             if not getPlayerLearnedInstantSpell(cid, spell.name) then
                 if showAll then
@@ -140,7 +142,8 @@ function creatureSayCallback(cid, type, msg)
                         id = booksByType["attack"], 
                         buy = spell.price, 
                         sell = 0, 
-                        subType = i, 
+                        subType = 0, 
+                        specialId = #spells + 1
                         name = "Old Spellbook:\n" .. spell.name,
                         funcShop = 1
                     }
@@ -158,7 +161,8 @@ function creatureSayCallback(cid, type, msg)
                             id = booksByType["attack"], 
                             buy = spell.price, 
                             sell = 0, 
-                            subType = i, 
+                            subType = 0, 
+                            specialId = #spells + 1
                             name = "Spellbook" .. CanLearnNow .. ":\n" .. spell.name,
                             funcShop = 1
                         }
@@ -166,13 +170,16 @@ function creatureSayCallback(cid, type, msg)
                 end
             end
         end
-        Discord_Debug("Tenebrus Skills | " .. tostring(#spells))
+        Discord_Debug("Tenebrus Skills | Free + Premium " .. tostring(#spells))
+        Discord_Debug("Tenebrus Skills | canLearnSpell " .. tostring(#canLearnSpell))
         --Discord_Debug("Tenebrus Skill Learning | Spells that can be learn:" .. tostring(#spells))
-        local onBuy = function(cid, item, subType, amount, ignoreCap, inBackpacks)
-            local text = "Tenebrus Skill Learning | Displayed Item Id:"
-            text = text .. tostring(subType)
+        local onBuy = function(cid, item, subType, amount, ignoreCap, inBackpacks, specialId)
+            local text = "Tenebrus Skill Learning | Displayed Item position:"
+            text = text .. tostring(specialId)
             text = text .. " Skill Name:"
-            --text = text .. tostring(canLearnSpell[subType].name)
+            if canLearnSpell[specialId] ~= nil then
+                text = text .. tostring(canLearnSpell[specialId].name)
+            end
             Discord_Debug(text)
             -- TESTUJE TU
 
