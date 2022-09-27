@@ -820,6 +820,8 @@ int NpcScriptInterface::luaOpenShopWindow(lua_State* L)
 
 	std::list<ShopInfo> items;
 	lua_pushnil(L);
+
+	std::cout << "test s" << std::endl;
 	while (lua_next(L, -2) != 0) {
 		const auto tableIndex = lua_gettop(L);
 		ShopInfo item;
@@ -843,6 +845,7 @@ int NpcScriptInterface::luaOpenShopWindow(lua_State* L)
 	}
 	lua_pop(L, 1);
 
+	std::cout << "test mid" << std::endl;
 	Player* player = getPlayer(L, -1);
 	if (!player) {
 		reportErrorFunc(L, getErrorDesc(LUA_ERROR_PLAYER_NOT_FOUND));
@@ -863,7 +866,7 @@ int NpcScriptInterface::luaOpenShopWindow(lua_State* L)
 	npc->addShopPlayer(player);
 	player->setShopOwner(npc, buyCallback, sellCallback);
 	player->openShopWindow(npc, items);
-
+	std::cout << "test end" << std::endl;
 	pushBoolean(L, true);
 	return 1;
 }
