@@ -52,7 +52,7 @@
 		<immunity lifedrain="1" />
 		<immunity drunk="1" />
 	</immunities>
-  <summons maxSummons="2">
+  	<summons maxSummons="2">
 		<summon name="Giant Spider" interval="5000" chance="15" max="1" />
 		<summon name="Poison Spider" interval="4000" chance="25" max="3" />
 	</summons>
