@@ -60,9 +60,7 @@ function creatureSayCallback(cid, type, msg)
     -- [ OUTFITS ] 
     if msgcontains(msg, 'outfits') or msgcontains(msg, 'outfit') then
         local shopItems = {}
-        print(#Romero_outfits)
         for i, outfit in pairs(Romero_outfits) do
-            print(outfit.name .. " " .. outfit.isPremium .. " " .. tostring(isPlayerPremium))
             if outfit.isPremium == 1 and isPlayerPremium or outfit.isPremium == 0 then
                 shopItems[#shopItems + 1] = {
                     id = outfit.showedAsItem, 
@@ -92,6 +90,8 @@ function creatureSayCallback(cid, type, msg)
             npcHandler:say('You have bought ' .. shopItems[specialId].name .. " outfit!", cid)
             return true
         end
+        print(#shopItems)
+        print(type(shopItems))
         openShopWindow(cid, shopItems, onBuy)
         return true
     end
