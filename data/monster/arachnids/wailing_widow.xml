@@ -39,10 +39,10 @@
 		</defense>
 	</defenses>
 	<elements>
-		<element firePercent="-25" />
-		<element holyPercent="10" />
-		<element icePercent="10" />
-		<element energyPercent="10" />
+		<element firePercent="15" />
+		<element holyPercent="15" />
+		<element icePercent="-15" />
+		<element energyPercent="15" />
 	</elements>
 	<immunities>
 		<immunity paralyze="1" />
@@ -57,16 +57,19 @@
 		<summon name="Poison Spider" interval="4000" chance="25" max="4" />
 	</summons>
 	<loot>
-		<item name="platinum coin" countmax="5" chance="50000" />
-		<item id="2381" chance="4460" />
-		<item name="plate shield" chance="2854" />
-		<item id="2168" chance="950" /><!-- life ring -->
-		<item id="2169" chance="950" /><!-- time ring -->
-		<item name="green mushroom" countmax="15" chance="3208" />
-		<item name="strong mana potion" countmax="15" chance="4700" />
-		<item name="strong health potion" countmax="15" chance="4700" />
-		<item name="Zaoan halberd" chance="2210" />
-		<item name="widow's mandibles" chance="20950" />
-		<item name="wailing widow's necklace" chance="900" />
+		<item name="platinum coin" countmax="25" chance="75000" />
+		<item id="2168" countmax="5" chance="20000" /><!-- life ring -->
+		<item id="2169" countmax="5" chance="20000" /><!-- time ring -->
+		<item name="green mushroom" countmax="35" chance="15000" />
+		<item name="strong mana potion" countmax="25" chance="9000" />
+		<item name="strong health potion" countmax="25" chance="9000" />
+		<item name="Zaoan halberd" chance="2500" />
+		<item name="Zaoan armor" chance="2500" />
+		<item name="Zaoan robe" chance="2500" />
+		<item name="Zaoan helmet" chance="2500" />
+		<item name="Zaoan shoes" chance="2500" />
+		<item name="Zaoan legs" chance="2500" />
+		<item name="widow's mandibles" chance="2000" />
+		<item name="wailing widow's necklace" chance="1000" />
 	</loot>
 </monster>
