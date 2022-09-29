@@ -11,9 +11,9 @@ function onThink()                     npcHandler:onThink()                     
 npcHandler:setMessage(MESSAGE_GREET, "Greetings |PLAYERNAME|. I'm selling clothing, and tamed wild animals. If you want to see my cloth shop type {outfits}, and if it's a tamed animal that you are looking for then say {mounts}")
 
     -- OUTFIT MAP GENERATOR
-local outfits = {}
+Romero_outfits = {}
     -- MOUNT MAP GENERATOR
-local mounts = {}
+Romero_mounts = {}
 
     -- ACTUAL SCRIPTS
 local shopItems = {}
@@ -21,10 +21,11 @@ function creatureSayCallback(cid, type, msg)
     if(not npcHandler:isFocused(cid)) then
         return false
     end
-    if #outfits == 0 then
+    if #Romero_outfits == 0 or Romero_outfits == nil then
+        Romero_outfits = {}
         for i, outfit in pairs(GameConfig.Outfits) do
             if not outfit.defaultUnlocked and outfit.sex == 0 then
-                outfits[#outfits + 1] = {
+                Romero_outfits[#Romero_outfits + 1] = {
                     showedAsItem = 2595,
                     name = outfit.name,
                     looktype = { outfit.id, GameConfig.Outfits[i + 55].id },
@@ -38,10 +39,11 @@ function creatureSayCallback(cid, type, msg)
         end
     end
 
-    if #mounts == 0 then
+    if #Romero_mounts == 0 or Romero_mounts == nil then
+        Romero_mounts = {}
         for i, mount in pairs(GameConfig.Mounts) do
             if not mount.defaultUnlocked and outfit.sex == 0 then
-                mounts[#mounts + 1] = {
+                Romero_mounts[#Romero_mounts + 1] = {
                     showedAsItem = 2595,
                     name = mount.name,
                     mountId = mount.id,
@@ -59,7 +61,7 @@ function creatureSayCallback(cid, type, msg)
     -- [ OUTFITS ] 
     if msgcontains(msg, 'outfits') or msgcontains(msg, 'outfit') then
         shopItems = {}
-        for i, outfit in pairs(outfits) do
+        for i, outfit in pairs(Romero_outfits) do
             if outfit.premium == 1 and isPlayerPremium or outfit.premium == 0 then
                 shopItems[#shopItems + 1] = {
                     id = outfit.showedAsItem, 
@@ -97,7 +99,7 @@ function creatureSayCallback(cid, type, msg)
         shopItems = {}
 
         local player = Player(cid)
-        for i, mount in pairs(mounts) do
+        for i, mount in pairs(Romero_mounts) do
             if not player:hasMount(mount.id) then
                 shopItems[#shopItems + 1] = {
                     id = mount.showedAsItem, 
