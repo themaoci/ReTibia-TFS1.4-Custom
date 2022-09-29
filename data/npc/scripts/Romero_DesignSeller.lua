@@ -80,7 +80,7 @@ function creatureSayCallback(cid, type, msg)
             local outfitId = outfits[specialId].looktype[player:Sex()]
 
             if canPlayerWearOutfit(cid, outfitId, 3) then
-                npcHandler:say('You already have this addon!', cid)
+                npcHandler:say('You bought ' .. outfits[specialId].name .. ' already!', cid)
                 npcHandler:resetNpc()
                 return true
             end
@@ -91,7 +91,9 @@ function creatureSayCallback(cid, type, msg)
             npcHandler:say('You have bought ' .. shopItems[specialId].name .. " outfit!", cid)
             return true
         end
-        print(#shopItems)
+        if not isPlayerPremium then
+            npcHandler:say('... oh right, I only showed you the clothes everyone can see. To see more diversity. Which is visible only for VIPs, make sure to apply for it by spending gold or Golden Tokens!', cid)
+        end
         openShopWindow(cid, shopItems, onBuy, onSell)
         return true
     end
@@ -99,21 +101,23 @@ function creatureSayCallback(cid, type, msg)
     if msgcontains(msg, 'mounts') or msgcontains(msg, 'mount') then
         shopItems = {}
         for i, mount in pairs(Romero_mounts) do
-            if not player:hasMount(mount.id) then
-                shopItems[#shopItems + 1] = {
-                    id = mount.showedAsItem, 
-                    buy = 10000 * mount.requirements[1][2], 
-                    sell = 0, 
-                    subType = 0, 
-                    specialId = #shopItems + 1,
-                    name = mount.name .. "\n+" .. mount.speed .. " speed",
-                    funcShop = 1
-                }
+            if mount.isPremium == 1 and isPlayerPremium or mount.isPremium == 0 then
+                if not player:hasMount(mount.id) then
+                    shopItems[#shopItems + 1] = {
+                        id = mount.showedAsItem, 
+                        buy = 10000 * mount.requirements[1][2], 
+                        sell = 0, 
+                        subType = 0, 
+                        specialId = #shopItems + 1,
+                        name = mount.name .. "\n+" .. mount.speed .. " speed",
+                        funcShop = 1
+                    }
+                end
             end
         end
         local onBuy = function(cid, item, subType, amount, ignoreCap, inBackpacks, specialId)
             if player:hasMount(mounts[specialId].mountId) then
-                npcHandler:say('You already have this mount!', cid)
+                npcHandler:say('You bought ' .. mounts[specialId].name .. ' already!', cid)
                 npcHandler:resetNpc()
                 return true
             end
@@ -123,6 +127,9 @@ function creatureSayCallback(cid, type, msg)
             player:addMount(mounts[specialId].mountId)
             npcHandler:say('You have bought ' .. shopItems[specialId].name .. " mount!", cid)
             return true
+        end
+        if not isPlayerPremium then
+            npcHandler:say('... oh right, I only showed you the tamed monsters everyone can see. To see more diversity. Which is visible only for VIPs make sure to apply for it by spending gold or Golden Tokens!', cid)
         end
         openShopWindow(cid, shopItems, onBuy, onSell)
         return true
