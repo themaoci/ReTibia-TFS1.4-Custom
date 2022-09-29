@@ -4751,7 +4751,7 @@ int LuaScriptInterface::luaGameGetAllOutfits(lua_State* L)
 		setField(L, "name", lootBlock.name);
 		setField(L, "sex", 0);
 		setField(L, "defaultUnlocked", lootBlock.unlocked);
-		setField(L, "premium", lootBlock.premium);
+		setField(L, "premium", (lootBlock.premium) ? 1 : 0);
 
 		lua_rawseti(L, -2, ++index);
 	}
@@ -4761,8 +4761,8 @@ int LuaScriptInterface::luaGameGetAllOutfits(lua_State* L)
 		setField(L, "id", lootBlock.lookType);
 		setField(L, "name", lootBlock.name);
 		setField(L, "sex", 1);
-		setField(L, "defaultUnlocked", lootBlock.unlocked);
-		setField(L, "premium", lootBlock.premium);
+		setField(L, "defaultUnlocked", (lootBlock.unlocked) ? 1 : 0);
+		setField(L, "premium", (lootBlock.premium) ? 1 : 0);
 
 		lua_rawseti(L, -2, ++index);
 	}
@@ -4780,7 +4780,7 @@ int LuaScriptInterface::luaGameGetAllMounts(lua_State* L)
 		setField(L, "clientId", mount.clientId);
 		setField(L, "id", mount.id);
 		setField(L, "name", mount.name);
-		setField(L, "premium", mount.premium);
+		setField(L, "premium", (mount.premium) ? 1 : 0);
 		setField(L, "speed", mount.speed);
 
 		lua_rawseti(L, -2, ++index);
