@@ -12,42 +12,47 @@ npcHandler:setMessage(MESSAGE_GREET, "Greetings |PLAYERNAME|. I'm selling clothi
 
     -- OUTFIT MAP GENERATOR
 local outfits = {}
-for i, outfit in pairs(GameConfig.Outfits) do
-    if not outfit.defaultUnlocked and outfit.sex == 0 then
-        outfits[#outfits + 1] = {
-            showedAsItem = 2595,
-            name = outfit.name,
-            looktype = { outfit.id, GameConfig.Outfits[i + 55].id },
-            maxAddon = 3,
-            isPremium = outfit.premium,
-            requirements = {
-                {2160, 10} -- crystal coin x10
-            }    
-        }    
-    end
-end
     -- MOUNT MAP GENERATOR
 local mounts = {}
-for i, mount in pairs(GameConfig.Mounts) do
-    if not mount.defaultUnlocked and outfit.sex == 0 then
-        mounts[#mounts + 1] = {
-            showedAsItem = 2595,
-            name = mount.name,
-            mountId = mount.id,
-            isPremium = mount.premium,
-            speedBonus = mount.speed,
-            requirements = {
-                {2160, 10} -- crystal coin x10
-            }
-        }
-    end
-end
 
     -- ACTUAL SCRIPTS
 local shopItems = {}
 function creatureSayCallback(cid, type, msg)
     if(not npcHandler:isFocused(cid)) then
         return false
+    end
+    if #outfits == 0 then
+        for i, outfit in pairs(GameConfig.Outfits) do
+            if not outfit.defaultUnlocked and outfit.sex == 0 then
+                outfits[#outfits + 1] = {
+                    showedAsItem = 2595,
+                    name = outfit.name,
+                    looktype = { outfit.id, GameConfig.Outfits[i + 55].id },
+                    maxAddon = 3,
+                    isPremium = outfit.premium,
+                    requirements = {
+                        {2160, 10} -- crystal coin x10
+                    }    
+                }    
+            end
+        end
+    end
+
+    if #mounts == 0 then
+        for i, mount in pairs(GameConfig.Mounts) do
+            if not mount.defaultUnlocked and outfit.sex == 0 then
+                mounts[#mounts + 1] = {
+                    showedAsItem = 2595,
+                    name = mount.name,
+                    mountId = mount.id,
+                    isPremium = mount.premium,
+                    speedBonus = mount.speed,
+                    requirements = {
+                        {2160, 10} -- crystal coin x10
+                    }
+                }
+            end
+        end
     end
     local isPlayerPremium = isPremium(cid)
 
