@@ -22,9 +22,7 @@ function creatureSayCallback(cid, type, msg)
     if #Romero_outfits == 0 or Romero_outfits == nil then
         Romero_outfits = {}
         for i, outfit in pairs(GameConfig.Outfits) do
-            print(outfit.name)
-            print(outfit.defaultUnlocked)
-            if not outfit.defaultUnlocked and outfit.sex == 0 then
+            if outfit.sex == 0 then
                 Romero_outfits[#Romero_outfits + 1] = {
                     showedAsItem = 2595,
                     name = outfit.name,
@@ -62,6 +60,7 @@ function creatureSayCallback(cid, type, msg)
     -- [ OUTFITS ] 
     if msgcontains(msg, 'outfits') or msgcontains(msg, 'outfit') then
         local shopItems = {}
+        print(#Romero_outfits)
         for i, outfit in pairs(Romero_outfits) do
             print(outfit.name)
             if outfit.premium == 1 and isPlayerPremium or outfit.premium == 0 then
