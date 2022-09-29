@@ -13,6 +13,7 @@ npcHandler:setMessage(MESSAGE_GREET, "Greetings |PLAYERNAME|. I'm selling clothi
 Romero_outfits = {}
 Romero_mounts = {}
 
+local shopItems = {}
     -- ACTUAL SCRIPTS
 function creatureSayCallback(cid, type, msg)
     if(not npcHandler:isFocused(cid)) then
@@ -55,11 +56,13 @@ function creatureSayCallback(cid, type, msg)
             end
         end
     end
+    
+    local player = Player(cid)
     local isPlayerPremium = isPremium(cid)
 
     -- [ OUTFITS ] 
     if msgcontains(msg, 'outfits') or msgcontains(msg, 'outfit') then
-        local shopItems = {}
+        shopItems = {}
         for i, outfit in pairs(Romero_outfits) do
             if outfit.isPremium == 1 and isPlayerPremium or outfit.isPremium == 0 then
                 shopItems[#shopItems + 1] = {
@@ -74,8 +77,6 @@ function creatureSayCallback(cid, type, msg)
             end
         end
         local onBuy = function(cid, item, subType, amount, ignoreCap, inBackpacks, specialId)
-
-            local player = Player(cid)
             local outfitId = outfits[specialId].looktype[player:Sex()]
 
             if canPlayerWearOutfit(cid, outfitId, 3) then
@@ -91,15 +92,12 @@ function creatureSayCallback(cid, type, msg)
             return true
         end
         print(#shopItems)
-        print(type(shopItems))
-        openShopWindow(cid, shopItems, onBuy)
+        openShopWindow(cid, shopItems, onBuy, onSell)
         return true
     end
     -- [ MOUNTS ] 
     if msgcontains(msg, 'mounts') or msgcontains(msg, 'mount') then
-        local shopItems = {}
-
-        local player = Player(cid)
+        shopItems = {}
         for i, mount in pairs(Romero_mounts) do
             if not player:hasMount(mount.id) then
                 shopItems[#shopItems + 1] = {
@@ -126,7 +124,7 @@ function creatureSayCallback(cid, type, msg)
             npcHandler:say('You have bought ' .. shopItems[specialId].name .. " mount!", cid)
             return true
         end
-        openShopWindow(cid, shopItems, onBuy)
+        openShopWindow(cid, shopItems, onBuy, onSell)
         return true
     end
     return true
