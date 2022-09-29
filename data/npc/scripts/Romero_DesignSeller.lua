@@ -42,7 +42,7 @@ function creatureSayCallback(cid, type, msg)
     if #Romero_mounts == 0 or Romero_mounts == nil then
         Romero_mounts = {}
         for i, mount in pairs(GameConfig.Mounts) do
-            if not mount.defaultUnlocked and outfit.sex == 0 then
+            if not mount.premium then
                 Romero_mounts[#Romero_mounts + 1] = {
                     showedAsItem = 2595,
                     name = mount.name,
