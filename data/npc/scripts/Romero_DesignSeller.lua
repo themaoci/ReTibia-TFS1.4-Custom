@@ -91,7 +91,7 @@ function creatureSayCallback(cid, type, msg)
             npcHandler:say('You have bought ' .. shopItems[specialId].name .. " outfit!", cid)
             return true
         end
-        openShopWindow(cid, spells, onBuy)
+        openShopWindow(cid, shopItems, onBuy)
         return true
     end
     -- [ MOUNTS ] 
@@ -125,7 +125,7 @@ function creatureSayCallback(cid, type, msg)
             npcHandler:say('You have bought ' .. shopItems[specialId].name .. " mount!", cid)
             return true
         end
-        openShopWindow(cid, spells, onBuy)
+        openShopWindow(cid, shopItems, onBuy)
         return true
     end
     return true
