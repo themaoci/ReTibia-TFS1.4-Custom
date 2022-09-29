@@ -623,7 +623,6 @@
 		<monster name="Bug" x="2" y="5" z="8" spawntime="450" />
 		<monster name="Bug" x="9" y="12" z="8" spawntime="450" />
 	</spawn>
-	<spawn centerx="305" centery="337" centerz="8" radius="15" />
 	<spawn centerx="252" centery="342" centerz="8" radius="15">
 		<monster name="Cave Rat" x="-2" y="-13" z="8" spawntime="60" />
 		<monster name="Cave Rat" x="-4" y="-11" z="8" spawntime="60" />
@@ -970,7 +969,6 @@
 	<spawn centerx="404" centery="288" centerz="9" radius="1">
 		<monster name="Orc" x="1" y="0" z="9" spawntime="450" />
 	</spawn>
-	<spawn centerx="322" centery="292" centerz="9" radius="1" />
 	<spawn centerx="332" centery="294" centerz="9" radius="5">
 		<monster name="Troll" x="-1" y="1" z="9" spawntime="450" />
 	</spawn>
