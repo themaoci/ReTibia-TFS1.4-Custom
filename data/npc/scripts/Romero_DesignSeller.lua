@@ -52,7 +52,7 @@ function creatureSayCallback(cid, type, msg)
     local isPlayerPremium = isPremium(cid)
 
     -- [ OUTFITS ] 
-    if msgcontains(msg, 'outfits') msgcontains(msg, 'outfit') then
+    if msgcontains(msg, 'outfits') or msgcontains(msg, 'outfit') then
         shopItems = {}
         for i, outfit in pairs(outfits) do
             if outfit.premium == 1 and isPlayerPremium or outfit.premium == 0 then
@@ -88,7 +88,7 @@ function creatureSayCallback(cid, type, msg)
         return true
     end
     -- [ MOUNTS ] 
-    if msgcontains(msg, 'mounts') msgcontains(msg, 'mount') then
+    if msgcontains(msg, 'mounts') or msgcontains(msg, 'mount') then
         shopItems = {}
 
         local player = Player(cid)
