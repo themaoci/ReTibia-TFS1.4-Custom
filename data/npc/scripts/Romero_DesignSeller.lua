@@ -62,8 +62,8 @@ function creatureSayCallback(cid, type, msg)
         local shopItems = {}
         print(#Romero_outfits)
         for i, outfit in pairs(Romero_outfits) do
-            print(outfit.name .. " " .. outfit.premium .. " " .. tostring(isPlayerPremium))
-            if outfit.premium == 1 and isPlayerPremium or outfit.premium == 0 then
+            print(outfit.name .. " " .. outfit.isPremium .. " " .. tostring(isPlayerPremium))
+            if outfit.isPremium == 1 and isPlayerPremium or outfit.isPremium == 0 then
                 shopItems[#shopItems + 1] = {
                     id = outfit.showedAsItem, 
                     buy = 10000 * outfit.requirements[1][2], 
