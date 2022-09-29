@@ -10,20 +10,20 @@ function onThink()                     npcHandler:onThink()                     
 
 npcHandler:setMessage(MESSAGE_GREET, "Greetings |PLAYERNAME|. I'm selling clothing, and tamed wild animals. If you want to see my cloth shop type {outfits}, and if it's a tamed animal that you are looking for then say {mounts}")
 
-    -- OUTFIT MAP GENERATOR
 Romero_outfits = {}
-    -- MOUNT MAP GENERATOR
 Romero_mounts = {}
 
     -- ACTUAL SCRIPTS
-local shopItems = {}
 function creatureSayCallback(cid, type, msg)
     if(not npcHandler:isFocused(cid)) then
         return false
     end
+    -- OUTFIT MAP GENERATOR
     if #Romero_outfits == 0 or Romero_outfits == nil then
         Romero_outfits = {}
         for i, outfit in pairs(GameConfig.Outfits) do
+            print(outfit.name)
+            print(outfit.defaultUnlocked)
             if not outfit.defaultUnlocked and outfit.sex == 0 then
                 Romero_outfits[#Romero_outfits + 1] = {
                     showedAsItem = 2595,
@@ -39,6 +39,7 @@ function creatureSayCallback(cid, type, msg)
         end
     end
 
+    -- MOUNT MAP GENERATOR
     if #Romero_mounts == 0 or Romero_mounts == nil then
         Romero_mounts = {}
         for i, mount in pairs(GameConfig.Mounts) do
@@ -60,8 +61,9 @@ function creatureSayCallback(cid, type, msg)
 
     -- [ OUTFITS ] 
     if msgcontains(msg, 'outfits') or msgcontains(msg, 'outfit') then
-        shopItems = {}
+        local shopItems = {}
         for i, outfit in pairs(Romero_outfits) do
+            print(outfit.name)
             if outfit.premium == 1 and isPlayerPremium or outfit.premium == 0 then
                 shopItems[#shopItems + 1] = {
                     id = outfit.showedAsItem, 
@@ -96,7 +98,7 @@ function creatureSayCallback(cid, type, msg)
     end
     -- [ MOUNTS ] 
     if msgcontains(msg, 'mounts') or msgcontains(msg, 'mount') then
-        shopItems = {}
+        local shopItems = {}
 
         local player = Player(cid)
         for i, mount in pairs(Romero_mounts) do
