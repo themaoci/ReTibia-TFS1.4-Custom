@@ -1609,13 +1609,19 @@
 		<monster name="Skeleton" x="-8" y="5" z="10" spawntime="450" />
 		<monster name="Skeleton" x="-3" y="5" z="10" spawntime="450" />
 	</spawn>
-	<spawn centerx="369" centery="415" centerz="10" radius="5" />
+	<spawn centerx="369" centery="415" centerz="10" radius="5">
+		<monster name="Undead Gladiator" x="-2" y="-2" z="10" spawntime="60" />
+		<monster name="Undead Gladiator" x="-2" y="3" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="285" centery="417" centerz="10" radius="8">
 		<monster name="Skeleton" x="2" y="-2" z="10" spawntime="450" />
 		<monster name="Skeleton" x="-2" y="1" z="10" spawntime="450" />
 		<monster name="Skeleton" x="4" y="1" z="10" spawntime="450" />
 	</spawn>
-	<spawn centerx="355" centery="418" centerz="10" radius="10" />
+	<spawn centerx="355" centery="418" centerz="10" radius="10">
+		<monster name="Undead Gladiator" x="-6" y="2" z="10" spawntime="60" />
+		<monster name="Undead Gladiator" x="9" y="7" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="506" centery="419" centerz="10" radius="15">
 		<monster name="Dragonling" x="-2" y="-14" z="10" spawntime="240" />
 		<monster name="Dragonling" x="6" y="-3" z="10" spawntime="240" />
@@ -1633,7 +1639,13 @@
 		<monster name="Dragonling" x="-7" y="-2" z="10" spawntime="240" />
 		<monster name="Dragonling" x="11" y="12" z="10" spawntime="240" />
 	</spawn>
-	<spawn centerx="382" centery="430" centerz="10" radius="5" />
+	<spawn centerx="349" centery="429" centerz="10" radius="1">
+		<monster name="Undead Gladiator" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="382" centery="430" centerz="10" radius="5">
+		<monster name="Undead Gladiator" x="1" y="-4" z="10" spawntime="60" />
+		<monster name="Undead Gladiator" x="1" y="3" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="411" centery="441" centerz="10" radius="15">
 		<monster name="Wyrm" x="0" y="-3" z="10" spawntime="240" />
 		<monster name="Wyrm" x="-5" y="-2" z="10" spawntime="240" />
@@ -1692,7 +1704,12 @@
 		<monster name="Minotaur" x="4" y="7" z="10" spawntime="240" />
 		<monster name="Minotaur" x="11" y="7" z="10" spawntime="240" />
 	</spawn>
-	<spawn centerx="359" centery="447" centerz="10" radius="15" />
+	<spawn centerx="359" centery="447" centerz="10" radius="15">
+		<monster name="Undead Gladiator" x="5" y="-11" z="10" spawntime="60" />
+		<monster name="Undead Gladiator" x="2" y="1" z="10" spawntime="60" />
+		<monster name="Undead Gladiator" x="-15" y="4" z="10" spawntime="60" />
+		<monster name="Undead Gladiator" x="-8" y="14" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="520" centery="462" centerz="10" radius="15">
 		<monster name="Wyvern" x="-10" y="4" z="10" spawntime="240" />
 		<monster name="Wyvern" x="13" y="4" z="10" spawntime="240" />
