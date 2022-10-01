@@ -783,6 +783,39 @@ bool Map::getPathMatching(const Creature& creature, std::vector<Direction>& dirL
 	int_fast32_t prevx = endPos.x;
 	int_fast32_t prevy = endPos.y;
 
+	if(!creature.getPlayer() && !creature.getNpc()) {
+		// --- VISIBILITY CHECKS (bresenham algorithm) --- //
+			const int dx = endPos.x - pos.x;
+			const int dy = endPos.y - pos.y;
+			int x = pos.x;
+			int y = pos.y;
+			int p=2*dy-dx;
+			
+			while(x<endPos.x)
+			{
+				const Tile* tile = g_game.map.getTile(x,y, pos.z);
+				if(p >= 0)
+				{
+					// you cannot see the player etc.
+					if(tile && tile->hasFlag(FLAG_BLOCK_PATHFIND | FLAG_BLOCK_PROJECTILE | FLAG_BLOCK_SOLID))
+						return false;
+					y = y+1;
+					p = p+2*dy-2*dx;
+				}
+				else
+				{
+					// you cannot see the player etc.
+					if(tile && tile->hasFlag(FLAG_BLOCK_PATHFIND | FLAG_BLOCK_PROJECTILE | FLAG_BLOCK_SOLID))
+						return false;
+					p = p+2*dy;
+				}
+				x = x+1;
+			}
+		// --- VISIBILITY CHECKS END --- //
+	}
+
+
+
 	found = found->parent;
 	while (found) {
 		pos.x = found->x;
