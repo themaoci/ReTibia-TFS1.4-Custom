@@ -4222,7 +4222,7 @@ int LuaScriptInterface::luaDiscordWebhook(lua_State* L)
 	const std::string& webhookUrl = getString(L, 1);
 	const std::string& Text = getString(L, 2);
 
-	g_discord->webhook(webhookUrl, Text);
+	g_discord.webhook(webhookUrl, Text);
 
 	return 1;
 }
