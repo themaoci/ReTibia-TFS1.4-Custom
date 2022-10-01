@@ -79,7 +79,7 @@ bool Creature::canSee(const Position& myPos, const Position& pos, int32_t viewRa
 		if(p >= 0)
 		{
 			// you cannot see the player etc.
-			if(tile && tile->hasFlag(FLAG_BLOCK_PATHFIND | FLAG_BLOCK_PROJECTILE))
+			if(tile && tile->hasFlag(FLAG_BLOCK_PATHFIND | FLAG_BLOCK_PROJECTILE | FLAG_BLOCK_SOLID))
 				return false;
 			y = y+1;
 			p = p+2*dy-2*dx;
@@ -87,7 +87,7 @@ bool Creature::canSee(const Position& myPos, const Position& pos, int32_t viewRa
 		else
 		{
 			// you cannot see the player etc.
-			if(tile && tile->hasFlag(FLAG_BLOCK_PATHFIND | FLAG_BLOCK_PROJECTILE))
+			if(tile && tile->hasFlag(FLAG_BLOCK_PATHFIND | FLAG_BLOCK_PROJECTILE | FLAG_BLOCK_SOLID))
 				return false;
 			p = p+2*dy;
 		}
@@ -112,7 +112,8 @@ bool Creature::canSeeCreature(const Creature* creature) const
 	if (!canSeeInvisibility() && creature->isInvisible()) {
 		return false;
 	}
-	return true;
+	// this could increase the cpu time but it will be worth it
+	return canSee(creature->getPosition());
 }
 
 void Creature::setSkull(Skulls_t newSkull)
