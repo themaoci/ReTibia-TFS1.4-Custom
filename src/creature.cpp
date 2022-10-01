@@ -65,35 +65,6 @@ bool Creature::canSee(const Position& myPos, const Position& pos, int32_t viewRa
 	if(!(visibleOverXAxis && visibleOverYAxis))
 		return false;
 	//localMapCache[maxWalkCacheHeight + dy][maxWalkCacheWidth + dx]
- 
- // --- VISIBILITY CHECKS (bresenham algorithm) --- //
-	const int dx = pos.x - myPos.x;
-	const int dy = pos.y - myPos.y;
-	int x = myPos.x;
-	int y = myPos.y;
-	int p=2*dy-dx;
-	
-	while(x<pos.x)
-	{
-		const Tile* tile = g_game.map.getTile(x,y, myPos.z);
-		if(p >= 0)
-		{
-			// you cannot see the player etc.
-			if(tile && tile->hasFlag(FLAG_BLOCK_PATHFIND | FLAG_BLOCK_PROJECTILE | FLAG_BLOCK_SOLID))
-				return false;
-			y = y+1;
-			p = p+2*dy-2*dx;
-		}
-		else
-		{
-			// you cannot see the player etc.
-			if(tile && tile->hasFlag(FLAG_BLOCK_PATHFIND | FLAG_BLOCK_PROJECTILE | FLAG_BLOCK_SOLID))
-				return false;
-			p = p+2*dy;
-		}
-		x = x+1;
-	}
- // --- VISIBILITY CHECKS END --- //
 
 	return true;
 }
@@ -113,7 +84,7 @@ bool Creature::canSeeCreature(const Creature* creature) const
 		return false;
 	}
 	// this could increase the cpu time but it will be worth it
-	return canSee(creature->getPosition());
+	return true;
 }
 
 void Creature::setSkull(Skulls_t newSkull)
