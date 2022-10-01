@@ -32,6 +32,7 @@ Dispatcher g_dispatcher;
 Scheduler g_scheduler;
 
 Game g_game;
+Discord g_discord;
 ConfigManager g_config;
 Monsters g_monsters;
 Vocations g_vocations;
