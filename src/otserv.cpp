@@ -150,7 +150,6 @@ void mainLoader(int, char*[], ServiceManager* services)
 	}
 
 	// read global config
-	std::cout << ">> Loading config";
 	if (!g_config.load()) {
 		startupErrorMessage("Unable to load " + configFile + "!");
 		return;
@@ -166,7 +165,6 @@ void mainLoader(int, char*[], ServiceManager* services)
 #endif
 
 	//set RSA key
-	std::cout << " | Loading RSA key ";
 	try {
 		g_RSA.loadPEM("key.pem");
 	} catch(const std::exception& e) {
@@ -174,17 +172,14 @@ void mainLoader(int, char*[], ServiceManager* services)
 		return;
 	}
 
-	std::cout << " | DB:" << std::flush;
 
 	if (!Database::getInstance().connect()) {
 		startupErrorMessage("Failed to connect to database.");
 		return;
 	}
 
-	std::cout << " MySQL " << Database::getClientVersion();
 
 	// run database manager
-	std::cout << " | db manager";
 
 	if (!DatabaseManager::isDatabaseSetup()) {
 		startupErrorMessage("The database you have specified in config.lua is empty, please import the schema.sql to your database.");
@@ -199,14 +194,12 @@ void mainLoader(int, char*[], ServiceManager* services)
 	}
 
 	//load vocations
-	std::cout << " | vocations";
 	if (!g_vocations.loadFromXml()) {
 		startupErrorMessage("Unable to load vocations!");
 		return;
 	}
 
 	// load item data
-	std::cout << " | items";
 	if (!Item::items.loadFromOtb("data/items/items.otb")) {
 		startupErrorMessage("Unable to load items (OTB)!");
 		return;
@@ -217,37 +210,31 @@ void mainLoader(int, char*[], ServiceManager* services)
 		return;
 	}
 
-	std::cout << " | scripts";
 	if (!ScriptingManager::getInstance().loadScriptSystems()) {
 		startupErrorMessage("Failed to load script systems");
 		return;
 	}
 
-	std::cout << " | lua scripts";
 	if (!g_scripts->loadScripts("scripts", false, false)) {
 		startupErrorMessage("Failed to load lua scripts");
 		return;
 	}
 
-	std::cout << " | monsters";
 	if (!g_monsters.loadFromXml()) {
 		startupErrorMessage("Unable to load monsters!");
 		return;
 	}
 
-	std::cout << " | lua monsters";
 	if (!g_scripts->loadScripts("monster", false, false)) {
 		startupErrorMessage("Failed to load lua monsters");
 		return;
 	}
 
-	std::cout << " | outfits";
 	if (!Outfits::getInstance().loadFromXml()) {
 		startupErrorMessage("Unable to load outfits!");
 		return;
 	}
 
-	std::cout << " | world type: " << std::flush;
 	std::string worldType = asLowerCaseString(g_config.getString(ConfigManager::WORLD_TYPE));
 	if (worldType == "pvp") {
 		g_game.setWorldType(WORLD_TYPE_PVP);
@@ -262,13 +249,11 @@ void mainLoader(int, char*[], ServiceManager* services)
 	}
 	std::cout << asUpperCaseString(worldType);
 
-	std::cout << " | Loading map";
 	if (!g_game.loadMainMap(g_config.getString(ConfigManager::MAP_NAME))) {
 		startupErrorMessage("Failed to load map");
 		return;
 	}
 
-	std::cout << " | Initializing";
 	g_game.setGameState(GAME_STATE_INIT);
 
 	// Game client protocols
