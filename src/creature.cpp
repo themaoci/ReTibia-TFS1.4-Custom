@@ -5,6 +5,7 @@
 
 #include "creature.h"
 #include "game.h"
+#include "map.h"
 #include "monster.h"
 #include "configmanager.h"
 #include "scheduler.h"
@@ -55,10 +56,46 @@ bool Creature::canSee(const Position& myPos, const Position& pos, int32_t viewRa
 			return false;
 		}
 	}
-
 	const int_fast32_t offsetz = myPos.getZ() - pos.getZ();
-	return (pos.getX() >= myPos.getX() - Map::maxViewportX + offsetz) && (pos.getX() <= myPos.getX() + Map::maxViewportX + offsetz)
-		&& (pos.getY() >= myPos.getY() - Map::maxViewportY + offsetz) && (pos.getY() <= myPos.getY() + Map::maxViewportY + offsetz);
+
+	const bool visibleOverXAxis = (pos.getX() >= myPos.getX() - Map::maxViewportX + offsetz) && (pos.getX() <= myPos.getX() + Map::maxViewportX + offsetz);
+	const bool visibleOverYAxis = (pos.getY() >= myPos.getY() - Map::maxViewportY + offsetz) && (pos.getY() <= myPos.getY() + Map::maxViewportY + offsetz);
+
+
+	if(!(visibleOverXAxis && visibleOverYAxis))
+		return false;
+	//localMapCache[maxWalkCacheHeight + dy][maxWalkCacheWidth + dx]
+ 
+ // --- VISIBILITY CHECKS (bresenham algorithm) --- //
+	const int dx = pos.x - myPos.x;
+	const int dy = pos.y - myPos.y;
+	int x = myPos.x;
+	int y = myPos.y;
+	int p=2*dy-dx;
+	
+	while(x<pos.x)
+	{
+		const Tile* tile = g_game.map.getTile(x,y, myPos.z);
+		if(p >= 0)
+		{
+			// you cannot see the player etc.
+			if(tile && tile->hasFlag(FLAG_BLOCK_PATHFIND | FLAG_BLOCK_PROJECTILE))
+				return false;
+			y = y+1;
+			p = p+2*dy-2*dx;
+		}
+		else
+		{
+			// you cannot see the player etc.
+			if(tile && tile->hasFlag(FLAG_BLOCK_PATHFIND | FLAG_BLOCK_PROJECTILE))
+				return false;
+			p = p+2*dy;
+		}
+		x = x+1;
+	}
+ // --- VISIBILITY CHECKS END --- //
+
+	return true;
 }
 
 bool Creature::canSee(const Position& pos) const
