@@ -64,7 +64,8 @@ bool Creature::canSee(const Position& myPos, const Position& pos, int32_t viewRa
 
 	if(!(visibleOverXAxis && visibleOverYAxis))
 		return false;
-	//localMapCache[maxWalkCacheHeight + dy][maxWalkCacheWidth + dx]
+	
+	// Vis check here
 
 	return true;
 }
