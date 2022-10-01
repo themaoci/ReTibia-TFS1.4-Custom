@@ -561,36 +561,9 @@ bool Monster::searchTarget(TargetSearchType_t searchType /*= TARGETSEARCH_DEFAUL
 				}
 			}
 			const Position targetPos = target->getPosition();
-			//if(!creature.getPlayer() && !creature.getNpc()) {
-				// --- VISIBILITY CHECKS (bresenham algorithm) --- //
-					const int dx = targetPos.x - myPos.x;
-					const int dy = targetPos.y - myPos.y;
-					int x = myPos.x;
-					int y = myPos.y;
-					int p=2*dy-dx;
-					
-					while(x<targetPos.x)
-					{
-						const Tile* tile = g_game.map.getTile(x,y, myPos.z);
-						if(p >= 0)
-						{
-							// you cannot see the player etc.
-							if(tile && tile->hasFlag(FLAG_BLOCK_PATHFIND | FLAG_BLOCK_PROJECTILE | FLAG_BLOCK_SOLID))
-								return false;
-							y = y+1;
-							p = p+2*dy-2*dx;
-						}
-						else
-						{
-							// you cannot see the player etc.
-							if(tile && tile->hasFlag(FLAG_BLOCK_PATHFIND | FLAG_BLOCK_PROJECTILE | FLAG_BLOCK_SOLID))
-								return false;
-							p = p+2*dy;
-						}
-						x = x+1;
-					}
-				// --- VISIBILITY CHECKS END --- //
-			//}
+			if(!g_game.isSightClear(myPos, targetPos, true)) {
+				return false;
+			}
 
 			if (target && selectTarget(target)) {
 				return true;
@@ -603,6 +576,7 @@ bool Monster::searchTarget(TargetSearchType_t searchType /*= TARGETSEARCH_DEFAUL
 		case TARGETSEARCH_RANDOM:
 		default: {
 			if (!resultList.empty()) {
+
 				auto it = resultList.begin();
 				std::advance(it, uniform_random(0, resultList.size() - 1));
 				return selectTarget(*it);
@@ -686,7 +660,9 @@ bool Monster::selectTarget(Creature* creature)
 	if (!isTarget(creature)) {
 		return false;
 	}
-
+	if(!g_game.isSightClear(getPosition(), creature->getPosition(), true)) {
+		return false;
+	}
 	auto it = std::find(targetList.begin(), targetList.end(), creature);
 	if (it == targetList.end()) {
 		//Target not found in our target list.
