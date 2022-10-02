@@ -10396,7 +10396,7 @@ int LuaScriptInterface::luaPlayerGetFightMode(lua_State* L)
 int LuaScriptInterface::luaPlayerAddItemToAutoLoot(lua_State* L)
 {
     // player:addItemToAutoLoot(itemId)
-    Player* player = genUserdata<Player>(L, 1);
+    Player* player = getUserdata<Player>(L, 1);
     if (!player) {
         lua_pushnil(L);
         return 1;
