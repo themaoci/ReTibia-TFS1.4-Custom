@@ -2521,6 +2521,11 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Player", "hasSecureMode", LuaScriptInterface::luaPlayerHasSecureMode);
 	registerMethod("Player", "getFightMode", LuaScriptInterface::luaPlayerGetFightMode);
 
+	registerMethod("Player", "addItemToAutoLoot", LuaScriptInterface::luaPlayerAddItemToAutoLoot);
+	registerMethod("Player", "removeItemFromAutoLoot", LuaScriptInterface::luaPlayerRemoveItemFromAutoLoot);
+	registerMethod("Player", "getItemFromAutoLoot", LuaScriptInterface::luaPlayerGetItemFromAutoLoot);
+	registerMethod("Player", "getAutoLootList", LuaScriptInterface::luaPlayerGetAutoLootList );
+
 	registerMethod("Player", "getStoreInbox", LuaScriptInterface::luaPlayerGetStoreInbox);
 
 	// Monster
@@ -10386,6 +10391,112 @@ int LuaScriptInterface::luaPlayerGetFightMode(lua_State* L)
 		lua_pushnil(L);
 	}
 	return 1;
+}
+
+int LuaScriptInterface::luaPlayerAddItemToAutoLoot(lua_State* L)
+{
+    // player:addItemToAutoLoot(itemId)
+    Player* player = genUserdata<Player>(L, 1);
+    if (!player) {
+        lua_pushnil(L);
+        return 1;
+    }
+
+    uint16_t itemId;
+    if (isNumber(L, 2)) {
+        itemId = getNumber<uint16_t>(L, 2);
+    } else {
+        itemId = Item::items.getItemIdByName(getString(L, 2));
+        if (itemId == 0) {
+            lua_pushnil(L);
+            return 1;
+        }
+    }
+    player->addItemToAutoLoot(itemId);
+    pushBoolean(L, true);
+    return 1;
+}
+
+int LuaScriptInterface::luaPlayerRemoveItemFromAutoLoot(lua_State* L)
+{
+    // player:removeItemFromAutoLoot(itemId)
+    Player* player = getUserdata<Player>(L, 1);
+    if (!player) {
+        lua_pushnil(L);
+        return 1;
+    }
+
+    uint16_t itemId;
+    if (isNumber(L, 2)) {
+        itemId = getNumber<uint16_t>(L, 2);
+    } else {
+        itemId = Item::items.getItemIdByName(getString(L, 2));
+        if (itemId == 0) {
+            lua_pushnil(L);
+            return 1;
+        }
+    }
+
+    player->removeItemFromAutoLoot(itemId);
+    pushBoolean(L, true);
+
+    return 1;
+}
+
+int LuaScriptInterface::luaPlayerGetItemFromAutoLoot(lua_State* L)
+{
+    // player:getItemFromAutoLoot(itemId)
+    Player* player = getUserdata<Player>(L, 1);
+    if (!player) {
+        lua_pushnil(L);
+        return 1;
+    }
+
+    uint16_t itemId;
+    if (isNumber(L, 2)) {
+        itemId = getNumber<uint16_t>(L, 2);
+    } else {
+        itemId = Item::items.getItemIdByName(getString(L, 2));
+        if (itemId == 0) {
+            lua_pushnil(L);
+            return 1;
+        }
+    }
+
+    if (player->getItemFromAutoLoot(itemId)) {
+        pushBoolean(L, true);
+    } else {
+        pushBoolean(L, false);
+    }
+
+    return 1;
+}
+
+int LuaScriptInterface::luaPlayerGetAutoLootList(lua_State* L)
+{
+    // player:getAutoLootList()
+    Player* player = getUserdata<Player>(L, 1);
+
+    if (player) {
+        std::set<uint32_t> value = player->autoLootList;
+   
+        if (value.size() == 0) {
+          lua_pushnil(L);
+          return 1;
+        }
+
+        int index = 0;
+        lua_createtable(L, value.size(), 0);
+        for(auto i : value) {
+            lua_pushnumber(L, i);
+            lua_rawseti(L, -2, ++index);
+        }
+   
+    } else {
+        lua_pushnil(L);
+    }
+
+    return 1;
 }
 
 int LuaScriptInterface::luaPlayerGetStoreInbox(lua_State* L)

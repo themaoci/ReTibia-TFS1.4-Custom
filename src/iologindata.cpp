@@ -538,6 +538,21 @@ bool IOLoginData::loadPlayer(Player* player, DBResult_ptr result)
 		} while (result->next());
 	}
 
+	//load auto loot tables
+    if ((result = db.storeQuery(fmt::format("SELECT `autoloot_list` FROM `player_autoloot` WHERE `player_id` = {:d}", player->getGUID())))) {
+        unsigned long lootlistSize;
+        const char* autolootlist = result->getStream("autoloot_list", lootlistSize);
+        PropStream propStreamList;
+        propStreamList.init(autolootlist, lootlistSize);
+
+        int16_t value;
+        int16_t item = propStreamList.read<int16_t>(value);
+        while (item) {
+               player->addItemToAutoLoot(value);
+            item = propStreamList.read<int16_t>(value);
+        }
+    }
+
 	//load vip list
 	if ((result = db.storeQuery(fmt::format("SELECT `player_id` FROM `account_viplist` WHERE `account_id` = {:d}", player->getAccount())))) {
 		do {
@@ -789,6 +804,33 @@ bool IOLoginData::savePlayer(Player* player)
 	if (!db.executeQuery(fmt::format("DELETE FROM `player_inboxitems` WHERE `player_id` = {:d}", player->getGUID()))) {
 		return false;
 	}
+
+	//save auto loot
+	if (!db.executeQuery(fmt::format("DELETE FROM `player_autoloot` WHERE `player_id` = {:d}", player->getGUID()))) {
+        return false;
+    }
+
+    PropWriteStream propWriteStreamAutoLoot;
+
+    for (auto i : player->autoLootList) {
+        propWriteStreamAutoLoot.write<uint16_t>(i);
+    }
+
+    size_t lootlistSize;
+    const char* autolootlist = propWriteStreamAutoLoot.getStream(lootlistSize);
+
+    query.str(std::string());
+
+    DBInsert autolootQuery("INSERT INTO `player_autoloot` (`player_id`, `autoloot_list`) VALUES ");
+
+    query << player->getGUID() << ',' << db.escapeBlob(autolootlist, lootlistSize);
+    if (!autolootQuery.addRow(query)) {
+        return false;
+    }
+
+    if (!autolootQuery.execute()) {
+        return false;
+    }
 
 	DBInsert inboxQuery("INSERT INTO `player_inboxitems` (`player_id`, `pid`, `sid`, `itemtype`, `count`, `attributes`) VALUES ");
 	itemList.clear();
