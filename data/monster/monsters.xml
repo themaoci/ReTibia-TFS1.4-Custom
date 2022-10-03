@@ -97,4 +97,8 @@
 	<monster name="Rottie the Rotworm" file="raid_special/rottie_the_rotworm.xml"/>
 	<monster name="Tarantula" file="raid_special/tarantula.xml"/>
 	<monster name="Teleskor" file="raid_special/teleskor.xml"/>
+  
+  
+  <!-- TESTING -->
+	<monster name="Fire Elemental" file="fire_elemental.xml"/>
 </monsters>
