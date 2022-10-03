@@ -4849,7 +4849,7 @@
 		<attribute key="corpseType" value="blood" />
 	</item>
 	<item id="2813" article="a" name="dead rat">
-		<attribute key="weight" value="6300" />
+		<attribute key="weight" value="500" />
 		<attribute key="containerSize" value="10" />
 		<attribute key="decayTo" value="2814" />
 		<attribute key="duration" value="300" />
@@ -4857,20 +4857,20 @@
 		<attribute key="fluidSource" value="blood" />
 	</item>
 	<item id="2814" article="a" name="dead rat">
-		<attribute key="weight" value="4400" />
+		<attribute key="weight" value="450" />
 		<attribute key="containerSize" value="10" />
 		<attribute key="decayTo" value="2815" />
 		<attribute key="duration" value="300" />
 		<attribute key="corpseType" value="blood" />
 	</item>
 	<item id="2815" article="a" name="dead rat">
-		<attribute key="weight" value="3000" />
+		<attribute key="weight" value="400" />
 		<attribute key="decayTo" value="2816" />
 		<attribute key="duration" value="30" />
 		<attribute key="corpseType" value="blood" />
 	</item>
 	<item id="2816" article="a" name="dead rat">
-		<attribute key="weight" value="2000" />
+		<attribute key="weight" value="300" />
 		<attribute key="decayTo" value="0" />
 		<attribute key="duration" value="30" />
 		<attribute key="corpseType" value="blood" />
@@ -5900,15 +5900,15 @@
 		<attribute key="corpseType" value="blood" />
 	</item>
 	<item id="2992" article="a" name="dead rabbit">
-		<attribute key="weight" value="1000" />
+		<attribute key="weight" value="500" />
 		<attribute key="containerSize" value="5" />
 		<attribute key="corpseType" value="blood" />
 	</item>
 	<item id="2993" article="a" name="dead rabbit">
-		<attribute key="weight" value="3070" />
+		<attribute key="weight" value="470" />
 	</item>
 	<item id="2994" article="a" name="dead rabbit">
-		<attribute key="weight" value="2070" />
+		<attribute key="weight" value="370" />
 	</item>
 	<item id="2995" article="a" name="dead swamp troll">
 		<attribute key="weight" value="60000" />
@@ -6371,7 +6371,7 @@
 		<attribute key="corpseType" value="blood" />
 	</item>
 	<item id="3073" article="a" name="dead rat">
-		<attribute key="weight" value="6300" />
+		<attribute key="weight" value="500" />
 		<attribute key="containerSize" value="10" />
 		<attribute key="decayTo" value="2813" />
 		<attribute key="duration" value="10" />
@@ -6379,19 +6379,19 @@
 		<attribute key="fluidSource" value="blood" />
 	</item>
 	<item id="3074" article="a" name="dead rat">
-		<attribute key="weight" value="4400" />
+		<attribute key="weight" value="450" />
 		<attribute key="decayTo" value="3075" />
 		<attribute key="duration" value="300" />
 		<attribute key="corpseType" value="blood" />
 	</item>
 	<item id="3075" article="a" name="dead rat">
-		<attribute key="weight" value="3000" />
+		<attribute key="weight" value="400" />
 		<attribute key="decayTo" value="3076" />
 		<attribute key="duration" value="30" />
 		<attribute key="corpseType" value="blood" />
 	</item>
 	<item id="3076" article="a" name="dead rat">
-		<attribute key="weight" value="3000" />
+		<attribute key="weight" value="300" />
 		<attribute key="decayTo" value="0" />
 		<attribute key="duration" value="30" />
 		<attribute key="corpseType" value="blood" />
@@ -6444,7 +6444,7 @@
 		<attribute key="duration" value="600" />
 	</item>
 	<item id="3086" article="a" name="dead wolf">
-		<attribute key="weight" value="11950" />
+		<attribute key="weight" value="5950" />
 		<attribute key="containerSize" value="6" />
 		<attribute key="decayTo" value="3087" />
 		<attribute key="duration" value="600" />
@@ -6452,14 +6452,14 @@
 		<attribute key="fluidSource" value="blood" />
 	</item>
 	<item id="3087" article="a" name="dead wolf">
-		<attribute key="weight" value="11500" />
+		<attribute key="weight" value="5500" />
 		<attribute key="containerSize" value="6" />
 		<attribute key="decayTo" value="3088" />
 		<attribute key="duration" value="600" />
 		<attribute key="corpseType" value="blood" />
 	</item>
 	<item id="3088" article="a" name="dead wolf">
-		<attribute key="weight" value="8000" />
+		<attribute key="weight" value="5000" />
 		<attribute key="decayTo" value="3089" />
 		<attribute key="duration" value="600" />
 		<attribute key="corpseType" value="blood" />
@@ -6501,7 +6501,7 @@
 		<attribute key="duration" value="300" />
 	</item>
 	<item id="3095" article="a" name="dead deer">
-		<attribute key="weight" value="25000" />
+		<attribute key="weight" value="15000" />
 		<attribute key="containerSize" value="5" />
 		<attribute key="decayTo" value="3096" />
 		<attribute key="duration" value="600" />
@@ -6509,19 +6509,19 @@
 		<attribute key="fluidSource" value="blood" />
 	</item>
 	<item id="3096" article="a" name="dead deer">
-		<attribute key="weight" value="24000" />
+		<attribute key="weight" value="14000" />
 		<attribute key="containerSize" value="5" />
 		<attribute key="decayTo" value="3097" />
 		<attribute key="duration" value="600" />
 	</item>
 	<item id="3097" article="a" name="dead deer">
-		<attribute key="weight" value="21000" />
+		<attribute key="weight" value="11000" />
 		<attribute key="containerSize" value="5" />
 		<attribute key="decayTo" value="3098" />
 		<attribute key="duration" value="600" />
 	</item>
 	<item id="3098" article="a" name="dead deer">
-		<attribute key="weight" value="21000" />
+		<attribute key="weight" value="10000" />
 		<attribute key="decayTo" value="0" />
 		<attribute key="duration" value="600" />
 	</item>
@@ -6626,21 +6626,21 @@
 		<attribute key="corpseType" value="blood" />
 	</item>
 	<item id="3119" article="a" name="dead rabbit">
-		<attribute key="weight" value="1000" />
+		<attribute key="weight" value="500" />
 		<attribute key="containerSize" value="5" />
 		<attribute key="decayTo" value="3120" />
 		<attribute key="duration" value="900" />
 		<attribute key="corpseType" value="blood" />
 	</item>
 	<item id="3120" article="a" name="dead rabbit">
-		<attribute key="weight" value="1000" />
+		<attribute key="weight" value="400" />
 		<attribute key="containerSize" value="5" />
 		<attribute key="decayTo" value="3121" />
 		<attribute key="duration" value="600" />
 		<attribute key="corpseType" value="blood" />
 	</item>
 	<item id="3121" article="a" name="dead rabbit">
-		<attribute key="weight" value="1000" />
+		<attribute key="weight" value="300" />
 		<attribute key="decayTo" value="0" />
 		<attribute key="duration" value="600" />
 		<attribute key="corpseType" value="blood" />
