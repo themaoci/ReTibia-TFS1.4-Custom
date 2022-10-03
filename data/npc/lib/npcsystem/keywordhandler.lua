@@ -45,7 +45,6 @@ if not KeywordHandler then
 	end
 
 	-- Returns true if message contains all patterns/strings found in keywords.
-	-- Returns true if message contains all patterns/strings found in keywords.
 	function KeywordNode:checkMessage(cid, message)
   	if self.keywords.callback then
 			return self.keywords.callback(self.keywords, message)
