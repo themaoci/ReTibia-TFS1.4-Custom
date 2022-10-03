@@ -22,8 +22,10 @@ function talk.onSay(player, words, param)
 	local action = split[1]
 
     if action == "add" then
-        local item = split[2]:gsub("%s+", "", 1)
+        local item = split[2]
         local itemType = ItemType(item)
+		
+        print(item)
 	    if itemType:getId() == 0 then
 	        itemType = ItemType(tonumber(item))
 	        if itemType:getName() == '' then
@@ -41,7 +43,7 @@ function talk.onSay(player, words, param)
         player:sendTextMessage(MESSAGE_INFO_DESCR, "You're now auto looting " .. itemType:getName())
         return false
     elseif action == "remove" then
-        local item = split[2]:gsub("%s+", "", 1)
+        local item = split[2]
         local itemType = ItemType(item)
 	    if itemType:getId() == 0 then
 	        itemType = ItemType(tonumber(item))
