@@ -22,7 +22,8 @@ ec.onDropLoot = function(self, corpse)
 			if party then
 				party:broadcastPartyLoot(text)
 			else
-				player:sendTextMessage(MESSAGE_LOOT, text)
+				player:sendChannelMessage(9, TALKTYPE_CHANNEL_O, text)
+				--player:sendTextMessage(MESSAGE_LOOT, text)
 			end
 		end
 	else
