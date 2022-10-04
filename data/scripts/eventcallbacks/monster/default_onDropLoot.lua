@@ -1,5 +1,10 @@
 local ec = EventCallback
 
+-- for ease of using it multiple times and just changing it once...
+function sendChannelMessageToPlayer(player, message) 
+	player:sendChannelMessage(nil, message, TALKTYPE_CHANNEL_Y, 9)
+end
+
 ec.onDropLoot = function(self, corpse)
 	if configManager.getNumber(configKeys.RATE_LOOT) == 0 then
 		return
@@ -20,19 +25,22 @@ ec.onDropLoot = function(self, corpse)
 			local text = ("Loot of %s:\n%s"):format(mType:getNameDescription(), corpse:getContentDescription())
 			local party = player:getParty()
 			if party then
-				party:broadcastPartyLoot(text)
+				for member in pairs(party:getMembers()) do 
+					sendChannelMessageToPlayer(player, "[" .. player:getName() .. "]" .. text)
+				end
 			else
-				player:sendTextMessage(MESSAGE_LOOT, text)
-				player:sendChannelMessage(nil, text, TALKTYPE_WHISPER, 9)
+				sendChannelMessageToPlayer(player, text)
 			end
 		end
 	else
 		local text = ("Loot of %s: nothing (due to low stamina)"):format(mType:getNameDescription())
 		local party = player:getParty()
 		if party then
-			party:broadcastPartyLoot(text)
+			for member in pairs(party:getMembers()) do 
+				sendChannelMessageToPlayer(player, "[" .. player:getName() .. "]" .. text)
+			end
 		else
-			player:sendTextMessage(MESSAGE_LOOT, text)
+			sendChannelMessageToPlayer(player, text)
 		end
 	end
 end
