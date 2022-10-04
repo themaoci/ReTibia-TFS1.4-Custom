@@ -4042,7 +4042,7 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 					}
 					message.text = spectatorMessage;
 				}
-				tmpPlayer->sendChannelMessage(nullptr, message.text, TALKTYPE_CHANNEL_Y, 9);
+				tmpPlayer->sendChannelMessage(std::string(), message.text, TALKTYPE_CHANNEL_Y, 9);
 				//tmpPlayer->sendTextMessage(message);
 			}
 		}
@@ -4137,7 +4137,7 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 						}
 						message.text = spectatorMessage;
 					}
-					tmpPlayer->sendChannelMessage(nullptr, message.text, TALKTYPE_CHANNEL_O, 9);
+					tmpPlayer->sendChannelMessage(std::string(), message.text, TALKTYPE_CHANNEL_O, 9);
 					//tmpPlayer->sendTextMessage(message);
 				}
 
@@ -4238,7 +4238,7 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 					}
 					message.text = spectatorMessage;
 				}
-				tmpPlayer->sendChannelMessage(nullptr, message.text, TALKTYPE_CHANNEL_R1, 9);
+				tmpPlayer->sendChannelMessage(std::string(), message.text, TALKTYPE_CHANNEL_R1, 9);
 				//tmpPlayer->sendTextMessage(message);
 			}
 		}
