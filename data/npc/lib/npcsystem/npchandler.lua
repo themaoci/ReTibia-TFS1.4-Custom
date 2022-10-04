@@ -636,6 +636,6 @@ if NpcHandler == nil then
 			if player then
 				npc:say(message, TALKTYPE_PRIVATE_NP, false, player, npc:getPosition())
 			end
-		end, self.talkDelayTime * 1000, Npc():getId(), message) -- focus
+		end, self.talkDelayTime * 1000, Npc():getId(), message, focus) -- 
 	end
 end
