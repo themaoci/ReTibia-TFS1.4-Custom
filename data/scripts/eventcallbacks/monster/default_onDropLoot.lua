@@ -17,13 +17,13 @@ ec.onDropLoot = function(self, corpse)
 		end
 
 		if player then
-			local text = ("Loot of %s: %s"):format(mType:getNameDescription(), corpse:getContentDescription())
+			local text = ("Loot of %s:\n%s"):format(mType:getNameDescription(), corpse:getContentDescription())
 			local party = player:getParty()
 			if party then
 				party:broadcastPartyLoot(text)
 			else
 				player:sendTextMessage(MESSAGE_LOOT, text)
-				player:sendChannelMessage(nil, text, TALKTYPE_CHANNEL_R1, 9)
+				player:sendChannelMessage(nil, text, TALKTYPE_CHANNEL_O, 9)
 			end
 		end
 	else
