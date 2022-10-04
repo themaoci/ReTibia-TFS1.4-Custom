@@ -23,9 +23,7 @@ ec.onDropLoot = function(self, corpse)
 				party:broadcastPartyLoot(text)
 			else
 				player:sendTextMessage(MESSAGE_LOOT, text)
-				for i = 1, 11 do
-					player:sendChannelMessage(nil, i .. " -> " .. text, TALKTYPE_CHANNEL_R1, i)
-				end
+				player:sendChannelMessage(nil, text, TALKTYPE_CHANNEL_R1, 9)
 			end
 		end
 	else
