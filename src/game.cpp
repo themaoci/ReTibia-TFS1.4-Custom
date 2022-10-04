@@ -4294,7 +4294,8 @@ bool Game::combatChangeMana(Creature* attacker, Creature* target, CombatDamage& 
 			message.position = target->getPosition();
 			message.primary.value = realManaChange;
 			message.primary.color = TEXTCOLOR_MAYABLUE;
-			targetPlayer->sendTextMessage(message);
+			targetPlayer->sendChannelMessage(std::string(), message.text, TALKTYPE_SAY, 9);
+			//targetPlayer->sendTextMessage(message);
 		}
 	} else {
 		const Position& targetPos = target->getPosition();
@@ -4378,7 +4379,8 @@ bool Game::combatChangeMana(Creature* attacker, Creature* target, CombatDamage& 
 				}
 				message.text = spectatorMessage;
 			}
-			tmpPlayer->sendTextMessage(message);
+			tmpPlayer->sendChannelMessage(std::string(), message.text, TALKTYPE_SAY, 9);
+			//tmpPlayer->sendTextMessage(message);
 		}
 	}
 
