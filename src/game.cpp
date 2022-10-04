@@ -4042,7 +4042,8 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 					}
 					message.text = spectatorMessage;
 				}
-				tmpPlayer->sendTextMessage(message);
+				tmpPlayer->sendChannelMessage(nullptr, message.text, TALKTYPE_CHANNEL_Y, 9);
+				//tmpPlayer->sendTextMessage(message);
 			}
 		}
 	} else {
@@ -4136,7 +4137,8 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 						}
 						message.text = spectatorMessage;
 					}
-					tmpPlayer->sendTextMessage(message);
+					tmpPlayer->sendChannelMessage(nullptr, message.text, TALKTYPE_CHANNEL_O, 9);
+					//tmpPlayer->sendTextMessage(message);
 				}
 
 				damage.primary.value -= manaDamage;
@@ -4236,7 +4238,8 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 					}
 					message.text = spectatorMessage;
 				}
-				tmpPlayer->sendTextMessage(message);
+				tmpPlayer->sendChannelMessage(nullptr, message.text, TALKTYPE_CHANNEL_R1, 9);
+				//tmpPlayer->sendTextMessage(message);
 			}
 		}
 
