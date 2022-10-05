@@ -2,7 +2,7 @@
 // Use of this source code is governed by the GPL-2.0 License that can be found in the LICENSE file.
 
 #include "otpch.h"
-
+#include <boost/algorithm/string/replace.hpp>
 #include "monsters.h"
 #include "monster.h"
 #include "spells.h"
@@ -53,9 +53,10 @@ bool Monsters::loadFromXml(bool reloading /*= false*/)
 	loaded = true;
 
 	for (auto monsterNode : doc.child("monsters").children()) {
-		std::string name = asLowerCaseString(monsterNode.attribute("name").as_string());
-		std::string file = "data/monster/" + std::string(monsterNode.attribute("file").as_string());
-		unloadedMonsters.emplace(name, file);
+		std::string name = boost::replace_all_copy(asLowerCaseString(monsterNode.attribute("name").as_string()), "_", " ");
+		std::string nodeName = std::string(monsterNode.attribute("node").as_string());
+		unloadedMonsters.emplace(name, 
+			"data/monster/" + nodeName + "/" + boost::replace_all_copy(name, " ", "_") + ".xml");
 	}
 
 	bool forceLoad = g_config.getBoolean(ConfigManager::FORCE_MONSTERTYPE_LOAD);
