@@ -51,7 +51,7 @@
 		<item name="gold coin" countmax="56" chance="23000" />
 		<item name="boots of haste" chance="320" />
 		<item name="two handed sword" chance="8470" />
-		<item name="halberd" chance="11850" />
+		<item id="2381" chance="11850" />
 		<item name="spear" countmax="3" chance="30800" />
 		<item name="dragon lance" chance="110" />
 		<item name="battle hammer" chance="6980" />

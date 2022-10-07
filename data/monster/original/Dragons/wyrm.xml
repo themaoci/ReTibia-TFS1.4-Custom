@@ -63,7 +63,7 @@
 		<item name="gold coin" countmax="100" chance="30000" />
 		<item name="gold coin" countmax="30" chance="30000" />
 		<item name="crossbow" chance="5920" />
-		<item name="burst arrow" countmax="10" chance="7650" />
+		<item id="2546" countmax="10" chance="7650" />
 		<item name="dragon ham" countmax="3" chance="34800" />
 		<item name="dragonbone staff" chance="110" />
 		<item name="strong health potion" chance="19970" />

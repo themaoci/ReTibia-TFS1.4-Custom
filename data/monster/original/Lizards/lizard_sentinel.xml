@@ -40,7 +40,7 @@
 	<loot>
 		<item name="small diamond" chance="190" />
 		<item name="gold coin" countmax="80" chance="89000" />
-		<item name="halberd" chance="510" />
+		<item id="2381" chance="510" />
 		<item name="spear" countmax="3" chance="8750" />
 		<item name="obsidian lance" chance="1120" />
 		<item name="chain armor" chance="8560" />

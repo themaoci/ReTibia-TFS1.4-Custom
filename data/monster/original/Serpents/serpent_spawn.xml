@@ -76,7 +76,7 @@
 		<item name="crown armor" chance="510" />
 		<item name="royal helmet" chance="140" />
 		<item name="tower shield" chance="920" />
-		<item name="power bolt" chance="6200" />
+		<item id="2547" chance="6200" />
 		<item name="green mushroom" chance="18200" />
 		<item name="charmer's tiara" chance="180" />
 		<item id="4842" chance="600" /><!-- Old Parchment -->

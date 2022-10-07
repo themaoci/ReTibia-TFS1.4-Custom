@@ -53,7 +53,7 @@
 		<item name="gold coin" countmax="40" chance="45000" />
 		<item name="stealth ring" chance="450" />
 		<item name="gold ring" chance="10" />
-		<item name="halberd" chance="3003" />
+		<item id="2381" chance="3003" />
 		<item name="golden armor" chance="10" />
 		<item name="green mushroom" chance="1450" />
 		<item name="health potion" chance="4930" />

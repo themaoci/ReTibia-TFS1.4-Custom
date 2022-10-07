@@ -824,7 +824,9 @@
 	<monster name="undead cavebear" node="original/Skeletons"/>
 	<monster name="undead minion" node="original/Skeletons"/>
 	<monster name="undead mine worker" node="original/Skeletons"/>
-	<monster name="undead minion" node="original/Skeletons"/>
+	<monster name="undead minion" node="original/Skeletons"/>	
+	<monster name="undead gladiator" node="original/Skeletons"/>
+
 <!--            Sorcerers            -->
 	<monster name="dark apprentice" node="original/Sorcerers"/>
 	<monster name="dark magician" node="original/Sorcerers"/>

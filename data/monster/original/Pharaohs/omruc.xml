@@ -69,8 +69,8 @@
 		<item name="hammer of wrath" chance="300" />
 		<item name="arrow" countmax="21" chance="10000" />
 		<item name="poison arrow" countmax="20" chance="10000" />
-		<item name="burst arrow" countmax="15" chance="10000" />
-		<item name="power bolt" countmax="3" chance="10000" />
+		<item id="2546" countmax="15" chance="10000" />
+		<item id="2547" countmax="3" chance="10000" />
 		<item name="onyx arrow" countmax="2" chance="10000" />
 		<item name="great health potion" chance="7000" />
 	</loot>

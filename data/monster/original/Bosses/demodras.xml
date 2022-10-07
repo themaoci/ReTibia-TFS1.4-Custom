@@ -59,8 +59,8 @@
 		<item name="dragon scale mail" chance="333" />
 		<item name="royal helmet" chance="588" />
 		<item name="tower shield" chance="1333" />
-		<item name="burst arrow" countmax="5" chance="2222" />
-		<item name="power bolt" countmax="10" chance="2222" />
+		<item id="2546" countmax="5" chance="2222" />
+		<item id="2547" countmax="10" chance="2222" />
 		<item name="dragon ham" countmax="2" chance="20000" />
 		<item name="green mushroom" chance="6666" />
 		<item name="worm" countmax="10" chance="50000" />
