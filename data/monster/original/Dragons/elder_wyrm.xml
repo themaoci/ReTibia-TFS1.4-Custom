@@ -38,7 +38,7 @@
 		</defense>
 	</defenses>
 	<elements>
-		<element energyPercent="80" />
+		<!-- <element energyPercent="80" /> -->
 		<element firePercent="25" />
 	</elements>
 	<immunities>
