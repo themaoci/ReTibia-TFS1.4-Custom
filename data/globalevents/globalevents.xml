@@ -5,8 +5,8 @@
 
 
 	<!-- <globalevent name="Server Save" interval="600" script="Server_Save.lua" /> -->
-	<globalevent name="Server Save" interval="10800000" script="Server_Save.lua" />
-	<globalevent name="Server Clear Map" time="00:00:00" script="Map_Clean.lua" />
+	<globalevent name="Server_Save" interval="10800000" script="Server_Save.lua" />
+	<globalevent name="Map_Clean" time="00:00:00" script="Map_Clean.lua" />
 
 
 	<!--
