@@ -1,104 +1,924 @@
 <?xml version="1.0"?>
 <monsters>
-  <!-- Custom Spawns -->
-	<monster name="trainer" file="training_device.xml"/>
-	<monster name="Weard Dragon Statue" file="dragon_statue_device.xml"/>
+<!-- 
+	name -> will be loaded always as lowerCase and with spaces, is used for spawning monsters
+	node -> is a folder where xml is located from monsters.xml file 
+	loaded xml file -> will always have _ in replace of any spaces in name
+-->
+<!-- New Spawns -->
+	<monster name="elder dragon" node="custom"/>
   
-  <!-- Almost Unkillable God Beings -->
-	<monster name="Demigod ??????" file="demigod_punish.xml"/>
-
-  <!-- Default Rookgaard -->
-	<monster name="bear" file="default rookgaard/bear.xml"/>
-	<monster name="bug" file="default rookgaard/bug.xml"/>
-	<monster name="cave rat" file="default rookgaard/cave rat.xml"/>
-	<monster name="chicken" file="default rookgaard/chicken.xml"/>
-	<monster name="deer" file="default rookgaard/deer.xml"/>
-	<monster name="ghoul" file="default rookgaard/ghoul.xml"/>
-	<monster name="goblin" file="default rookgaard/goblin.xml"/>
-	<monster name="minotaur mage" file="default rookgaard/minotaur mage.xml"/>
-	<monster name="minotaur" file="default rookgaard/minotaur.xml"/>
-	<monster name="orc spearman" file="default rookgaard/orc spearman.xml"/>
-	<monster name="orc" file="default rookgaard/orc.xml"/>
-	<monster name="rabbit" file="default rookgaard/rabbit.xml"/>
-	<monster name="rat" file="default rookgaard/rat.xml"/>
-	<monster name="rotworm" file="default rookgaard/rotworm.xml"/>
-	<monster name="sheep" file="default rookgaard/sheep.xml"/>
-	<monster name="skeleton" file="default rookgaard/skeleton.xml"/>
-	<monster name="snake" file="default rookgaard/snake.xml"/>
-	<monster name="troll" file="default rookgaard/troll.xml"/>
-	<monster name="warlock" file="default rookgaard/warlock.xml"/>
-	<monster name="wasp" file="default rookgaard/wasp.xml"/>
-	<monster name="wolf" file="default rookgaard/wolf.xml"/>
+<!-- Boss monsters and Special Event monsters -->
+	<monster name="strong wailing widow" node="custom"/>
+	<monster name="strong rottie the rotworm" node="custom"/>
+	<monster name="strong teleskor" node="custom"/>
   
-  <!-- Dragonic species -->
-  <monster name="dragon hatchling" file="dragonic_species/dragon_hatchling.xml"/>
-	<monster name="wyvern" file="dragonic_species/wyvern.xml"/>
-	<monster name="dragon lord hatchling" file="dragonic_species/dragon_lord_hatchling.xml"/>
-	<monster name="dragon" file="dragonic_species/dragon.xml"/>
-	<monster name="wyrm" file="dragonic_species/wyrm.xml"/>
-	<monster name="dragon lord" file="dragonic_species/dragon_lord.xml"/>
-	<monster name="dragonling" file="dragonic_species/dragonling.xml"/>
-	<monster name="draptor" file="dragonic_species/draptor.xml"/>
-	<monster name="elder wyrm" file="dragonic_species/elder_wyrm.xml"/>
-	<monster name="elder dragon" file="dragonic_species/elder_dragon.xml"/>
+<!-- Static Spawns -->
+	<monster name="trainer" node="custom"/>
+	<monster name="weard dragon statue" node="custom"/> 
 
-  <!-- Undead species -->
-	<monster name="banshee" file="undead_species/banshee.xml"/>
- 	<monster name="blightwalker" file="undead_species/blightwalker.xml"/>
- 	<monster name="crypt shambler" file="undead_species/crypt_shambler.xml"/>
- 	<monster name="death priest" file="undead_species/death_priest.xml"/>
- 	<monster name="elder mummy" file="undead_species/elder_mummy.xml"/>
- 	<monster name="greater death minion" file="undead_species/greater death minion.xml"/>
- 	<monster name="grim reaper" file="undead_species/grim_reaper.xml"/>
- 	<monster name="lich" file="undead_species/lich.xml"/>
- 	<monster name="mummy" file="undead_species/mummy.xml"/>
- 	<monster name="nightfiend" file="undead_species/nightfiend.xml"/>
- 	<monster name="tomb servant" file="undead_species/tomb_servant.xml"/>
- 	<monster name="undead prospector" file="undead_species/undead_prospector.xml"/>
- 	<monster name="vampire" file="undead_species/vampire.xml"/>
- 	<monster name="vampire bride" file="undead_species/vampire_bride.xml"/>
- 	<monster name="vicious manbat" file="undead_species/vicious_manbat.xml"/>
- 	<monster name="vampire viscount" file="undead_species/vampire_viscount.xml"/>
- 	<monster name="zombie" file="undead_species/zombie.xml"/>
- 	<monster name="ghastly dragon" file="undead_species/ghastly_dragon.xml"/>
+<!-- Almost Unkillable God Beings -->
+	<monster name="demigod punish" node="custom"/>
 
-  <!-- Skeleton species -->
-	<monster name="skeleton warrior" file="skeleton_species/skeleton_warrior.xml"/>
- 	<monster name="honour guard" file="skeleton_species/honour_guard.xml"/>
- 	<monster name="demon skeleton" file="skeleton_species/demon_skeleton.xml"/>
- 	<monster name="dreadbeast" file="skeleton_species/dreadbeast.xml"/>
- 	<monster name="undead minion" file="skeleton_species/undead minion.xml"/>
- 	<monster name="bonebeast" file="skeleton_species/bonebeast.xml"/>
- 	<monster name="undead cavebear" file="skeleton_species/undead cavebear.xml"/>
- 	<monster name="undead gladiator" file="skeleton_species/undead_gladiator.xml"/>
- 	<monster name="betrayed wraith" file="skeleton_species/betrayed_wraith.xml"/>
- 	<monster name="lost soul" file="skeleton_species/lost_soul.xml"/>
-
-  <!-- Bio Elemental -->
- 	<monster name="swampling" file="bio-elemental/swampling.xml"/>
- 	<monster name="slime" file="bio-elemental/slime.xml"/>
- 	<monster name="glooth anemone" file="bio-elemental/glooth_anemone.xml"/>
-	<monster name="devourer" file="bio-elemental/devourer.xml"/>
-
-  <!-- Arachnids -->
-	<monster name="spider" file="arachnids/spider.xml"/>
-	<monster name="poison spider" file="arachnids/poison_spider.xml"/>
-	<monster name="giant spider" file="arachnids/giant_spider.xml"/>
-	<monster name="wailing widow" file="arachnids/wailing_widow.xml"/>
+<!-- Almost Unkillable God Beings -->
+	<monster name="demigod" node="custom/endgame"/>
   
+<!--            Bosses            -->
+	<monster name="abyssador" node="original/Bosses"/>
+	<monster name="annihilon" node="original/Bosses"/>
+	<monster name="apocalypse" node="original/Bosses"/>
+	<monster name="apprentice sheng" node="original/Bosses"/>
+	<monster name="arachir the ancient one" node="original/Bosses"/>
+	<monster name="armenius" node="original/Bosses"/>
+	<monster name="azerus" node="original/Bosses"/>
+	<monster name="barbaria" node="original/Bosses"/>
+	<monster name="baron brute" node="original/Bosses"/>
+	<monster name="battlemaster zunzu" node="original/Bosses"/>
+	<monster name="bazir" node="original/Bosses"/>
+	<monster name="bibby bloodbath" node="original/Bosses"/>
+	<monster name="big boss trolliver" node="original/Bosses"/>
+	<monster name="bones" node="original/Bosses"/>
+	<monster name="boogey" node="original/Bosses"/>
+	<monster name="bretzecutioner" node="original/Bosses"/>
+	<monster name="bruise payne" node="original/Bosses"/>
+	<monster name="brutus bloodbeard" node="original/Bosses"/>
+	<monster name="bullwark" node="original/Bosses"/>
+	<monster name="captain jones" node="original/Bosses"/>
+	<monster name="chikhaton" node="original/Bosses"/>
+	<monster name="chizzoron the distorter" node="original/Bosses"/>
+	<monster name="clubarc the plunderer" node="original/Bosses"/>
+	<monster name="coldheart" node="original/Bosses"/>
+	<monster name="countess sorrow" node="original/Bosses"/>
+	<monster name="deadeye devious" node="original/Bosses"/>
+	<monster name="death priest shargon" node="original/Bosses"/>
+	<monster name="deathbine" node="original/Bosses"/>
+	<monster name="deathstrike" node="original/Bosses"/>
+	<monster name="demodras" node="original/Bosses"/>
+	<monster name="dharalion" node="original/Bosses"/>
+	<monster name="diblis the fair" node="original/Bosses"/>
+	<monster name="dirtbeard" node="original/Bosses"/>
+	<monster name="diseased bill" node="original/Bosses"/>
+	<monster name="diseased dan" node="original/Bosses"/>
+	<monster name="diseased fred" node="original/Bosses"/>
+	<monster name="doctor perhaps" node="original/Bosses"/>
+	<monster name="doomhowl" node="original/Bosses"/>
+	<monster name="dracola" node="original/Bosses"/>
+	<monster name="dreadwing" node="original/Bosses"/>
+	<monster name="energized raging mage" node="original/Bosses"/>
+	<monster name="esmeralda" node="original/Bosses"/>
+	<monster name="ethershreck" node="original/Bosses"/>
+	<monster name="evil mastermind" node="original/Bosses"/>
+	<monster name="fatality" node="original/Bosses"/>
+	<monster name="fazzrah" node="original/Bosses"/>
+	<monster name="fernfang" node="original/Bosses"/>
+	<monster name="ferumbras" node="original/Bosses"/>
+	<monster name="fleshslicer" node="original/Bosses"/>
+	<monster name="fluffy" node="original/Bosses"/>
+	<monster name="foreman kneebiter" node="original/Bosses"/>
+	<monster name="freegoiz" node="original/Bosses"/>
+	<monster name="fury of the emperor" node="original/Bosses"/>
+	<monster name="gazharagoth" node="original/Bosses"/>
+	<monster name="general murius" node="original/Bosses"/>
+	<monster name="ghazbaran" node="original/Bosses"/>
+	<monster name="glitterscale" node="original/Bosses"/>
+	<monster name="glooth bandit" node="original/Bosses"/>
+	<monster name="glooth brigand" node="original/Bosses"/>
+	<monster name="glooth fairy" node="original/Bosses"/>
+	<monster name="gnomevil" node="original/Bosses"/>
+	<monster name="golgordan" node="original/Bosses"/>
+	<monster name="gorgo" node="original/Bosses"/>
+	<monster name="grand mother foulscale" node="original/Bosses"/>
+	<monster name="grandfather tridian" node="original/Bosses"/>
+	<monster name="gravelord oshuran" node="original/Bosses"/>
+	<monster name="groam" node="original/Bosses"/>
+	<monster name="grorlam" node="original/Bosses"/>
+	<monster name="hairman the huge" node="original/Bosses"/>
+	<monster name="haunter" node="original/Bosses"/>
+	<monster name="hellgorak" node="original/Bosses"/>
+	<monster name="hemming" node="original/Bosses"/>
+	<monster name="heoni" node="original/Bosses"/>
+	<monster name="hide" node="original/Bosses"/>
+	<monster name="horestis" node="original/Bosses"/>
+	<monster name="incineron" node="original/Bosses"/>
+	<monster name="infernatil" node="original/Bosses"/>
+	<monster name="inky" node="original/Bosses"/>
+	<monster name="jaul" node="original/Bosses"/>
+	<monster name="jesse the wicked" node="original/Bosses"/>
+	<monster name="kerberos" node="original/Bosses"/>
+	<monster name="koshei the deathless" node="original/Bosses"/>
+	<monster name="kraknaknork" node="original/Bosses"/>
+	<monster name="kraknaknorks demon" node="original/Bosses"/>
+	<monster name="latrivan" node="original/Bosses"/>
+	<monster name="lethal lissy" node="original/Bosses"/>
+	<monster name="leviathan" node="original/Bosses"/>
+	<monster name="lisa" node="original/Bosses"/>
+	<monster name="lizard abomination" node="original/Bosses"/>
+	<monster name="lord of the elements" node="original/Bosses"/>
+	<monster name="mad mage" node="original/Bosses"/>
+	<monster name="mad technomancer" node="original/Bosses"/>
+	<monster name="madareth" node="original/Bosses"/>
+	<monster name="man in the cave" node="original/Bosses"/>
+	<monster name="massacre" node="original/Bosses"/>
+	<monster name="mawhawk" node="original/Bosses"/>
+	<monster name="menace" node="original/Bosses"/>
+	<monster name="mephiles" node="original/Bosses"/>
+	<monster name="minishabaal" node="original/Bosses"/>
+	<monster name="minotaur wallbreaker" node="original/Bosses"/>
+	<monster name="monstor" node="original/Bosses"/>
+	<monster name="moohtah master" node="original/Bosses"/>
+	<monster name="morgaroth" node="original/Bosses"/>
+	<monster name="morik the gladiator" node="original/Bosses"/>
+	<monster name="mr. punish" node="original/Bosses"/>
+	<monster name="munster" node="original/Bosses"/>
+	<monster name="mutated zalamon" node="original/Bosses"/>
+	<monster name="necropharus" node="original/Bosses"/>
+	<monster name="obujos" node="original/Bosses"/>
+	<monster name="orshabaal" node="original/Bosses"/>
+	<monster name="paiz the pauperizer" node="original/Bosses"/>
+	<monster name="pythius the rotten" node="original/Bosses"/>
+	<monster name="raging mage" node="original/Bosses"/>
+	<monster name="renegade orc" node="original/Bosses"/>
+	<monster name="ribstride" node="original/Bosses"/>
+	<monster name="robby the reckless" node="original/Bosses"/>
+	<monster name="rocko" node="original/Bosses"/>
+	<monster name="ron the ripper" node="original/Bosses"/>
+	<monster name="rottie the rotworm" node="original/Bosses"/>
+	<monster name="rotworm queen" node="original/Bosses"/>
+	<monster name="rukor zad" node="original/Bosses"/>
+	<monster name="scorn of the emperor" node="original/Bosses"/>
+	<monster name="shardhead" node="original/Bosses"/>
+	<monster name="sharptooth" node="original/Bosses"/>
+	<monster name="sir valorcrest" node="original/Bosses"/>
+	<monster name="smuggler baron silvertoe" node="original/Bosses"/>
+	<monster name="snake god essence" node="original/Bosses"/>
+	<monster name="snake thing" node="original/Bosses"/>
+	<monster name="spider queen" node="original/Bosses"/>
+	<monster name="spite of the emperor" node="original/Bosses"/>
+	<monster name="splasher" node="original/Bosses"/>
+	<monster name="stonecracker" node="original/Bosses"/>
+	<monster name="sulphur scuttler" node="original/Bosses"/>
+	<monster name="tanjis" node="original/Bosses"/>
+	<monster name="teleskor" node="original/Bosses"/>
+	<monster name="terofar" node="original/Bosses"/>
+	<monster name="the ravager" node="original/Bosses"/>
+	<monster name="the weakened count" node="original/Bosses"/>
+	<monster name="the abomination" node="original/Bosses"/>
+	<monster name="the axeorcist" node="original/Bosses"/>
+	<monster name="the blightfather" node="original/Bosses"/>
+	<monster name="the bloodtusk" node="original/Bosses"/>
+	<monster name="the bloodweb" node="original/Bosses"/>
+	<monster name="the collector" node="original/Bosses"/>
+	<monster name="the count" node="original/Bosses"/>
+	<monster name="the dreadorian" node="original/Bosses"/>
+	<monster name="the evil eye" node="original/Bosses"/>
+	<monster name="the frog prince" node="original/Bosses"/>
+	<monster name="the handmaiden" node="original/Bosses"/>
+	<monster name="the horned fox" node="original/Bosses"/>
+	<monster name="the imperor" node="original/Bosses"/>
+	<monster name="the many" node="original/Bosses"/>
+	<monster name="the noxious spawn" node="original/Bosses"/>
+	<monster name="the old widow" node="original/Bosses"/>
+	<monster name="the pale count" node="original/Bosses"/>
+	<monster name="the plasmother" node="original/Bosses"/>
+	<monster name="the snapper" node="original/Bosses"/>
+	<monster name="thul" node="original/Bosses"/>
+	<monster name="tiquandas revenge" node="original/Bosses"/>
+	<monster name="tirecz" node="original/Bosses"/>
+	<monster name="tormentor" node="original/Bosses"/>
+	<monster name="tremorak" node="original/Bosses"/>
+	<monster name="tromphonyte" node="original/Bosses"/>
+	<monster name="ungreez" node="original/Bosses"/>
+	<monster name="ushuriel" node="original/Bosses"/>
+	<monster name="verminor" node="original/Bosses"/>
+	<monster name="versperoth" node="original/Bosses"/>
+	<monster name="warlord ruzad" node="original/Bosses"/>
+	<monster name="wrath of the emperor" node="original/Bosses"/>
+	<monster name="xenia" node="original/Bosses"/>
+	<monster name="yaga the crone" node="original/Bosses"/>
+	<monster name="yakchal" node="original/Bosses"/>
+	<monster name="zanakeph" node="original/Bosses"/>
+	<monster name="zarabustor" node="original/Bosses"/>
+	<monster name="zavarash" node="original/Bosses"/>
+	<monster name="zevelon duskbringer" node="original/Bosses"/>
+	<monster name="zomba" node="original/Bosses"/>
+	<monster name="zoralurk" node="original/Bosses"/>
+	<monster name="zugurosh" node="original/Bosses"/>
+	<monster name="zulazza the corruptor" node="original/Bosses"/>
+	<!-- <monster name="" node="original/Bosses"/> -->
+<!--            Amazons - Amazonki            -->
+	<monster name="amazon" node="original/Amazons"/>
+	<monster name="valkyrie" node="original/Amazons"/>
+<!--            Annelids - Grzyby/Worms etc.            -->
+	<monster name="carrion worm" node="original/Annelids"/>
+	<monster name="drillworm" node="original/Annelids"/>
+	<monster name="rift worm" node="original/Annelids"/>
+	<monster name="rotworm" node="original/Annelids"/>
+	<monster name="rotworm queen" node="original/Annelids"/>
+<!--            Apes - Malpy           -->
+	<monster name="kongra" node="original/Apes"/>
+	<monster name="merlkin" node="original/Apes"/>
+	<monster name="sibang" node="original/Apes"/>
+	<monster name="yeti" node="original/Apes"/>
+<!--            Arachnids - Pajeczaki            -->
+	<monster name="crystal spider" node="original/Arachnids"/>
+	<monster name="dawn scorpion" node="original/Arachnids"/>
+	<monster name="giant spider" node="original/Arachnids"/>
+	<monster name="giant spider wyda" node="original/Arachnids"/>
+	<monster name="poison spider" node="original/Arachnids"/>
+	<monster name="sacred spider" node="original/Arachnids"/>
+	<monster name="sandstone scorpion" node="original/Arachnids"/>
+	<monster name="scorpion" node="original/Arachnids"/>
+	<monster name="spider" node="original/Arachnids"/>
+	<monster name="tarantula" node="original/Arachnids"/>
+	<monster name="wailing widow" node="original/Arachnids"/>
+<!--            Barbarians            -->
+	<monster name="barbarian bloodwalker" node="original/Barbarians"/>
+	<monster name="barbarian brutetamer" node="original/Barbarians"/>
+	<monster name="barbarian headsplitter" node="original/Barbarians"/>
+	<monster name="bBarbarian skullhunter" node="original/Barbarians"/>
+<!--            Bears            -->
+	<monster name="bear" node="original/Bears"/>
+	<monster name="panda" node="original/Bears"/>
+	<monster name="polar bear" node="original/Bears"/>
+	<monster name="undead cavebear" node="original/Bears"/>
+<!--            Bio-Elementals            -->
+	<monster name="bane bringer" node="original/Bio-Elementals"/>
+	<monster name="blood beast" node="original/Bio-Elementals"/>
+	<monster name="bog raider" node="original/Bio-Elementals"/>
+	<monster name="carniphila" node="original/Bio-Elementals"/>
+	<monster name="defiler" node="original/Bio-Elementals"/>
+	<monster name="devourer" node="original/Bio-Elementals"/>
+	<monster name="glooth anemone" node="original/Bio-Elementals"/>
+	<monster name="haunted treeling" node="original/Bio-Elementals"/>
+	<monster name="hideous fungus" node="original/Bio-Elementals"/>
+	<monster name="humongous fungus" node="original/Bio-Elementals"/>
+	<monster name="humorless fungus" node="original/Bio-Elementals"/>
+	<monster name="leaf golem" node="original/Bio-Elementals"/>
+	<monster name="mechanical fighter" node="original/Bio-Elementals"/>
+	<monster name="rot elemental" node="original/Bio-Elementals"/>
+	<monster name="slime" node="original/Bio-Elementals"/>
+	<monster name="son of verminor" node="original/Bio-Elementals"/>
+	<monster name="spit nettle" node="original/Bio-Elementals"/>
+	<monster name="strange slime" node="original/Bio-Elementals"/>
+	<monster name="swampling" node="original/Bio-Elementals"/>
+	<monster name="wilting leaf golem" node="original/Bio-Elementals"/>
+	<monster name="woodling" node="original/Bio-Elementals"/>
+<!--            Birds            -->
+	<monster name="berserker chicken" node="original/Birds"/>
+	<monster name="chicken" node="original/Birds"/>
+	<monster name="demon parrot" node="original/Birds"/>
+	<monster name="dire penguin" node="original/Birds"/>
+	<monster name="flamingo" node="original/Birds"/>
+	<monster name="marsh stalker" node="original/Birds"/>
+	<monster name="meadow strider" node="original/Birds"/>
+	<monster name="parrot" node="original/Birds"/>
+	<monster name="penguin" node="original/Birds"/>
+	<monster name="pigeon" node="original/Birds"/>
+	<monster name="seagull" node="original/Birds"/>
+	<monster name="terror bird" node="original/Birds"/>
+<!--            Blobs            -->
+	<monster name="acid blob" node="original/Blobs"/>
+	<monster name="death blob" node="original/Blobs"/>
+	<monster name="essence of darkness" node="original/Blobs"/>
+	<monster name="floor blob" node="original/Blobs"/>
+	<monster name="glooth blob" node="original/Blobs"/>
+	<monster name="mercury blob" node="original/Blobs"/>
+	<monster name="midnight spawn" node="original/Blobs"/>
+<!--            Bonelords            -->
+	<monster name="bBonelord" node="original/Bonelords"/>
+	<monster name="braindeath" node="original/Bonelords"/>
+	<monster name="elder bonelord" node="original/Bonelords"/>
+	<monster name="eye of the seven" node="original/Bonelords"/>
+	<monster name="gazer" node="original/Bonelords"/>
+<!--            Canines            -->
+	<monster name="crystal wolf" node="original/Canines"/>
+	<monster name="dog" node="original/Canines"/>
+	<monster name="gnarlhound" node="original/Canines"/>
+	<monster name="hellhound" node="original/Canines"/>
+	<monster name="hot dog" node="original/Canines"/>
+	<monster name="husky" node="original/Canines"/>
+	<monster name="poodle" node="original/Canines"/>
+	<monster name="starving wolf" node="original/Canines"/>
+	<monster name="thornfire wolf" node="original/Canines"/>
+	<monster name="war wolf" node="original/Canines"/>
+	<monster name="werewolf" node="original/Canines"/>
+	<monster name="wild dog" node="original/Canines"/>
+	<monster name="winter wolf" node="original/Canines"/>
+	<monster name="wolf" node="original/Canines"/>
+	<monster name="grey wolf" node="original/Canines"/>
+<!--            Chakoyas            -->
+	<monster name="chakoya toolshaper" node="original/Chakoyas"/>
+	<monster name="chakoya tribewarden" node="original/Chakoyas"/>
+	<monster name="chakoya windcaller" node="original/Chakoyas"/>
+<!--            Cnidarians            -->
+	<monster name="jellyfish" node="original/Amazons"/>
+<!--            Corym            -->
+	<monster name="corym charlatan" node="original/Corym"/>
+	<monster name="corym skirmisher" node="original/Corym"/>
+	<monster name="corym vanguard" node="original/Corym"/>
+	<monster name="little corym charlatan" node="original/Corym"/>
+<!--            Crustaceans            -->
+	<monster name="blood crab" node="original/Crustaceans"/>
+	<monster name="blood crab underwater" node="original/Crustaceans"/>
+	<monster name="crab" node="original/Crustaceans"/>
+	<monster name="crustacea gigantica" node="original/Crustaceans"/>
+<!--            Cryo-Elementals            -->
+	<monster name="ice golem" node="original/Cryo-Elementals"/>
+<!--            Deeplings            -->
+	<monster name="deepling brawler" node="original/Deeplings"/>
+	<monster name="deepling elite" node="original/Deeplings"/>
+	<monster name="deepling guard" node="original/Deeplings"/>
+	<monster name="deepling master librarian" node="original/Deeplings"/>
+	<monster name="deepling scout" node="original/Deeplings"/>
+	<monster name="deepling spellsinger" node="original/Deeplings"/>
+	<monster name="deepling tyrant" node="original/Deeplings"/>
+	<monster name="deepling warrior" node="original/Deeplings"/>
+	<monster name="deepling worker" node="original/Deeplings"/>
+<!--            Demons            -->
+	<monster name="askarak demon" node="original/Demons"/>
+	<monster name="askarak lord" node="original/Demons"/>
+	<monster name="askarak prince" node="original/Demons"/>
+	<monster name="dark torturer" node="original/Demons"/>
+	<monster name="demon" node="original/Demons"/>
+	<monster name="destroyer" node="original/Demons"/>
+	<monster name="diabolic imp" node="original/Demons"/>
+	<monster name="fire devil" node="original/Demons"/>
+	<monster name="gozzler" node="original/Demons"/>
+	<monster name="grave guard" node="original/Demons"/>
+	<monster name="gravedigger" node="original/Demons"/>
+	<monster name="hand of cursed fate" node="original/Demons"/>
+	<monster name="hellhound" node="original/Demons"/>
+	<monster name="hellspawn" node="original/Demons"/>
+	<monster name="herald of gloom" node="original/Demons"/>
+	<monster name="juggernaut" node="original/Demons"/>
+	<monster name="lesser fire devil" node="original/Demons"/>
+	<monster name="nightmare" node="original/Demons"/>
+	<monster name="nightmare scion" node="original/Demons"/>
+	<monster name="nightstalker" node="original/Demons"/>
+	<monster name="plaguesmith" node="original/Demons"/>
+	<monster name="rift lord" node="original/Demons"/>
+	<monster name="rift brood" node="original/Demons"/>
+	<monster name="rift scythe" node="original/Demons"/>
+	<monster name="shaburak demon" node="original/Demons"/>
+	<monster name="shaburak lord" node="original/Demons"/>
+	<monster name="shaburak prince" node="original/Demons"/>
+	<monster name="shadow hound" node="original/Demons"/>
+	<monster name="weakened demon" node="original/Demons"/>
+	<monster name="yielothax" node="original/Demons"/>
+	<monster name="zavarash" node="original/Demons"/>
+<!--            Djinn            -->
+	<monster name="blue djinn" node="original/Djinn"/>
+	<monster name="efreet" node="original/Djinn"/>
+	<monster name="green djinn" node="original/Djinn"/>
+	<monster name="marid" node="original/Djinn"/>
+<!--            Dragons            -->
+	<monster name="dragon" node="original/Dragons"/>
+	<monster name="dragon hatchling" node="original/Dragons"/>
+	<monster name="dragon lord" node="original/Dragons"/>
+	<monster name="dragon lord hatchling" node="original/Dragons"/>
+	<monster name="dragonling" node="original/Dragons"/>
+	<monster name="draptor" node="original/Dragons"/>
+	<monster name="elder wyrm" node="original/Dragons"/>
+	<monster name="frost dragon" node="original/Dragons"/>
+	<monster name="frost dragon hatchling" node="original/Dragons"/>
+	<monster name="ghastly dragon" node="original/Dragons"/>
+	<monster name="undead dragon" node="original/Dragons"/>
+	<monster name="wounded cave draptor" node="original/Dragons"/>
+	<monster name="wyrm" node="original/Dragons"/>
+<!--            Dreamhaunters            -->
+	<monster name="bad dream" node="original/Dreamhaunters"/>
+	<monster name="choking fear" node="original/Dreamhaunters"/>
+	<monster name="demon outcast" node="original/Dreamhaunters"/>
+	<monster name="feversleep" node="original/Dreamhaunters"/>
+	<monster name="frazzlemaw" node="original/Dreamhaunters"/>
+	<monster name="guzzlemaw" node="original/Dreamhaunters"/>
+	<monster name="minion of gaz'haragoth" node="original/Dreamhaunters"/>
+	<monster name="nightmare of gaz'haragoth" node="original/Dreamhaunters"/>
+	<monster name="retching horror" node="original/Dreamhaunters"/>
+	<monster name="shiversleep" node="original/Dreamhaunters"/>
+	<monster name="shock head" node="original/Dreamhaunters"/>
+	<monster name="sight of surrender" node="original/Dreamhaunters"/>
+	<monster name="silencer" node="original/Dreamhaunters"/>
+	<monster name="terrorsleep" node="original/Dreamhaunters"/>
+<!--            Dwarves            -->
+	<monster name="crazed dwarf" node="original/Dwarves"/>
+	<monster name="dwarf henchman" node="original/Dwarves"/>
+	<monster name="dwarf" node="original/Dwarves"/>
+	<monster name="dwarf geomancer" node="original/Dwarves"/>
+	<monster name="dwarf guard" node="original/Dwarves"/>
+	<monster name="dwarf miner" node="original/Dwarves"/>
+	<monster name="dwarf soldier" node="original/Dwarves"/>
+	<monster name="enslaved dwarf" node="original/Dwarves"/>
+	<monster name="lost basher" node="original/Dwarves"/>
+	<monster name="lost berserker" node="original/Dwarves"/>
+	<monster name="lost husher" node="original/Dwarves"/>
+	<monster name="lost thrower" node="original/Dwarves"/>
+<!--            Dworcs            -->
+	<monster name="dworc fleshhunter" node="original/Amazons"/>
+	<monster name="dworc venomsniper" node="original/Amazons"/>
+	<monster name="dworc voodoomaster" node="original/Amazons"/>
+<!--            Electro-Elementals            -->
+	<monster name="charged energy elemental" node="original/Electro-Elementals"/>
+	<monster name="energy elemental" node="original/Electro-Elementals"/>
+	<monster name="massive energy elemental" node="original/Electro-Elementals"/>
+	<monster name="overcharged energy elemental" node="original/Electro-Elementals"/>
+<!--            Elemental-Lords            -->
+	<monster name="earth overlord" node="original/Elemental-Lords"/>
+	<monster name="energy overlord" node="original/Elemental-Lords"/>
+	<monster name="fire overlord" node="original/Elemental-Lords"/>
+	<monster name="ice overlord" node="original/Elemental-Lords"/>
+	<monster name="lord of the elements" node="original/Elemental-Lords"/>
+<!--            Elves            -->
+	<monster name="elf" node="original/Elves"/>
+	<monster name="elf arcanist" node="original/Elves"/>
+	<monster name="elf scout" node="original/Elves"/>
+	<monster name="high elf" node="original/Elves"/>
+	<monster name="firestarter" node="original/Elves"/>
+<!--            Event-Creatures            -->
+	<monster name="bane bringer" node="original/Event-Creatures"/>
+	<monster name="doomsday cultist" node="original/Event-Creatures"/>
+	<monster name="dryad" node="original/Event-Creatures"/>
+	<monster name="essence of darkness event" node="original/Event-Creatures"/>
+	<monster name="football" node="original/Event-Creatures"/>
+	<monster name="grynch clan goblin" node="original/Event-Creatures"/>
+	<monster name="hacker" node="original/Event-Creatures"/>
+	<monster name="herald of gloom" node="original/Event-Creatures"/>
+	<monster name="midnight spawn" node="original/Event-Creatures"/>
+	<monster name="primitive" node="original/Event-Creatures"/>
+	<monster name="shadow hound" node="original/Event-Creatures"/>
+	<monster name="spectral scum" node="original/Event-Creatures"/>
+	<monster name="the halloween hare" node="original/Event-Creatures"/>
+	<monster name="tibia bug" node="original/Event-Creatures"/>
+	<monster name="undead minion event" node="original/Event-Creatures"/>
+<!--            Felines            -->
+	<monster name="cat" node="original/Felines"/>
+	<monster name="kitty" node="original/Felines"/>
+	<monster name="lion" node="original/Felines"/>
+	<monster name="midnight panther" node="original/Felines"/>
+	<monster name="noble lion" node="original/Felines"/>
+	<monster name="roaring lion" node="original/Felines"/>
+	<monster name="tiger" node="original/Felines"/>
+<!--            Fish            -->
+	<monster name="fish" node="original/Fish"/>
+	<monster name="manta ray" node="original/Fish"/>
+	<monster name="northern pike" node="original/Fish"/>
+	<monster name="shark" node="original/Fish"/>
+<!--            Frogs            -->
+	<monster name="azure frog" node="original/Frogs"/>
+	<monster name="bog frog" node="original/Frogs"/>
+	<monster name="coral frog" node="original/Frogs"/>
+	<monster name="crimson frog" node="original/Frogs"/>
+	<monster name="deathspawn" node="original/Frogs"/>
+	<monster name="filth toad" node="original/Frogs"/>
+	<monster name="green frog" node="original/Frogs"/>
+	<monster name="infernal frog" node="original/Frogs"/>
+	<monster name="orchid frog" node="original/Frogs"/>
+	<monster name="toad" node="original/Frogs"/>
+<!--            Geo-Elementals            -->
+	<monster name="armadile" node="original/Geo-Elementals"/>
+	<monster name="clay guardian" node="original/Geo-Elementals"/>
+	<monster name="cliff strider" node="original/Geo-Elementals"/>
+	<monster name="crystalcrusher" node="original/Geo-Elementals"/>
+	<monster name="damaged crystal golem" node="original/Geo-Elementals"/>
+	<monster name="damaged worker golem" node="original/Geo-Elementals"/>
+	<monster name="diamond servant" node="original/Geo-Elementals"/>
+	<monster name="earth elemental" node="original/Geo-Elementals"/>
+	<monster name="enraged crystal golem" node="original/Geo-Elementals"/>
+	<monster name="eternal guardian" node="original/Geo-Elementals"/>
+	<monster name="forest fury" node="original/Geo-Elementals"/>
+	<monster name="gargoyle" node="original/Geo-Elementals"/>
+	<monster name="golden servant" node="original/Geo-Elementals"/>
+	<monster name="iron servant" node="original/Geo-Elementals"/>
+	<monster name="ironblight" node="original/Geo-Elementals"/>
+	<monster name="jagged earth elemental" node="original/Geo-Elementals"/>
+	<monster name="massive earth elemental" node="original/Geo-Elementals"/>
+	<monster name="medusa" node="original/Geo-Elementals"/>
+	<monster name="muddy earth elemental" node="original/Geo-Elementals"/>
+	<monster name="orewalker" node="original/Geo-Elementals"/>
+	<monster name="shard of corruption" node="original/Geo-Elementals"/>
+	<monster name="stone devourer" node="original/Geo-Elementals"/>
+	<monster name="stone golem" node="original/Geo-Elementals"/>
+	<monster name="vulcongra" node="original/Geo-Elementals"/>
+	<monster name="war golem" node="original/Geo-Elementals"/>
+	<monster name="worker golem" node="original/Geo-Elementals"/>
+<!--            Ghosts            -->
+	<monster name="ghost" node="original/Ghosts"/>
+	<monster name="phantasm" node="original/Ghosts"/>
+	<monster name="phantasm summon" node="original/Ghosts"/>
+	<monster name="rift phantom" node="original/Ghosts"/>
+	<monster name="souleater" node="original/Ghosts"/>
+	<monster name="spectre" node="original/Ghosts"/>
+	<monster name="tarnished spirit" node="original/Ghosts"/>
+	<monster name="tormented ghost" node="original/Ghosts"/>
+	<monster name="white shade" node="original/Ghosts"/>
+	<monster name="wisp" node="original/Ghosts"/>
+<!--            Giants            -->
+	<monster name="behemoth" node="original/Giants"/>
+	<monster name="cyclops" node="original/Giants"/>
+	<monster name="cyclops drone" node="original/Giants"/>
+	<monster name="cyclops smith" node="original/Giants"/>
+	<monster name="frost giant" node="original/Giants"/>
+	<monster name="frost giantess" node="original/Giants"/>
+	<monster name="juvenile cyclops" node="original/Giants"/>
+<!--            Glires            -->
+	<monster name="cave rat" node="original/Glires"/>
+	<monster name="enraged squirrel" node="original/Glires"/>
+	<monster name="killer rabbit" node="original/Glires"/>
+	<monster name="rabbit" node="original/Glires"/>
+	<monster name="rat" node="original/Glires"/>
+	<monster name="silver rabbit" node="original/Glires"/>
+	<monster name="squirrel" node="original/Glires"/>
+	<monster name="thieving squirrel" node="original/Glires"/>
+<!--            Goblins            -->
+	<monster name="demon (goblin)" node="original/Goblins"/>
+	<monster name="goblin" node="original/Goblins"/>
+	<monster name="goblin assassin" node="original/Goblins"/>
+	<monster name="goblin leader" node="original/Goblins"/>
+	<monster name="goblin scavenger" node="original/Goblins"/>
+	<monster name="goblinnatal" node="original/Goblins"/>
+	<monster name="muglex clan assassin" node="original/Goblins"/>
+	<monster name="muglex clan footman" node="original/Goblins"/>
+	<monster name="muglex clan scavenger" node="original/Goblins"/>
+<!--            Hydro-Elementals            -->
+	<monster name="massive water elemental" node="original/Hydro-Elementals"/>
+	<monster name="roaring water elemental" node="original/Hydro-Elementals"/>
+	<monster name="slick water elemental" node="original/Hydro-Elementals"/>
+	<monster name="water elemental" node="original/Hydro-Elementals"/>
+<!--            Insects            -->
+	<monster name="ancient scarab" node="original/Insects"/>
+	<monster name="blue butterfly" node="original/Insects"/>
+	<monster name="brimstone bug" node="original/Insects"/>
+	<monster name="bug" node="original/Insects"/>
+	<monster name="butterfly" node="original/Insects"/>
+	<monster name="cockroach" node="original/Insects"/>
+	<monster name="dawnfly" node="original/Insects"/>
+	<monster name="emerald damselfly" node="original/Insects"/>
+	<monster name="fleshslicer" node="original/Insects"/>
+	<monster name="hive overseer" node="original/Insects"/>
+	<monster name="insect swarm" node="original/Insects"/>
+	<monster name="insectoid scout" node="original/Insects"/>
+	<monster name="insectoid worker" node="original/Insects"/>
+	<monster name="kollos" node="original/Insects"/>
+	<monster name="ladybug" node="original/Insects"/>
+	<monster name="lancer beetle" node="original/Insects"/>
+	<monster name="larva" node="original/Insects"/>
+	<monster name="lesser swarmer" node="original/Insects"/>
+	<monster name="parasite" node="original/Insects"/>
+	<monster name="pink butterfly" node="original/Insects"/>
+	<monster name="purple butterfly" node="original/Insects"/>
+	<monster name="red butterfly" node="original/Insects"/>
+	<monster name="sandcrawler" node="original/Insects"/>
+	<monster name="scarab" node="original/Insects"/>
+	<monster name="spidris elitesumom" node="original/Insects"/>
+	<monster name="spidris" node="original/Insects"/>
+	<monster name="spidris elite" node="original/Insects"/>
+	<monster name="spitter" node="original/Insects"/>
+	<monster name="swarmer" node="original/Insects"/>
+	<monster name="swarmer hatchling" node="original/Insects"/>
+	<monster name="terramite" node="original/Insects"/>
+	<monster name="wasp" node="original/Insects"/>
+	<monster name="waspoid" node="original/Insects"/>
+	<monster name="yellow butterfly" node="original/Insects"/>
+<!--            Lizards            -->
+	<monster name="battlemaster zunzu" node="original/Lizards"/>
+	<monster name="draken abomination" node="original/Lizards"/>
+	<monster name="draken elite" node="original/Lizards"/>
+	<monster name="draken spellweaver" node="original/Lizards"/>
+	<monster name="draken warmaster" node="original/Lizards"/>
+	<monster name="lizard chosen" node="original/Lizards"/>
+	<monster name="lizard dragon priest" node="original/Lizards"/>
+	<monster name="lizard high guard" node="original/Lizards"/>
+	<monster name="lizard legionnaire" node="original/Lizards"/>
+	<monster name="lizard magistratus" node="original/Lizards"/>
+	<monster name="lizard noble" node="original/Lizards"/>
+	<monster name="lizard sentinel" node="original/Lizards"/>
+	<monster name="lizard snakecharmer" node="original/Lizards"/>
+	<monster name="lizard templar" node="original/Lizards"/>
+	<monster name="lizard zaogun" node="original/Lizards"/>
+	<monster name="wyvern" node="original/Lizards"/>
+<!--            Machines            -->
+	<monster name="glooth golem" node="original/Machines"/>
+	<monster name="metal gargoyle" node="original/Machines"/>
+	<monster name="rustheap golem" node="original/Machines"/>
+	<monster name="walker" node="original/Machines"/>
+<!--            Magma-Elementals            -->
+	<monster name="minion of versperoth" node="original/Magma-Elementals"/>
+<!--            Minotaurs            -->
+	<monster name="depowered minotaur" node="original/Minotaurs"/>
+	<monster name="execowtioner" node="original/Minotaurs"/>
+	<monster name="glooth powered minotaur" node="original/Minotaurs"/>
+	<monster name="minotaur" node="original/Minotaurs"/>
+	<monster name="minotaur amazon" node="original/Minotaurs"/>
+	<monster name="minotaur bruiser" node="original/Minotaurs"/>
+	<monster name="minotaur hunter" node="original/Minotaurs"/>
+	<monster name="minotaur invader" node="original/Minotaurs"/>
+	<monster name="minotaur occultist" node="original/Minotaurs"/>
+	<monster name="minotaur poacher" node="original/Minotaurs"/>
+	<monster name="minotaur totem" node="original/Minotaurs"/>
+	<monster name="mooh'tah warrior" node="original/Minotaurs"/>
+	<monster name="moohtant" node="original/Minotaurs"/>
+	<monster name="worm priestess" node="original/Minotaurs"/>
+<!--            Misc            -->
+	<!--        Misc:Mammals    -->
+	<monster name="badger" node="original/Misc/Mammals"/>
+	<monster name="bat" node="original/Misc/Mammals"/>
+	<monster name="ghoulish hyaena" node="original/Misc/Mammals"/>
+	<monster name="hyaena" node="original/Misc/Mammals"/>
+	<monster name="skunk" node="original/Misc/Mammals"/>
+	<monster name="water buffalo" node="original/Misc/Mammals"/>
+	<!--        Misc:Mounts     -->
+	<!-- <monster name="donkey" node="original/Misc/Mounts"/> CHECK IF THE SAME AND DELETE !!! -->
+	<monster name="modified gnarlhound" node="original/Misc/Mounts"/>
+	<!--        Misc:Reptiles   -->
+	<monster name="crocodile" node="original/Misc/Reptiles"/>
+	<monster name="hydra" node="original/Misc/Reptiles"/>
+	<monster name="killer caiman" node="original/Misc/Reptiles"/>
+	<monster name="thornback tortoise" node="original/Misc/Reptiles"/>
+	<monster name="tortoise" node="original/Misc/Reptiles"/>
+<!--            Mollusks            -->
+	<monster name="abyssal calamary" node="original/Mollusks"/>
+	<monster name="calamary" node="original/Mollusks"/>
+	<monster name="slug" node="original/Mollusks"/>
+<!--            Monks            -->
+	<monster name="monk" node="original/Monks"/>
+	<monster name="dark monk" node="original/Monks"/>
+<!--            Mutated            -->
+	<monster name="mutated bat" node="original/Mutated"/>
+	<monster name="mutated human" node="original/Mutated"/>
+	<monster name="mutated rat" node="original/Mutated"/>
+	<monster name="mutated tiger" node="original/Mutated"/>
+<!--            Myriapods            -->
+	<monster name="centipede" node="original/Myriapods"/>
+	<monster name="crawler" node="original/Myriapods"/>
+	<monster name="spitter" node="original/Myriapods"/>
+	<monster name="wiggler" node="original/Myriapods"/>
+<!--            Necromancers            -->
+	<monster name="blood hand" node="original/Necromancers"/>
+	<monster name="blood priest" node="original/Necromancers"/>
+	<monster name="necromancer" node="original/Necromancers"/>
+	<monster name="necromancer servant" node="original/Necromancers"/>
+	<monster name="priestess" node="original/Necromancers"/>
+	<monster name="shadow pupil" node="original/Necromancers"/>
+<!--            Novos            -->
+	<monster name="breach brood" node="original/Novos"/>
+	<monster name="charger" node="original/Novos"/>
+	<monster name="clomp" node="original/Novos"/>
+	<monster name="dawnfire asura" node="original/Novos"/>
 
-  <!-- Almost Unkillable God Beings -->
-	<monster name="demigod" file="endgame/demigod.xml"/>
-  
-  <!-- Boss monsters and Special Event monsters -->
-	<monster name="Rotworm Queen" file="default rookgaard/rotworm_queen.xml"/>
-	<monster name="Apprentice Sheng" file="raid_special/apprentice_sheng.xml"/>
-	<monster name="Munster" file="raid_special/munster.xml"/>
-	<monster name="Rottie the Rotworm" file="raid_special/rottie_the_rotworm.xml"/>
-	<monster name="Tarantula" file="raid_special/tarantula.xml"/>
-	<monster name="Teleskor" file="raid_special/teleskor.xml"/>
-  
-  
-  <!-- TESTING -->
-	<monster name="Fire Elemental" file="fire_elemental.xml"/>
+	<monster name="deep terror" node="original/Novos"/>
+	<monster name="despair" node="original/Novos"/>
+	<monster name="disgusting ooze" node="original/Novos"/>
+	<monster name="dread intruder" node="original/Novos"/>
+	<monster name="dread intruderSummon" node="original/Novos"/>
+	<monster name="eradicator" node="original/Novos"/>
+	<monster name="eradicator1" node="original/Novos"/>
+	<monster name="frenzy" node="original/Novos"/>
+	<monster name="glooth slasher" node="original/Novos"/>
+	<monster name="glooth trasher" node="original/Novos"/>
+	<monster name="greed" node="original/Novos"/>
+	<monster name="grimeleech" node="original/Novos"/>
+	<monster name="guilt" node="original/Novos"/>
+	<monster name="hellflayer" node="original/Novos"/>
+	<monster name="instable breach brood" node="original/Novos"/>
+	<monster name="instable breach broodsummon" node="original/Novos"/>
+	<monster name="instable sparkion" node="original/Novos"/>
+	<monster name="mazoran" node="original/Novos"/>
+	<monster name="midnight asura" node="original/Novos"/>
+	<monster name="ogre brute" node="original/Novos"/>
+	<monster name="ogre savage" node="original/Novos"/>
+	<monster name="ogre shaman" node="original/Novos"/>
+	<monster name="omnivora" node="original/Novos"/>
+	<monster name="outburst" node="original/Novos"/>
+	<monster name="plagirath" node="original/Novos"/>
+	<monster name="professor maxxen" node="original/Novos"/>
+	<monster name="rage of mazoran" node="original/Novos"/>
+	<monster name="ragiaz" node="original/Novos"/>
+	<monster name="ratskeleton" node="original/Novos"/>
+	<monster name="razzagorn" node="original/Novos"/>
+	<monster name="reality reaver" node="original/Novos"/>
+	<monster name="renegade knight" node="original/Novos"/>
+	<monster name="rupture" node="original/Novos"/>
+	<monster name="sacred snake" node="original/Novos"/>
+	<monster name="shulgrax" node="original/Novos"/>
+	<monster name="spark of destruction" node="original/Novos"/>
+	<monster name="sparkion" node="original/Novos"/>
+	<monster name="tarbaz" node="original/Novos"/>
+	<monster name="the hunger" node="original/Novos"/>
+	<monster name="the rage" node="original/Novos"/>
+	<monster name="the shatterer" node="original/Novos"/>
+	<monster name="vexclaw" node="original/Novos"/>
+	<monster name="vicious Squire" node="original/Novos"/>
+	<monster name="vikiskeleton" node="original/Novos"/>
+	<monster name="vile grandmaster" node="original/Novos"/>
+	<monster name="werebadger" node="original/Novos"/>
+	<monster name="werebear" node="original/Novos"/>
+	<monster name="wereboar" node="original/Novos"/>
+	<monster name="world devourer" node="original/Novos"/>
+	<monster name="zamulosh" node="original/Novos"/>
+	<monster name="zamuloshsummom" node="original/Novos"/>
+<!--            Orcs            -->
+	<monster name="furious orc berserker" node="original/Orcs"/>
+	<monster name="orc" node="original/Orcs"/>
+	<monster name="orc berserker" node="original/Orcs"/>
+	<monster name="orc leader" node="original/Orcs"/>
+	<monster name="orc marauder" node="original/Orcs"/>
+	<monster name="orc rider" node="original/Orcs"/>
+	<monster name="orc shaman" node="original/Orcs"/>
+	<monster name="orc spearman" node="original/Orcs"/>
+	<monster name="orc warlord" node="original/Orcs"/>
+	<monster name="orc warrior" node="original/Orcs"/>
+	<monster name="rorc" node="original/Orcs"/>
+	<monster name="running elite orc guard" node="original/Orcs"/>
+	<monster name="scar tribe shaman" node="original/Orcs"/>
+	<monster name="scar tribe warrior" node="original/Orcs"/>
+<!--            Outlaws            -->
+	<monster name="adventurer" node="original/Outlaws"/>
+	<monster name="angry adventurer" node="original/Outlaws"/>
+	<monster name="assassin" node="original/Outlaws"/>
+	<monster name="bandit" node="original/Outlaws"/>
+	<monster name="black knight" node="original/Outlaws"/>
+	<monster name="crazed beggar" node="original/Outlaws"/>
+	<monster name="crypt defiler" node="original/Outlaws"/>
+	<monster name="feverish citizen" node="original/Outlaws"/>
+	<monster name="gang member" node="original/Outlaws"/>
+	<monster name="gladiator" node="original/Outlaws"/>
+	<monster name="grave robber" node="original/Outlaws"/>
+	<monster name="hero" node="original/Outlaws"/>
+	<monster name="hunter" node="original/Outlaws"/>
+	<monster name="nomad" node="original/Outlaws"/>
+	<monster name="nomadblue" node="original/Outlaws"/>
+	<monster name="nomadfemale" node="original/Outlaws"/>
+	<monster name="poacher" node="original/Outlaws"/>
+	<monster name="smuggler" node="original/Outlaws"/>
+	<monster name="stalker" node="original/Outlaws"/>
+	<monster name="thief" node="original/Outlaws"/>
+	<monster name="travelling merchant" node="original/Outlaws"/>
+	<monster name="werewolf" node="original/Outlaws"/>
+	<monster name="wild warrior" node="original/Outlaws"/>
+<!--            Pharaohs            -->
+	<monster name="ashmunrah" node="original/Pharaohs"/>
+	<monster name="dipthrah" node="original/Pharaohs"/>
+	<monster name="mahrdis" node="original/Pharaohs"/>
+	<monster name="morguthis" node="original/Pharaohs"/>
+	<monster name="omruc" node="original/Pharaohs"/>
+	<monster name="rahemos" node="original/Pharaohs"/>
+	<monster name="superior death minion" node="original/Pharaohs"/>
+	<monster name="thalas" node="original/Pharaohs"/>
+	<monster name="vashresamun" node="original/Pharaohs"/>
+<!--            Pirates            -->
+	<monster name="pirate buccaneer" node="original/Pirates"/>
+	<monster name="pirate corsair" node="original/Pirates"/>
+	<monster name="pirate cutthroat" node="original/Pirates"/>
+	<monster name="pirate ghost" node="original/Pirates"/>
+	<monster name="pirate marauder" node="original/Pirates"/>
+	<monster name="pirate skeleton" node="original/Pirates"/>
+<!--            Pyro-Elementals            -->
+	<monster name="blazing fire elemental" node="original/Pyro-Elementals"/>
+	<monster name="blistering fire elemental" node="original/Pyro-Elementals"/>
+	<monster name="fire elemental" node="original/Pyro-Elementals"/>
+	<monster name="flame of omrafir" node="original/Pyro-Elementals"/>
+	<monster name="hellfire fighter" node="original/Pyro-Elementals"/>
+	<monster name="infected weeper" node="original/Pyro-Elementals"/>
+	<monster name="lava golem" node="original/Pyro-Elementals"/>
+	<monster name="magma crawler" node="original/Pyro-Elementals"/>
+	<monster name="massive fire elemental" node="original/Pyro-Elementals"/>
+	<monster name="orewalker" node="original/Pyro-Elementals"/>
+	<monster name="weeper" node="original/Pyro-Elementals"/>
+<!--            Quaras            -->
+	<monster name="quara constrictor" node="original/Quaras"/>
+	<monster name="quara constrictor scout" node="original/Quaras"/>
+	<monster name="quara hydromancer" node="original/Quaras"/>
+	<monster name="quara hydromancer scout" node="original/Quaras"/>
+	<monster name="quara mantassin" node="original/Quaras"/>
+	<monster name="quara mantassin scout" node="original/Quaras"/>
+	<monster name="quara pincher" node="original/Quaras"/>
+	<monster name="quara pincher scout" node="original/Quaras"/>
+	<monster name="quara predator" node="original/Quaras"/>
+	<monster name="quara predator scout" node="original/Quaras"/>
+<!--            Salamanders            -->
+	<monster name="salamander" node="original/Salamanders"/>
+	<monster name="troll-trained salamander" node="original/Salamanders"/>
+<!--            Serpents            -->
+	<monster name="cobra" node="original/Serpents"/>
+	<monster name="sea serpent" node="original/Serpents"/>
+	<monster name="seacrest serpent" node="original/Serpents"/>
+	<monster name="serpent spawn" node="original/Serpents"/>
+	<monster name="snake" node="original/Serpents"/>
+	<monster name="young sea serpent" node="original/Serpents"/>
+<!--            Shapeshifters            -->
+	<monster name="mimic" node="original/Shapeshifters"/>
+<!--            Skeletons            -->
+	<monster name="betrayed wraith" node="original/Skeletons"/>
+	<monster name="bonebeast" node="original/Skeletons"/>
+	<monster name="brittle skeleton" node="original/Skeletons"/>
+	<monster name="demon skeleton" node="original/Skeletons"/>
+	<monster name="dreadbeast" node="original/Skeletons"/>
+	<monster name="honour guard" node="original/Skeletons"/>
+	<monster name="lesser death minion" node="original/Skeletons"/>
+	<monster name="lost soul" node="original/Skeletons"/>
+	<monster name="party skeleton" node="original/Skeletons"/>
+	<monster name="skeleton" node="original/Skeletons"/>
+	<monster name="skeleton warrior" node="original/Skeletons"/>
+	<monster name="sloth wraith" node="original/Skeletons"/>
+	<monster name="spectral scum" node="original/Skeletons"/>
+	<monster name="undead cavebear" node="original/Skeletons"/>
+	<monster name="undead minion" node="original/Skeletons"/>
+	<monster name="undead mine worker" node="original/Skeletons"/>
+	<monster name="undead minion" node="original/Skeletons"/>
+<!--            Sorcerers            -->
+	<monster name="dark apprentice" node="original/Sorcerers"/>
+	<monster name="dark magician" node="original/Sorcerers"/>
+	<monster name="fury" node="original/Sorcerers"/>
+	<monster name="ice witch" node="original/Sorcerers"/>
+	<monster name="incredibly old witch" node="original/Sorcerers"/>
+	<monster name="infernalist" node="original/Sorcerers"/>
+	<monster name="mad scientist" node="original/Sorcerers"/>
+	<monster name="warlock" node="original/Sorcerers"/>
+	<monster name="witch" node="original/Sorcerers"/>
+	<monster name="yalahari" node="original/Sorcerers"/>
+<!--            Traps            -->
+	<monster name="a carved stone tile" node="original/Traps"/>
+	<monster name="canopic jar" node="original/Traps"/>
+	<monster name="deathslicer" node="original/Traps"/>
+	<monster name="deaththrower" node="original/Traps"/>
+	<monster name="demon summoner" node="original/Traps"/>
+	<monster name="dwarf dispenser" node="original/Traps"/>
+	<monster name="flamethrower" node="original/Traps"/>
+	<monster name="hell hole" node="original/Traps"/>
+	<monster name="hive pore" node="original/Traps"/>
+	<monster name="lava hole" node="original/Traps"/>
+	<monster name="magic pillar" node="original/Traps"/>
+	<monster name="magicthrower" node="original/Traps"/>
+	<monster name="pillar" node="original/Traps"/>
+	<monster name="plaguethrower" node="original/Traps"/>
+	<monster name="shredderthrower" node="original/Traps"/>
+<!--            Trolls            -->
+	<monster name="frost troll" node="original/Trolls"/>
+	<monster name="furious troll" node="original/Trolls"/>
+	<monster name="island troll" node="original/Trolls"/>
+	<monster name="mountain troll" node="original/Trolls"/>
+	<monster name="salamander trainer" node="original/Trolls"/>
+	<monster name="swamp troll" node="original/Trolls"/>
+	<monster name="troll marauder" node="original/Trolls"/>
+	<monster name="troll" node="original/Trolls"/>
+	<monster name="troll champion" node="original/Trolls"/>
+	<monster name="troll guard" node="original/Trolls"/>
+	<monster name="troll legionnaire" node="original/Trolls"/>
+	<monster name="young troll" node="original/Trolls"/>
+<!--            Undead Humanoids            -->
+	<monster name="banshee" node="original/Undead-Humanoids"/>
+	<monster name="blightwalker" node="original/Undead-Humanoids"/>
+	<monster name="crypt shambler" node="original/Undead-Humanoids"/>
+	<monster name="death priest" node="original/Undead-Humanoids"/>
+	<monster name="elder mummy" node="original/Undead-Humanoids"/>
+	<monster name="ghoul" node="original/Undead-Humanoids"/>
+	<monster name="greater death minion" node="original/Undead-Humanoids"/>
+	<monster name="grim reaper" node="original/Undead-Humanoids"/>
+	<monster name="lich" node="original/Undead-Humanoids"/>
+	<monster name="mummy" node="original/Undead-Humanoids"/>
+	<monster name="nightfiend" node="original/Undead-Humanoids"/>
+	<monster name="tomb servant" node="original/Undead-Humanoids"/>
+	<monster name="undead prospector" node="original/Undead-Humanoids"/>
+	<monster name="vampire" node="original/Undead-Humanoids"/>
+	<monster name="vampire bride" node="original/Undead-Humanoids"/>
+	<monster name="vampire viscount" node="original/Undead-Humanoids"/>
+	<monster name="vicious manbat" node="original/Undead-Humanoids"/>
+	<monster name="zombie" node="original/Undead-Humanoids"/>
+<!--            Ungulates            -->
+	<monster name="black sheep" node="original/Ungulates"/>
+	<monster name="boar" node="original/Ungulates"/>
+	<monster name="deer" node="original/Ungulates"/>
+	<monster name="desperate white deer" node="original/Ungulates"/>
+	<monster name="donkey" node="original/Ungulates"/>
+	<monster name="doom deer" node="original/Ungulates"/>
+	<monster name="dromedary" node="original/Ungulates"/>
+	<monster name="elephant" node="original/Ungulates"/>
+	<monster name="enraged white deer" node="original/Ungulates"/>
+	<monster name="evil sheep" node="original/Ungulates"/>
+	<monster name="evil sheep lord" node="original/Ungulates"/>
+	<monster name="horse" node="original/Ungulates"/>
+	<monster name="horse brown" node="original/Ungulates"/>
+	<monster name="horse fire" node="original/Ungulates"/>
+	<monster name="horse grey" node="original/Ungulates"/>
+	<monster name="horse wild" node="original/Ungulates"/>
+	<monster name="mammoth" node="original/Ungulates"/>
+	<monster name="mushroom sniffer" node="original/Ungulates"/>
+	<monster name="pig" node="original/Ungulates"/>
+	<monster name="sheep" node="original/Ungulates"/>
+	<monster name="stampor" node="original/Ungulates"/>
+	<monster name="terrified elephant" node="original/Ungulates"/>
+	<monster name="vampire pig" node="original/Ungulates"/>
+	<monster name="water buffalo" node="original/Ungulates"/>
+	<monster name="white deer" node="original/Ungulates"/>
+<!--            Voodoo Cultists            -->
+	<monster name="acolyte of the cult" node="original/Voodoo-Cultists"/>
+	<monster name="adept of the cult" node="original/Voodoo-Cultists"/>
+	<monster name="enlightened of the cult" node="original/Voodoo-Cultists"/>
+	<monster name="novice of the cult" node="original/Voodoo-Cultists"/>
+<!--            Wild Magics            -->
+	<monster name="wild fire magic" node="original/Wild-Magics"/>
+	<monster name="wild fury magic" node="original/Wild-Magics"/>
+	<monster name="wild nature magic" node="original/Wild-Magics"/>
+	<monster name="wild water magic" node="original/Wild-Magics"/>
+
 </monsters>
