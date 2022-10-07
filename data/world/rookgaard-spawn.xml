@@ -922,7 +922,7 @@
 		<monster name="Minotaur" x="-1" y="-2" z="8" spawntime="240" />
 	</spawn>
 	<spawn centerx="34" centery="15" centerz="9" radius="1">
-		<monster name="Demigod ??????" x="1" y="0" z="9" spawntime="10" direction="2" />
+		<monster name="Demigod Punish" x="1" y="0" z="9" spawntime="10" direction="2" />
 	</spawn>
 	<spawn centerx="347" centery="234" centerz="9" radius="15">
 		<monster name="Spider" x="-8" y="-9" z="9" spawntime="450" />

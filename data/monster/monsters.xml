@@ -608,6 +608,7 @@
 	<monster name="execowtioner" node="original/Minotaurs"/>
 	<monster name="glooth powered minotaur" node="original/Minotaurs"/>
 	<monster name="minotaur" node="original/Minotaurs"/>
+	<monster name="minotaur mage" node="original/Minotaurs"/>
 	<monster name="minotaur amazon" node="original/Minotaurs"/>
 	<monster name="minotaur bruiser" node="original/Minotaurs"/>
 	<monster name="minotaur hunter" node="original/Minotaurs"/>
