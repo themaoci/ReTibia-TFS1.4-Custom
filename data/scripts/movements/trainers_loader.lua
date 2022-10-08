@@ -1,3 +1,35 @@
+-- {
+--     {4470},           -- 1 -- mountain left-top
+--     {876},            -- 2 -- mountain top-v1
+--     {598, 875},       -- 3 -- mountain left
+--     {598, 4473},      -- 4 -- mountain right-top
+--     {598, 4472},      -- 5 -- mountain right-v1
+--     {598, 4475},      -- 6 -- mountain right-bottom
+--     {598, 4471},      -- 7 -- mountain bottom
+--     {919},            -- 8 -- mountain OverTop
+--     {919, 1051},      -- 9 -- wall top-left
+--     {1053},           -- 10 -- wall bottom-right
+--     {919, 1049},      -- 11 -- wall left
+--     {1049},           -- 12 -- wall right
+--     {919, 1050},      -- 13 -- wall top
+--     {1050},           -- 14 -- wall bottom
+--     {424, "trainer"}, -- 15 -- TrainerSandingTile
+--     {424, 1642, 7159, "foodhuge"}, -- 16 -- TrainerFood
+--     {3216},           -- 17 -- Center
+--     {424, 1484},      -- 18 -- Coal Basin
+--     {424, 1642, 2590},      -- 19 -- Pedestal With Depo
+--     {424, 1387, "teleport"}, -- 20 - teleport
+--     {598}             -- 21 -- just lava
+--   }
+-- { 1,  2,  2,  2,  2,  2, 2, 4 },
+-- { 3,  9, 13, 13, 13, 13, 8, 5 },
+-- { 3, 11, 15, 20, 15, 12, 8, 5 },
+-- { 3, 11, 18, 17, 16, 12, 8, 5 },
+-- { 3, 11, 15, 18, 15, 12, 8, 5 },
+-- { 3, 11, 14, 14, 14, 10, 8, 5 },
+-- { 3,  8,  8,  8,  8,  8, 8, 5 },
+-- { 21,  7,  7,  7,  7,  7, 7, 6 }
+
 -- Infinity Room Config
 local IRConfig = {
     startPos = Position(100, 100, 2), -- upper left corner
@@ -9,38 +41,38 @@ local IRConfig = {
         row = 15,
         col = 15
     },
+    doNotDelete = { 13635, 9726 },
+    playerSpotId = 14,
     mapTiles = {
-      {4470},           -- 1 -- mountain left-top
-      {876},            -- 2 -- mountain top-v1
-      {598, 875},       -- 3 -- mountain left
-      {598, 4473},      -- 4 -- mountain right-top
-      {598, 4472},      -- 5 -- mountain right-v1
-      {598, 4475},      -- 6 -- mountain right-bottom
-      {598, 4471},      -- 7 -- mountain bottom
-      {919},            -- 8 -- mountain OverTop
-      {919, 1051},      -- 9 -- wall top-left
-      {1053},           -- 10 -- wall bottom-right
-      {919, 1049},      -- 11 -- wall left
-      {1049},           -- 12 -- wall right
-      {919, 1050},      -- 13 -- wall top
-      {1050},           -- 14 -- wall bottom
-      {424, "trainer"}, -- 15 -- TrainerSandingTile
-      {424, 1642, 7159, "foodhuge"}, -- 16 -- TrainerFood
-      {3216},           -- 17 -- Center
-      {424, 1484},      -- 18 -- Coal Basin
-      {424, 1642, 2590},      -- 19 -- Pedestal With Depo
-      {424, 1387, "teleport"}, -- 20 - teleport
-      {598}             -- 21 -- just lava
+    --{},                               -- 0 -- skip drawing
+      {},                               -- 1 -- empty
+      {17464},                          -- 2 -- left top corner
+      {17444},                          -- 3 -- top center
+      {17453},                          -- 4 -- right top
+      {17447},                          -- 5 -- right center
+      {17454},                          -- 6 -- right bottom
+      {17445},                          -- 7 -- bottom center
+      {17455},                          -- 8 -- left bottom
+      {17446},                          -- 9 -- left center
+      {17437, 17574},                   -- 10 -- 1x1
+      {17437, "teleport"},              -- 11 -- 1x2
+      {17437, 17566},                   -- 12 -- 1x3
+      {17437, 1645, 7159, "foodhuge"},  -- 13 -- 2x1
+      {18001},                          -- 14 -- 2x2 - player spot
+      {17437, 17575},           -- 15 -- 2x3
+      {17437, "trainer"},      -- 16 -- 3x1
+      {17437, 17568},           -- 17 -- 3x2
+      {17437, "trainer"},           -- 18 -- 3x3
     },
     map = { -- room drawing mask
-      { 1,  2,  2,  2,  2,  2, 2, 4 },
-      { 3,  9, 13, 13, 13, 13, 8, 5 },
-      { 3, 11, 15, 20, 15, 12, 8, 5 },
-      { 3, 11, 18, 17, 16, 12, 8, 5 },
-      { 3, 11, 15, 18, 15, 12, 8, 5 },
-      { 3, 11, 14, 14, 14, 10, 8, 5 },
-      { 3,  8,  8,  8,  8,  8, 8, 5 },
-      { 21,  7,  7,  7,  7,  7, 7, 6 }
+      { 0,  0,  0,  0,  0,  0, 0, 0 },
+      { 0,  2,  3,  3,  3,  4, 0, 0 },
+      { 0,  9, 10, 11, 12,  5, 0, 0 },
+      { 0,  9, 13, 14, 15,  5, 0, 0 },
+      { 0,  9, 16, 17, 18,  5, 0, 0 },
+      { 0,  8,  7,  7,  7,  6, 0, 0 },
+      { 0,  0,  0,  0,  0,  0, 0, 0 },
+      { 0,  0,  0,  0,  0,  0, 0, 0 }
     }
 }
 
@@ -59,10 +91,10 @@ function IRoom.new(pos, fromPos, index)
         for y = 1, mapDistY do
             local tilePos = Position(pos.x+x, pos.y+y, pos.z)
             local tileIndex = IRConfig.map[y][x]
-            if tileIndex == 17 then iroom.center = tilePos end
+            if tileIndex == IRConfig.playerSpotId then iroom.center = tilePos end
             if tileIndex == 0 then goto endLooper end
             local lastItem
-            local stackedPosition = 1
+            --local stackedPosition = 2
             for _, it in pairs(IRConfig.mapTiles[tileIndex]) do
                 local thingType = type(it)
                 if thingType == "number" then
@@ -107,17 +139,18 @@ function IRoom:destroy()
                         if thing:isPlayer() then
                             thing:teleportTo(self.fromPos)
                         else
-                            if(thing:getId() == 2590) then
-                                print(doRemoveItem(thing.uid))
-                                --thing:remove()
-                            else
-                                thing:remove()
+                            if(not table.contains(IRConfig.doNotDelete, thing:getId())) then 
+                                if(thing:getId() == 2590) then
+                                    doRemoveItem(thing.uid)
+                                else
+                                    thing:remove()
+                                end
                             end
                         end
                     end
                   end
                 end
-                tile:remove()
+                --tile:remove()
             end
             Game.createItem(IRConfig.replacableTile, 1, pos)
             pos:sendMagicEffect(CONST_ME_POFF)
