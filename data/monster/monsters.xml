@@ -14,7 +14,7 @@
 	<monster name="strong teleskor" node="custom"/>
   
 <!-- Static Spawns -->
-	<monster name="trainer" node="custom"/>
+	<monster name="training device" node="custom"/>
 	<monster name="weard dragon statue" node="custom"/> 
 
 <!-- Almost Unkillable God Beings -->
@@ -213,7 +213,6 @@
 	<monster name="drillworm" node="original/Annelids"/>
 	<monster name="rift worm" node="original/Annelids"/>
 	<monster name="rotworm" node="original/Annelids"/>
-	<monster name="rotworm queen" node="original/Annelids"/>
 <!--            Apes - Malpy           -->
 	<monster name="kongra" node="original/Apes"/>
 	<monster name="merlkin" node="original/Apes"/>
