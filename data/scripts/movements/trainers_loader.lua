@@ -105,7 +105,7 @@ function IRoom.new(pos, fromPos, index)
                       iroom:destroy()
                       return
                     end
-                    --tilePos.stackpos = tilePos.stackpos + 1
+                    tilePos.stackpos = tilePos.stackpos + 1
                 elseif thingType == "string" then
                     if it == "teleport" then
                         lastItem:setCustomAttribute("roomIndex", index)
