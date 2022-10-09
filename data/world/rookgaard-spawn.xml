@@ -187,15 +187,6 @@
 		<monster name="Wolf" x="3" y="0" z="6" spawntime="450" />
 		<monster name="Wolf" x="0" y="2" z="6" spawntime="450" />
 	</spawn>
-	<spawn centerx="749" centery="439" centerz="6" radius="2">
-		<npc name="Pemaret" x="-1" y="-1" z="6" spawntime="60" direction="2" />
-	</spawn>
-	<spawn centerx="771" centery="474" centerz="6" radius="1">
-		<monster name="Blue Butterfly" x="1" y="-1" z="6" spawntime="60" />
-	</spawn>
-	<spawn centerx="779" centery="481" centerz="6" radius="1">
-		<monster name="Red Butterfly" x="0" y="-1" z="6" spawntime="60" />
-	</spawn>
 	<spawn centerx="679" centery="165" centerz="7" radius="1">
 		<monster name="Lion" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
@@ -804,9 +795,6 @@
 		<monster name="Rabbit" x="0" y="0" z="7" spawntime="60" />
 		<monster name="Rabbit" x="1" y="0" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="765" centery="450" centerz="7" radius="3">
-		<npc name="Yoem" x="1" y="-2" z="7" spawntime="60" direction="2" />
-	</spawn>
 	<spawn centerx="809" centery="454" centerz="7" radius="1">
 		<monster name="Wasp" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
@@ -834,14 +822,11 @@
 	<spawn centerx="724" centery="474" centerz="7" radius="1">
 		<monster name="Rabbit" x="1" y="1" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="733" centery="478" centerz="7" radius="2">
+		<monster name="Squirrel" x="-1" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="812" centery="479" centerz="7" radius="1">
 		<monster name="Deer" x="0" y="1" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="736" centery="487" centerz="7" radius="3">
-		<monster name="Squirrel" x="0" y="-1" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="754" centery="487" centerz="7" radius="1">
-		<monster name="Yellow Butterfly" x="1" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="813" centery="487" centerz="7" radius="1">
 		<monster name="Seagull" x="0" y="1" z="7" spawntime="60" />
@@ -865,14 +850,14 @@
 	<spawn centerx="769" centery="505" centerz="7" radius="2">
 		<monster name="Squirrel" x="-1" y="-2" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="756" centery="507" centerz="7" radius="1">
-		<monster name="Seagull" x="-1" y="1" z="7" spawntime="60" />
-	</spawn>
 	<spawn centerx="804" centery="507" centerz="7" radius="1">
 		<monster name="Spider" x="1" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="820" centery="510" centerz="7" radius="2">
 		<monster name="Rabbit" x="-1" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="735" centery="513" centerz="7" radius="1">
+		<monster name="Seagull" x="-1" y="1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="802" centery="513" centerz="7" radius="1">
 		<monster name="Dwarf" x="-1" y="1" z="7" spawntime="60" />
@@ -1357,9 +1342,6 @@
 		<monster name="Minotaur" x="-1" y="16" z="8" spawntime="240" />
 		<monster name="Minotaur" x="10" y="16" z="8" spawntime="240" />
 	</spawn>
-	<spawn centerx="816" centery="475" centerz="8" radius="3">
-		<npc name="A Majestic Warwolf" x="1" y="-1" z="8" spawntime="60" direction="2" />
-	</spawn>
 	<spawn centerx="334" centery="486" centerz="8" radius="1">
 		<monster name="Minotaur Mage" x="1" y="0" z="8" spawntime="600" />
 	</spawn>
@@ -1609,6 +1591,9 @@
 	<spawn centerx="752" centery="229" centerz="9" radius="1">
 		<monster name="Corym Skirmisher" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="584" centery="230" centerz="9" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="753" centery="233" centerz="9" radius="1">
 		<monster name="Corym Charlatan" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
@@ -1620,11 +1605,20 @@
 		<monster name="Spider" x="6" y="2" z="9" spawntime="450" />
 		<monster name="Poison Spider" x="7" y="9" z="9" spawntime="450" />
 	</spawn>
+	<spawn centerx="568" centery="235" centerz="9" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="730" centery="235" centerz="9" radius="1">
 		<monster name="Corym Vanguard" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="580" centery="237" centerz="9" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="750" centery="238" centerz="9" radius="1">
 		<monster name="Corym Vanguard" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="593" centery="240" centerz="9" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="760" centery="243" centerz="9" radius="1">
 		<monster name="Corym Vanguard" x="0" y="0" z="9" spawntime="60" />
@@ -1635,11 +1629,23 @@
 	<spawn centerx="744" centery="245" centerz="9" radius="1">
 		<monster name="Corym Skirmisher" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="578" centery="246" centerz="9" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="555" centery="248" centerz="9" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="567" centery="248" centerz="9" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="754" centery="248" centerz="9" radius="1">
 		<monster name="Corym Charlatan" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="740" centery="249" centerz="9" radius="1">
 		<monster name="Corym Vanguard" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="534" centery="253" centerz="9" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="755" centery="253" centerz="9" radius="1">
 		<monster name="Corym Skirmisher" x="0" y="0" z="9" spawntime="60" />
@@ -1647,8 +1653,14 @@
 	<spawn centerx="735" centery="255" centerz="9" radius="1">
 		<monster name="Corym Charlatan" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="534" centery="258" centerz="9" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="759" centery="259" centerz="9" radius="1">
 		<monster name="Corym Vanguard" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="578" centery="260" centerz="9" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="732" centery="261" centerz="9" radius="1">
 		<monster name="Corym Skirmisher" x="0" y="0" z="9" spawntime="60" />
@@ -1658,6 +1670,9 @@
 		<monster name="Poison Spider" x="5" y="0" z="9" spawntime="450" />
 		<monster name="Spider" x="1" y="1" z="9" spawntime="450" />
 		<monster name="Spider" x="3" y="6" z="9" spawntime="450" />
+	</spawn>
+	<spawn centerx="569" centery="263" centerz="9" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="753" centery="264" centerz="9" radius="1">
 		<monster name="Corym Charlatan" x="0" y="0" z="9" spawntime="60" />
@@ -1676,6 +1691,21 @@
 		<monster name="Spider" x="-1" y="2" z="9" spawntime="450" />
 		<monster name="Spider" x="-1" y="9" z="9" spawntime="450" />
 	</spawn>
+	<spawn centerx="547" centery="268" centerz="9" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="537" centery="277" centerz="9" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="563" centery="280" centerz="9" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="488" centery="282" centerz="9" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="557" centery="282" centerz="9" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="355" centery="283" centerz="9" radius="5">
 		<monster name="Troll" x="-2" y="4" z="9" spawntime="450" />
 	</spawn>
@@ -1691,8 +1721,14 @@
 	<spawn centerx="404" centery="288" centerz="9" radius="1">
 		<monster name="Orc" x="1" y="0" z="9" spawntime="450" />
 	</spawn>
+	<spawn centerx="522" centery="289" centerz="9" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="332" centery="294" centerz="9" radius="5">
 		<monster name="Troll" x="-1" y="1" z="9" spawntime="450" />
+	</spawn>
+	<spawn centerx="513" centery="294" centerz="9" radius="1">
+		<monster name="Elder Wyrm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="360" centery="309" centerz="9" radius="1">
 		<monster name="Spider" x="1" y="0" z="9" spawntime="450" />
@@ -2482,8 +2518,8 @@
 		<monster name="Demon" x="1" y="2" z="10" spawntime="60" />
 		<monster name="Metal Gargoyle" x="3" y="3" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="527" centery="334" centerz="10" radius="1">
-		<monster name="Elder Wyrm" x="0" y="0" z="10" spawntime="240" />
+	<spawn centerx="528" centery="335" centerz="10" radius="1">
+		<monster name="Elder Wyrm" x="-1" y="-1" z="10" spawntime="240" />
 	</spawn>
 	<spawn centerx="658" centery="337" centerz="10" radius="1">
 		<monster name="Metal Gargoyle" x="0" y="0" z="10" spawntime="60" />
@@ -3950,7 +3986,7 @@
 		<monster name="Minotaur" x="3" y="8" z="12" spawntime="450" />
 	</spawn>
 	<spawn centerx="296" centery="260" centerz="12" radius="1">
-		<monster name="Wailing Widow" x="-1" y="0" z="12" spawntime="600" direction="2" />
+		<monster name="Strong Wailing Widow" x="-1" y="0" z="12" spawntime="600" direction="2" />
 	</spawn>
 	<spawn centerx="424" centery="274" centerz="12" radius="3">
 		<monster name="Spider" x="3" y="-2" z="12" spawntime="450" />
