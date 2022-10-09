@@ -90,7 +90,7 @@ function IRoom.new(pos, fromPos, index)
     for x = 1, mapDistX do
         for y = 1, mapDistY do
             local tilePos = Position(pos.x+x, pos.y+y, pos.z)
-            tilePos.stackpos = 2
+            tilePos.stackpos = 1
             local tileIndex = IRConfig.map[y][x]
             if tileIndex == IRConfig.playerSpotId then iroom.center = tilePos end
             if tileIndex == 0 then goto endLooper end
@@ -105,7 +105,7 @@ function IRoom.new(pos, fromPos, index)
                       iroom:destroy()
                       return
                     end
-                    tilePos.stackpos = tilePos.stackpos + 1
+                    --tilePos.stackpos = tilePos.stackpos + 1
                 elseif thingType == "string" then
                     if it == "teleport" then
                         lastItem:setCustomAttribute("roomIndex", index)
