@@ -89,7 +89,8 @@ function IRoom.new(pos, fromPos, index)
     iroom.fromPos = fromPos
     for x = 1, mapDistX do
         for y = 1, mapDistY do
-            local tilePos = {x=pos.x+x, y=pos.y+y, z=pos.z, stackpos=1} --Position(pos.x+x, pos.y+y, pos.z)
+            local tilePos = Position(pos.x+x, pos.y+y, pos.z)
+            tilePos.stackpos = 1
             local tileIndex = IRConfig.map[y][x]
             if tileIndex == IRConfig.playerSpotId then iroom.center = tilePos end
             if tileIndex == 0 then goto endLooper end
@@ -98,8 +99,7 @@ function IRoom.new(pos, fromPos, index)
             for _, it in pairs(IRConfig.mapTiles[tileIndex]) do
                 local thingType = type(it)
                 if thingType == "number" then
-                    lastItem = doCreateItem(it, 1, tilePos)
-                    --lastItem = Game.createItem(it, 1, tilePos)
+                    lastItem = Game.createItem(it, 1, tilePos)
                     if not lastItem then
                       debugPrint("[Warning - IRoom::new] the room could not be created correctly.")
                       iroom:destroy()
