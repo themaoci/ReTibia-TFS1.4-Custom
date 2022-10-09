@@ -90,7 +90,7 @@ function IRoom.new(pos, fromPos, index)
     for x = 1, mapDistX do
         for y = 1, mapDistY do
             local tilePos = Position(pos.x+x, pos.y+y, pos.z)
-            tilePos.stackpos = 1
+            tilePos.stackpos = 2
             local tileIndex = IRConfig.map[y][x]
             if tileIndex == IRConfig.playerSpotId then iroom.center = tilePos end
             if tileIndex == 0 then goto endLooper end
