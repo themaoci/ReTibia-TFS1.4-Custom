@@ -121,7 +121,7 @@ void ProtocolLogin::onRecvFirstMessage(NetworkMessage& msg)
 	}
   
   uint16_t OS = msg.get<uint16_t>();
-	uint16_t version = msg.get<uint16_t>();
+  uint16_t version = msg.get<uint16_t>();
   uint32_t clientFileSize = std::stoi(msg.getString());
   uint32_t version2 = msg.get<uint32_t>();
   uint32_t signature_module = msg.get<uint32_t>();
