@@ -606,15 +606,17 @@
 	<monster name="depowered minotaur" node="original/Minotaurs"/>
 	<monster name="execowtioner" node="original/Minotaurs"/>
 	<monster name="glooth powered minotaur" node="original/Minotaurs"/>
-	<monster name="minotaur" node="original/Minotaurs"/>
-	<monster name="minotaur mage" node="original/Minotaurs"/>
 	<monster name="minotaur amazon" node="original/Minotaurs"/>
+	<monster name="minotaur archer" node="original/Minotaurs"/>
 	<monster name="minotaur bruiser" node="original/Minotaurs"/>
+	<monster name="minotaur guard" node="original/Minotaurs"/>
 	<monster name="minotaur hunter" node="original/Minotaurs"/>
 	<monster name="minotaur invader" node="original/Minotaurs"/>
+	<monster name="minotaur mage" node="original/Minotaurs"/>
 	<monster name="minotaur occultist" node="original/Minotaurs"/>
 	<monster name="minotaur poacher" node="original/Minotaurs"/>
 	<monster name="minotaur totem" node="original/Minotaurs"/>
+	<monster name="minotaur" node="original/Minotaurs"/>
 	<monster name="mooh'tah warrior" node="original/Minotaurs"/>
 	<monster name="moohtant" node="original/Minotaurs"/>
 	<monster name="worm priestess" node="original/Minotaurs"/>
