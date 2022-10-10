@@ -510,10 +510,9 @@ struct ShopInfo {
 	int64_t buyPrice = 0;
 	int64_t sellPrice = 0;
 	std::string realName = "";
-	uint32_t funcShop = 0;
 
 	ShopInfo() = default;
-	ShopInfo(uint16_t itemId, int32_t subType = 0, int64_t buyPrice = 0, int64_t sellPrice = 0, std::string realName = "", uint32_t funcShop = false, uint16_t specialId = 0)
+	ShopInfo(uint16_t itemId, int32_t subType = 0, int64_t buyPrice = 0, int64_t sellPrice = 0, std::string realName = "", uint16_t specialId = 0)
 		: itemId(itemId), subType(subType), buyPrice(buyPrice), sellPrice(sellPrice), realName(std::move(realName)) {}
 };
 
