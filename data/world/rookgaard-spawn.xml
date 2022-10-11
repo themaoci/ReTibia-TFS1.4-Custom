@@ -159,9 +159,9 @@
 		<monster name="Wolf" x="1" y="3" z="6" spawntime="450" />
 		<monster name="Wolf" x="3" y="3" z="6" spawntime="450" />
 	</spawn>
-	<spawn centerx="364" centery="374" centerz="6" radius="5">
-		<npc name="Yasir" x="-3" y="-2" z="6" spawntime="60" direction="1" />
-		<npc name="Rashid" x="-2" y="1" z="6" spawntime="60" />
+	<spawn centerx="365" centery="373" centerz="6" radius="5">
+		<npc name="Yasir" x="5" y="0" z="6" spawntime="60" direction="1" />
+		<npc name="Rashid" x="-4" y="3" z="6" spawntime="60" />
 	</spawn>
 	<spawn centerx="307" centery="378" centerz="6" radius="1">
 		<npc name="Zerbrus" x="0" y="-1" z="6" spawntime="240" />
