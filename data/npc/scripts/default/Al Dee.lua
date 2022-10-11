@@ -101,9 +101,6 @@ keywordHandler:addAliasKeyword({'small', 'axe'})
 npcHandler:setMessage(MESSAGE_WALKAWAY, 'Bye, bye.')
 npcHandler:setMessage(MESSAGE_FAREWELL, 'Bye, bye |PLAYERNAME|.')
 npcHandler:setMessage(MESSAGE_SENDTRADE, 'Take a look in the trade window to your left.')
-npcHandler:setMessage(MESSAGE_GREET, {
-	'Hello, hello, |PLAYERNAME|! Please come in, look, and buy! I\'m a specialist for all sorts of {tools}. Just ask me for a {trade} to see my offers! You can also ask me for general {hints} about the game. ...',
-	'You can also ask me about each {citizen} of the isle.'
-})
+npcHandler:setMessage(MESSAGE_GREET, 'Hello, hello, |PLAYERNAME|! Please come in, look, and buy! I\'m a specialist for all sorts of {tools}. Just ask me for a {trade} to see my offers! You can also ask me for general {hints} about the game. You can also ask me about each {citizen} of the isle.')
 
 npcHandler:addModule(FocusModule:new())
