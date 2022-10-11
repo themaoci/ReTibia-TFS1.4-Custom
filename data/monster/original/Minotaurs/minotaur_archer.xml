@@ -41,10 +41,10 @@
 		<item name="crossbow" chance="830" />
 		<item name="brass armor" chance="530" />
 		<item name="scale armor" chance="530" />
-		<item name="bolt" countmax="20" chance="90450" />
+		<item id="2543" countmax="20" chance="90450" />
 		<item name="meat" chance="5000" />
 		<item name="minotaur leather" chance="1900" />
-		<item name="piercing bolt" countmax="4" chance="12340" />
+		<item id="7363" countmax="4" chance="12340" />
 		<item name="broken crossbow" chance="15400" />
 		<item name="minotaur horn" countmax="2" chance="1990" />
 		<item name="piece of archer armor" chance="8260" />
