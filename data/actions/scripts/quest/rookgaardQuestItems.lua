@@ -137,10 +137,10 @@ RookGaardQuestItems_Config = {
 			name = "bag", 
 			wrapInBag = 1988,
 			items = {
-				[1] = { id = 2013, count = 1, capReq = 2 }
-				[2] = { id = 2035, count = 1, capReq = 1.5 }
-				[3] = { id = 2014, count = 1, capReq = 7.5 }
-				[4] = { id = 1990, count = 1, capReq = 6 } -- present
+				[1] = { id = 2013, count = 1, capReq = 2 },
+				[2] = { id = 2035, count = 1, capReq = 1.5 },
+				[3] = { id = 2014, count = 1, capReq = 7.5 },
+				[4] = { id = 1990, count = 1, capReq = 6 }, -- present
 			}
 		},
 		[26] = {  -- Small Axe --
