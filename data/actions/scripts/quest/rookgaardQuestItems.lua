@@ -37,7 +37,7 @@ RookGaardQuestItems_Config = {
 			}
 		},
 		[11] = { -- Bear Room Brass Helmet -- 
-			name = "Brass Helmet", 2460
+			name = "Brass Helmet",
 			items = {
 				[1] = { id = 2460, count = 1, capReq = 27 }
 			}

@@ -21,7 +21,7 @@ function onUse(cid, item, frompos, item2, topos)
           text = text .. " With " .. reward.charges .. " charges."
       end
     end
-    doPlayerSendTextMessage(cid,22,)
+    doPlayerSendTextMessage(cid,22, text)
     setPlayerStorageValue(cid,rewardId,1)
   else
     print("newQuestItems_1.lua -> unknown reward for Id: " .. rewardId)
