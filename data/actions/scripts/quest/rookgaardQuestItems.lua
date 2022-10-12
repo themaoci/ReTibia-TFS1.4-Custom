@@ -70,22 +70,22 @@ RookGaardQuestItems_Config = {
 				[2] = { id = 2530, count = 1, capReq = 63 }
 			}
 		},
-		[16] = { -- Goblin Temple #1 --
+		[16] = { -- Goblin Temple left chest --
 			name = "bag", 
 			wrapInBag = 1987,
 			items = {
-				[1] = { id = 2563, count = 1, capReq = 18 },
-				[2] = { id = 1294, count = 5, capReq = 3.6 },
-				[3] = { id = 2148, count = 50, capReq = 0.1 }
+				[1] = { id = 2563, count = 1, capReq = 18 }, -- pan
+				[2] = { id = 1294, count = 5, capReq = 3.6 }, -- small stone
+				[3] = { id = 2148, count = 50, capReq = 0.1 } -- gold coin
 			}
 		},
-		[17] = {  -- Goblin Temple #2 --
+		[17] = {  -- Goblin Temple right chest --
 			name = "bag", 
 			wrapInBag = 1987,
 			items = {
-				[1] = { id = 2006, count = 6, capReq = 18 },
-				[2] = { id = 2111, count = 4, capReq = 3.6 },
-				[3] = { id = 2642, count = 1, capReq = 0.1 }
+				[1] = { id = 2006, count = 6, capReq = 1.8 }, -- vial
+				[2] = { id = 2111, count = 4, capReq = 0.8 }, -- snowball
+				[3] = { id = 2642, count = 1, capReq = 0.6 } -- sandals
 			}
 		},
 		[18] = {  -- Katana key --
@@ -172,7 +172,38 @@ RookGaardQuestItems_Config = {
 			}
 		},
     -- 41 -- Spike sword storage for web (given in last door)
-  }
+  },
+	rewardKey = {
+		[38] = { -- Key 0013 (Open's the mino mage door)
+			name = "golden key", 
+			keyId = 2091, 
+			actionId = 2043, 
+			description = "(Key: 0013)", 
+			capReq = 1,
+			requiredToMeet = {
+				[1] = { StorageId = 7037, wrongText = "Something is weird about this stone." }
+			} 
+		},
+		[39] = { -- Key 0015 (Opens Toms bedroom)
+			name = "copper key", 
+			keyId = 2089, 
+			actionId = 2045, 
+			description = "(Key: 0015)", 
+			capReq = 1,
+			requiredToMeet = {
+				[1] = { StorageId = 7037, wrongText = "Something is weird about this corpse." }
+			} 
+		},
+		[40] = { -- Key 0011 (Opens Gobblin switch rooms)
+			name = "copper key", 
+			keyId = 2089, 
+			actionId = 2046, 
+			description = "(Key: 0011)", 
+			capReq = 1,
+			requiredToMeet = {
+			} 
+		},
+	}
 }
 -- RETARDED ITEM ID's...
 	Cfletter = 2597
@@ -257,70 +288,29 @@ function onUse(cid, item, frompos, item2, topos)
     return 1
 	end
 
--- CHAIN QUESTS NEED TO BE DONE AS BELOW
-
-	-- Spike Sword Quest --
-  -- Key 0013 (Open's the mino mage door)
-  if item.uid == 7038 then
-    if getPlayerStorageValue(cid,7038) <= 0 then
-      if getPlayerStorageValue(cid,7037) ~= 1 then
-        doPlayerSendTextMessage(cid,22,"Something is weird about this stone.")
-        return TRUE
+  -- Keys below
+	local rewardKey = RookGaardQuestItems_Config.rewardKey[item.uid - RookGaardQuestItems_Config.scriptStartUID]
+	if rewardKey ~= nil then
+		if getPlayerStorageValue(cid,item.uid) <= 0 then
+			for _, requirement in pairs(rewardKey.requiredToMeet) do
+				if getPlayerStorageValue(cid,requirement.StorageId) ~= 1 then
+					doPlayerSendTextMessage(cid,22, requirement.wrongText)
+					return 1
+				end		
+			end
+      if getPlayerFreeCap(cid) <= rewardKey.capReq then
+        doPlayerSendTextMessage(cid,22,"You need " .. rewardKey.capReq .. " cap or more to loot this!")
+        return 1
       end
-      if getPlayerFreeCap(cid) <= 1 then
-        doPlayerSendTextMessage(cid,22,"You need 1 cap or more to loot this!")
-        return TRUE
-      end
-      doPlayerSendTextMessage(cid,22,"You have found a golden key.")
-      SPIKESWORDKEY = doPlayerAddItem(cid, Cfgoldenkey, 1)
-      doSetItemActionId(SPIKESWORDKEY, 2043)
-      doSetItemSpecialDescription(SPIKESWORDKEY, "(Key: 0013)")	
-      setPlayerStorageValue(cid,7038,1)
-    else
-      doPlayerSendTextMessage(cid,22,"it's empty.")
-    end
-  -- Key 0015 (Opens Toms bedroom)
-  elseif item.uid == 7039 then
-    if getPlayerStorageValue(cid,7039) <= 0 then
-      if getPlayerStorageValue(cid,7037) ~= 1 then
-        doPlayerSendTextMessage(cid,22,"Something is weird about this corpse.")
-        return TRUE
-      end
-      if getPlayerFreeCap(cid) <= 1 then
-        doPlayerSendTextMessage(cid,22,"You need 1 cap or more to loot this!")
-        return TRUE
-      end
-      doPlayerSendTextMessage(cid,22,"You have found a copper key.")
-      KEY = doPlayerAddItem(cid, Cfcopperkey, 1)
-      doSetItemActionId(KEY, 2045)
-      doSetItemSpecialDescription(KEY, "(Key: 0015)")	
-      setPlayerStorageValue(cid,7039,1)
-    else
-      doPlayerSendTextMessage(cid,22,"it's empty.")
-    end
-  -- Key 0011 (Opens Gobblin switch rooms)
-  elseif item.uid == 7040 then
-    if getPlayerStorageValue(cid,7040) <= 0 then
-      if getPlayerStorageValue(cid,7040) ~= 1 then
-        doPlayerSendTextMessage(cid,22,"Something is weird about this chest.")
-        return TRUE
-      end
-      if getPlayerFreeCap(cid) <= 1 then
-        doPlayerSendTextMessage(cid,22,"You need 1 cap or more to loot this!")
-        return TRUE
-      end
-      doPlayerSendTextMessage(cid,22,"You have found a copper key.")
-      KEY = doPlayerAddItem(cid, Cfcopperkey, 1)
-      doSetItemActionId(KEY, 2046)
-      doSetItemSpecialDescription(KEY, "(Key: 0011)")	
-      setPlayerStorageValue(cid,7040,1)
-    else
-      doPlayerSendTextMessage(cid,22,"it's empty.")
-    end
-  -----
-  -----
-  else	
-    return 0
-  end
-return 1
+      doPlayerSendTextMessage(cid,22,"You have found a " .. rewardKey.name .. ".")
+      local keySpawned = doPlayerAddItem(cid, rewardKey.keyId, 1)
+      doSetItemActionId(keySpawned, rewardKey.actionId)
+      doSetItemSpecialDescription(keySpawned, rewardKey.description)	
+      setPlayerStorageValue(cid, item.uid, 1)
+		else
+			doPlayerSendTextMessage(cid,22,"it's empty.")
+		end
+    return 1
+	end
+  return 0
 end
