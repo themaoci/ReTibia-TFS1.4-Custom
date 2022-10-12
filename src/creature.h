@@ -35,7 +35,7 @@ enum slots_t : uint8_t {
 
 struct FindPathParams {
 	bool fullPathSearch = true;
-	bool clearSight = true;
+	bool clearSight = false;
 	bool allowDiagonal = true;
 	bool keepDistance = false;
 	int32_t maxSearchDist = 0;

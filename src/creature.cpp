@@ -1599,7 +1599,7 @@ bool FrozenPathingConditionCall::operator()(const Position& startPos, const Posi
 		return false;
 	}
 
-	if (fpp.clearSight) {
+	if (fpp.clearSight && !g_game.isSightClear(testPos, targetPos, true)) {
 		return false;
 	}
 
