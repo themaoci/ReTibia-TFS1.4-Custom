@@ -80,7 +80,7 @@ bool Creature::canSee(const Position& pos) const
 
 /// this function is used to add or remove target from visible ones
 ///
-bool Creature::canSeeCreature(const Creature* creature, bool isAttemptToRemove) const
+bool Creature::canSeeCreature(const Creature* creature) const
 {
 	if (!canSeeGhostMode(creature) && creature->isInGhostMode()) {
 		return false;
@@ -89,12 +89,12 @@ bool Creature::canSeeCreature(const Creature* creature, bool isAttemptToRemove) 
 	if (!canSeeInvisibility() && creature->isInvisible()) {
 		return false;
 	}
-	if(!isAttemptToRemove){
-		if (!g_game.isSightClear(getPosition(), creature->getPosition(), true))
-		{
-			return false;
-		}
-	}
+	// if(!isAttemptToRemove){
+	// 	if (!g_game.isSightClear(getPosition(), creature->getPosition(), true))
+	// 	{
+	// 		return false;
+	// 	}
+	// }
 	
 	// this could increase the cpu time but it will be worth it
 	return true;
