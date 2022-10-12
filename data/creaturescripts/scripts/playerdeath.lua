@@ -4,7 +4,7 @@ local maxDeathRecords = 100
 -- aka "one way karma system"
 local DISGUSTING_KILLER = {
   LevelDifference = 0.75, -- number to multiply killer level to compare
-  DeathJailPosition = Position(0,0,0),
+  DeathJailPosition = Position(35, 18, 9),
   StorageValue = 90101,
   MaxToTrigger = 5,
   -- make sure to make the texts for each "disgusted" kill
@@ -18,8 +18,9 @@ local DISGUSTING_KILLER = {
 }
 
 function bringDisgustingKillerToDemigod(cid)
+	print("bringDisgustingKillerToDemigod called")
 -- teleport 
-	local player = Player(cid)
+  local player = Player(cid)
   player:teleportTo(DISGUSTING_KILLER.DeathJailPosition, false)
 -- send effect
   DISGUSTING_KILLER.DeathJailPosition:sendMagicEffect(CONST_ME_GREEN_RINGS)
@@ -44,7 +45,7 @@ function onDeath(player, corpse, killer, mostDamageKiller, lastHitUnjustified, m
       local DisgustedKillCount = killer:getStorageValue(DISGUSTING_KILLER.StorageValue)
       if DisgustedKillCount >= DISGUSTING_KILLER.MaxToTrigger then
         -- oh hes done for but with random event spawning
-		print(killer.cid)
+		    print(killer.cid)
         addEvent(bringDisgustingKillerToDemigod, math.random(15000, 60000), killer.cid)
         killer:setStorageValue(DISGUSTING_KILLER.StorageValue, 0)
         killer:sendTextMessage(MESSAGE_INFO_DESCR, DISGUSTING_KILLER.Texts[#DISGUSTING_KILLER.Texts])
