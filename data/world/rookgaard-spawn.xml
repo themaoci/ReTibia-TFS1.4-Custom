@@ -1499,7 +1499,7 @@
 		<monster name="Dwarf Soldier" x="2" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="34" centery="15" centerz="9" radius="1">
-		<monster name="Demigod Punish" x="1" y="0" z="9" spawntime="10" direction="2" />
+		<monster name="Demigod ??????" x="1" y="0" z="9" spawntime="10" direction="2" />
 	</spawn>
 	<spawn centerx="726" centery="179" centerz="9" radius="1">
 		<monster name="Minotaur Guard" x="0" y="0" z="9" spawntime="60" />
