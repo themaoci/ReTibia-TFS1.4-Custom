@@ -40,8 +40,8 @@ function onDeath(player, corpse, killer, mostDamageKiller, lastHitUnjustified, m
     if killerLevel * DISGUSTING_KILLER.LevelDifference > player:getLevel() then
       -- yes this is disgusting kill
     
-      local DisgustedKillCount = killer:getStorageValue(DISGUSTING_KILLER.StorageValue)
-      
+      local DisgustedKillCount = killer:getStorageValue(DISGUSTING_KILLER.StorageValue) or 0
+      print(DisgustedKillCount)
       if DisgustedKillCount >= MaxToTrigger then
         -- oh hes done for but with random event spawning
         addEvent(bringDisgustingKillerToDemigod, math.random(15000, 60000), killer)
