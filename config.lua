@@ -14,20 +14,20 @@ dev_modulesSig = 2503763
 
 -- Combat settings
 -- NOTE: valid values for worldType are: "pvp", "no-pvp" and "pvp-enforced"
-worldType = "pvp"
+worldType = "pvp-enforced"
 hotkeyAimbotEnabled = true
 protectionLevel = 1
 killsToRedSkull = 3
 killsToBlackSkull = 6
-pzLocked = 60000
+pzLocked = 1000 -- 1 min
 removeChargesFromRunes = true
 removeChargesFromPotions = true
 removeWeaponAmmunition = true
 removeWeaponCharges = true
-timeToDecreaseFrags = 24 * 60 * 60
-whiteSkullTime = 15 * 60
+timeToDecreaseFrags = 30 * 60 -- 30 min
+whiteSkullTime = 1 * 60 -- 1 min
 stairJumpExhaustion = 2000
-experienceByKillingPlayers = false
+experienceByKillingPlayers = true
 expFromPlayersLevelRange = 75
 
 -- Connection Config
@@ -46,7 +46,7 @@ allowWalkthrough = true
 serverName = "ReTibia"
 statusTimeout = 5000
 replaceKickOnLogin = true
-maxPacketsPerSecond = 25
+maxPacketsPerSecond = 60
 
 -- Deaths
 -- NOTE: Leave deathLosePercent as -1 if you want to use the default
@@ -107,7 +107,7 @@ yellAlwaysAllowPremium = false
 forceMonsterTypesOnLoad = true
 cleanProtectionZones = false
 luaItemDesc = false
-showPlayerLogInConsole = true
+showPlayerLogInConsole = false
 
 -- VIP and Depot limits
 -- NOTE: you can set custom limits per group in data/XML/groups.xml
