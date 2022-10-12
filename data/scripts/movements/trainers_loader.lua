@@ -60,9 +60,9 @@ local IRConfig = {
       {17437, 1645, 7159, "foodhuge"},  -- 13 -- 2x1
       {18001},                          -- 14 -- 2x2 - player spot
       {17437, 17575},                   -- 15 -- 2x3
-      {17437, "trainer device"},        -- 16 -- 3x1
+      {17437, "training device"},        -- 16 -- 3x1
       {17437, 1484},                    -- 17 -- 3x2
-      {17437, "trainer device"},        -- 18 -- 3x3
+      {17437, "training device"},        -- 18 -- 3x3
     },
     map = { -- room drawing mask
       { 0,  0,  0,  0,  0,  0, 0 },
