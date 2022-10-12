@@ -19,8 +19,7 @@ local DISGUSTING_KILLER = {
 }
 
 function bringDisgustingKillerToDemigod(killer)
-	print("bringDisgustingKillerToDemigod called")
-	print(killer)
+	killer = Player(killer)
   -- teleport 
   killer:teleportTo(DISGUSTING_KILLER.DeathJailPosition, false)
   -- send effect
@@ -28,7 +27,6 @@ function bringDisgustingKillerToDemigod(killer)
   -- send message
   killer:sendTextMessage(MESSAGE_INFO_DESCR, DISGUSTING_KILLER.KillMessage)
 end
-
 
 function onDeath(player, corpse, killer, mostDamageKiller, lastHitUnjustified, mostDamageUnjustified)
 	local playerId = player:getId()
@@ -47,21 +45,18 @@ function onDeath(player, corpse, killer, mostDamageKiller, lastHitUnjustified, m
       if DisgustedKillCount >= DISGUSTING_KILLER.MaxToTrigger then
         -- oh hes done for but with random event spawning
         local randomDelay = 1000 -- math.random(15000, 60000)
-		    print("yes this is disgusting kill " .. randomDelay)
         addEvent(bringDisgustingKillerToDemigod, randomDelay, killer)
         killer:setStorageValue(DISGUSTING_KILLER.StorageValue, 0)
         killer:sendTextMessage(MESSAGE_INFO_DESCR, DISGUSTING_KILLER.Texts[#DISGUSTING_KILLER.Texts])
       else
-		if DisgustedKillCount == -1 then
-			DisgustedKillCount = 0
-		end
+        if DisgustedKillCount == -1 then
+          DisgustedKillCount = 0
+        end
         killer:setStorageValue(DISGUSTING_KILLER.StorageValue, DisgustedKillCount + 1)
         killer:sendTextMessage(MESSAGE_INFO_DESCR, DISGUSTING_KILLER.Texts[DisgustedKillCount + 1])
       end
     end
   end
-  
-  
   
 	if not deathListEnabled then
 		return
