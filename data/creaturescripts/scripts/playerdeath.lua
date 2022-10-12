@@ -8,6 +8,7 @@ local DISGUSTING_KILLER = {
   StorageValue = 90101,
   MaxToTrigger = 5,
   -- make sure to make the texts for each "disgusted" kill
+  KillMessage = "Let's see... what you gonna do now!!!",
   Texts = {
     "A being is paying attention to your behaviour",
     "A being is disgusted with your decision making",
@@ -17,15 +18,14 @@ local DISGUSTING_KILLER = {
   }
 }
 
-function bringDisgustingKillerToDemigod(cid)
+function bringDisgustingKillerToDemigod(player)
 	print("bringDisgustingKillerToDemigod called")
 -- teleport 
-  local player = Player(cid)
   player:teleportTo(DISGUSTING_KILLER.DeathJailPosition, false)
 -- send effect
-  DISGUSTING_KILLER.DeathJailPosition:sendMagicEffect(CONST_ME_GREEN_RINGS)
+  player:getPosition():sendMagicEffect(CONST_ME_GREEN_RINGS)
 -- send message
-  player:sendTextMessage(MESSAGE_INFO_DESCR, DISGUSTING_KILLER.Texts[#DISGUSTING_KILLER.Texts])
+  player:sendTextMessage(MESSAGE_INFO_DESCR, DISGUSTING_KILLER.KillMessage)
 end
 
 
@@ -45,8 +45,9 @@ function onDeath(player, corpse, killer, mostDamageKiller, lastHitUnjustified, m
       local DisgustedKillCount = killer:getStorageValue(DISGUSTING_KILLER.StorageValue)
       if DisgustedKillCount >= DISGUSTING_KILLER.MaxToTrigger then
         -- oh hes done for but with random event spawning
-		    print(killer.cid)
-        addEvent(bringDisgustingKillerToDemigod, math.random(15000, 60000), killer.cid)
+        local randomDelay = math.random(15000, 60000)
+		    print("yes this is disgusting kill " .. randomDelay)
+        addEvent(bringDisgustingKillerToDemigod, randomDelay, killer)
         killer:setStorageValue(DISGUSTING_KILLER.StorageValue, 0)
         killer:sendTextMessage(MESSAGE_INFO_DESCR, DISGUSTING_KILLER.Texts[#DISGUSTING_KILLER.Texts])
       else
