@@ -41,6 +41,7 @@ function onDeath(player, corpse, killer, mostDamageKiller, lastHitUnjustified, m
       -- yes this is disgusting kill
     
       local DisgustedKillCount = killer:getStorageValue(DISGUSTING_KILLER.StorageValue) or 0
+      print("DisgustedKillCount")
       print(DisgustedKillCount)
       if DisgustedKillCount >= MaxToTrigger then
         -- oh hes done for but with random event spawning
