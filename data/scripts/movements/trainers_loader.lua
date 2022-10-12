@@ -139,18 +139,18 @@ function IRoom:destroy()
                         if thing:isPlayer() then
                             thing:teleportTo(self.fromPos)
                         else
-                            if(not table.contains(IRConfig.doNotDelete, thing:getId())) then 
-                                if(thing:getId() == 2590) then
-                                    doRemoveItem(thing.uid)
-                                else
+                            --if(not table.contains(IRConfig.doNotDelete, thing:getId())) then 
+                            --    if(thing:getId() == 2590) then
+                            --        doRemoveItem(thing.uid)
+                            --    else
                                     thing:remove()
-                                end
-                            end
+                            --    end
+                            --end
                         end
                     end
                   end
                 end
-                --tile:remove()
+                tile:remove()
             end
             --Game.createItem(IRConfig.replacableTile, 1, pos)
             pos:sendMagicEffect(CONST_ME_POFF)
