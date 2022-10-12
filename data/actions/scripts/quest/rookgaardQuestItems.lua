@@ -165,16 +165,22 @@ RookGaardQuestItems_Config = {
     -- 35 -- Movement tile for Spike sword (Poison spider cave)
     -- 36 -- Movement tile for Spike sword (Rotworm cave)
     -- 37 -- Access to the door above Tom's shop
-		[38] = {  -- Viking Helmet --
+		[42] = {  -- Viking Helmet --
 			name = "viking helmet", 
 			items = {
 				[1] = { id = 2473, count = 1, capReq = 39 }
 			}
 		},
     -- 41 -- Spike sword storage for web (given in last door)
+		[50] = {  -- Reward after mino mage room --
+			name = "platinum coins", 
+			items = {
+				[1] = { id = 2152, count = 40, capReq = 0.1 }
+			}
+		},
   },
 	rewardKey = {
-		[38] = { -- Key 0013 (Open's the mino mage door)
+		[38] = { -- Key 0013 (Open's the mino mage door) - kamien tam gdize jest minotaur archer
 			name = "golden key", 
 			keyId = 2091, 
 			actionId = 2043, 
@@ -184,7 +190,7 @@ RookGaardQuestItems_Config = {
 				[1] = { StorageId = 7037, wrongText = "Something is weird about this stone." }
 			} 
 		},
-		[39] = { -- Key 0015 (Opens Toms bedroom)
+		[39] = { -- Key 0015 (Opens Toms bedroom) - cialo human tam gdize sa miski NW od miasta
 			name = "copper key", 
 			keyId = 2089, 
 			actionId = 2045, 
@@ -194,7 +200,7 @@ RookGaardQuestItems_Config = {
 				[1] = { StorageId = 7037, wrongText = "Something is weird about this corpse." }
 			} 
 		},
-		[40] = { -- Key 0011 (Opens Gobblin switch rooms)
+		[40] = { -- Key 0011 (Opens Gobblin switch rooms) - 
 			name = "copper key", 
 			keyId = 2089, 
 			actionId = 2046, 
@@ -205,40 +211,6 @@ RookGaardQuestItems_Config = {
 		},
 	}
 }
--- RETARDED ITEM ID's...
-	Cfletter = 2597
-	Cfsalmon = 2668
-	Cfchainarmor = 2464
-	Cfbrasshelmet = 2460
-	Cfarrow = 2544
-	Cfcombatknife = 2404
-	Cfdoublet = 2485
-	Cflegionhelmet = 2480
-	Cfcoppershield = 2530
-	Cfpan = 2563
-	Cfsmallstone = 1294
-	Cfsnowball = 2111
-	Cfsandals = 2642
-	Cfkatana = 2412
-	Cfcarlinsword = 2395
-	Cffishingrod = 2580
-	Cfpoisonarrow = 2545
-	Cfrapier = 2384
-	Cftorch = 2050
-	Cfbackpack = 1988
-	Cfcup = 2013
-	Cfplate = 2035
-	Cfjug = 2014
-	Cfsmallaxe = 2559
-	Cfbanana = 2676
-	Cfpurplekey = 2086
-	Cfwoodenkey = 2087
-	Cfsilverkey = 2088
-	Cfcopperkey = 2089
-	Cfcrystalkey = 2090
-	Cfgoldenkey = 2091
-	Cfbonekey = 2092
-
 
 function onUse(cid, item, frompos, item2, topos)
 	local reward = RookGaardQuestItems_Config.reward[item.uid - RookGaardQuestItems_Config.scriptStartUID]
@@ -250,9 +222,9 @@ function onUse(cid, item, frompos, item2, topos)
       end
       for _, item in pairs(reward.items) do
         -- check if item can be picked up
-        if getPlayerFreeCap(cid) <= item.capReq then
+        if getPlayerFreeCap(cid) <= item.capReq * item.count then
           -- display information that it cannot pickup and you are missing cap
-          doPlayerSendTextMessage(cid,22,"You need " .. item.capReq .. " cap or more to loot this!")
+          doPlayerSendTextMessage(cid,22,"You need " .. item.capReq * item.count .. " cap free or more to loot this!")
           return 1
         end
         local createdItem = nil
