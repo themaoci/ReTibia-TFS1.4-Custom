@@ -65,7 +65,10 @@ bool Creature::canSee(const Position& myPos, const Position& pos, int32_t viewRa
 	if(!(visibleOverXAxis && visibleOverYAxis))
 		return false;
 	
-	// Vis check here
+	if (!g_game.isSightClear(myPos, pos, true))
+	{
+		return false;
+	}
 
 	return true;
 }
@@ -75,7 +78,9 @@ bool Creature::canSee(const Position& pos) const
 	return canSee(getPosition(), pos, Map::maxViewportX, Map::maxViewportY);
 }
 
-bool Creature::canSeeCreature(const Creature* creature) const
+/// this function is used to add or remove target from visible ones
+///
+bool Creature::canSeeCreature(const Creature* creature, bool isAttemptToRemove) const
 {
 	if (!canSeeGhostMode(creature) && creature->isInGhostMode()) {
 		return false;
@@ -84,6 +89,13 @@ bool Creature::canSeeCreature(const Creature* creature) const
 	if (!canSeeInvisibility() && creature->isInvisible()) {
 		return false;
 	}
+	if(!isAttemptToRemove){
+		if (!g_game.isSightClear(getPosition(), creature->getPosition(), true))
+		{
+			return false;
+		}
+	}
+	
 	// this could increase the cpu time but it will be worth it
 	return true;
 }
@@ -1587,7 +1599,7 @@ bool FrozenPathingConditionCall::operator()(const Position& startPos, const Posi
 		return false;
 	}
 
-	if (fpp.clearSight && !g_game.isSightClear(testPos, targetPos, true)) {
+	if (fpp.clearSight) {
 		return false;
 	}
 
