@@ -1743,8 +1743,14 @@
 		<monster name="Skeleton" x="-1" y="-1" z="9" spawntime="450" />
 		<monster name="Skeleton" x="3" y="3" z="9" spawntime="450" />
 	</spawn>
+	<spawn centerx="392" centery="316" centerz="9" radius="1">
+		<monster name="Goblin Leader" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="326" centery="318" centerz="9" radius="1">
 		<npc name="Statue_RogueVocation" x="0" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="390" centery="319" centerz="9" radius="1">
+		<monster name="Goblin Scavenger" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="301" centery="320" centerz="9" radius="15">
 		<monster name="Rat" x="5" y="-10" z="9" spawntime="450" />
@@ -1766,12 +1772,42 @@
 		<monster name="Rat" x="9" y="9" z="9" spawntime="450" />
 		<monster name="Rat" x="9" y="14" z="9" spawntime="450" />
 	</spawn>
+	<spawn centerx="395" centery="320" centerz="9" radius="1">
+		<monster name="Goblin Assassin" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="378" centery="321" centerz="9" radius="1">
+		<monster name="Goblin" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="445" centery="322" centerz="9" radius="20">
 		<monster name="Rotworm" x="14" y="-13" z="9" spawntime="450" />
 		<monster name="Skeleton" x="-19" y="1" z="9" spawntime="450" />
 		<monster name="Rotworm" x="10" y="1" z="9" spawntime="450" />
 		<monster name="Skeleton" x="-16" y="8" z="9" spawntime="450" />
 		<monster name="Skeleton" x="-12" y="15" z="9" spawntime="450" />
+	</spawn>
+	<spawn centerx="396" centery="324" centerz="9" radius="1">
+		<monster name="Goblin Scavenger" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="381" centery="325" centerz="9" radius="1">
+		<monster name="Goblin" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="377" centery="328" centerz="9" radius="1">
+		<monster name="Goblin" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="391" centery="328" centerz="9" radius="1">
+		<monster name="Goblin Scavenger" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="391" centery="330" centerz="9" radius="1">
+		<monster name="Goblin Assassin" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="387" centery="331" centerz="9" radius="1">
+		<monster name="Goblin Scavenger" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="376" centery="333" centerz="9" radius="1">
+		<monster name="Goblin" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="387" centery="336" centerz="9" radius="1">
+		<monster name="Goblin Leader" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="233" centery="350" centerz="9" radius="20">
 		<monster name="Cave Rat" x="-7" y="-16" z="9" spawntime="60" />
@@ -2560,8 +2596,14 @@
 	<spawn centerx="765" centery="339" centerz="10" radius="3">
 		<monster name="Demon" x="-3" y="2" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="310" centery="343" centerz="10" radius="1">
+		<monster name="Goblin Scavenger" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="746" centery="345" centerz="10" radius="1">
 		<monster name="Metal Gargoyle" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="297" centery="346" centerz="10" radius="1">
+		<monster name="Goblin Scavenger" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="660" centery="346" centerz="10" radius="3">
 		<monster name="Demon" x="-1" y="-3" z="10" spawntime="60" />
@@ -2587,6 +2629,9 @@
 	</spawn>
 	<spawn centerx="651" centery="347" centerz="10" radius="1">
 		<monster name="Metal Gargoyle" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="309" centery="349" centerz="10" radius="1">
+		<monster name="Goblin" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="365" centery="352" centerz="10" radius="15">
 		<monster name="Spider" x="-11" y="-11" z="10" spawntime="450" />
@@ -2657,35 +2702,8 @@
 	<spawn centerx="758" centery="353" centerz="10" radius="3">
 		<monster name="Grim Reaper" x="-1" y="-2" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="305" centery="354" centerz="10" radius="12">
-		<monster name="Rat" x="-8" y="-10" z="10" spawntime="450" />
-		<monster name="Cave Rat" x="4" y="-10" z="10" spawntime="450" />
-		<monster name="Rat" x="4" y="-9" z="10" spawntime="450" />
-		<monster name="Rat" x="-6" y="-8" z="10" spawntime="450" />
-		<monster name="Cave Rat" x="4" y="-8" z="10" spawntime="450" />
-		<monster name="Rat" x="4" y="-7" z="10" spawntime="450" />
-		<monster name="Rat" x="4" y="-5" z="10" spawntime="450" />
-		<monster name="Cave Rat" x="-7" y="-4" z="10" spawntime="450" />
-		<monster name="Cave Rat" x="2" y="-2" z="10" spawntime="450" />
-		<monster name="Cave Rat" x="2" y="-1" z="10" spawntime="450" />
-		<monster name="Rat" x="-5" y="0" z="10" spawntime="450" />
-		<monster name="Cave Rat" x="-2" y="0" z="10" spawntime="450" />
-		<monster name="Rat" x="0" y="0" z="10" spawntime="450" />
-		<monster name="Rat" x="-8" y="5" z="10" spawntime="450" />
-		<monster name="Rat" x="4" y="5" z="10" spawntime="450" />
-		<monster name="Rat" x="-8" y="6" z="10" spawntime="450" />
-		<monster name="Cave Rat" x="-6" y="6" z="10" spawntime="450" />
-		<monster name="Rat" x="-5" y="6" z="10" spawntime="450" />
-		<monster name="Rat" x="3" y="6" z="10" spawntime="450" />
-		<monster name="Rat" x="-9" y="8" z="10" spawntime="450" />
-		<monster name="Cave Rat" x="-7" y="8" z="10" spawntime="450" />
-		<monster name="Cave Rat" x="-5" y="8" z="10" spawntime="450" />
-		<monster name="Rat" x="-4" y="8" z="10" spawntime="450" />
-		<monster name="Cave Rat" x="7" y="8" z="10" spawntime="450" />
-		<monster name="Rat" x="-7" y="9" z="10" spawntime="450" />
-		<monster name="Rat" x="-6" y="9" z="10" spawntime="450" />
-		<monster name="Cave Rat" x="-6" y="10" z="10" spawntime="450" />
-		<monster name="Rat" x="9" y="11" z="10" spawntime="450" />
+	<spawn centerx="302" centery="354" centerz="10" radius="1">
+		<monster name="Goblin" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="659" centery="354" centerz="10" radius="1">
 		<monster name="Metal Gargoyle" x="0" y="0" z="10" spawntime="60" />
@@ -2711,6 +2729,9 @@
 		<monster name="Troll" x="4" y="0" z="10" spawntime="450" />
 		<monster name="Troll" x="-3" y="2" z="10" spawntime="450" />
 	</spawn>
+	<spawn centerx="297" centery="360" centerz="10" radius="1">
+		<monster name="Goblin Scavenger" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="625" centery="360" centerz="10" radius="3">
 		<monster name="Grim Reaper" x="0" y="-1" z="10" spawntime="60" />
 		<monster name="Demon" x="3" y="0" z="10" spawntime="60" />
@@ -2726,8 +2747,17 @@
 	<spawn centerx="688" centery="360" centerz="10" radius="3">
 		<monster name="Demon" x="-1" y="0" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="310" centery="361" centerz="10" radius="1">
+		<monster name="Goblin" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="299" centery="362" centerz="10" radius="1">
+		<monster name="Goblin" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="541" centery="364" centerz="10" radius="1">
 		<monster name="Elder Wyrm" x="0" y="0" z="10" spawntime="240" />
+	</spawn>
+	<spawn centerx="314" centery="365" centerz="10" radius="1">
+		<monster name="Goblin Scavenger" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="685" centery="365" centerz="10" radius="1">
 		<monster name="Metal Gargoyle" x="0" y="0" z="10" spawntime="60" />
@@ -2791,11 +2821,20 @@
 	<spawn centerx="737" centery="374" centerz="10" radius="3">
 		<monster name="Demon" x="0" y="2" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="307" centery="375" centerz="10" radius="1">
+		<monster name="Goblin" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="299" centery="376" centerz="10" radius="1">
+		<monster name="Goblin" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="330" centery="377" centerz="10" radius="2">
 		<monster name="Bug" x="-1" y="1" z="10" spawntime="450" />
 	</spawn>
 	<spawn centerx="464" centery="377" centerz="10" radius="1">
 		<monster name="Dragonling" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="314" centery="378" centerz="10" radius="1">
+		<monster name="Goblin" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="660" centery="378" centerz="10" radius="1">
 		<monster name="Metal Gargoyle" x="0" y="0" z="10" spawntime="60" />
@@ -2811,6 +2850,9 @@
 		<monster name="Troll" x="-1" y="-5" z="10" spawntime="450" />
 		<monster name="Troll" x="2" y="5" z="10" spawntime="450" />
 	</spawn>
+	<spawn centerx="319" centery="381" centerz="10" radius="1">
+		<monster name="Goblin" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="449" centery="381" centerz="10" radius="1">
 		<monster name="Dragonling" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
@@ -2822,31 +2864,23 @@
 		<monster name="Troll" x="5" y="3" z="10" spawntime="450" />
 		<monster name="Troll" x="0" y="4" z="10" spawntime="450" />
 	</spawn>
-	<spawn centerx="306" centery="383" centerz="10" radius="12">
-		<monster name="Cave Rat" x="0" y="-10" z="10" spawntime="450" />
-		<monster name="Rat" x="0" y="-9" z="10" spawntime="450" />
-		<monster name="Rat" x="-8" y="-8" z="10" spawntime="450" />
-		<monster name="Cave Rat" x="-3" y="-6" z="10" spawntime="450" />
-		<monster name="Rat" x="-2" y="-6" z="10" spawntime="450" />
-		<monster name="Rat" x="-7" y="-3" z="10" spawntime="450" />
-		<monster name="Rat" x="4" y="-3" z="10" spawntime="450" />
-		<monster name="Rat" x="-11" y="-1" z="10" spawntime="450" />
-		<monster name="Rat" x="5" y="1" z="10" spawntime="450" />
-		<monster name="Rat" x="-5" y="2" z="10" spawntime="450" />
-		<monster name="Rat" x="-8" y="7" z="10" spawntime="450" />
-		<monster name="Rat" x="10" y="8" z="10" spawntime="450" />
-		<monster name="Rat" x="5" y="10" z="10" spawntime="450" />
-		<monster name="Rat" x="-4" y="11" z="10" spawntime="450" />
+	<spawn centerx="300" centery="382" centerz="10" radius="1">
+		<monster name="Goblin" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="323" centery="384" centerz="10" radius="4">
-		<monster name="Rat" x="-3" y="-4" z="10" spawntime="450" />
-		<monster name="Rat" x="0" y="-1" z="10" spawntime="450" />
-		<monster name="Rat" x="-4" y="4" z="10" spawntime="450" />
+	<spawn centerx="312" centery="382" centerz="10" radius="1">
+		<monster name="Goblin" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="288" centery="386" centerz="10" radius="5">
-		<monster name="Rat" x="5" y="-1" z="10" spawntime="450" />
-		<monster name="Cave Rat" x="5" y="1" z="10" spawntime="450" />
-		<monster name="Rat" x="3" y="4" z="10" spawntime="450" />
+	<spawn centerx="295" centery="383" centerz="10" radius="1">
+		<monster name="Goblin" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="324" centery="384" centerz="10" radius="1">
+		<monster name="Goblin" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="311" centery="388" centerz="10" radius="1">
+		<monster name="Goblin" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="303" centery="389" centerz="10" radius="1">
+		<monster name="Goblin" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="411" centery="389" centerz="10" radius="15">
 		<monster name="Dragonling" x="-7" y="-5" z="10" spawntime="240" />
@@ -2860,6 +2894,12 @@
 		<monster name="Troll" x="1" y="3" z="10" spawntime="450" />
 		<monster name="Troll" x="-2" y="4" z="10" spawntime="450" />
 	</spawn>
+	<spawn centerx="293" centery="390" centerz="10" radius="1">
+		<monster name="Goblin" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="316" centery="390" centerz="10" radius="1">
+		<monster name="Goblin" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="537" centery="390" centerz="10" radius="1">
 		<monster name="Dragonling" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
@@ -2869,6 +2909,12 @@
 	</spawn>
 	<spawn centerx="441" centery="394" centerz="10" radius="1">
 		<monster name="Dragonling" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="302" centery="395" centerz="10" radius="1">
+		<monster name="Goblin" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="309" centery="395" centerz="10" radius="1">
+		<monster name="Goblin" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="485" centery="399" centerz="10" radius="15">
 		<monster name="Dragonling" x="14" y="-13" z="10" spawntime="60" />
