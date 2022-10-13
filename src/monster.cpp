@@ -242,7 +242,7 @@ void Monster::onCreatureMove(Creature* creature, const Tile* newTile, const Posi
 
 	if (creature == this) {
 		if (isSummon()) {
-			isMasterInRange = canSee(getMaster()->getPosition());
+			isMasterInRange = canSee(getMaster()->getPosition(), false);
 		}
 
 		updateTargetList();
