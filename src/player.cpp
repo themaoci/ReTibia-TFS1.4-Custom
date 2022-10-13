@@ -696,7 +696,7 @@ bool Player::getStorageValue(const uint32_t key, int32_t& value) const
 	return true;
 }
 
-bool Player::canSee(const Position& pos) const
+bool Player::canSee(const Position& pos, bool visCheck) const
 {
 	if (!client) {
 		return false;
