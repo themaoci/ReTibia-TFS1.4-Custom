@@ -157,7 +157,7 @@ void Monster::onCreatureAppear(Creature* creature, bool isLogin)
 	if (creature == this) {
 		//We just spawned lets look around to see who is there.
 		if (isSummon()) {
-			isMasterInRange = canSee(getMaster()->getPosition());
+			isMasterInRange = canSee(getMaster()->getPosition(), false);
 		}
 
 		updateTargetList();
@@ -249,9 +249,10 @@ void Monster::onCreatureMove(Creature* creature, const Tile* newTile, const Posi
 		updateIdleStatus();
 	} else {
 		bool canSeeNewPos = canSee(newPos, false);
+		bool canSeeNewPosEnter = canSee(newPos);
 		bool canSeeOldPos = canSee(oldPos, false);
 
-		if (canSeeNewPos && !canSeeOldPos) {
+		if (canSeeNewPosEnter && !canSeeOldPos) {
 			onCreatureEnter(creature);
 		} else if (!canSeeNewPos && canSeeOldPos) {
 			onCreatureLeave(creature);
@@ -417,7 +418,7 @@ void Monster::onCreatureFound(Creature* creature, bool pushFront/* = false*/)
 		return;
 	}
 
-	if (!canSee(creature->getPosition())) {
+	if (!canSee(creature->getPosition(), false)) {
 		return;
 	}
 
