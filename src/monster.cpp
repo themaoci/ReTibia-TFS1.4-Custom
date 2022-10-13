@@ -101,9 +101,9 @@ const std::string& Monster::getNameDescription() const
 	return nameDescription;
 }
 
-bool Monster::canSee(const Position& pos) const
+bool Monster::canSee(const Position& pos, bool visCheck) const
 {
-	return Creature::canSee(getPosition(), pos, Map::maxViewportX, Map::maxViewportY);
+	return Creature::canSee(getPosition(), pos, Map::maxViewportX, Map::maxViewportY, visCheck);
 }
 
 bool Monster::canWalkOnFieldType(CombatType_t combatType) const
@@ -366,7 +366,8 @@ void Monster::updateTargetList()
 	auto friendIterator = friendList.begin();
 	while (friendIterator != friendList.end()) {
 		Creature* creature = *friendIterator;
-		if (creature->getHealth() <= 0 || !canSee(creature->getPosition())) {
+		// this removes the target of friend list if not seen (vis check disabled)
+		if (creature->getHealth() <= 0 || !canSee(creature->getPosition(), false)) {
 			creature->decrementReferenceCounter();
 			friendIterator = friendList.erase(friendIterator);
 		} else {
@@ -377,7 +378,8 @@ void Monster::updateTargetList()
 	auto targetIterator = targetList.begin();
 	while (targetIterator != targetList.end()) {
 		Creature* creature = *targetIterator;
-		if (creature->getHealth() <= 0 || !canSee(creature->getPosition())) {
+		// this removes the target of enemies list if not seen (vis check disabled)
+		if (creature->getHealth() <= 0 || !canSee(creature->getPosition(), false)) {
 			creature->decrementReferenceCounter();
 			targetIterator = targetList.erase(targetIterator);
 		} else {

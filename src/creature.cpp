@@ -36,7 +36,7 @@ Creature::~Creature()
 	}
 }
 
-bool Creature::canSee(const Position& myPos, const Position& pos, int32_t viewRangeX, int32_t viewRangeY)
+bool Creature::canSee(const Position& myPos, const Position& pos, int32_t viewRangeX, int32_t viewRangeY, bool visCheck)
 {
 	if (myPos.z <= 7) {
 		// we are on ground level or above (7 -> 0)
@@ -65,15 +65,18 @@ bool Creature::canSee(const Position& myPos, const Position& pos, int32_t viewRa
 	if(!(visibleOverXAxis && visibleOverYAxis))
 		return false;
 	
-	if (!g_game.isSightClear(myPos, pos, true))
+	if(visCheck)
 	{
-		return false;
+		if (!g_game.isSightClear(myPos, pos, true))
+		{
+			return false;
+		}
 	}
 
 	return true;
 }
 
-bool Creature::canSee(const Position& pos) const
+bool Creature::canSee(const Position& pos, bool visCheck) const
 {
 	return canSee(getPosition(), pos, Map::maxViewportX, Map::maxViewportY);
 }
