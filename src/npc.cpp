@@ -227,12 +227,12 @@ bool Npc::loadFromXml()
 	return true;
 }
 
-bool Npc::canSee(const Position& pos) const
+bool Npc::canSee(const Position& pos, bool visCheck) const
 {
 	if (pos.z != getPosition().z) {
 		return false;
 	}
-	return Creature::canSee(getPosition(), pos, 3, 3);
+	return Creature::canSee(getPosition(), pos, 3, 3, visCheck);
 }
 
 std::string Npc::getDescription(int32_t) const
