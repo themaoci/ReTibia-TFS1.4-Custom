@@ -419,7 +419,7 @@ void Monster::onCreatureFound(Creature* creature, bool pushFront/* = false*/)
 		return;
 	}
 
-	if (!canSee(creature->getPosition(), false)) {
+	if (!canSee(creature->getPosition())) {
 		return;
 	}
 
