@@ -59,18 +59,16 @@ bool Creature::canSee(const Position& myPos, const Position& pos, int32_t viewRa
 	const int_fast32_t offsetz = myPos.getZ() - pos.getZ();
 
 	const bool visibleOverXAxis = (pos.getX() >= myPos.getX() - Map::maxViewportX + offsetz) && (pos.getX() <= myPos.getX() + Map::maxViewportX + offsetz);
+	if(!(visibleOverXAxis))
+		return false;
+
 	const bool visibleOverYAxis = (pos.getY() >= myPos.getY() - Map::maxViewportY + offsetz) && (pos.getY() <= myPos.getY() + Map::maxViewportY + offsetz);
-
-
-	if(!(visibleOverXAxis && visibleOverYAxis))
+	if(!(visibleOverYAxis))
 		return false;
 	
 	if(visCheck)
 	{
-		if (!g_game.isSightClear(myPos, pos, true))
-		{
-			return false;
-		}
+		return g_game.isSightClear(myPos, pos, true);
 	}
 
 	return true;
