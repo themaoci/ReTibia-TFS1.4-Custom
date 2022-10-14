@@ -520,8 +520,8 @@ namespace {
 
 bool checkSteepLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint8_t z, bool isPathfinding)
 {
-	float dx = x1 - x0;
-	float slope = (dx == 0) ? 1 : (y1 - y0) / dx;
+	const float dx = x1 - x0;
+	const float slope = (dx == 0) ? 1 : (y1 - y0) / dx;
 	float yi = y0 + slope;
 
 	for (uint16_t x = x0 + 1; x < x1; ++x) {
@@ -537,8 +537,8 @@ bool checkSteepLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint8_t 
 
 bool checkSlightLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint8_t z, bool isPathfinding)
 {
-	float dx = x1 - x0;
-	float slope = (dx == 0) ? 1 : (y1 - y0) / dx;
+	const float dx = x1 - x0;
+	const float slope = (dx == 0) ? 1 : (y1 - y0) / dx;
 	float yi = y0 + slope;
 
 	for (uint16_t x = x0 + 1; x < x1; ++x) {
@@ -641,7 +641,7 @@ bool Map::isSightClear(const Position& fromPos, const Position& toPos, bool same
 
 const Tile* Map::canWalkTo(const Creature& creature, const Position& pos) const
 {
-	int32_t walkCache = creature.getWalkCache(pos);
+	const int32_t walkCache = creature.getWalkCache(pos);
 	if (walkCache == 0) {
 		return nullptr;
 	} else if (walkCache == 1) {
@@ -649,7 +649,7 @@ const Tile* Map::canWalkTo(const Creature& creature, const Position& pos) const
 	}
 
 	//used for non-cached tiles
-	Tile* tile = getTile(pos.x, pos.y, pos.z);
+	const Tile* tile = getTile(pos.x, pos.y, pos.z);
 	if (creature.getTile() != tile) {
 		if (!tile || tile->queryAdd(0, creature, 1, FLAG_PATHFINDING | FLAG_IGNOREFIELDDAMAGE) != RETURNVALUE_NOERROR) {
 			return nullptr;
