@@ -157,7 +157,7 @@ void Monster::onCreatureAppear(Creature* creature, bool isLogin)
 	if (creature == this) {
 		//We just spawned lets look around to see who is there.
 		if (isSummon()) {
-			isMasterInRange = canSee(getMaster()->getPosition(), false);
+			isMasterInRange = canSee(getMaster()->getPosition());
 		}
 
 		updateTargetList();
@@ -242,17 +242,17 @@ void Monster::onCreatureMove(Creature* creature, const Tile* newTile, const Posi
 
 	if (creature == this) {
 		if (isSummon()) {
-			isMasterInRange = canSee(getMaster()->getPosition(), false);
+			isMasterInRange = canSee(getMaster()->getPosition());
 		}
 
 		updateTargetList();
 		updateIdleStatus();
 	} else {
-		bool canSeeNewPos = canSee(newPos);
-		bool canSeeOldPos = canSee(oldPos);
+		bool canSeeNewPos = canSee(newPos, true);
+		bool canSeeOldPos = canSee(oldPos, true);
 
-		bool canSeeNewPos2 = canSee(newPos, false);
-		bool canSeeOldPos2 = canSee(oldPos, false);
+		bool canSeeNewPos2 = canSee(newPos);
+		bool canSeeOldPos2 = canSee(oldPos);
 		if (canSeeNewPos && !canSeeOldPos) {
 			onCreatureEnter(creature);
 		}
@@ -370,7 +370,7 @@ void Monster::updateTargetList()
 	while (friendIterator != friendList.end()) {
 		Creature* creature = *friendIterator;
 		// this removes the target of friend list if not seen (vis check disabled)
-		if (creature->getHealth() <= 0 || !canSee(creature->getPosition(), false)) {
+		if (creature->getHealth() <= 0 || !canSee(creature->getPosition())) {
 			creature->decrementReferenceCounter();
 			friendIterator = friendList.erase(friendIterator);
 		} else {
@@ -382,7 +382,7 @@ void Monster::updateTargetList()
 	while (targetIterator != targetList.end()) {
 		Creature* creature = *targetIterator;
 		// this removes the target of enemies list if not seen (vis check disabled)
-		if (creature->getHealth() <= 0 || !canSee(creature->getPosition(), false)) {
+		if (creature->getHealth() <= 0 || !canSee(creature->getPosition())) {
 			creature->decrementReferenceCounter();
 			targetIterator = targetList.erase(targetIterator);
 		} else {

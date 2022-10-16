@@ -501,7 +501,7 @@ class Player final : public Creature, public Cylinder
 		void onReceiveMail() const;
 		bool isNearDepotBox() const;
 
-		bool canSee(const Position& pos, bool visCheck = true) const override;
+		bool canSee(const Position& pos, bool visCheck = false) const override;
 		bool canSeeCreature(const Creature* creature) const override;
 
 		bool canWalkthrough(const Creature* creature) const;

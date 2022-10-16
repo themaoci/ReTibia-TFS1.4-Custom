@@ -130,7 +130,7 @@ class Creature : virtual public Thing
 		virtual void removeList() = 0;
 		virtual void addList() = 0;
 
-		virtual bool canSee(const Position& pos, bool visCheck = true) const;
+		virtual bool canSee(const Position& pos, bool visCheck = false) const;
 		virtual bool canSeeCreature(const Creature* creature) const;
 
 		virtual RaceType_t getRace() const {
@@ -446,7 +446,7 @@ class Creature : virtual public Thing
 			lastPosition = newLastPos;
 		}
 
-		static bool canSee(const Position& myPos, const Position& pos, int32_t viewRangeX, int32_t viewRangeY, bool visCheck = true);
+		static bool canSee(const Position& myPos, const Position& pos, int32_t viewRangeX, int32_t viewRangeY, bool visCheck = false);
 
 		double getDamageRatio(Creature* attacker) const;
 
