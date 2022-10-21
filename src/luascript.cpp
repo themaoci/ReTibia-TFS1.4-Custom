@@ -2001,6 +2001,8 @@ void LuaScriptInterface::registerFunctions()
 	registerEnumIn("configKeys", ConfigManager::EXP_FROM_PLAYERS_LEVEL_RANGE)
 	registerEnumIn("configKeys", ConfigManager::MAX_PACKETS_PER_SECOND)
 	registerEnumIn("configKeys", ConfigManager::PLAYER_CONSOLE_LOGS)
+	registerEnumIn("configKeys", ConfigManager::STAMINA_REGEN_MINUTE)
+	registerEnumIn("configKeys", ConfigManager::STAMINA_REGEN_PREMIUM)
 
 	// os
 	registerMethod("os", "mtime", LuaScriptInterface::luaSystemTime);
@@ -4959,6 +4961,11 @@ int LuaScriptInterface::luaPositionSendMagicEffect(lua_State* L)
 	}
 
 	MagicEffectClasses magicEffect = getNumber<MagicEffectClasses>(L, 2);
+	if (magicEffect == CONST_ME_NONE) {
+		pushBoolean(L, false);
+		return 1;
+	}
+
 	const Position& position = getPosition(L, 1);
 	if (!spectators.empty()) {
 		Game::addMagicEffect(spectators, position, magicEffect);
@@ -5030,7 +5037,7 @@ int LuaScriptInterface::luaTileRemove(lua_State* L)
 	if (g_game.isTileInCleanList(tile)) {
 		g_game.removeTileToClean(tile);
 	}
-	
+
 	g_game.map.removeTile(tile->getPosition());
 	pushBoolean(L, true);
 	return 1;
