@@ -1123,8 +1123,9 @@ void Creature::onAttackedCreatureDrainHealth(Creature* target, int32_t points)
 
 bool Creature::onKilledCreature(Creature* target, bool)
 {
+	bool unjustified = false;
 	if (master) {
-		master->onKilledCreature(target);
+		unjustified = master->onKilledCreature(target);
 	}
 
 	//scripting event - onKill
@@ -1132,7 +1133,7 @@ bool Creature::onKilledCreature(Creature* target, bool)
 	for (CreatureEvent* killEvent : killEvents) {
 		killEvent->executeOnKill(this, target);
 	}
-	return false;
+	return unjustified;
 }
 
 void Creature::onGainExperience(uint64_t gainExp, Creature* target)
