@@ -1,7 +1,7 @@
 local log_slow_exec_startExecProg = os.clock()
 local log_slow_exec_currExecProg = ""
 local log_slow_exec_currGetInfo = {}
-local log_slow_exec_ReportTime = 0.05 -- where 1 is 1 second and 0.005 is 5 ms
+local log_slow_exec_ReportTime = 0.15 -- where 1 is 1 second and 0.005 is 5 ms
 
 -- enable disable this logger
 local ExtendedDebug = true 
