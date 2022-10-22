@@ -748,9 +748,9 @@ bool Map::getPathMatching(const Creature& creature, const Position& targetPos, s
 			}
 
 			if (fpp.keepDistance && !pathCondition.isInRange(startPos, pos, fpp)) {
-				if (distX < fpp.maxTargetDist && distY < fpp.maxTargetDist) {
+				//if (distX < fpp.maxTargetDist && distY < fpp.maxTargetDist) {
 					continue;
-				}
+				//}
 			}
 
 			// Sight is clear. We shouldn't have to move backwards.
