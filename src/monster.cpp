@@ -248,19 +248,16 @@ void Monster::onCreatureMove(Creature* creature, const Tile* newTile, const Posi
 		updateTargetList();
 		updateIdleStatus();
 	} else {
-		bool canSeeNewPos = canSee(newPos);
-		bool canSeeOldPos = canSee(oldPos);
-
-		bool canSeeNewPos2 = canSee(newPos);
-		bool canSeeOldPos2 = canSee(oldPos);
-		if (canSeeNewPos && !canSeeOldPos) {
+		const bool canSeeNewPos2 = canSee(newPos);
+		
+		if (canSee(newPos, true) && !canSee(oldPos, true)) {
 			onCreatureEnter(creature);
 		}
-		if (!canSeeNewPos2 && canSeeOldPos2) {
+		if (!canSeeNewPos2 && canSee(oldPos)) {
 			onCreatureLeave(creature);
 		}
 
-		if (canSeeNewPos && isSummon() && getMaster() == creature) {
+		if (canSeeNewPos2 && isSummon() && getMaster() == creature) {
 			isMasterInRange = true; //Follow master again
 		}
 
@@ -271,13 +268,13 @@ void Monster::onCreatureMove(Creature* creature, const Tile* newTile, const Posi
 				const Position& followPosition = followCreature->getPosition();
 				const Position& position = getPosition();
 
-				int32_t offset_x = Position::getDistanceX(followPosition, position);
-				int32_t offset_y = Position::getDistanceY(followPosition, position);
+				const int32_t offset_x = Position::getDistanceX(followPosition, position);
+				const int32_t offset_y = Position::getDistanceY(followPosition, position);
 				if ((offset_x > 1 || offset_y > 1) && mType->info.changeTargetChance > 0) {
 					Direction dir = getDirectionTo(position, followPosition);
 					const Position& checkPosition = getNextPosition(dir, position);
 
-					Tile* tile = g_game.map.getTile(checkPosition);
+					const Tile* tile = g_game.map.getTile(checkPosition);
 					if (tile) {
 						Creature* topCreature = tile->getTopCreature();
 						if (topCreature && followCreature != topCreature && isOpponent(topCreature)) {
