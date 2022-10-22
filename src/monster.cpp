@@ -865,7 +865,10 @@ bool Monster::canUseAttack(const Position& pos, const Creature* target) const
 		uint32_t distance = std::max<uint32_t>(Position::getDistanceX(pos, targetPos), Position::getDistanceY(pos, targetPos));
 		for (const spellBlock_t& spellBlock : mType->info.attackSpells) {
 			if (spellBlock.range != 0 && distance <= spellBlock.range) {
-				return g_game.isSightClear(pos, targetPos, true);
+				if ( Creature::canSee(pos, targetPos, Map::maxClientViewportX + 2, Map::maxClientViewportY + 2, false) || spellBlock.range == 99 ) {
+                    return g_game.isSightClear(pos, targetPos, true);
+                }
+				//return g_game.isSightClear(pos, targetPos, true);
 			}
 		}
 		return false;
@@ -876,6 +879,9 @@ bool Monster::canUseAttack(const Position& pos, const Creature* target) const
 bool Monster::canUseSpell(const Position& pos, const Position& targetPos,
                           const spellBlock_t& sb, uint32_t interval, bool& inRange, bool& resetTicks)
 {
+	if (!Creature::canSee(pos, targetPos, Map::maxClientViewportX + 2, Map::maxClientViewportY + 2, false) && sb.range != 99 ) {
+        return false;
+    }
 	inRange = true;
 
 	if (sb.isMelee) {
