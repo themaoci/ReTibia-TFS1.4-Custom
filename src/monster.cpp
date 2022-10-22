@@ -248,8 +248,8 @@ void Monster::onCreatureMove(Creature* creature, const Tile* newTile, const Posi
 		updateTargetList();
 		updateIdleStatus();
 	} else {
-		bool canSeeNewPos = canSee(newPos, true);
-		bool canSeeOldPos = canSee(oldPos, true);
+		bool canSeeNewPos = canSee(newPos);
+		bool canSeeOldPos = canSee(oldPos);
 
 		bool canSeeNewPos2 = canSee(newPos);
 		bool canSeeOldPos2 = canSee(oldPos);
