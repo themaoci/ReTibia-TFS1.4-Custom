@@ -182,13 +182,21 @@ void ProtocolLogin::onRecvFirstMessage(NetworkMessage& msg)
 	key[3] = msg.get<uint32_t>();
 	enableXTEAEncryption();
 	setXTEAKey(std::move(key));
-  
+
+	if (version != CLIENT_VERSION_MIN && version != CLIENT_VERSION_MAX) {
+		std::cout << "client version" << std::endl;
+		disconnectClient("Usage of custom client detected!! Check #6", version);
+		return;
+	}
+
 	if (g_game.getGameState() == GAME_STATE_STARTUP) {
+		std::cout << "server not up" << std::endl;
 		disconnectClient("Gameworld is starting up. Please wait.", version);
 		return;
 	}
 
 	if (g_game.getGameState() == GAME_STATE_MAINTAIN) {
+		std::cout << "maintain" << std::endl;
 		disconnectClient("Gameworld is under maintenance.\nPlease re-connect in a while.", version);
 		return;
 	}
@@ -199,7 +207,6 @@ void ProtocolLogin::onRecvFirstMessage(NetworkMessage& msg)
 	if (!connection) {
 		return;
 	}
-
 
 
 	if (IOBan::isIpBanned(connection->getIP(), banInfo)) {
@@ -229,63 +236,63 @@ void ProtocolLogin::onRecvFirstMessage(NetworkMessage& msg)
 		disconnectClient("Invalid authentication token.", version);
 		return;
 	}
+
 	if (version != CLIENT_VERSION_MIN && version != CLIENT_VERSION_MAX) {
-		g_discord.webhook("https://discord.com/api/webhooks/1033439759315521547/zVzt7q0yKOiqyI1sBBt7IC-LEAFNkZR2h1bEFvlE6uz98wf14Gt0O60R0svdh6UcXAo3",
-			fmt::format("IP: {:s} / Username: {:s} -> Version Mismatch (disconnected)", connection->getIP(), accountName));
+		//g_discord.webhook("https://discord.com/api/webhooks/1033439759315521547/zVzt7q0yKOiqyI1sBBt7IC-LEAFNkZR2h1bEFvlE6uz98wf14Gt0O60R0svdh6UcXAo3",
+		//	fmt::format("IP: {:s} / Username: {:s} -> Version Mismatch (disconnected)", connection->getIP(), accountName));
 		disconnectClient("Usage of custom client detected!!", version);
 		return;
 	}
-
   
-	if(signature_module != (uint32_t)SEC_moduleSig && SEC_moduleSig != 0){
+	if(signature_module != SEC_moduleSig && SEC_moduleSig != 0){
 		if (!isDevTest)
 		{
-			g_discord.webhook("https://discord.com/api/webhooks/1033439759315521547/zVzt7q0yKOiqyI1sBBt7IC-LEAFNkZR2h1bEFvlE6uz98wf14Gt0O60R0svdh6UcXAo3",
-				fmt::format("IP: {:s} / Username: {:s} -> Client Modules Mismatch (disconnected)", connection->getIP(), accountName));
+		//	g_discord.webhook("https://discord.com/api/webhooks/1033439759315521547/zVzt7q0yKOiqyI1sBBt7IC-LEAFNkZR2h1bEFvlE6uz98wf14Gt0O60R0svdh6UcXAo3",
+		//		fmt::format("IP: {:s} / Username: {:s} -> Client Modules Mismatch (disconnected)", connection->getIP(), accountName));
 			//disconnectClient("Usage of custom client detected!!", version);
 			//return;
 		}
 		std::cout << "CheckFailed for SEC_moduleSig (" << signature_module << " != " << SEC_moduleSig << ") [" << connection->getIP() << "] - " << accountName << std::endl;
 	}
-	if(clientFileSize != (uint32_t)SEC_fileSize && SEC_fileSize != 0){
+	if(clientFileSize != SEC_fileSize && SEC_fileSize != 0){
 		if (!isDevTest)
 		{
-			g_discord.webhook("https://discord.com/api/webhooks/1033439759315521547/zVzt7q0yKOiqyI1sBBt7IC-LEAFNkZR2h1bEFvlE6uz98wf14Gt0O60R0svdh6UcXAo3",
-				fmt::format("IP: {:s} / Username: {:s} -> Client Executable Mismatch (disconnected)", connection->getIP(), accountName));
+		//	g_discord.webhook("https://discord.com/api/webhooks/1033439759315521547/zVzt7q0yKOiqyI1sBBt7IC-LEAFNkZR2h1bEFvlE6uz98wf14Gt0O60R0svdh6UcXAo3",
+		//		fmt::format("IP: {:s} / Username: {:s} -> Client Executable Mismatch (disconnected)", connection->getIP(), accountName));
 			//disconnectClient("Usage of custom client detected!!", version);
 			//return;
 		}
 		std::cout << "CheckFailed for SEC_fileSize (" << clientFileSize << " != " << SEC_fileSize << "> [" << connection->getIP() << "] - " << accountName << std::endl;
 	}
-	if(signature_dat != (uint32_t)SEC_datSig && SEC_datSig != 0){
+	if(signature_dat != SEC_datSig && SEC_datSig != 0){
 		if (!isDevTest)
 		{
-			g_discord.webhook("https://discord.com/api/webhooks/1033439759315521547/zVzt7q0yKOiqyI1sBBt7IC-LEAFNkZR2h1bEFvlE6uz98wf14Gt0O60R0svdh6UcXAo3",
-				fmt::format("IP: {:s} / Username: {:s} -> Client Dat Mismatch (disconnected)", connection->getIP(), accountName));
+		//	g_discord.webhook("https://discord.com/api/webhooks/1033439759315521547/zVzt7q0yKOiqyI1sBBt7IC-LEAFNkZR2h1bEFvlE6uz98wf14Gt0O60R0svdh6UcXAo3",
+		//		fmt::format("IP: {:s} / Username: {:s} -> Client Dat Mismatch (disconnected)", connection->getIP(), accountName));
 			//disconnectClient("Usage of custom client detected!!", version);
 			//return;
 		}
 		std::cout << "CheckFailed for SEC_datSig (" << signature_dat << " != " << SEC_datSig << ") [" << connection->getIP() << "] - " << accountName << std::endl;
 	}
-	if(signature_spr != (uint32_t)SEC_sprSig && SEC_sprSig != 0){
+	if(signature_spr != SEC_sprSig && SEC_sprSig != 0){
 		if (!isDevTest)
 		{
-			g_discord.webhook("https://discord.com/api/webhooks/1033439759315521547/zVzt7q0yKOiqyI1sBBt7IC-LEAFNkZR2h1bEFvlE6uz98wf14Gt0O60R0svdh6UcXAo3",
-				fmt::format("IP: {:s} / Username: {:s} -> Client Sprites Mismatch (disconnected)", connection->getIP(), accountName));
+		//	g_discord.webhook("https://discord.com/api/webhooks/1033439759315521547/zVzt7q0yKOiqyI1sBBt7IC-LEAFNkZR2h1bEFvlE6uz98wf14Gt0O60R0svdh6UcXAo3",
+		//		fmt::format("IP: {:s} / Username: {:s} -> Client Sprites Mismatch (disconnected)", connection->getIP(), accountName));
 			//disconnectClient("Usage of custom client detected!!", version);
 			//return;
 		}
 		std::cout << "CheckFailed for SEC_sprSig (" << signature_spr << " != " << SEC_sprSig << ") [" << connection->getIP() << "] - " << accountName << std::endl;
 	}
-	if(signature_pic != (uint32_t)SEC_picSig && SEC_picSig != 0){
+	if(signature_pic != SEC_picSig && SEC_picSig != 0){
 		if (!isDevTest)
 		{
-			g_discord.webhook("https://discord.com/api/webhooks/1033439759315521547/zVzt7q0yKOiqyI1sBBt7IC-LEAFNkZR2h1bEFvlE6uz98wf14Gt0O60R0svdh6UcXAo3",
-				fmt::format("IP: {:s} / Username: {:s} -> Client Pic Missmatch (disconnected)", connection->getIP(), accountName));
+		//	g_discord.webhook("https://discord.com/api/webhooks/1033439759315521547/zVzt7q0yKOiqyI1sBBt7IC-LEAFNkZR2h1bEFvlE6uz98wf14Gt0O60R0svdh6UcXAo3",
+		//		fmt::format("IP: {:s} / Username: {:s} -> Client Pic Missmatch (disconnected)", connection->getIP(), accountName));
+			//disconnectClient("Usage of custom client detected!!", version);
+			//return;
 		}
 		std::cout << "CheckFailed for SEC_picSig (" << signature_pic << " != " << SEC_picSig << ") [" << connection->getIP() << "] - " << accountName << std::endl;
-		//disconnectClient("Usage of custom client detected!!", version);
-		//return;
 	}
   
 	std::string authToken = msg.getString();
