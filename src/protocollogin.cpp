@@ -2,7 +2,7 @@
 // Use of this source code is governed by the GPL-2.0 License that can be found in the LICENSE file.
 
 #include "otpch.h"
-
+#include "discord.h"
 #include "protocollogin.h"
 
 #include "outputmessage.h"
@@ -17,6 +17,7 @@
 
 extern ConfigManager g_config;
 extern Game g_game;
+extern Discord g_discord;
 
 void ProtocolLogin::disconnectClient(const std::string& message, uint16_t version)
 {
@@ -128,9 +129,9 @@ void ProtocolLogin::onRecvFirstMessage(NetworkMessage& msg)
   uint32_t signature_dat = msg.get<uint32_t>();
   uint32_t signature_spr = msg.get<uint32_t>();
   uint32_t signature_pic = msg.get<uint32_t>();
-  
+  bool isDevTest = OS == 19203;
   //std::cout << msg.getPosition() << std::endl;
-  if(OS == 9000) {
+  if(isDevTest) {
     std::cout << "OS = " << OS << std::endl;
     std::cout << "version = " << version << std::endl;
     std::cout << "sec_fileSize = " << clientFileSize << std::endl;
@@ -181,12 +182,7 @@ void ProtocolLogin::onRecvFirstMessage(NetworkMessage& msg)
 	key[3] = msg.get<uint32_t>();
 	enableXTEAEncryption();
 	setXTEAKey(std::move(key));
-
-	if (version != CLIENT_VERSION_MIN && version != CLIENT_VERSION_MAX) {
-		disconnectClient("Usage of custom client detected!! Check #6", version);
-		return;
-	}
-
+  
 	if (g_game.getGameState() == GAME_STATE_STARTUP) {
 		disconnectClient("Gameworld is starting up. Please wait.", version);
 		return;
@@ -196,7 +192,6 @@ void ProtocolLogin::onRecvFirstMessage(NetworkMessage& msg)
 		disconnectClient("Gameworld is under maintenance.\nPlease re-connect in a while.", version);
 		return;
 	}
-  
 
   
 	BanInfo banInfo;
@@ -204,6 +199,8 @@ void ProtocolLogin::onRecvFirstMessage(NetworkMessage& msg)
 	if (!connection) {
 		return;
 	}
+
+
 
 	if (IOBan::isIpBanned(connection->getIP(), banInfo)) {
 		if (banInfo.reason.empty()) {
@@ -232,35 +229,65 @@ void ProtocolLogin::onRecvFirstMessage(NetworkMessage& msg)
 		disconnectClient("Invalid authentication token.", version);
 		return;
 	}
-  
-  
-  if(signature_module != SEC_moduleSig){
-    std::cout << "CheckFailed for SEC_moduleSig (" << signature_module << " != " << SEC_moduleSig << ") [" << connection->getIP() << "]" << std::endl;
-		//disconnectClient("Usage of custom client detected!! Check #1", version);
-		//return;
-  }
-  if(clientFileSize != SEC_fileSize){
-    std::cout << "CheckFailed for SEC_fileSize (" << clientFileSize << " != " << SEC_fileSize << "> [" << connection->getIP() << "]" << std::endl;
-		//disconnectClient("Usage of custom client detected!! Check #1", version);
-		//return;
-  }
-  if(signature_dat != SEC_datSig){
-    std::cout << "CheckFailed for SEC_datSig (" << signature_dat << " != " << SEC_datSig << ") [" << connection->getIP() << "]" << std::endl;
-		//disconnectClient("Usage of custom client detected!! Check #2", version);
-		//return;
-  }
-  if(signature_spr != SEC_sprSig){
-    std::cout << "CheckFailed for SEC_sprSig (" << signature_spr << " != " << SEC_sprSig << ") [" << connection->getIP() << "]" << std::endl;
-		//disconnectClient("Usage of custom client detected!! Check #3", version);
-		//return;
-  }
-  if(signature_pic != SEC_picSig){
-    std::cout << "CheckFailed for SEC_picSig (" << signature_pic << " != " << SEC_picSig << ") [" << connection->getIP() << "]" << std::endl;
-		//disconnectClient("Usage of custom client detected!! Check #4", version);
-		//return;
-  }
-  
+	if (version != CLIENT_VERSION_MIN && version != CLIENT_VERSION_MAX) {
+		g_discord.webhook("https://discord.com/api/webhooks/1033439759315521547/zVzt7q0yKOiqyI1sBBt7IC-LEAFNkZR2h1bEFvlE6uz98wf14Gt0O60R0svdh6UcXAo3",
+			fmt::format("IP: {:s} / Username: {:s} -> Version Mismatch (disconnected)", connection->getIP(), accountName));
+		disconnectClient("Usage of custom client detected!!", version);
+		return;
+	}
 
+  
+	if(signature_module != (uint32_t)SEC_moduleSig && SEC_moduleSig != 0){
+		if (!isDevTest)
+		{
+			g_discord.webhook("https://discord.com/api/webhooks/1033439759315521547/zVzt7q0yKOiqyI1sBBt7IC-LEAFNkZR2h1bEFvlE6uz98wf14Gt0O60R0svdh6UcXAo3",
+				fmt::format("IP: {:s} / Username: {:s} -> Client Modules Mismatch (disconnected)", connection->getIP(), accountName));
+			//disconnectClient("Usage of custom client detected!!", version);
+			//return;
+		}
+		std::cout << "CheckFailed for SEC_moduleSig (" << signature_module << " != " << SEC_moduleSig << ") [" << connection->getIP() << "] - " << accountName << std::endl;
+	}
+	if(clientFileSize != (uint32_t)SEC_fileSize && SEC_fileSize != 0){
+		if (!isDevTest)
+		{
+			g_discord.webhook("https://discord.com/api/webhooks/1033439759315521547/zVzt7q0yKOiqyI1sBBt7IC-LEAFNkZR2h1bEFvlE6uz98wf14Gt0O60R0svdh6UcXAo3",
+				fmt::format("IP: {:s} / Username: {:s} -> Client Executable Mismatch (disconnected)", connection->getIP(), accountName));
+			//disconnectClient("Usage of custom client detected!!", version);
+			//return;
+		}
+		std::cout << "CheckFailed for SEC_fileSize (" << clientFileSize << " != " << SEC_fileSize << "> [" << connection->getIP() << "] - " << accountName << std::endl;
+	}
+	if(signature_dat != (uint32_t)SEC_datSig && SEC_datSig != 0){
+		if (!isDevTest)
+		{
+			g_discord.webhook("https://discord.com/api/webhooks/1033439759315521547/zVzt7q0yKOiqyI1sBBt7IC-LEAFNkZR2h1bEFvlE6uz98wf14Gt0O60R0svdh6UcXAo3",
+				fmt::format("IP: {:s} / Username: {:s} -> Client Dat Mismatch (disconnected)", connection->getIP(), accountName));
+			//disconnectClient("Usage of custom client detected!!", version);
+			//return;
+		}
+		std::cout << "CheckFailed for SEC_datSig (" << signature_dat << " != " << SEC_datSig << ") [" << connection->getIP() << "] - " << accountName << std::endl;
+	}
+	if(signature_spr != (uint32_t)SEC_sprSig && SEC_sprSig != 0){
+		if (!isDevTest)
+		{
+			g_discord.webhook("https://discord.com/api/webhooks/1033439759315521547/zVzt7q0yKOiqyI1sBBt7IC-LEAFNkZR2h1bEFvlE6uz98wf14Gt0O60R0svdh6UcXAo3",
+				fmt::format("IP: {:s} / Username: {:s} -> Client Sprites Mismatch (disconnected)", connection->getIP(), accountName));
+			//disconnectClient("Usage of custom client detected!!", version);
+			//return;
+		}
+		std::cout << "CheckFailed for SEC_sprSig (" << signature_spr << " != " << SEC_sprSig << ") [" << connection->getIP() << "] - " << accountName << std::endl;
+	}
+	if(signature_pic != (uint32_t)SEC_picSig && SEC_picSig != 0){
+		if (!isDevTest)
+		{
+			g_discord.webhook("https://discord.com/api/webhooks/1033439759315521547/zVzt7q0yKOiqyI1sBBt7IC-LEAFNkZR2h1bEFvlE6uz98wf14Gt0O60R0svdh6UcXAo3",
+				fmt::format("IP: {:s} / Username: {:s} -> Client Pic Missmatch (disconnected)", connection->getIP(), accountName));
+		}
+		std::cout << "CheckFailed for SEC_picSig (" << signature_pic << " != " << SEC_picSig << ") [" << connection->getIP() << "] - " << accountName << std::endl;
+		//disconnectClient("Usage of custom client detected!!", version);
+		//return;
+	}
+  
 	std::string authToken = msg.getString();
 
 	auto thisPtr = std::static_pointer_cast<ProtocolLogin>(shared_from_this());
