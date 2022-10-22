@@ -96,6 +96,8 @@ using MuteCountMap = std::map<uint32_t, uint32_t>;
 static constexpr int32_t PLAYER_MAX_SPEED = 3000;
 static constexpr int32_t PLAYER_MIN_SPEED = 20;
 
+static constexpr int32_t PLAYER_SEARCHDIST = 9;
+
 class Player final : public Creature, public Cylinder
 {
 	public:

@@ -54,6 +54,7 @@ class Tile;
 
 static constexpr int32_t EVENT_CREATURECOUNT = 10;
 static constexpr int32_t EVENT_CREATURE_THINK_INTERVAL = 250;
+static constexpr int32_t EVENT_CREATURE_PATH_INTERVAL = 20;
 static constexpr int32_t EVENT_CHECK_CREATURE_INTERVAL = (EVENT_CREATURE_THINK_INTERVAL / EVENT_CREATURECOUNT);
 
 class FrozenPathingConditionCall
@@ -368,6 +369,7 @@ class Creature : virtual public Thing
 		void setCreatureLight(LightInfo lightInfo);
 
 		virtual void onThink(uint32_t interval);
+		virtual void checkPath();
 		void onAttacking(uint32_t interval);
 		virtual void onWalk();
 		virtual bool getNextStep(Direction& dir, uint32_t& flags);
@@ -490,6 +492,7 @@ class Creature : virtual public Thing
 
 		Tile* tile = nullptr;
 		Creature* attackedCreature = nullptr;
+		Position followPosition;
 		Creature* master = nullptr;
 		Creature* followCreature = nullptr;
 
@@ -521,7 +524,7 @@ class Creature : virtual public Thing
 		bool localMapCache[mapWalkHeight][mapWalkWidth] = {{ false }};
 		bool isInternalRemoved = false;
 		bool isMapLoaded = false;
-		bool isUpdatingPath = false;
+		//bool isUpdatingPath = false;
 		bool creatureCheck = false;
 		bool inCheckCreaturesVector = false;
 		bool skillLoss = true;
