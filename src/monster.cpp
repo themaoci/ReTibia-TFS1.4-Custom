@@ -2057,7 +2057,7 @@ void Monster::getPathSearchParams(const Creature* creature, FindPathParams& fpp)
 			fpp.keepDistance = true;
 			fpp.fullPathSearch = true;
 		} else if (mType->info.targetDistance <= 1) {
-			fpp.fullPathSearch = true;
+			fpp.fullPathSearch = false; // should this be false ?? enemy is 1 square away from you
 		} else {
 			fpp.fullPathSearch = !canUseAttack(getPosition(), creature);
 		}
