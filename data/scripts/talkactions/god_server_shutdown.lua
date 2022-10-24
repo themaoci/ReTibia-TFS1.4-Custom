@@ -1,4 +1,4 @@
-local god_server_shutdown = TalkAction("/shutdown")
+local god_server_shutdown = TalkAction("/shutdown", "/reset")
 
 function god_server_shutdown.onSay(player, words, param)
 	if not player:getGroup():getAccess() then
