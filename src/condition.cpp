@@ -895,7 +895,7 @@ bool ConditionRegeneration::executeCondition(Creature* creature, int32_t interva
 				message.primary.value = realHealthGain;
 				message.primary.color = TEXTCOLOR_MAYABLUE;
 				player->sendChannelMessage(std::string(), message.text, TALKTYPE_MONSTER_YELL, 9);
-				//player->sendTextMessage(message);
+				player->sendTextMessage(message);
 
 				SpectatorVec spectators;
 				g_game.map.getSpectators(spectators, player->getPosition(), false, true);
@@ -905,7 +905,7 @@ bool ConditionRegeneration::executeCondition(Creature* creature, int32_t interva
 					message.text = player->getName() + " was healed for " + healString;
 					for (Creature* spectator : spectators) {
 						spectator->getPlayer()->sendChannelMessage(std::string(), message.text, TALKTYPE_MONSTER_YELL, 9);
-						//spectator->getPlayer()->sendTextMessage(message);
+						spectator->getPlayer()->sendTextMessage(message);
 					}
 				}
 			}
@@ -928,7 +928,7 @@ bool ConditionRegeneration::executeCondition(Creature* creature, int32_t interva
 				message.primary.value = realManaGain;
 				message.primary.color = TEXTCOLOR_MAYABLUE;
 				player->sendChannelMessage(std::string(), message.text, TALKTYPE_SAY, 9);
-				//player->sendTextMessage(message);
+				player->sendTextMessage(message);
 
 				SpectatorVec spectators;
 				g_game.map.getSpectators(spectators, player->getPosition(), false, true);
@@ -938,7 +938,7 @@ bool ConditionRegeneration::executeCondition(Creature* creature, int32_t interva
 					message.text = player->getName() + " gained " + manaGainString + " mana.";
 					for (Creature* spectator : spectators) {
 						spectator->getPlayer()->sendChannelMessage(std::string(), message.text, TALKTYPE_SAY, 9);
-						//spectator->getPlayer()->sendTextMessage(message);
+						spectator->getPlayer()->sendTextMessage(message);
 					}
 				}
 			}
