@@ -46,4 +46,15 @@
 	<house name="House Above Tom Shop #5" houseid="56" entryx="370" entryy="381" entryz="5" rent="750" townid="2" size="9" />
 	<house name="House Above Tom Shop #6" houseid="57" entryx="369" entryy="381" entryz="5" rent="750" townid="2" size="7" />
 	<house name="House Above Tom Shop #7" houseid="58" entryx="367" entryy="381" entryz="5" rent="750" townid="2" size="7" />
+	<house name="Underground #1" houseid="59" entryx="177" entryy="633" entryz="6" rent="550" townid="3" size="18" />
+	<house name="Underground #2" houseid="60" entryx="182" entryy="633" entryz="6" rent="550" townid="3" size="18" />
+	<house name="Underground #3" houseid="61" entryx="191" entryy="633" entryz="6" rent="550" townid="3" size="18" />
+	<house name="Underground #4" houseid="62" entryx="196" entryy="633" entryz="6" rent="550" townid="3" size="18" />
+	<house name="Underground #5" houseid="63" entryx="205" entryy="633" entryz="6" rent="550" townid="3" size="18" />
+	<house name="Underground #6" houseid="64" entryx="209" entryy="633" entryz="6" rent="550" townid="3" size="18" />
+	<house name="Underground #7" houseid="65" entryx="217" entryy="633" entryz="6" rent="550" townid="3" size="18" />
+	<house name="Underground #8" houseid="66" entryx="222" entryy="633" entryz="6" rent="550" townid="3" size="18" />
+	<house name="Underground #9" houseid="67" entryx="207" entryy="639" entryz="6" rent="550" townid="3" size="18" />
+	<house name="Underground #10" houseid="68" entryx="208" entryy="639" entryz="6" rent="550" townid="3" size="18" />
+	<house name="Underground #11" houseid="69" entryx="207" entryy="645" entryz="6" rent="550" townid="3" size="18" />
 </houses>
