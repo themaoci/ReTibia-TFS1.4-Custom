@@ -4058,7 +4058,7 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 					message.text = spectatorMessage;
 				}
 				tmpPlayer->sendChannelMessage(std::string(), message.text, TALKTYPE_CHANNEL_Y, 9);
-				//tmpPlayer->sendTextMessage(message);
+				tmpPlayer->sendTextMessage(message);
 			}
 		}
 	} else {
@@ -4153,7 +4153,7 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 						message.text = spectatorMessage;
 					}
 					tmpPlayer->sendChannelMessage(std::string(), message.text, TALKTYPE_CHANNEL_O, 9);
-					//tmpPlayer->sendTextMessage(message);
+					tmpPlayer->sendTextMessage(message);
 				}
 
 				damage.primary.value -= manaDamage;
@@ -4254,7 +4254,7 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 					message.text = spectatorMessage;
 				}
 				tmpPlayer->sendChannelMessage(std::string(), message.text, TALKTYPE_CHANNEL_R1, 9);
-				//tmpPlayer->sendTextMessage(message);
+				tmpPlayer->sendTextMessage(message);
 			}
 		}
 
@@ -4310,7 +4310,7 @@ bool Game::combatChangeMana(Creature* attacker, Creature* target, CombatDamage& 
 			message.primary.value = realManaChange;
 			message.primary.color = TEXTCOLOR_MAYABLUE;
 			targetPlayer->sendChannelMessage(std::string(), message.text, TALKTYPE_SAY, 9);
-			//targetPlayer->sendTextMessage(message);
+			targetPlayer->sendTextMessage(message);
 		}
 	} else {
 		const Position& targetPos = target->getPosition();
@@ -4395,7 +4395,7 @@ bool Game::combatChangeMana(Creature* attacker, Creature* target, CombatDamage& 
 				message.text = spectatorMessage;
 			}
 			tmpPlayer->sendChannelMessage(std::string(), message.text, TALKTYPE_SAY, 9);
-			//tmpPlayer->sendTextMessage(message);
+			tmpPlayer->sendTextMessage(message);
 		}
 	}
 
