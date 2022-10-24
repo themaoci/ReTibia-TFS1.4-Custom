@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<monster name="Cyclops" nameDescription="a cyclops" race="blood" experience="150" speed="190" manacost="490">
-	<health now="260" max="260" />
+<monster name="Cyclops" nameDescription="a cyclops" race="blood" experience="150" speed="380" manacost="980">
+	<health now="520" max="520" />
 	<look type="22" corpse="5962" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
@@ -20,7 +20,7 @@
 		<flag canwalkonpoison="0" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="0" max="-105" />
+		<attack name="melee" interval="2000" min="0" max="-210" />
 	</attacks>
 	<defenses armor="17" defense="17" />
 	<elements>
@@ -37,10 +37,12 @@
 		<voice sentence="Let da mashing begin!" />
 	</voices>
 	<loot>
-		<item name="gold coin" countmax="47" chance="82000" />
-		<item name="meat" chance="30070" />
+		<item name="gold coin" countmax="100" chance="82000" />
+		<item name="gold coin" countmax="100" chance="82000" />
+		<item name="gold coin" countmax="100" chance="82000" />
+		<item name="meat" countmax="5" chance="30070" />
 		<item name="short sword" chance="8000" />
-		<item name="cyclops toe" chance="4930" />
+		<item name="cyclops toe" countmax="2" chance="4930" />
 		<item name="plate shield" chance="2500" />
 		<item name="battle shield" chance="1400" />
 		<item id="2381" chance="730" />
