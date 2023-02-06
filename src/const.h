@@ -4,7 +4,7 @@
 #ifndef FS_CONST_H_0A49B5996F074465BF44B90F4F780E8B
 #define FS_CONST_H_0A49B5996F074465BF44B90F4F780E8B
 
-static constexpr int32_t NETWORKMESSAGE_MAXSIZE = 65500; // 1000000 ~1MB
+static constexpr int32_t NETWORKMESSAGE_MAXSIZE = 65500; // min:24590 max:65535 // as TCP max packet size is 65535 anything above will start crashing your game client's
 /*
 24590 - org
 49180 - x2
